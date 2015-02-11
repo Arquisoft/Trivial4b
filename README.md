@@ -2,3 +2,5 @@
 ## Equipo formado por: 
 
 <A rellenar>
+
+Joaquín García
