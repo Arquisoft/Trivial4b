@@ -3,3 +3,4 @@
 
 * Joaquín García
 * Jose Labra
+* Sergio Rodríguez
