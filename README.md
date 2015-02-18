@@ -8,5 +8,4 @@
 * Carlos Alperi Meana // [alperi89](https://www.github.com/alperi89)
 * Joaquín García Muñiz // [Joaquingm](https://www.github.com/Joaquingm)
 * Sergio Fernández Celorio // [segius02](https://www.github.com/sergius02)
-* Natalia Negri // 
-
+* Natalia Negri // [NataliaNegri](https://www.github.com/NataliaNegri)
