@@ -2,10 +2,10 @@ package es.uniovi.asw.trivial.parser;
 
 import java.util.List;
 
-import es.uniovi.asw.trivial.model.Question;
+import es.uniovi.asw.trivial.logica.Pregunta;
 
 public interface Parser {
 	
-	public List<Question> parse();
+	public List<Pregunta> parse();
 
 }
