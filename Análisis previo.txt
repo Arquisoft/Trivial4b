@@ -1,17 +1,39 @@
-Stackeholders:
-* Dueño de la empresa constratante de nuestro programa. Esta persona exigirá una producto que sea estable que sea desarrollado en el menor tiempo posible ya quiere poder lanzar al mercado cuanto antes su nueva linea de juegos de preguntas y respuesta. 
-* Equipo de desarroladores de nuestra empresa. Este grupo de personas quieren tener un margen de tiempo amplio para poder desarrallorar el porgrama de manera sea facilmente mantenible y extensible a nuevas funcionalidades.
-* Administrador de la base de datos. Esta persona quiere que nuestro programa disponga configuracion que permita modificar las opciones de conexión a la base de datos de una manera facil y sencilla. Tambien exigirá que nuestro programa sea capaz de conectarse y trabajar con cualquier base de datos, sea esta SQL o NOSQL.
+Stakeholders:
+
+* Dueño de la empresa contratante de nuestro programa. 
+      Esta persona exigirá una producto que sea estable que sea desarrollado en el menor tiempo posible 
+      ya quiere poder lanzar al mercado cuanto antes su nueva linea de juegos de preguntas y respuesta.
+      
+* Equipo de desarroladores de nuestra empresa. 
+    Este grupo de personas quieren tener un margen de tiempo amplio para poder desarrollar el programa 
+    de manera sea fácilmente mantenible y extensible a nuevas funcionalidades.
+    
+* Administrador de la base de datos. 
+    Esta persona quiere que nuestro programa disponga configuración que permita modificar las opciones de 
+    conexión a la base de datos de una manera fácil y sencilla. 
+    También exigirá que nuestro programa sea capaz de conectarse y trabajar con cualquier base de datos, 
+    sea esta SQL o NOSQL.
+
 
 
 Requisitos funcionales:
-* El programa debe genera uanfichero de salida en formato JSON con las preguntas y respuestas.
-* Las preguntas deben ser obtenidas de una fuente externa (fichero) de formato GIFT.
-* El programa debe ser lo menos interactivo posible. Tan solo debe requerirnos unos simple datos, tales como, el nombre del fichero de entrada, el nombre del fichero de salida y la extension del fichero de ambos ficheros respectivamente.
+
+* El programa debe gener un fichero de salida en formato JSON con las preguntas y respuestas.
+
+* Las preguntas deben ser obtenidas de una fuente externa, un fichero de formato GIFT.
+
+* El programa debe ser lo menos interactivo posible. Tan solo debe requerirnos unos simple datos, tales como, 
+    el nombre del fichero de entrada, el nombre del fichero de salida y la extensión del fichero de ambos ficheros 
+    respectivamente.
+    
 * Se debe almacenar las preguntas y respuestas en una base de datos.
-* El proceso debe poder ser automazido.
+
+* El proceso debe poder ser automatizado.
+
 
 
 Requisitos no funcionales:
+
 * Poder agregar preguntas desde diferentes formatos de fichero.
+
 * La base de datos puede ser SQL o NOQSL como por ejemplo MongoDB.
