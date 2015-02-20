@@ -7,6 +7,7 @@ import java.util.List;
 import org.junit.Test;
 
 import es.uniovi.asw.trivial.logica.Pregunta;
+import es.uniovi.asw.trivial.logica.Respuesta;
 import es.uniovi.asw.trivial.parser.ParserBuilder;
 
 public class ExtractorTest {
@@ -25,17 +26,14 @@ public class ExtractorTest {
 		for (int i = 0; i < prueba.size(); i++) {
 			System.out.println("Pregunta: " + i + "\t"
 					+ prueba.get(i).getEnunciado());
-			for (int j = 0; j < prueba.get(i).getRespuestas().length; j++) {
-				if (prueba.get(i).getRespuestas()[j] != null) {
-					if (prueba.get(i).getRespuestas()[j].isCorrecta()) {
+			List<Respuesta> respuestas = prueba.get(i).getRespuestas();
+			for (int j = 0; j < prueba.get(i).getRespuestas().size(); j++) {
+					if (respuestas.get(j).isCorrecta()) {
 						System.out.println("Respuesta correcta: "
-								+ prueba.get(i).getRespuestas()[j]
-										.getRespuesta());
+								+ respuestas.get(j).getRespuesta());
 					} else
 						System.out.println("Respuesta incorrecta:"
-								+ prueba.get(i).getRespuestas()[j]
-										.getRespuesta());
-				}
+								+ respuestas.get(j).getRespuesta());
 			}
 			System.out.println();
 		}

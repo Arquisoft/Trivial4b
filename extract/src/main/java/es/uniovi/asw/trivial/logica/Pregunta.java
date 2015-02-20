@@ -1,12 +1,14 @@
 package es.uniovi.asw.trivial.logica;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pregunta {
 
 	private String enunciado; // Enunciado de la pregunta
 	private String categoria; // Categoria de la pregunta
-	private Respuesta[] respuestas; // Vector que contiene las respuestas de la
+	private List<Respuesta> respuestas; // Vector que contiene las respuestas de la
 									// pregunta
-	private int contadorRespuesta; // Cuenta el numero de respuestas
 
 	/**
 	 * Constructor con un parametro de la clase pregunta. Inicializa el vector
@@ -17,7 +19,7 @@ public class Pregunta {
 	 */
 	public Pregunta(String enunciado) {
 		this.enunciado = enunciado;
-		this.respuestas = new Respuesta[4];
+		this.respuestas = new ArrayList<Respuesta>();
 	}
 
 	/**
@@ -32,7 +34,7 @@ public class Pregunta {
 	public Pregunta(String enunciado, String categoria) {
 		this.enunciado = enunciado;
 		this.categoria = categoria;
-		this.respuestas = new Respuesta[4];
+		this.respuestas = new ArrayList<Respuesta>();
 	}
 
 	/**
@@ -42,9 +44,9 @@ public class Pregunta {
 	 * @return respuesta correcta
 	 */
 	public Respuesta getRespuestaCorrecta() {
-		for (int i = 0; i < respuestas.length; i++)
-			if (respuestas[i].isCorrecta()) {
-				return respuestas[i];
+		for (int i = 0; i < respuestas.size(); i++)
+			if (respuestas.get(i).isCorrecta()) {
+				return respuestas.get(i);
 			}
 		return null;
 	}
@@ -56,9 +58,7 @@ public class Pregunta {
 	 *            la respuesta a añadir
 	 */
 	public void addRespuesta(Respuesta respuesta) {
-		if (contadorRespuesta >= 0 && contadorRespuesta < respuestas.length)
-			respuestas[contadorRespuesta] = respuesta;
-		contadorRespuesta++;
+		respuestas.add(respuesta);
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class Pregunta {
 	 * 
 	 * @return vector de respuestas
 	 */
-	public Respuesta[] getRespuestas() {
+	public List<Respuesta> getRespuestas() {
 		return respuestas;
 	}
 
