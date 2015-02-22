@@ -9,7 +9,7 @@ import es.uniovi.asw.trivial.parser.ParserBuilder;
 public class Extractor {
 
 	public void usage() {
-		System.out.println("Wellcome to Trivial Extractor");
+		System.out.println("Welcome to Trivial Extractor");
 	}
 
 	public int run(String[] args) {
