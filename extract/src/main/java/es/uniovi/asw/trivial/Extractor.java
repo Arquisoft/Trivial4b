@@ -30,7 +30,7 @@ public class Extractor {
 				System.out.println();
 			}
 			
-//			System.out.println(JSONConverter.getJSON(preguntas));
+			System.out.println(JSONConverter.getJSON(preguntas));
 		}
 		return -1;
 	}

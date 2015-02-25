@@ -86,18 +86,21 @@ public class ParserGIFT implements Parser{
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File(inputFilePath)));
 			
+			String titulo = "";
+			List<Respuesta> respuestas = new ArrayList<Respuesta>();
+			
 			while(br.ready()){
 				String linea = br.readLine();
 				
-				String titulo = "";
-				List<Respuesta> respuestas = new ArrayList<Respuesta>();
 				if(linea.contains("::")){
 					//Titulo
 					titulo = linea.split("::")[1];
+					respuestas = new ArrayList<Respuesta>();
 				}
 				else if(linea.contains("{")){
 					//Titulo (sin ::)
-					titulo = linea.split("{")[0];
+					titulo = linea.split("\\{")[0];
+					respuestas = new ArrayList<Respuesta>();
 				}
 				else if(linea.contains("~")){
 					//Respuesta incorrecta
