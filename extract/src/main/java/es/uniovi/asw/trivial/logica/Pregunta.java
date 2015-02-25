@@ -23,6 +23,21 @@ public class Pregunta {
 	}
 
 	/**
+	 * Constructor con un parametro de la clase pregunta. Inicializa el vector
+	 * de respuestas con un tamaño 4 por defecto.
+	 * 
+	 * @param enunciado
+	 *            es el enunciado de la pregunta.
+	 *            
+	 * @param respuestas
+	 * 			respuestas de la pregunta
+	 */
+	public Pregunta(String enunciado, List<Respuesta> respuestas) {
+		this.enunciado = enunciado;
+		this.respuestas = respuestas;
+	}
+	
+	/**
 	 * Sobrecarga del constructor de la clase pregunta, añadiendole el parametro
 	 * categoria
 	 * 

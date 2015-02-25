@@ -21,16 +21,16 @@ public class Extractor {
 			String inputFileFormat = args[1];
 			List<Pregunta> preguntas = ParserBuilder.build(inputFilePath, inputFileFormat).parse();
 			
-//			for(Pregunta p : preguntas){
-//				System.out.println(p.getEnunciado());
-//				List<Respuesta> respuestas = p.getRespuestas();
-//				for(int i = 0; i < respuestas.size(); i++)
-//					System.out.println("\t"+respuestas.get(i).getRespuesta());
-//				
-//				System.out.println();
-//			}
+			for(Pregunta p : preguntas){
+				System.out.println(p.getEnunciado());
+				List<Respuesta> respuestas = p.getRespuestas();
+				for(int i = 0; i < respuestas.size(); i++)
+					System.out.println("\t"+respuestas.get(i).getRespuesta());
+				
+				System.out.println();
+			}
 			
-			System.out.println(JSONConverter.getJSON(preguntas));
+//			System.out.println(JSONConverter.getJSON(preguntas));
 		}
 		return -1;
 	}
