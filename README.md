@@ -1,4 +1,4 @@
-# Trivial4b
+# Trivial4b [![Build Status](https://travis-ci.org/Arquisoft/Trivial4b.svg?branch=master)](https://travis-ci.org/Arquisoft/Trivial4b)
 ## Equipo formado por: 
 
 * Pedro Menéndez Piera // [pedromenendez93](https://www.github.com/pedromenendez93)
