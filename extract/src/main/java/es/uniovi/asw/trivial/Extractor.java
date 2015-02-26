@@ -10,6 +10,7 @@ public class Extractor {
 
 	public void usage() {
 		System.out.println("Welcome to Trivial Extractor");
+		System.out.println("How to use: java -jar extractor FILE_INPUT FORMAT_FILE_INPUT FILE_OUTPUT FORMAT_FILE_OUTPUT");
 	}
 
 	public int run(String[] args) {
