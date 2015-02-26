@@ -7,9 +7,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import es.uniovi.asw.trivial.logica.Pregunta;
 import es.uniovi.asw.trivial.logica.Respuesta;
 import es.uniovi.asw.trivial.parser.Parser;

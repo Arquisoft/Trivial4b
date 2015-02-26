@@ -2,10 +2,19 @@ package es.uniovi.asw.trivial;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.net.UnknownHostException;
 import java.util.List;
 
+import org.eclipse.jetty.util.ajax.JSON;
 import org.junit.Assert;
 import org.junit.Test;
+
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBObject;
+import com.mongodb.MongoClient;
+import com.mongodb.ServerAddress;
+import com.mongodb.util.*;
 
 import es.uniovi.asw.trivial.logica.Pregunta;
 import es.uniovi.asw.trivial.logica.Respuesta;
@@ -37,8 +46,11 @@ public class ExtractorTest {
 					System.out.println("Respuesta incorrecta:"
 							+ respuestas.get(j).getRespuesta());
 			}
-			System.out.println();
+			System.out.println(JSONConverter.getJSON(prueba));
 		}
+		
+	
+		
 	}
 
 	@Test
