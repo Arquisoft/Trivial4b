@@ -1,5 +1,6 @@
 package es.uniovi.asw.trivial;
 
+import java.util.Iterator;
 import java.util.List;
 
 import com.google.gson.GsonBuilder;
@@ -14,7 +15,12 @@ public class JSONConverter {
 	 * @return La lista en formato JSON
 	 */
 	public static String getJSON(List<Pregunta> preguntas){
-		return new GsonBuilder().setPrettyPrinting().create().toJson(preguntas);
+		String jsonResult = "";
+		
+		for(Pregunta p : preguntas)
+			jsonResult += new GsonBuilder().create().toJson(p)+"\n";
+		
+		return jsonResult;
 	}
 	
 }
