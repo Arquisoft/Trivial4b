@@ -37,3 +37,9 @@ Requisitos no funcionales:
 * Poder agregar preguntas desde diferentes formatos de fichero.
 
 * La base de datos puede ser SQL o NOQSL como por ejemplo MongoDB.
+
+* Adapatabilidad entendida como capacidad de procesar ficheros con distintas extensiones
+
+* Usabilidad entendida como sencilla comprensión y uso de la aplicación
+
+* Testabilidad entendida como facilidad para verificar el producto
