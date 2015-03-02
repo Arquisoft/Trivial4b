@@ -105,6 +105,102 @@
 			<timezone>2</timezone>
 			<properties />
 		</developer>
+		<developer>
+			<id>pedromenendez93</id>
+			<name>Pedro Menéndez Piera</name>
+			<email> @uniovi.es</email>
+			<organization>University of Oviedo</organization>
+			<organizationUrl>http://www.uniovi.es</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>2</timezone>
+			<properties />
+		</developer>
+		<developer>
+			<id>SergioRodriguez7</id>
+			<name>Sergio Rodríguez Pérez</name>
+			<email> @uniovi.es</email>
+			<organization>University of Oviedo</organization>
+			<organizationUrl>http://www.uniovi.es</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>2</timezone>
+			<properties />
+		</developer>
+		<developer>
+			<id>angelasuarez</id>
+			<name>Ángela Suárez Alonso</name>
+			<email> @uniovi.es</email>
+			<organization>University of Oviedo</organization>
+			<organizationUrl>http://www.uniovi.es</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>2</timezone>
+			<properties />
+		</developer>
+		<developer>
+			<id>asgnmmo</id>
+			<name>Andrés Sampedro Gimeno</name>
+			<email>labra@uniovi.es</email>
+			<organization>University of Oviedo</organization>
+			<organizationUrl>http://www.uniovi.es</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>2</timezone>
+			<properties />
+		</developer>
+		<developer>
+			<id>alperi89</id>
+			<name>Carlos Alperi Meana</name>
+			<email> @uniovi.es</email>
+			<organization>University of Oviedo</organization>
+			<organizationUrl>http://www.uniovi.es</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>2</timezone>
+			<properties />
+		</developer>
+		<developer>
+			<id>Joaquingm</id>
+			<name>Joaquín García Muñiz</name>
+			<email>uo205060@uniovi.es</email>
+			<organization>University of Oviedo</organization>
+			<organizationUrl>http://www.uniovi.es</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>2</timezone>
+			<properties />
+		</developer>
+		<developer>
+			<id>segius02</id>
+			<name>Sergio Fernández Celorio</name>
+			<email> @uniovi.es</email>
+			<organization>University of Oviedo</organization>
+			<organizationUrl>http://www.uniovi.es</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>2</timezone>
+			<properties />
+		</developer>
+		<developer>
+			<id>NataliaNegri</id>
+			<name>Natalia Negri</name>
+			<email> @uniovi.es</email>
+			<organization>University of Oviedo</organization>
+			<organizationUrl>http://www.uniovi.es</organizationUrl>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>2</timezone>
+			<properties />
+		</developer>
 	</developers>
 
 
