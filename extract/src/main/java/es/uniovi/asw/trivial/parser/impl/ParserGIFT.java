@@ -64,15 +64,13 @@ public class ParserGIFT implements Parser{
 					Pregunta pregunta = new Pregunta(titulo,respuestas);
 					preguntas.add(pregunta);
 				}
-			}
-			
+			}		
 			br.close();
 		} catch (FileNotFoundException e) {
 			System.err.println(e.getMessage());
 		} catch (IOException e) {
 			System.err.println(e.getMessage());
-		}
-		
+		}		
 		return preguntas;
 	}
 	

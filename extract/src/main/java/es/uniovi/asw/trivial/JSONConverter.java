@@ -1,6 +1,5 @@
 package es.uniovi.asw.trivial;
 
-import java.util.Iterator;
 import java.util.List;
 
 import com.google.gson.GsonBuilder;

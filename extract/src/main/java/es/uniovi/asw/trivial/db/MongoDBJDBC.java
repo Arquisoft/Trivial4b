@@ -15,21 +15,6 @@ import com.mongodb.DBCollection;
 import com.mongodb.util.JSON;
 
 public class MongoDBJDBC {
-//	public static void main(String args[]) {
-//		try {
-//			// Conectar con mongodb
-//			MongoClient mongoClient = new MongoClient("85.152.166.25", 27017);
-//			// Conectar con nuestra base de datos
-//			DB db = mongoClient.getDB("trivial");
-//			System.out.println("Conexion creada con la base de datos");
-//			DBCollection coll = db.getCollection("preguntas");
-//			System.out.println(coll.find());
-//			db.command("mongoimport --db trivial --collection preguntas --file preguntas2.json");
-//			System.out.println(coll.count());
-//		} catch (Exception e) {
-//			System.err.println(e.getClass().getName() + ": " + e.getMessage());
-//		}
-//	}
 
 	/**
 	 * Éste metodo se conecta con la base de datos MongoDB, y va insertando uno a uno los objetos JSON
@@ -39,9 +24,11 @@ public class MongoDBJDBC {
 	 */
 	public static void insert(String filePath) {
 		// Conectar con mongodb
-		MongoClient mongoClient;
+		MongoClient mongoClient = null;
 		try {
-			mongoClient = new MongoClient("85.152.166.25", 27017);
+			//mongoClient = new MongoClient("85.152.166.25", 27017);
+			mongoClient = new MongoClient( "localhost" );
+			//mongoClient = new MongoClient("localhost", 27017);
 
 			// Conectar con nuestra base de datos
 			DB db = mongoClient.getDB("trivial");
@@ -86,6 +73,8 @@ public class MongoDBJDBC {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} finally {
+			mongoClient.close();
 		}
 	}
 

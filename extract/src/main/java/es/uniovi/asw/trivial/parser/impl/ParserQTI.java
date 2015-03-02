@@ -5,8 +5,8 @@ import java.util.List;
 import es.uniovi.asw.trivial.logica.Pregunta;
 import es.uniovi.asw.trivial.parser.Parser;
 
-public class ParserQTI implements Parser{
-	
+public class ParserQTI implements Parser {
+
 	private String inputFilePath;
 
 	public ParserQTI(String inputFilePath) {
