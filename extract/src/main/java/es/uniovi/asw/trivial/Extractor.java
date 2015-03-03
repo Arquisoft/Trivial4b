@@ -27,38 +27,45 @@ public class Extractor {
 			String inputFilePath = args[0];
 			String inputFileFormat = args[1];
 			String outputFile = args[2];
-			String outputFileFormat = args[3];
 
 			List<Pregunta> preguntas = ParserBuilder.build(inputFilePath,
 					inputFileFormat).parse();
 
-			for (Pregunta p : preguntas) {
-				System.out.println(p.getEnunciado());
-				List<Respuesta> respuestas = p.getRespuestas();
-				for (int i = 0; i < respuestas.size(); i++)
-					System.out.println("\t" + respuestas.get(i).getRespuesta());
-
-				System.out.println();
-			}
+			imprimirPreguntas(preguntas);
 
 			String jsonResult = JSONConverter.getJSON(preguntas);
 			System.out.println(jsonResult);
-
-			BufferedWriter bw;
-			try {
-				bw = new BufferedWriter(new FileWriter(new File(
-						outputFile)));
-				bw.write(jsonResult);
-				bw.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			
+			crearArchivoJSON(outputFile, jsonResult);
 			
 			MongoDBJDBC.insert(outputFile);
 			
 			System.out.println("Insercción realizada con éxito");
 		}
 		return -1;
+	}
+
+	private void imprimirPreguntas(List<Pregunta> preguntas) {
+		for (Pregunta p : preguntas) {
+			System.out.println(p.getEnunciado());
+			List<Respuesta> respuestas = p.getRespuestas();
+			for (int i = 0; i < respuestas.size(); i++)
+				System.out.println("\t" + respuestas.get(i).getRespuesta());
+
+			System.out.println();
+		}
+	}
+
+	private void crearArchivoJSON(String outputFile, String jsonResult) {
+		BufferedWriter bw;
+		try {
+			bw = new BufferedWriter(new FileWriter(new File(
+					outputFile)));
+			bw.write(jsonResult);
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void main(String[] args) {
