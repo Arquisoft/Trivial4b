@@ -68,5 +68,23 @@ public class ExtractorTest {
 			assertThat(cont).isEqualTo(1);
 		}
 	}
+	@Test
+	public void respuestaCorrectaXML() {
+		List<Pregunta> preguntas = ParserBuilder
+				.build("preguntas.xml", "xml").parse();
+		for (int i = 0; i < preguntas.size(); i++) {
+			Assert.assertNotNull(preguntas.get(i).getRespuestaCorrecta());
+			int cont = 0;
+			for (int j = 0; j < preguntas.get(i).getRespuestas().size(); j++) {
+				if (preguntas.get(i).getRespuestas().get(j).isCorrecta()) {
+					cont++;
+				}
+				if(i == 0){
+					Assert.assertEquals(preguntas.get(i).getRespuestaCorrecta().getRespuesta(), "cuatro");
+				}
+			}
+			assertThat(cont).isEqualTo(1);
+		}
+	}
 
 }

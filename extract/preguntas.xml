@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preguntas
+    xmlns="http://www.example.org/visores"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <pregunta>
+  	<enunciado>¿Cuántos lados tiene un cuadrado?</enunciado>
+  	<respuesta valor="false">dos</respuesta>
+  	<respuesta valor="false">tres</respuesta>
+  	<respuesta valor="true">cuatro</respuesta> 	
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿Cuánto es la raiz cuadrada de dos?</enunciado>
+  	<respuesta valor="true">1.4142...</respuesta>
+  	<respuesta valor="false">8</respuesta>
+  	<respuesta valor="false">1</respuesta> 	
+  	<respuesta valor="false">0</respuesta> 	
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿Quién pintó "El Gernika"?</enunciado>
+  	<respuesta valor="false">Dalí</respuesta>
+  	<respuesta valor="false">Goya</respuesta>
+  	<respuesta valor="true">Picasso</respuesta> 	
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿En qué equipo de la NBA juega el pívot español Pau Gasol?</enunciado>
+  	<respuesta valor="false">Grizzlies</respuesta>
+  	<respuesta valor="true">Bulls</respuesta>
+  	<respuesta valor="false">Lakers</respuesta> 	
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿Qué fruto se suele comer en España en Nochevieja, 31 de diciembre, cuando suenan las doce campanadas?</enunciado>
+  	<respuesta valor="false">12 fresas</respuesta>
+  	<respuesta valor="false">12 cerezas</respuesta>
+  	<respuesta valor="true">12 uvas</respuesta> 	
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿Qué legendario jugador de fútbol marcó un gol con “la mano de Dios”?</enunciado>
+  	<respuesta valor="true">Maradona</respuesta>
+  	<respuesta valor="false">Pelé</respuesta>
+  	<respuesta valor="false">Messi</respuesta> 	
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿Cuántos Roland Garros ganó Rafael Nadal? (2014)?</enunciado>
+  	<respuesta valor="false">6</respuesta>
+  	<respuesta valor="false">Ninguno</respuesta>
+  	<respuesta valor="false">8</respuesta> 	
+  	<respuesta valor="true">9</respuesta> 
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿Cuántos Roland Garros ganó Rafael Nadal? (2014)?</enunciado>
+  	<respuesta valor="false">6</respuesta>
+  	<respuesta valor="false">Ninguno</respuesta>
+  	<respuesta valor="false">8</respuesta> 	
+  	<respuesta valor="true">9</respuesta> 
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿En qué año ganó el Real Madrid club de fútbol su sexta copa de Europa?</enunciado>
+  	<respuesta valor="false">1980-1981</respuesta>
+  	<respuesta valor="true">1965-1966</respuesta>
+  	<respuesta valor="false">1960-1961</respuesta> 	
+  	<respuesta valor="false">1956-1957</respuesta> 
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿Quién fue el protagonista de la famosa sitcom ‘Two and a half men’ desde 2003 hasta 2011?</enunciado>
+  	<respuesta valor="true">Charlie Sheen</respuesta>
+  	<respuesta valor="false">Aston Kutcher</respuesta>
+  	<respuesta valor="false">Angus T. Jones</respuesta> 	
+  	<respuesta valor="false">Jon Cryer</respuesta> 
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿Cuál es la capital de Madagacar?</enunciado>
+  	<respuesta valor="false">Kinsasa</respuesta>
+  	<respuesta valor="true">Antananarivo</respuesta>
+  	<respuesta valor="false">Adís Abeba</respuesta> 	
+  	<respuesta valor="false">Moscú</respuesta> 
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿Cuál es la capital de Dinamarca?</enunciado>
+  	<respuesta valor="false">Lisboa</respuesta>
+  	<respuesta valor="true">Copenhague</respuesta>
+  	<respuesta valor="false">Budapest</respuesta> 	
+  	<respuesta valor="false">Bucarest</respuesta> 
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿Cuántos Roland Garros ganó Rafael Nadal? (2014)?</enunciado>
+  	<respuesta valor="true">Wellington</respuesta>
+  	<respuesta valor="false">Abu Dabi</respuesta>
+  	<respuesta valor="false">Nicosia</respuesta> 	
+  	<respuesta valor="false">Yakarta</respuesta> 
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿Cuál fue la serie más pirateada de 2014?</enunciado>
+  	<respuesta valor="false">Gotham</respuesta>
+  	<respuesta valor="false">The Big Bang Theory</respuesta>
+  	<respuesta valor="true">Game of thrones</respuesta> 	
+  	<respuesta valor="false">The Walking Dead</respuesta> 
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿Cuántos Roland Garros ganó Rafael Nadal? (2014)?</enunciado>
+  	<respuesta valor="false">6</respuesta>
+  	<respuesta valor="false">Ninguno</respuesta>
+  	<respuesta valor="false">8</respuesta> 	
+  	<respuesta valor="true">9</respuesta> 
+  	</pregunta>
+  	<pregunta>
+  	<enunciado>¿Cuántas veces ha sido nominada al oscar la actriz Meryl Streep?</enunciado>
+  	<respuesta valor="false">34</respuesta>
+  	<respuesta valor="false">10</respuesta>
+  	<respuesta valor="false">4</respuesta> 	
+  	<respuesta valor="true">8</respuesta> 
+  	</pregunta>
+	<pregunta>
+  	<enunciado>Si juntamos el color rojo con el color verde. ¿Qué color es el resultante?</enunciado>
+  	<respuesta valor="false">Negro</respuesta>
+  	<respuesta valor="true">Amarillo</respuesta>
+  	<respuesta valor="false">Azul</respuesta> 	
+  	<respuesta valor="false">Morado</respuesta> 
+  	</pregunta>
+ </preguntas>

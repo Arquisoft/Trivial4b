@@ -28,7 +28,7 @@ public class Extractor {
 			String inputFileFormat = args[1];
 			String outputFile = args[2];
 			String outputFileFormat = args[3];
-
+			
 			List<Pregunta> preguntas = ParserBuilder.build(inputFilePath,
 					inputFileFormat).parse();
 

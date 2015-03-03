@@ -1,7 +1,7 @@
 package es.uniovi.asw.trivial.parser;
 
 import es.uniovi.asw.trivial.parser.impl.ParserGIFT;
-import es.uniovi.asw.trivial.parser.impl.ParserQTI;
+import es.uniovi.asw.trivial.parser.impl.ParserXML;
 
 public class ParserBuilder {
 
@@ -16,8 +16,8 @@ public class ParserBuilder {
 	public static Parser build(String inputFilePath, String inputFileFormat) {
 		Parser p = new ParserGIFT(inputFilePath);
 
-		if (inputFileFormat.equalsIgnoreCase("qti"))
-			p = new ParserQTI(inputFilePath);
+		if (inputFileFormat.equalsIgnoreCase("xml"))
+			p = new ParserXML(inputFilePath);
 		else if (inputFileFormat.equalsIgnoreCase("gift"))
 			p = new ParserGIFT(inputFilePath);
 		return p;
