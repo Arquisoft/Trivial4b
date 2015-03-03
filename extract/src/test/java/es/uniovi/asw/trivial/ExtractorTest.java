@@ -2,19 +2,10 @@ package es.uniovi.asw.trivial;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.net.UnknownHostException;
 import java.util.List;
 
-import org.eclipse.jetty.util.ajax.JSON;
 import org.junit.Assert;
 import org.junit.Test;
-
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.DBObject;
-import com.mongodb.MongoClient;
-import com.mongodb.ServerAddress;
-import com.mongodb.util.*;
 
 import es.uniovi.asw.trivial.logica.Pregunta;
 import es.uniovi.asw.trivial.logica.Respuesta;
@@ -48,25 +39,26 @@ public class ExtractorTest {
 			}
 			System.out.println(JSONConverter.getJSON(prueba));
 		}
-		
-	
-		
+
 	}
 
 	@Test
-	public void soloUnaRespuestaCorrecta() {
+	public void estructuraPreguntas() {
 		List<Pregunta> preguntas = ParserBuilder
 				.build("preguntas.gift", "gift").parse();
 		for (int i = 0; i < preguntas.size(); i++) {
+			assertThat(preguntas.get(0).getEnunciado().length()).isGreaterThan(
+					5);
 			Assert.assertNotNull(preguntas.get(i).getRespuestaCorrecta());
-			int cont = 0;
+			int respuestasCorrectas = 0;
 			for (int j = 0; j < preguntas.get(i).getRespuestas().size(); j++) {
 				if (preguntas.get(i).getRespuestas().get(j).isCorrecta()) {
-					cont++;
+					respuestasCorrectas++;
 				}
 			}
-			assertThat(cont).isEqualTo(1);
+			assertThat(respuestasCorrectas).isEqualTo(1);
 		}
+
 	}
 	@Test
 	public void respuestaCorrectaXML() {
