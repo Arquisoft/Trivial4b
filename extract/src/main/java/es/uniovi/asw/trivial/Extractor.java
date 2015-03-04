@@ -1,10 +1,11 @@
-
 package es.uniovi.asw.trivial;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.List;
 
 import es.uniovi.asw.trivial.db.MongoDBJDBC;
@@ -28,26 +29,42 @@ public class Extractor {
 			String inputFilePath = args[0];
 			String inputFileFormat = args[1];
 			String outputFile = args[2];
-	
+
+			InputStreamReader isr = new InputStreamReader(System.in);
+			BufferedReader br = new BufferedReader(isr);
+
 			List<Pregunta> preguntas = ParserBuilder.build(inputFilePath,
 					inputFileFormat).parse();
-	
+
 			imprimirPreguntas(preguntas);
-	
+
 			String jsonResult = JSONConverter.getJSON(preguntas);
 			System.out.println(jsonResult);
-			
+
 			crearArchivoJSON(outputFile, jsonResult);
-			
-			MongoDBJDBC.insert(outputFile);
-			
+
+			String opcion = "";
+			System.out
+					.println("¿Desea hacer la carga de los datos en la base de datos? S/N (Solo escribir S, si se tiene una instancia activa de MongoDB");
+			try {
+				opcion = br.readLine();
+			} catch (IOException e) {
+				System.out
+						.println("Se ha producido un error a través de la lectura del teclado");
+			}
+			if (opcion.equals("S")) {
+				MongoDBJDBC.insert(outputFile);
+				System.out.println("Insercción realizada con éxito");
+			}
+
 			System.out.println("Insercción realizada con éxito");
 		}
 		return -1;
 	}
 
 	public void usage() {
-		System.out.println("Usage:\n\t java -jar extractor [INPUT_FILE] [FORMAT_INPUT_FILE] [OUTPUT_FILE] [FORMAT_OUTPUT_FILE]");
+		System.out
+				.println("Usage:\n\t java -jar extractor [INPUT_FILE] [FORMAT_INPUT_FILE] [OUTPUT_FILE] [FORMAT_OUTPUT_FILE]");
 		System.out.println("\nAdmitted formats:\n\t*GIFT\n\t*XML");
 		System.out.println("\n*All parameters are required*");
 	}
@@ -66,8 +83,7 @@ public class Extractor {
 	private void crearArchivoJSON(String outputFile, String jsonResult) {
 		BufferedWriter bw;
 		try {
-			bw = new BufferedWriter(new FileWriter(new File(
-					outputFile)));
+			bw = new BufferedWriter(new FileWriter(new File(outputFile)));
 			bw.write(jsonResult);
 			bw.close();
 		} catch (IOException e) {
