@@ -23,10 +23,17 @@ public class ParserXML implements Parser {
 
 	private String inputFilePath;
 
+	/**
+	* Constructor de la clase ParserXML
+	* @param inputFilePath Archivo de entrada con formato XML
+	*/
 	public ParserXML(String inputFilePath) {
 		this.inputFilePath = inputFilePath;
 	}
 
+	/**
+	* Parsea el archivo pasado por parametro al constructor y devuelve una lista con las preguntas
+	*/
 	@Override
 	public List<Pregunta> parse() {
 		List<Pregunta> preguntas = new ArrayList<Pregunta>();
