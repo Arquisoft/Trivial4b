@@ -14,10 +14,8 @@ import es.uniovi.asw.trivial.parser.ParserBuilder;
 
 public class Extractor {
 
-	public void usage() {
-		System.out.println("Welcome to Trivial Extractor");
-		System.out
-				.println("How to use: java -jar extractor FILE_INPUT FORMAT_FILE_INPUT FILE_OUTPUT FORMAT_FILE_OUTPUT");
+	public static void main(String[] args) {
+		new Extractor().run(args);
 	}
 
 	public int run(String[] args) {
@@ -28,12 +26,12 @@ public class Extractor {
 			String inputFilePath = args[0];
 			String inputFileFormat = args[1];
 			String outputFile = args[2];
-
+	
 			List<Pregunta> preguntas = ParserBuilder.build(inputFilePath,
 					inputFileFormat).parse();
-
+	
 			imprimirPreguntas(preguntas);
-
+	
 			String jsonResult = JSONConverter.getJSON(preguntas);
 			System.out.println(jsonResult);
 			
@@ -44,6 +42,12 @@ public class Extractor {
 			System.out.println("Insercción realizada con éxito");
 		}
 		return -1;
+	}
+
+	public void usage() {
+		System.out.println("Welcome to Trivial Extractor");
+		System.out
+				.println("How to use: java -jar extractor FILE_INPUT FORMAT_FILE_INPUT FILE_OUTPUT FORMAT_FILE_OUTPUT");
 	}
 
 	private void imprimirPreguntas(List<Pregunta> preguntas) {
@@ -67,9 +71,5 @@ public class Extractor {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-	public static void main(String[] args) {
-		new Extractor().run(args);
 	}
 }

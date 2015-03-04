@@ -15,7 +15,7 @@ public class JSONConverter {
 	 */
 	public static String getJSON(List<Pregunta> preguntas){
 		String jsonResult = "";
-		
+
 		for(Pregunta p : preguntas)
 			jsonResult += new GsonBuilder().create().toJson(p)+"\n";
 		
