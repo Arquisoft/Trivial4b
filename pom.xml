@@ -1,7 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                              http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>es.uniovi.asw</groupId>
@@ -13,7 +11,8 @@
     <modules>
         <module>extract</module>
 <!-- Other modules should be added here: <module>...</module> -->
-    </modules>
+    <module>game</module>
+  </modules>
 
     <build>
         <pluginManagement>
@@ -86,7 +85,7 @@
 			<name>GNU LESSER GENERAL PUBLIC LICENSE</name>
 			<url>http://www.gnu.org/licenses/lgpl.html</url>
 			<distribution>repo</distribution>
-			<comments />
+			<comments/>
 		</license>
 	</licenses>
 
@@ -103,7 +102,7 @@
 				<role>Developer</role>
 			</roles>
 			<timezone>2</timezone>
-			<properties />
+			<properties/>
 		</developer>
 		<developer>
 			<id>pedromenendez93</id>
@@ -115,7 +114,7 @@
 				<role>Developer</role>
 			</roles>
 			<timezone>2</timezone>
-			<properties />
+			<properties/>
 		</developer>
 		<developer>
 			<id>SergioRodriguez7</id>
@@ -127,11 +126,11 @@
 				<role>Developer</role>
 			</roles>
 			<timezone>2</timezone>
-			<properties />
+			<properties/>
 		</developer>
 		<developer>
 			<id>angelasuarez</id>
-			<name>Ángela Suárez Alonso</name>
+			<name>�?ngela Suárez Alonso</name>
 			<email> @uniovi.es</email>
 			<organization>University of Oviedo</organization>
 			<organizationUrl>http://www.uniovi.es</organizationUrl>
@@ -139,7 +138,7 @@
 				<role>Developer</role>
 			</roles>
 			<timezone>2</timezone>
-			<properties />
+			<properties/>
 		</developer>
 		<developer>
 			<id>asgnmmo</id>
@@ -151,7 +150,7 @@
 				<role>Developer</role>
 			</roles>
 			<timezone>2</timezone>
-			<properties />
+			<properties/>
 		</developer>
 		<developer>
 			<id>alperi89</id>
@@ -163,7 +162,7 @@
 				<role>Developer</role>
 			</roles>
 			<timezone>2</timezone>
-			<properties />
+			<properties/>
 		</developer>
 		<developer>
 			<id>Joaquingm</id>
@@ -175,7 +174,7 @@
 				<role>Developer</role>
 			</roles>
 			<timezone>2</timezone>
-			<properties />
+			<properties/>
 		</developer>
 		<developer>
 			<id>segius02</id>
@@ -187,7 +186,7 @@
 				<role>Developer</role>
 			</roles>
 			<timezone>2</timezone>
-			<properties />
+			<properties/>
 		</developer>
 		<developer>
 			<id>NataliaNegri</id>
@@ -199,7 +198,7 @@
 				<role>Developer</role>
 			</roles>
 			<timezone>2</timezone>
-			<properties />
+			<properties/>
 		</developer>
 	</developers>
 
