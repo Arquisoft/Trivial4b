@@ -32,6 +32,7 @@ public class MongoDBJDBC {
 			// Conectar con nuestra base de datos
 			DB db = mongoClient.getDB("trivial");
 			System.out.println("Conexion creada con la base de datos");
+			
 
 			BufferedReader br = new BufferedReader(new FileReader(new File(
 					filePath)));

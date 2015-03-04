@@ -19,7 +19,7 @@ public class Extractor {
 	}
 
 	public int run(String[] args) {
-		if (args.length != 4) {
+		if (args.length != 3) {
 			System.out.println("Incorrect number of params");
 			usage();
 			return 0;
