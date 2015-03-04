@@ -33,13 +33,18 @@ public class ParserGIFT implements Parser{
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(new File(inputFilePath)));
 			
+			String categoria = "";
 			String titulo = "";
 			List<Respuesta> respuestas = new ArrayList<Respuesta>();
 			
 			while(br.ready()){
 				String linea = br.readLine();
 				
-				if(linea.contains("::")){
+				if(linea.contains("$")){
+					//Categoria
+					categoria = linea.split("$")[0].substring(1, linea.length());
+				}
+				else if(linea.contains("::")){
 					//Titulo
 					titulo = linea.split("::")[1];
 					respuestas = new ArrayList<Respuesta>();
@@ -61,7 +66,7 @@ public class ParserGIFT implements Parser{
 				}
 				else if(linea.contains("}")){
 					//Fin de pregunta
-					Pregunta pregunta = new Pregunta(titulo,respuestas);
+					Pregunta pregunta = new Pregunta(titulo, categoria, respuestas);
 					preguntas.add(pregunta);
 				}
 			}		

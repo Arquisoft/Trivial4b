@@ -54,17 +54,21 @@ public class ParserXML implements Parser {
         	 List<Element> childrens = element.getChildren();
         	 List<Respuesta> respuestas = new ArrayList<Respuesta>();
         	 String enunciado="";
+        	 String categoria="";
         	 for(int j=0; j< childrens.size(); j++){
         		 Element e = (Element) childrens.get(j);
-        		 if(e.getName() == "enunciado"){
-        			  enunciado =e.getText();
+        		 if(e.getName() == "categoria"){
+        			 categoria = e.getText();
+        		 }
+        		 else if(e.getName() == "enunciado"){
+        			  enunciado = e.getText();
         		 }
         		 else if(e.getName() == "respuesta"){
         			 Respuesta respuesta = new Respuesta(e.getText(), Boolean.parseBoolean(e.getAttributeValue("valor")));
         			 respuestas.add(respuesta);
         		 }
         	 }
-        	Pregunta pregunta = new Pregunta(enunciado, respuestas);
+        	Pregunta pregunta = new Pregunta(enunciado, categoria, respuestas);
         	preguntas.add(pregunta);
         	
         }

@@ -56,8 +56,6 @@ public class Extractor {
 				MongoDBJDBC.insert(outputFile);
 				System.out.println("Insercción realizada con éxito");
 			}
-
-			System.out.println("Insercción realizada con éxito");
 		}
 		return -1;
 	}

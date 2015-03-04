@@ -51,6 +51,23 @@ public class Pregunta {
 		this.categoria = categoria;
 		this.respuestas = new ArrayList<Respuesta>();
 	}
+	
+	/**
+	 * Sobrecarga del constructor de la clase pregunta, añadiendole los parametros
+	 * categoria y respuestas
+	 * 
+	 * @param enunciado
+	 * 				es el enunciado de la pregunta
+	 * @param categoria
+	 * 				la categoria de la pregunta
+	 * @param respuestas
+	 * 				respuestas de la pregunta
+	 */
+	public Pregunta(String enunciado, String categoria, List<Respuesta> respuestas) {
+		this.enunciado = enunciado;
+		this.categoria = categoria;
+		this.respuestas = respuestas;
+	}
 
 	/**
 	 * Metodo que recorre el vector de respuestas y de devuelve la respuesta
