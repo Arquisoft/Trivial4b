@@ -24,7 +24,7 @@ public class ExtractorTest {
 	public void probandoLectura() {
 		List<Pregunta> prueba = ParserBuilder.build("preguntas.gift", "gift")
 				.parse();
-		assertThat(prueba.size()).isEqualTo(16);
+		assertThat(prueba.size()).isEqualTo(15);
 		for (int i = 0; i < prueba.size(); i++) {
 			System.out.println("Pregunta: " + i + "\t"
 					+ prueba.get(i).getEnunciado());
