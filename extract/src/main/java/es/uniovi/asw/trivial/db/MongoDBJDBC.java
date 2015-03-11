@@ -26,7 +26,7 @@ public class MongoDBJDBC {
 		// Conectar con mongodb
 		MongoClient mongoClient = null;
 		try {
-			mongoClient = new MongoClient( "localhost" );
+			mongoClient = new MongoClient("85.152.166.25", 27017);
 
 			// Conectar con nuestra base de datos
 			DB db = mongoClient.getDB("trivial");
