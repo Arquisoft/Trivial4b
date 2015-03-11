@@ -516,6 +516,10 @@ aside#sidebar p.repo-owner a {
   margin-bottom: 40px;
 }
 
+#div_descargas > a{
+  float:left;
+}
+
 a.button {
   width: 134px;
   height: 58px;
@@ -536,7 +540,7 @@ header a.button {
   right: 0;
   background: transparent url(../images/github-button.png) 0 0 no-repeat;
 }
-aside a.button {
+a.button {
   display: block;
   width: 138px;
   padding-left: 64px;
