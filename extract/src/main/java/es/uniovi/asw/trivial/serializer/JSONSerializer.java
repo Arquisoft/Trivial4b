@@ -1,12 +1,12 @@
-package es.uniovi.asw.trivial;
+package es.uniovi.asw.trivial.serializer;
 
 import java.util.List;
 
 import com.google.gson.GsonBuilder;
 
-import es.uniovi.asw.trivial.logica.Pregunta;
+import es.uniovi.asw.trivial.model.Pregunta;
 
-public class JSONConverter {
+public class JSONSerializer {
 	
 	/**
 	 * Retorna la lista de preguntas en un formato JSON

@@ -1,4 +1,4 @@
-package es.uniovi.asw.trivial.logica;
+package es.uniovi.asw.trivial.model;
 
 public class Respuesta {
 

@@ -14,7 +14,7 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.util.JSON;
 
-public class MongoDBJDBC {
+public class MongoDB {
 
 	/**
 	 * Éste metodo se conecta con la base de datos MongoDB, y va insertando uno a uno los objetos JSON

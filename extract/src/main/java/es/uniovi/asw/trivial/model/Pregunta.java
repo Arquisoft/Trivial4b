@@ -1,4 +1,4 @@
-package es.uniovi.asw.trivial.logica;
+package es.uniovi.asw.trivial.model;
 
 import java.util.ArrayList;
 import java.util.List;

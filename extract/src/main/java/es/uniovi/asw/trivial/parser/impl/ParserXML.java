@@ -10,16 +10,17 @@ import java.util.List;
 
 
 
+
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 
-import es.uniovi.asw.trivial.logica.Pregunta;
-import es.uniovi.asw.trivial.logica.Respuesta;
+import es.uniovi.asw.trivial.model.Pregunta;
+import es.uniovi.asw.trivial.model.Respuesta;
 import es.uniovi.asw.trivial.parser.Parser;
 
-public class ParserXML implements Parser {
+public class ParserXML extends Parser {
 
 	private String inputFilePath;
 

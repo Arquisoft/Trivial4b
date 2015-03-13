@@ -7,9 +7,11 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import es.uniovi.asw.trivial.logica.Pregunta;
-import es.uniovi.asw.trivial.logica.Respuesta;
+import es.uniovi.asw.trivial.main.Extractor;
+import es.uniovi.asw.trivial.model.Pregunta;
+import es.uniovi.asw.trivial.model.Respuesta;
 import es.uniovi.asw.trivial.parser.ParserBuilder;
+import es.uniovi.asw.trivial.serializer.JSONSerializer;
 
 public class ExtractorTest {
 
@@ -37,7 +39,7 @@ public class ExtractorTest {
 					System.out.println("Respuesta incorrecta:"
 							+ respuestas.get(j).getRespuesta());
 			}
-			System.out.println(JSONConverter.getJSON(prueba));
+			System.out.println(JSONSerializer.getJSON(prueba));
 		}
 
 	}

@@ -1,4 +1,4 @@
-package es.uniovi.asw.trivial;
+package es.uniovi.asw.trivial.main;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -8,10 +8,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
-import es.uniovi.asw.trivial.db.MongoDBJDBC;
-import es.uniovi.asw.trivial.logica.Pregunta;
-import es.uniovi.asw.trivial.logica.Respuesta;
+import es.uniovi.asw.trivial.db.MongoDB;
+import es.uniovi.asw.trivial.model.Pregunta;
+import es.uniovi.asw.trivial.model.Respuesta;
 import es.uniovi.asw.trivial.parser.ParserBuilder;
+import es.uniovi.asw.trivial.serializer.JSONSerializer;
 
 public class Extractor {
 
@@ -38,7 +39,7 @@ public class Extractor {
 
 			imprimirPreguntas(preguntas);
 
-			String jsonResult = JSONConverter.getJSON(preguntas);
+			String jsonResult = JSONSerializer.getJSON(preguntas);
 			System.out.println(jsonResult);
 
 			crearArchivoJSON(outputFile, jsonResult);
@@ -53,7 +54,7 @@ public class Extractor {
 						.println("Se ha producido un error a través de la lectura del teclado");
 			}
 			if (opcion.equals("S")) {
-				MongoDBJDBC.insert(outputFile);
+				MongoDB.insert(outputFile);
 				System.out.println("Insercción realizada con éxito");
 			}
 		}

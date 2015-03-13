@@ -7,11 +7,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import es.uniovi.asw.trivial.logica.Pregunta;
-import es.uniovi.asw.trivial.logica.Respuesta;
+
+import es.uniovi.asw.trivial.model.Pregunta;
+import es.uniovi.asw.trivial.model.Respuesta;
 import es.uniovi.asw.trivial.parser.Parser;
 
-public class ParserGIFT implements Parser{
+public class ParserGIFT extends Parser{
 	
 	private String inputFilePath;
 
