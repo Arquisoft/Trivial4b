@@ -7,11 +7,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.UnknownHostException;
 
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
 import com.mongodb.util.JSON;
 
 public class MongoDB {

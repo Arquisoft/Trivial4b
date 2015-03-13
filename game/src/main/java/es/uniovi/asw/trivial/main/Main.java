@@ -1,5 +1,10 @@
 package es.uniovi.asw.trivial.main;
 
+import java.util.List;
+
+import es.uniovi.asw.trivial.db.DBManager;
+import es.uniovi.asw.trivial.model.Pregunta;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -9,9 +14,16 @@ public class Main {
 	public void run() {
 		// Se debe conectar a la base de datos para extraer las preguntas y las
 		// respuestas
-
+		
 		// Una vez obtenidas las debe parsear de JSON a objetos Pregunta y
 		// Respuesta
+		DBManager dbManager = new DBManager();
+		List<Pregunta> listaPreguntas = dbManager.cargarPreguntasRemoto();
+		
+		for(int i = 0; i < listaPreguntas.size(); i++){
+			System.out.println();
+			System.out.println(listaPreguntas.get(i));
+		}
 
 		// Se deben guardar las preguntas y las respuestas en la base de datos
 		// local

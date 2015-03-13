@@ -120,4 +120,8 @@ public class Pregunta {
 		return respuestas;
 	}
 
+	@Override
+	public String toString() {
+		return "["+categoria+","+enunciado+"]\n\t"+respuestas.toString();
+	}
 }

@@ -36,4 +36,9 @@ public class Respuesta {
 		return isCorrecta;
 	}
 
+	@Override
+	public String toString() {
+		return "["+respuesta+","+isCorrecta+"]";
+	}
+	
 }
