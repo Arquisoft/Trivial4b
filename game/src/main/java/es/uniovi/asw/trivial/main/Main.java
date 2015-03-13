@@ -50,6 +50,10 @@ public class Main {
 
 		// Cuando un jugador consiga el ultimo de los quesitos que le faltan
 		// podrá ir a la casilla central
+		
+		// Una vez alli se le hace una pregunta, si la acierta gana
+		
+		// ¿Y si no acierta?
 
 	}
 
