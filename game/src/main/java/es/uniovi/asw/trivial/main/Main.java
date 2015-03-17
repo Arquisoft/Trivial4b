@@ -1,9 +1,12 @@
 package es.uniovi.asw.trivial.main;
 
+import java.util.Collections;
 import java.util.List;
 
 import es.uniovi.asw.trivial.db.DBManager;
+import es.uniovi.asw.trivial.game.Trivial;
 import es.uniovi.asw.trivial.model.Pregunta;
+import es.uniovi.asw.trivial.model.PreguntaComparator;
 
 public class Main {
 
@@ -20,6 +23,8 @@ public class Main {
 		DBManager dbManager = new DBManager();
 		List<Pregunta> listaPreguntas = dbManager.cargarPreguntasRemoto();
 		
+		Collections.sort(listaPreguntas, PreguntaComparator.comparatorCategoria);
+		
 		for(int i = 0; i < listaPreguntas.size(); i++){
 			System.out.println();
 			System.out.println(listaPreguntas.get(i));
@@ -31,6 +36,7 @@ public class Main {
 		// Se preguntará al usuario el numero de jugadores que van a jugar
 
 		// Se debe inicializar el tablero
+		Trivial trivial = new Trivial(listaPreguntas);
 
 		// Cuando este inicializado se deben crear los objetos Jugador y se
 		// deben "colocar" en el tablero en la posicion de salida

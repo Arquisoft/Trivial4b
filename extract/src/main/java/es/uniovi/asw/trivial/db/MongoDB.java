@@ -6,35 +6,57 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.UnknownHostException;
+import java.util.Arrays;
 
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
 import com.mongodb.util.JSON;
 
 public class MongoDB {
 
 	/**
-	 * Éste metodo se conecta con la base de datos MongoDB, y va insertando uno a uno los objetos JSON
-	 * del archivo que se le pase por parametro. El formato del archivo debe ser de un objeto JSON por
-	 * cada linea del fichero
-	 * @param filePath Archivo con los objetos JSON
+	 * Éste metodo se conecta con la base de datos MongoDB, y va insertando uno
+	 * a uno los objetos JSON del archivo que se le pase por parametro. El
+	 * formato del archivo debe ser de un objeto JSON por cada linea del fichero
+	 * 
+	 * @param filePath
+	 *            Archivo con los objetos JSON
 	 */
 	public static void insert(String filePath) {
 		// Conectar con mongodb
 		MongoClient mongoClient = null;
+		BufferedReader br = null;
+
 		try {
-			mongoClient = new MongoClient("localhost", 27017);
+			br = new BufferedReader(new FileReader(new File("user.mongouser")));
+			String user = "";
+			String pass = "";
+			while (br.ready()) {
+				String linea = br.readLine();
+				if (linea.contains("user="))
+					user = linea.split("=")[1];
+				else if (linea.contains("pass="))
+					pass = linea.split("=")[1];
+			}
+			br.close();
+
+			MongoCredential mongoCredential = MongoCredential
+					.createMongoCRCredential(user, "trivial",
+							pass.toCharArray());
+			mongoClient = new MongoClient(new ServerAddress(
+					"ds062797.mongolab.com", 62797),
+					Arrays.asList(mongoCredential));
 
 			// Conectar con nuestra base de datos
 			DB db = mongoClient.getDB("trivial");
 			System.out.println("Conexion creada con la base de datos");
-			
 
-			BufferedReader br = new BufferedReader(new FileReader(new File(
-					filePath)));
+			br = new BufferedReader(new FileReader(new File(filePath)));
 			while (br.ready()) {
 				boolean yaInsertado = false;
 				String json = br.readLine();
@@ -49,7 +71,8 @@ public class MongoDB {
 								.get("enunciado");
 						String enunciado = (String) jsonObject.get("enunciado");
 						if (enunciadoFichero.equalsIgnoreCase(enunciado)) {
-							// Ya hay una pregunta igual insertada en la base de datos
+							// Ya hay una pregunta igual insertada en la base de
+							// datos
 							yaInsertado = true;
 							break;
 						}

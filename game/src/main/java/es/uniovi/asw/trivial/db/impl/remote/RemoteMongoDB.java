@@ -1,7 +1,13 @@
 package es.uniovi.asw.trivial.db.impl.remote;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.mongodb.BasicDBList;
@@ -10,6 +16,8 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
 
 import es.uniovi.asw.trivial.db.RemoteDB;
 import es.uniovi.asw.trivial.model.Pregunta;
@@ -27,9 +35,27 @@ public class RemoteMongoDB implements RemoteDB {
 	public List<Pregunta> cargarPreguntas() {
 		List<Pregunta> listaPreguntas = new ArrayList<Pregunta>();
 		MongoClient mongoClient = null;
-		
+		BufferedReader br = null;
+
 		try {
-			mongoClient = new MongoClient("localhost", 27017);
+			br = new BufferedReader(new FileReader(new File("user.mongouser")));
+			String user = "";
+			String pass = "";
+			while (br.ready()) {
+				String linea = br.readLine();
+				if (linea.contains("user="))
+					user = linea.split("=")[1];
+				else if (linea.contains("pass="))
+					pass = linea.split("=")[1];
+			}
+			br.close();
+
+			MongoCredential mongoCredential = MongoCredential
+					.createMongoCRCredential(user, "trivial",
+							pass.toCharArray());
+			mongoClient = new MongoClient(new ServerAddress(
+					"ds062797.mongolab.com", 62797),
+					Arrays.asList(mongoCredential));
 
 			// Conectar con nuestra base de datos
 			DB db = mongoClient.getDB("trivial");
@@ -59,8 +85,13 @@ public class RemoteMongoDB implements RemoteDB {
 			cursor.close();
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
-		} finally{
-			mongoClient.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (mongoClient != null)
+				mongoClient.close();
 		}
 
 		return listaPreguntas;
