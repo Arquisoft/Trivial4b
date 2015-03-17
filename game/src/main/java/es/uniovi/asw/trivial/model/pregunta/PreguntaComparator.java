@@ -1,4 +1,4 @@
-package es.uniovi.asw.trivial.model;
+package es.uniovi.asw.trivial.model.pregunta;
 
 import java.util.Comparator;
 

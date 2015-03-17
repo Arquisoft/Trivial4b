@@ -3,7 +3,7 @@ package es.uniovi.asw.trivial.db;
 import java.util.List;
 
 import es.uniovi.asw.trivial.factories.DBFactory;
-import es.uniovi.asw.trivial.model.Pregunta;
+import es.uniovi.asw.trivial.model.pregunta.Pregunta;
 
 public class DBManager {
 

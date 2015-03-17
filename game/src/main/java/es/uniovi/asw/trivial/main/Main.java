@@ -5,8 +5,8 @@ import java.util.List;
 
 import es.uniovi.asw.trivial.db.DBManager;
 import es.uniovi.asw.trivial.game.Trivial;
-import es.uniovi.asw.trivial.model.Pregunta;
-import es.uniovi.asw.trivial.model.PreguntaComparator;
+import es.uniovi.asw.trivial.model.pregunta.Pregunta;
+import es.uniovi.asw.trivial.model.pregunta.PreguntaComparator;
 
 public class Main {
 
@@ -25,10 +25,10 @@ public class Main {
 		
 		Collections.sort(listaPreguntas, PreguntaComparator.comparatorCategoria);
 		
-		for(int i = 0; i < listaPreguntas.size(); i++){
-			System.out.println();
-			System.out.println(listaPreguntas.get(i));
-		}
+//		for(int i = 0; i < listaPreguntas.size(); i++){
+//			System.out.println();
+//			System.out.println(listaPreguntas.get(i));
+//		}
 
 		// Se deben guardar las preguntas y las respuestas en la base de datos
 		// local

@@ -1,9 +1,12 @@
 package es.uniovi.asw.trivial.game;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
-import es.uniovi.asw.trivial.model.Pregunta;
-import es.uniovi.asw.trivial.model.casilla.Casilla;
+import es.uniovi.asw.trivial.model.pregunta.Pregunta;
+import es.uniovi.asw.trivial.model.tablero.Casilla;
+import es.uniovi.asw.trivial.model.tablero.TableroFactory;
 
 /**
  * En esta clase se concentra la lógica del juego (el tablero, tirar los dados, moverse de posicion...)
@@ -13,7 +16,7 @@ public class Trivial {
 	private List<Pregunta> listaPreguntas;
 	/*
 		Casilla central = 44 (ultima posicion)
-		Calle exterior = 0 -> 31 (desde el quesito izquiedo)
+		Calle exterior = 0 -> 31 (desde el quesito izquierdo)
 		Calle central izquierda = tablero 32 -> 34
 		Calle central superior = 35 -> 37
 		Calle central derecha = 38 -> 40
@@ -49,16 +52,44 @@ public class Trivial {
 	
 	public Trivial(List<Pregunta> listaPreguntas) {
 		this.listaPreguntas = listaPreguntas;
-		tablero = new Casilla[45];
-		cargarTablero();
-	}
-	
-	private void cargarTablero(){
+		tablero = TableroFactory.createTablero(listaPreguntas);
+		
+//		System.out.println("\n--------------- Tablero ---------------");
+//		for (Casilla casilla: tablero) {
+//			casilla.usoCasilla().execute(this);
+//		}
+		
+//		System.out.println("\nPregunta:");
+//		tablero[31].usoCasilla().execute(this);
 		
 	}
 	
 	public int lanzarDado(){
-		return (int) (Math.random() * (6 - 1) + 1);
+		return (int) (Math.random() * (7 - 1) + 1);
+	}
+	
+	public void hacerPregunta(String categoria){
+		Pregunta pregunta = obtenerPregunta(categoria);
+		
+		System.out.println(pregunta.getEnunciado());
+	}
+	
+	private Pregunta obtenerPregunta(String categoria){
+		List<Pregunta> listaPreguntasCategoria = new ArrayList<Pregunta>();
+		
+		for(Pregunta p : listaPreguntas)
+			if(p.getCategoria().equalsIgnoreCase(categoria))
+				listaPreguntasCategoria.add(p);
+		
+		if(listaPreguntasCategoria.size() > 0){
+			int maxIndex = listaPreguntasCategoria.size()-1;
+			
+			int posRandom = (int) (Math.random() * ((maxIndex-0)+1) + 0);
+			return listaPreguntasCategoria.get(posRandom);
+		}
+		else{
+			return null;
+		}
 	}
 	
 }

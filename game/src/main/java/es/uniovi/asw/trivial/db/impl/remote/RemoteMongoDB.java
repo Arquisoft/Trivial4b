@@ -20,8 +20,8 @@ import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 
 import es.uniovi.asw.trivial.db.RemoteDB;
-import es.uniovi.asw.trivial.model.Pregunta;
-import es.uniovi.asw.trivial.model.Respuesta;
+import es.uniovi.asw.trivial.model.pregunta.Pregunta;
+import es.uniovi.asw.trivial.model.pregunta.Respuesta;
 
 public class RemoteMongoDB implements RemoteDB {
 
