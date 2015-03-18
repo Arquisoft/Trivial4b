@@ -59,8 +59,8 @@ public class Trivial {
 //			casilla.usoCasilla().execute(this);
 //		}
 		
-	System.out.println("\nPregunta:");
-	tablero[31].usoCasilla().execute(this);
+	//System.out.println("\nPregunta:");
+	//tablero[31].usoCasilla().execute(this);
 		
 	}
 	
