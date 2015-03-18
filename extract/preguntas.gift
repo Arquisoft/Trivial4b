@@ -1,8 +1,9 @@
 $Ciencias y Naturaleza
-¿Cuántos lados tiene un cuadrado?{
-~dos
-~tres
-=cuatro
+¿Cuál de las sisguientes enfermedades ataca al higado?{
+~Diabetes
+~Artrósis
+~Cifoescoliosis
+=Hepatitis
 }
 $Ciencias y Naturaleza
 ¿Cuánto es la raiz cuadrada de dos?{
@@ -11,65 +12,278 @@ $Ciencias y Naturaleza
 ~1
 ~0
 }
-$Arte y Literatura
-¿Quién pintó "El Gernika"?{
-~Dalí
-~Goya
-=Picasso
+$Ciencias y Naturaleza
+¿Cómo tomarías la sustancia alucinógena natural llamada ayahuasca?{
+=Ingerida
+~Inhalada
+~Esnifada
+~Inyectada
 }
-$Deportes
-¿En qué equipo de la NBA juega el pívot español Pau Gasol?{
-~Grizzlies
-=Bulls
-~Lakers
+$Ciencias y Naturaleza
+¿Cual es la funcion principal del intestino grueso?{
+=La absorción de agua
+~La absorción de nutrientes
+~La digestión mecánica de los alimentos
+~La digestión química de alimentos
 }
-$Deportes
-¿Qué legendario jugador de fútbol marcó un gol con “la mano de Dios”?{
-=Maradona
-~Pelé
-~Messi
+$Ciencias y Naturaleza
+¿Qué hay en la boca del estómago?{
+=El cardías
+~El píloro
+~Los ácidos gástricos
+~El epilón mayor
 }
-$Deportes
-¿Cuántos Roland Garros ganó Rafael Nadal? (2014)?{
-~6
-~Ninguno
+$Ciencias y Naturaleza
+¿Qué cambio de estado ocurre en la sublimación?{
+=De sólido a gaseoso
+~De sólido a líquido
+~De gaseoso a líquido
+~De líquido a solido
+}
+$Ciencias y Naturaleza
+¿Qué órgano del cuerpo humano produce la bilis?{
+=Hígado
+~Páncreas
+~Intestino delgado
+~Riñon
+}
+$Ciencias y Naturaleza
+¿De qué color es la sange de los peces?{
+~Verde oscuro
+~Marrón oscuro
+=Rojo
+~Azul
+}
+$Ciencias y Naturaleza
+¿De donde de saca la sacarina?{
+~Del aceite de girasol
+~Del azúcar
+=Del carbón
+~Del azufre
+}
+$Ciencias y Naturaleza
+¿Cuántas caras tiene un icosaedro?{
+=20
+~16
 ~8
-=9
+~24
 }
-$Deportes
-¿En qué año ganó el Real Madrid club de fútbol su sexta copa de Europa?{
-~1980-1981
-=1965-1966
-~1960-1961
-~1956-1957
+$Ciencias y Naturaleza
+¿Qué contiene el cactus llamado peyote?{
+~LSD 
+~MDMA
+~Salvia
+=Mescalina
 }
-$Espectáculos
-¿Quién fue el protagonista de la famosa sitcom ‘Two and a half men’ desde 2003 hasta 2011?{
-=Charlie Sheen
-~Aston Kutcher
-~Angus T. Jones
-~Jon Cryer
+$Ciencias y Naturaleza
+¿Cuál es el cérvido de mayor tamaño?{
+=El alce
+~El corzo
+~El ciervo
+~El pudu
 }
-$Geografía
-¿Cuál es la capital de Madagascar?{
-~Kinsasa
-=Antananarivo
-~Adís Abeba
-~Moscú
+$Ciencias y Naturaleza
+¿Qué es el calostro?{
+~Un hueso de la espina dorsal
+~Una hormona
+~Una parte del intestino grueso
+=La primera leche materna
 }
-$Geografía
-¿Cuál es la capital de Dinamarca?{
-~Lisboa
-=Copenhague
-~Budapest
-~Bucarest
+$Ciencias y Naturaleza
+¿Cuál es el hueso más pequeño del cuerpo?{
+~El yunque
+~La falange
+=El estribo
+~Ninguna es correcta
 }
-$Geografía
-¿Cuál es la capital de Nueva Zelanda?{
-=Wellington
-~Abu Dabi
-~Nicosia
-~Yakarta
+$Ciencias y Naturaleza
+¿Qué estudia la icitología?{
+~Los insectos
+~Las erupciones cutáneas
+~Las rocas
+=Los peces
+}
+$Ciencias y Naturaleza
+¿Cuál es el mamífero más grande conocido hasta la actualidad?{
+=Ballena Azul
+~Cachalote
+~Elefante
+~Rinoceronte
+}
+$Ciencias y Naturaleza
+¿Qué es un equino?{
+~Una vaca
+~Un antílope
+~Una oveja
+=Un caballo
+}
+$Ciencias y Naturaleza
+¿En qué parte del cuerpo tienen rayas el okapi?{
+~La cabeza
+~El torso
+=Las patas
+~No tiene rayas
+}
+$Ciencias y Naturaleza
+¿Cuántas cavidades estomacales tiene una vaca?{
+~Una
+~Dos
+~Tres
+=Cuatro
+}
+$Ciencias y Naturaleza
+¿Por qué los cocodrilos mantienen la boca abierta durante largo rato?{
+=Para calentarse
+~Para hacer la digestión
+~Para beber agua
+~Por si se cuela algo que puedan comerse
+}
+$Historia
+¿Qué ciudad quedó partida en dos tras la Segunda Guerra Mundial?{
+~París
+~Ámsterdam
+=Berlín
+~Varsovia
+}
+$Historia
+¿Cuál es la rama mayoritaria del Islam?{
+~Chiísmo
+=Sunismo
+~Jariyismo
+~Sufismo
+}
+$Historia
+¿De qué fue ministro Manuel Fraga durante el franquismo?{
+~De Interior
+~De Economía
+=De Información y Turismo
+~Del Ejército
+}
+$Historia
+¿En qué año tuvo lugar el ataque a Pearl Harbor?| Historia
+~1939
+~1940
+=1941
+~1942
+}
+$Historia
+¿Las revueltas de dónde son llamadas Intifadas?{
+~Montenegro
+~Kosovo
+=Palestina
+~Chechenia
+}
+$Historia
+La Comuna de París fue un movimiento...{
+~Del mayo de 68
+~Hippie de los años 60
+=Insurrecional autogestionario del XIX
+~De la revolución francesa
+}
+$Historia
+¿Quiénes fueron los sans-culottes de la Revolución Francesa?{
+~La burguesía durante la Revolución
+=La principal masa social revolucionaria
+~El nombre despectivo de los burgueses
+~Ninguna es correcta
+}
+$Historia
+¿Con qué hecho histórico relacionarías al "hombre del tanque" o "rebelde desconocido"?{
+=Protestas de plaza Tian'anmen, Pekín
+~Protestas de plaza Tahrir, El Cairo
+~Protestas de plaza del Sol, Madrid
+~Protestas de plaza de Mayo, Buenos Aires
+}
+$Historia
+¿Quién pronunció la frase: "Bebamos de la copa de la destrucción"?{
+~Margaret Tatcher
+~Mussolini
+=Gengis Kan
+~Berlusconi
+}
+$Historia
+¿Con qué emperador estuvo casada Cleopatra?{
+~Ptolomeo XIV
+~Julio César
+~Marco Antonio
+=Todas son correctas
+}
+$Historia
+El Renacimiento marcó el inicio de la Edad...{
+=Moderna
+~Antigüedad clásica
+~Contemporánea
+~Media
+}
+$Historia
+¿Qué se celebra el 8 de Marzo?{
+~El día del trabajo
+~El día del medio ambiente
+=El día de la mujer
+~El día del niño
+}
+$Historia
+¿Qué fue Dracón?{
+=Legislador
+~Comerciante
+~Médico
+~Guerrero
+}
+$Historia
+¿Quién liberó a Argentina, Chile y Perú?{
+~Ernesto 'Che' Guevara
+~Manual Belgrano
+=José de San Martín
+~Simón Bolívar
+}
+$Historia
+¿Cómo se llama la capital del antiguo imperio azteca?{
+~Quetzalcoatl
+=Tenochtitlan
+~Culhuacan
+~Texcoco
+}
+$Historia
+¿Quién gobernó Francia desde 1799 a 1815?{
+~Adam Smith
+~François Quesnay
+=Napoleón Bonaparte
+~Louis Bonaldgug
+}
+$Historia
+¿De que estaba fabricado originalmente el maquillaje blanco de las Geishas?{
+~Harina
+~Arroz molido
+=Plomo
+~Flores de loto
+}
+$Historia
+¿En qué año se dictó la primera Constitución española?{
+~1810
+~1714
+=1812
+~1896
+}
+$Historia
+¿Qué sobrenombre tenía Guillermo I de Inglaterra?{
+~El Valiente
+~El Loco
+=El Conquistador
+~El Tirano
+}
+$Historia
+¿Maria Antonieta fue reina de qué país?{
+=Francia
+~Nunca fue reina
+~Países Bajos
+~Reino Unido
+}
+$Historia
+¿Dónde vivía Ana Frank?{
+~Viena
+~Berlín
+=Ámsterdam
+~Brujas
 }
 $Espectáculos
 ¿Cuál fue la serie más pirateada de 2014?{
@@ -92,11 +306,269 @@ $Espectáculos
 ~4
 =18
 }
-$Arte y Literatura
-Si juntamos el color rojo con el color verde. ¿Qué color es el resultante?{
-~Negro
-=Amarillo
-~Azul
-~Morado
+$Espectáculos
+¿Quién fue el protagonista de la famosa sitcom ‘Two and a half men’ desde 2003 hasta 2011?{
+=Charlie Sheen
+~Aston Kutcher
+~Angus T. Jones
+~Jon Cryer
 }
-
+$Espectáculos
+¿Qué premiada serie de televisión tiene como protagonista a un publicista?{
+=Mad Men
+~Shameless
+~Juego de Tronos
+~Downton Abbey
+}
+$Espectáculos
+¿Cómo se llamaba el personaje que interpretaba John Travolta en "Grease"?{
+~Danny Puño
+=Danny Zuko
+~Danny Grease
+~Danny Chulo
+}
+$Espectáculos
+¿En qué año se estrenó la película de Disney "Pinocho"?{
+=1940
+~1950
+~1952
+~1946
+}
+$Espectáculos
+¿Qué director de cine norteamericano aterrorizó a los Estados Unidos con su adaptación radiofónica de "La guerra de los mundos"?{
+~Alfred Hitchcock
+=Orson Welles
+~Stanley Kubrik
+~Sergio Leone
+}
+$Espectáculos
+¿Quién dirigió la película "Los lunes al sol"?{
+=Fernando León de Aranoa
+~Pedro Almodóvar
+~Alejandro Amenábar
+~José Luis Garcia
+}
+$Espectáculos
+¿Cómo se llamaba el personaje que interpretaba Al Pacino en "Scarface"?{
+~Sonny Montana
+=Tony Montana
+~Michael Corleone
+~Frank Slade
+}
+$Espectáculos
+¿Cuál es considerado por los fans el peor juego de la historia de ATARI?{
+~Tetris
+=ET
+~Combat
+~Galaxian
+}
+$Espectáculos
+¿Por cuál de estas películas ganó Clint Eastwood el premio Oscar al mejor director?{
+~Million Dollar Baby
+~Cartas desde Iwo Jima
+~Mystic River
+=Los puentes de Madison
+}
+$Espectáculos
+¿A qué hace referencia 'La milla verde'?{
+~A un prado cercano
+~A una carrera
+=Al corredor de la muerte
+~A la cárcel
+}
+$Espectáculos
+¿Cómo se llama el actor protagonista de la saga Indiana Jones?{
+~Jack Nicholson
+~Michael Fox
+=Harrison Ford
+~Robin Williams
+}
+$Espectáculos
+¿Cuál es el nombre de pila del presentador de televisión apodado como el Gran Wyoming?{
+~José Miguel Navarro Monzón
+~Miguel José Navarro Monzón
+=José Miguel Monzón Navarro
+~Miguel José Monzón Navarro
+}
+$Espectáculos
+¿Qué animal es la mascota de Jazmín en Aladdin?{
+~Elefante
+=Tigre
+~Mono
+~Serpiente
+}
+$Espectáculos
+¿Cuál de ellas es una cantante española?{
+=Chenoa
+~Ariana Grande
+~Jennifer Lopez
+~Alaska
+}
+$Espectáculos
+¿A quién se considera el Rey del Pop?{
+~Justin Bieber
+=Michael Jackson
+~Zayn Malik
+~Zac Efron
+}
+$Espectáculos
+¿Cuál es el verdadero nombre de "El Arrebato"?{
+~Carlos Morean
+~Miguel Rios
+=Francisco Javier Labandón Pérez 
+~Jorge Moreno
+}
+$Espectáculos
+¿Qué personaje del videojuego Mortal Kombat tiene poderes de hielo?{
+=Sub-Zero
+~Scorpion
+~Reptile
+~Motaro
+}
+$Geografía
+¿Cuál es la capital de Madagascar?{
+~Kinsasa
+=Antananarivo
+~Adís Abeba
+~Moscú
+}
+$Geografía
+¿Cuál es la capital de Dinamarca?{
+~Lisboa
+=Copenhague
+~Budapest
+~Bucarest
+}
+$Geografía
+¿Cuál es la capital de Nueva Zelanda?{
+=Wellington
+~Abu Dabi
+~Nicosia
+~Yakarta
+}
+$Geografía
+¿A qué país pertenece la isla de Tasmania?{
+~Estados Unidos
+=Australia
+~Portugal
+~Ninguna es correcta
+}
+$Geografía
+¿En cuál de los siguientes países NO hay ningún desierto?{
+~España
+~Chile
+~Mongolia
+=Alemania
+}
+$Geografía
+¿Cuál es la capital del estado de Arkansas?{
+~Kansas
+=Little Rock
+~Hot Springs
+~Washington
+}
+$Geografía
+¿Qué es el Cabo de Creus?|Geografía
+~El punto más oriental de España
+=El punto más oriental de la Península
+~El punto más oriental de Cataluña
+~Ninguna es correcta
+}
+$Geografía
+¿Cuál es principal celebración holandesa?{
+~Navidad
+~La llegada del verano
+=El día de la Reina
+~Hallowen
+}
+$Geografía
+¿Con cuántos países limita Argentina?{
+~Tres
+~Cuatro
+=Cinco
+~Seis
+}
+$Geografía
+¿Qué es la UA?{
+~Unión Austrohúngara
+=Unión Africana
+~Unión Americana
+~Unión Afroamericana
+}
+$Geografía
+¿Qué separa las franjas de Gaza y Cisjordania?{
+~Un muro
+~Nada
+=Israel
+~Un río
+}
+$Geografía
+¿En qué país está Ushuaia, la ciudad más al sur del mundo?{
+~Chile
+=Argentina
+~Sudáfrica
+~Nueva Zelanda
+}
+$Geografía
+¿Cuál de las siguientes islas está más al sur?{
+~Sicilia
+=Malta
+~Córcega
+~Cerdeña
+}
+$Geografía
+¿Cuál es la capital de Baréin?{
+~Baréin
+=Manama
+~Ammán
+~Riad
+}
+$Geografía
+¿En qué cordillera están la mayoría de las grandes montañas?{
+~En el Karakórum
+=En el Himalaya
+~En los Andes
+~En las Montañas Rocosas
+}
+$Geografía
+¿Cuál es la capital de Libia?{
+=Trípoli
+~Beirut
+~El Cairo
+~Riad
+}
+$Geografía
+¿Entre qué dos países está el lago Titicaca?{
+=Bolivia y Perú
+~Bolivia y Paraguay
+~Bolivia y Brasil
+~Bolivia y Argentina
+}
+$Geografía
+¿Cuál es la capital de la república de Macedonia?{
+~La Valeta
+=Skopje
+~Chisinau
+~Sarajevo
+}
+$Geografía
+¿Cuál es el edificio más famoso en Dubai?{
+~Crystal Island
+~Torre Eiffel
+=Burjal Arab
+~Crosgrove
+}
+$Geografía
+¿A qué país pertenece la isla Mujeres?{
+=México
+~Argentina
+~Colombia
+~Chile
+}
+$Geografía
+¿Cuál es la religión mayoritaria en China?{
+=Budismo
+~Taoísmo
+~Confucianismo
+~Cristianismo
+}

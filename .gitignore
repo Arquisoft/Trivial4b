@@ -23,7 +23,7 @@ local.properties
 .buildpath
 .target
 .texlipse
-.DS_Store
-.json
+*.DS_Store
+*.json
 *.mongouser
 
