@@ -16,7 +16,7 @@ public class CasillaPregunta implements Casilla {
 		// Se elige una pregunta aleatoria de esa categoria
 		return new Action() {
 			public void execute(Trivial trivial) {
-				trivial.hacerPregunta(categoria);
+				trivial.hacerPregunta(categoria, false);
 			}
 		};
 	}

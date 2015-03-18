@@ -16,7 +16,7 @@ public class CasillaQuesito implements Casilla {
 		// Hace una pregunta sobre la categoria del quesito
 		return new Action() {
 			public void execute(Trivial trivial) {
-				trivial.hacerPregunta(categoria);
+				trivial.hacerPregunta(categoria, true);
 			}
 		};
 	}

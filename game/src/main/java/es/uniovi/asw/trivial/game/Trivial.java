@@ -59,37 +59,41 @@ public class Trivial {
 //			casilla.usoCasilla().execute(this);
 //		}
 		
-//		System.out.println("\nPregunta:");
-//		tablero[31].usoCasilla().execute(this);
+	System.out.println("\nPregunta:");
+	tablero[31].usoCasilla().execute(this);
 		
+	}
+	
+	public void usarCasilla(int i){
+		tablero[i].usoCasilla().execute(this);
 	}
 	
 	public int lanzarDado(){
 		return (int) (Math.random() * (7 - 1) + 1);
 	}
 	
-	public void hacerPregunta(String categoria){
-		Pregunta pregunta = obtenerPregunta(categoria);
-		
-		System.out.println(pregunta.getEnunciado());
+	public Object[] hacerPregunta(String categoria, boolean esQuesito){
+		Object[] result = new Object[2];
+		result[0] = obtenerPregunta(categoria);
+		result[1] = esQuesito;
+		return result;
 	}
 	
-	private Pregunta obtenerPregunta(String categoria){
+	private Pregunta obtenerPregunta(String categoria) {
 		List<Pregunta> listaPreguntasCategoria = new ArrayList<Pregunta>();
-		
-		for(Pregunta p : listaPreguntas)
-			if(p.getCategoria().equalsIgnoreCase(categoria))
+
+		for (Pregunta p : listaPreguntas)
+			if (p.getCategoria().equalsIgnoreCase(categoria))
 				listaPreguntasCategoria.add(p);
-		
-		if(listaPreguntasCategoria.size() > 0){
-			int maxIndex = listaPreguntasCategoria.size()-1;
-			
-			int posRandom = (int) (Math.random() * ((maxIndex-0)+1) + 0);
+
+		if (listaPreguntasCategoria.size() > 0) {
+			int maxIndex = listaPreguntasCategoria.size() - 1;
+
+			int posRandom = (int) (Math.random() * ((maxIndex - 0) + 1) + 0);
 			return listaPreguntasCategoria.get(posRandom);
-		}
-		else{
+		} else {
 			return null;
 		}
 	}
-	
+
 }
