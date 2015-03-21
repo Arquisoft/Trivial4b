@@ -160,7 +160,7 @@ $Historia
 ~Del Ejército
 }
 $Historia
-¿En qué año tuvo lugar el ataque a Pearl Harbor?| Historia
+¿En qué año tuvo lugar el ataque a Pearl Harbor?{
 ~1939
 ~1940
 =1941
@@ -468,7 +468,7 @@ $Geografía
 ~Washington
 }
 $Geografía
-¿Qué es el Cabo de Creus?|Geografía
+¿Qué es el Cabo de Creus?{
 ~El punto más oriental de España
 =El punto más oriental de la Península
 ~El punto más oriental de Cataluña

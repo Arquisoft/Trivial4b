@@ -14,6 +14,7 @@ import es.uniovi.asw.trivial.parser.ParserBuilder;
 import es.uniovi.asw.trivial.serializer.JSONSerializer;
 
 public class ExtractorTest {
+	int numPreguntasGift = 82;
 
 	@Test
 	public void emptyExtractor() {
@@ -26,7 +27,7 @@ public class ExtractorTest {
 	public void probandoLectura() {
 		List<Pregunta> prueba = ParserBuilder.build("preguntas.gift", "gift")
 				.parse();
-		assertThat(prueba.size()).isEqualTo(15);
+		assertThat(prueba.size()).isEqualTo(numPreguntasGift);
 		for (int i = 0; i < prueba.size(); i++) {
 			System.out.println("Pregunta: " + i + "\t"
 					+ prueba.get(i).getEnunciado());
