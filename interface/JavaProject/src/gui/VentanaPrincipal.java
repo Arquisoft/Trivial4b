@@ -75,51 +75,51 @@ public class VentanaPrincipal extends JFrame {
 	private JMenuItem mntmNewMenuItem_6;
 	private JLabel lblDadoTirada;
 	private JLabel lblMensajes;
-	private JButton btnCasilla01;
-	private JButton btnCasilla02;
-	private JButton btnCasilla03;
-	private JButton btnCasilla04;
-	private JButton btnCasilla05;
-	private JButton btnCasilla06;
-	private JButton btnCasilla07;
-	private JButton btnCasilla08;
-	private JButton btnCasilla09;
-	private JButton btnCasilla10;
-	private JButton btnCasilla11;
-	private JButton btnCasilla12;
-	private JButton btnCasilla13;
-	private JButton btnCasilla14;
-	private JButton btnCasilla15;
-	private JButton btnCasilla16;
-	private JButton btnCasilla17;
-	private JButton btnCasilla18;
-	private JButton btnCasilla19;
-	private JButton btnCasilla20;
-	private JButton btnCasilla21;
-	private JButton btnCasilla22;
-	private JButton btnCasilla23;
-	private JButton btnCasilla24;
-	private JButton btnCasilla25;
-	private JButton btnCasilla26;
-	private JButton btnCasilla27;
-	private JButton btnCasilla28;
-	private JButton btnCasilla29;
-	private JButton btnCasilla30;
-	private JButton btnCasilla31;
-	private JButton btnCasilla32;
-	private JButton btnCasilla33;
-	private JButton btnCasilla34;
-	private JButton btnCasilla35;
-	private JButton btnCasilla36;
-	private JButton btnCasilla37;
-	private JButton btnCasilla38;
-	private JButton btnCasilla39;
-	private JButton btnCasilla40;
-	private JButton btnCasilla41;
-	private JButton btnCasilla42;
-	private JButton btnCasilla43;
-	private JButton btnCasilla44;
-	private JButton btnCasilla45;
+	private JButton btnCasilla_04;
+	private JButton btnCasilla_05;
+	private JButton btnCasilla_06;
+	private JButton btnCasilla_07;
+	private JButton btnCasilla_08;
+	private JButton btnCasilla_09;
+	private JButton btnCasilla_10;
+	private JButton btnCasilla_11;
+	private JButton btnCasilla_12;
+	private JButton btnCasilla_13;
+	private JButton btnCasilla_14;
+	private JButton btnCasilla_15;
+	private JButton btnCasilla_16;
+	private JButton btnCasilla_17;
+	private JButton btnCasilla_18;
+	private JButton btnCasilla_19;
+	private JButton btnCasilla_20;
+	private JButton btnCasilla_21;
+	private JButton btnCasilla_22;
+	private JButton btnCasilla_23;
+	private JButton btnCasilla_24;
+	private JButton btnCasilla_25;
+	private JButton btnCasilla_26;
+	private JButton btnCasilla_27;
+	private JButton btnCasilla_28;
+	private JButton btnCasilla_29;
+	private JButton btnCasilla_30;
+	private JButton btnCasilla_31;
+	private JButton btnCasilla_00;
+	private JButton btnCasilla_01;
+	private JButton btnCasilla_02;
+	private JButton btnCasilla_03;
+	private JButton btnCasilla_35;
+	private JButton btnCasilla_36;
+	private JButton btnCasilla_37;
+	private JButton btnCasilla_44;
+	private JButton btnCasilla_43;
+	private JButton btnCasilla_42;
+	private JButton btnCasilla_41;
+	private JButton btnCasilla_32;
+	private JButton btnCasilla_33;
+	private JButton btnCasilla_34;
+	private JButton btnCasilla_40;
+	private JButton btnCasilla_39;
+	private JButton btnCasilla_38;
 	private JMenuItem mntmNewMenuItem_8;
 
 	/**
@@ -142,10 +142,11 @@ public class VentanaPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaPrincipal() {
+		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaPrincipal.class.getResource("/img/ico_150x150_app.png")));
 		setTitle("Trivial Arquisoft4b");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1021, 759);
+		setBounds(100, 100, 1007, 744);
 		contentPane = new JPanel();
 		contentPane.setBorder(null);
 		setContentPane(contentPane);
@@ -198,7 +199,7 @@ public class VentanaPrincipal extends JFrame {
 					DialogoJugadores frame = new DialogoJugadores(); 
 					frame.setLocationRelativeTo(null); 
 					frame.setVisible(true);
-					frame.setModalityType(DialogoJugadores.ModalityType.MODELESS);
+					frame.setModalityType(DialogoJugadores.ModalityType.APPLICATION_MODAL);
 					
 				}
 			});
@@ -279,6 +280,17 @@ public class VentanaPrincipal extends JFrame {
 	private JMenuItem getMntmNewMenuItem_4() {
 		if (mntmNewMenuItem_4 == null) {
 			mntmNewMenuItem_4 = new JMenuItem("Acerca de");
+			mntmNewMenuItem_4.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					
+					//Menú Ayuda > Acerca de
+					// Mostrar Diálogo de Acerca de
+					DialogoAcercade frame = new DialogoAcercade(); 
+					frame.setLocationRelativeTo(null); 
+					frame.setVisible(true);
+					frame.setModalityType(DialogoAcercade.ModalityType.APPLICATION_MODAL);
+				}
+			});
 			mntmNewMenuItem_4.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, InputEvent.SHIFT_MASK));
 			mntmNewMenuItem_4.setMnemonic('c');
 			mntmNewMenuItem_4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -337,51 +349,51 @@ public class VentanaPrincipal extends JFrame {
 			panel1.add(getLblJugador4Off());
 			panel1.add(getLblQuesoAz());
 			panel1.add(getLblJugador4());
-			panel1.add(getBtnCasilla01());
-			panel1.add(getBtnCasilla02());
-			panel1.add(getBtnCasilla03());
-			panel1.add(getBtnCasilla04());
-			panel1.add(getBtnCasilla05());
-			panel1.add(getBtnCasilla06());
-			panel1.add(getBtnCasilla07());
-			panel1.add(getBtnCasilla08());
-			panel1.add(getBtnCasilla09());
-			panel1.add(getBtnCasilla10());
-			panel1.add(getBtnCasilla11());
-			panel1.add(getBtnCasilla12());
-			panel1.add(getBtnCasilla13());
-			panel1.add(getBtnCasilla14());
-			panel1.add(getBtnCasilla15());
-			panel1.add(getBtnCasilla16());
-			panel1.add(getBtnCasilla17());
-			panel1.add(getBtnCasilla18());
-			panel1.add(getBtnCasilla19());
-			panel1.add(getBtnCasilla20());
-			panel1.add(getBtnCasilla21());
-			panel1.add(getBtnCasilla22());
-			panel1.add(getBtnCasilla23());
-			panel1.add(getBtnCasilla24());
-			panel1.add(getBtnCasilla25());
-			panel1.add(getBtnCasilla26());
-			panel1.add(getBtnCasilla27());
-			panel1.add(getBtnCasilla28());
-			panel1.add(getBtnCasilla29());
-			panel1.add(getBtnCasilla30());
-			panel1.add(getBtnCasilla31());
-			panel1.add(getBtnCasilla32());
-			panel1.add(getBtnCasilla33());
-			panel1.add(getBtnCasilla34());
-			panel1.add(getBtnCasilla35());
-			panel1.add(getBtnCasilla36());
-			panel1.add(getBtnCasilla37());
-			panel1.add(getBtnCasilla38());
-			panel1.add(getBtnCasilla39());
-			panel1.add(getBtnCasilla40());
-			panel1.add(getBtnCasilla41());
-			panel1.add(getBtnCasilla42());
-			panel1.add(getBtnCasilla43());
-			panel1.add(getBtnCasilla44());
-			panel1.add(getBtnCasilla45());
+			panel1.add(getBtnCasilla_04());
+			panel1.add(getBtnCasilla_05());
+			panel1.add(getBtnCasilla_06());
+			panel1.add(getBtnCasilla_07());
+			panel1.add(getBtnCasilla_08());
+			panel1.add(getBtnCasilla_09());
+			panel1.add(getBtnCasilla_10());
+			panel1.add(getBtnCasilla_11());
+			panel1.add(getBtnCasilla_12());
+			panel1.add(getBtnCasilla_13());
+			panel1.add(getBtnCasilla_14());
+			panel1.add(getBtnCasilla_15());
+			panel1.add(getBtnCasilla_16());
+			panel1.add(getBtnCasilla_17());
+			panel1.add(getBtnCasilla_18());
+			panel1.add(getBtnCasilla_19());
+			panel1.add(getBtnCasilla_20());
+			panel1.add(getBtnCasilla_21());
+			panel1.add(getBtnCasilla_22());
+			panel1.add(getBtnCasilla_23());
+			panel1.add(getBtnCasilla_24());
+			panel1.add(getBtnCasilla_25());
+			panel1.add(getBtnCasilla_26());
+			panel1.add(getBtnCasilla_27());
+			panel1.add(getBtnCasilla_28());
+			panel1.add(getBtnCasilla_29());
+			panel1.add(getBtnCasilla_30());
+			panel1.add(getBtnCasilla_31());
+			panel1.add(getBtnCasilla_00());
+			panel1.add(getBtnCasilla_01());
+			panel1.add(getBtnCasilla_02());
+			panel1.add(getBtnCasilla_03());
+			panel1.add(getBtnCasilla_35());
+			panel1.add(getBtnCasilla_36());
+			panel1.add(getBtnCasilla_37());
+			panel1.add(getBtnCasilla_44());
+			panel1.add(getBtnCasilla_43());
+			panel1.add(getBtnCasilla_42());
+			panel1.add(getBtnCasilla_41());
+			panel1.add(getBtnCasilla_32());
+			panel1.add(getBtnCasilla_33());
+			panel1.add(getBtnCasilla_34());
+			panel1.add(getBtnCasilla_40());
+			panel1.add(getBtnCasilla_39());
+			panel1.add(getBtnCasilla_38());
 			panel1.add(getLblFondoPcpal());
 		}
 		return panel1;
@@ -708,51 +720,51 @@ public class VentanaPrincipal extends JFrame {
 					lblMensajes.setText("elije casilla en el tablero"); //Cargar mensaje a mostrar
 					lblMensajes.setVisible(true); //Mostrar label mensajes
 					
-					btnCasilla01.setVisible(true); //Mostrar botones de las casillas
-					btnCasilla02.setVisible(true);
-					btnCasilla03.setVisible(true);
-					btnCasilla04.setVisible(true);
-					btnCasilla05.setVisible(true);
-					btnCasilla06.setVisible(true);
-					btnCasilla07.setVisible(true);
-					btnCasilla08.setVisible(true);
-					btnCasilla09.setVisible(true);
-					btnCasilla10.setVisible(true);
-					btnCasilla11.setVisible(true);
-					btnCasilla12.setVisible(true);
-					btnCasilla13.setVisible(true);
-					btnCasilla14.setVisible(true);
-					btnCasilla15.setVisible(true);
-					btnCasilla16.setVisible(true);
-					btnCasilla17.setVisible(true);
-					btnCasilla18.setVisible(true);
-					btnCasilla19.setVisible(true);
-					btnCasilla20.setVisible(true);
-					btnCasilla21.setVisible(true);
-					btnCasilla22.setVisible(true);
-					btnCasilla23.setVisible(true);
-					btnCasilla24.setVisible(true);
-					btnCasilla25.setVisible(true);
-					btnCasilla26.setVisible(true);
-					btnCasilla27.setVisible(true);
-					btnCasilla28.setVisible(true);
-					btnCasilla29.setVisible(true);
-					btnCasilla30.setVisible(true);
-					btnCasilla31.setVisible(true);
-					btnCasilla32.setVisible(true);
-					btnCasilla33.setVisible(true);
-					btnCasilla34.setVisible(true);
-					btnCasilla35.setVisible(true);
-					btnCasilla36.setVisible(true);
-					btnCasilla37.setVisible(true);
-					btnCasilla38.setVisible(true);
-					btnCasilla39.setVisible(true);
-					btnCasilla40.setVisible(true);
-					btnCasilla41.setVisible(true);
-					btnCasilla42.setVisible(true);
-					btnCasilla43.setVisible(true);
-					btnCasilla44.setVisible(true);
-					btnCasilla45.setVisible(true);
+					btnCasilla_04.setVisible(true); //Mostrar botones de las casillas
+					btnCasilla_05.setVisible(true);
+					btnCasilla_06.setVisible(true);
+					btnCasilla_07.setVisible(true);
+					btnCasilla_08.setVisible(true);
+					btnCasilla_09.setVisible(true);
+					btnCasilla_10.setVisible(true);
+					btnCasilla_11.setVisible(true);
+					btnCasilla_12.setVisible(true);
+					btnCasilla_13.setVisible(true);
+					btnCasilla_14.setVisible(true);
+					btnCasilla_15.setVisible(true);
+					btnCasilla_16.setVisible(true);
+					btnCasilla_17.setVisible(true);
+					btnCasilla_18.setVisible(true);
+					btnCasilla_19.setVisible(true);
+					btnCasilla_20.setVisible(true);
+					btnCasilla_21.setVisible(true);
+					btnCasilla_22.setVisible(true);
+					btnCasilla_23.setVisible(true);
+					btnCasilla_24.setVisible(true);
+					btnCasilla_25.setVisible(true);
+					btnCasilla_26.setVisible(true);
+					btnCasilla_27.setVisible(true);
+					btnCasilla_28.setVisible(true);
+					btnCasilla_29.setVisible(true);
+					btnCasilla_30.setVisible(true);
+					btnCasilla_31.setVisible(true);
+					btnCasilla_00.setVisible(true);
+					btnCasilla_01.setVisible(true);
+					btnCasilla_02.setVisible(true);
+					btnCasilla_03.setVisible(true);
+					btnCasilla_35.setVisible(true);
+					btnCasilla_36.setVisible(true);
+					btnCasilla_37.setVisible(true);
+					btnCasilla_44.setVisible(true);
+					btnCasilla_43.setVisible(true);
+					btnCasilla_42.setVisible(true);
+					btnCasilla_41.setVisible(true);
+					btnCasilla_32.setVisible(true);
+					btnCasilla_33.setVisible(true);
+					btnCasilla_34.setVisible(true);
+					btnCasilla_40.setVisible(true);
+					btnCasilla_39.setVisible(true);
+					btnCasilla_38.setVisible(true);
 
 				}
 			});
@@ -795,951 +807,951 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblMensajes;
 	}
-	private JButton getBtnCasilla01() {
-		if (btnCasilla01 == null) {
-			btnCasilla01 = new JButton("01");
-			btnCasilla01.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla01.setVisible(false);
-			btnCasilla01.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla01.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla01.setRequestFocusEnabled(false);
-			btnCasilla01.setPreferredSize(new Dimension(245, 43));
-			btnCasilla01.setMinimumSize(new Dimension(245, 43));
-			btnCasilla01.setMaximumSize(new Dimension(245, 43));
-			btnCasilla01.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla01.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla01.setForeground(Color.WHITE);
-			btnCasilla01.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla01.setContentAreaFilled(false);
-			btnCasilla01.setBorder(null);
-			btnCasilla01.setBounds(382, 62, 55, 55);
+	private JButton getBtnCasilla_04() {
+		if (btnCasilla_04 == null) {
+			btnCasilla_04 = new JButton("04");
+			btnCasilla_04.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_04.setVisible(false);
+			btnCasilla_04.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_04.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_04.setRequestFocusEnabled(false);
+			btnCasilla_04.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_04.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_04.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_04.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_04.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_04.setForeground(Color.WHITE);
+			btnCasilla_04.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_04.setContentAreaFilled(false);
+			btnCasilla_04.setBorder(null);
+			btnCasilla_04.setBounds(382, 62, 55, 55);
 		}
-		return btnCasilla01;
+		return btnCasilla_04;
 	}
-	private JButton getBtnCasilla02() {
-		if (btnCasilla02 == null) {
-			btnCasilla02 = new JButton("02");
-			btnCasilla02.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla02.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla02.setVisible(false);
-			btnCasilla02.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla02.setRequestFocusEnabled(false);
-			btnCasilla02.setPreferredSize(new Dimension(245, 43));
-			btnCasilla02.setMinimumSize(new Dimension(245, 43));
-			btnCasilla02.setMaximumSize(new Dimension(245, 43));
-			btnCasilla02.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla02.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla02.setForeground(Color.WHITE);
-			btnCasilla02.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla02.setContentAreaFilled(false);
-			btnCasilla02.setBorder(null);
-			btnCasilla02.setBounds(445, 62, 55, 55);
+	private JButton getBtnCasilla_05() {
+		if (btnCasilla_05 == null) {
+			btnCasilla_05 = new JButton("05");
+			btnCasilla_05.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_05.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_05.setVisible(false);
+			btnCasilla_05.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_05.setRequestFocusEnabled(false);
+			btnCasilla_05.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_05.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_05.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_05.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_05.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_05.setForeground(Color.WHITE);
+			btnCasilla_05.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_05.setContentAreaFilled(false);
+			btnCasilla_05.setBorder(null);
+			btnCasilla_05.setBounds(445, 62, 55, 55);
 		}
-		return btnCasilla02;
+		return btnCasilla_05;
 	}
 
-	private JButton getBtnCasilla03() {
-		if (btnCasilla03 == null) {
-			btnCasilla03 = new JButton("03");
-			btnCasilla03.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla03.setVisible(false);
-			btnCasilla03.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla03.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla03.setRequestFocusEnabled(false);
-			btnCasilla03.setPreferredSize(new Dimension(245, 43));
-			btnCasilla03.setMinimumSize(new Dimension(245, 43));
-			btnCasilla03.setMaximumSize(new Dimension(245, 43));
-			btnCasilla03.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla03.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla03.setForeground(Color.WHITE);
-			btnCasilla03.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla03.setContentAreaFilled(false);
-			btnCasilla03.setBorder(null);
-			btnCasilla03.setBounds(508, 62, 55, 55);
+	private JButton getBtnCasilla_06() {
+		if (btnCasilla_06 == null) {
+			btnCasilla_06 = new JButton("06");
+			btnCasilla_06.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_06.setVisible(false);
+			btnCasilla_06.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_06.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_06.setRequestFocusEnabled(false);
+			btnCasilla_06.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_06.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_06.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_06.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_06.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_06.setForeground(Color.WHITE);
+			btnCasilla_06.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_06.setContentAreaFilled(false);
+			btnCasilla_06.setBorder(null);
+			btnCasilla_06.setBounds(508, 62, 55, 55);
 		}
-		return btnCasilla03;
+		return btnCasilla_06;
 	}
-	private JButton getBtnCasilla04() {
-		if (btnCasilla04 == null) {
-			btnCasilla04 = new JButton("04");
-			btnCasilla04.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla04.setVisible(false);
-			btnCasilla04.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla04.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla04.setRequestFocusEnabled(false);
-			btnCasilla04.setPreferredSize(new Dimension(245, 43));
-			btnCasilla04.setMinimumSize(new Dimension(245, 43));
-			btnCasilla04.setMaximumSize(new Dimension(245, 43));
-			btnCasilla04.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla04.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla04.setForeground(Color.WHITE);
-			btnCasilla04.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla04.setContentAreaFilled(false);
-			btnCasilla04.setBorder(null);
-			btnCasilla04.setBounds(571, 62, 55, 55);
+	private JButton getBtnCasilla_07() {
+		if (btnCasilla_07 == null) {
+			btnCasilla_07 = new JButton("07");
+			btnCasilla_07.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_07.setVisible(false);
+			btnCasilla_07.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_07.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_07.setRequestFocusEnabled(false);
+			btnCasilla_07.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_07.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_07.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_07.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_07.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_07.setForeground(Color.WHITE);
+			btnCasilla_07.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_07.setContentAreaFilled(false);
+			btnCasilla_07.setBorder(null);
+			btnCasilla_07.setBounds(571, 62, 55, 55);
 		}
-		return btnCasilla04;
+		return btnCasilla_07;
 	}
-	private JButton getBtnCasilla05() {
-		if (btnCasilla05 == null) {
-			btnCasilla05 = new JButton("05");
-			btnCasilla05.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla05.setVisible(false);
-			btnCasilla05.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla05.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla05.setRequestFocusEnabled(false);
-			btnCasilla05.setPreferredSize(new Dimension(245, 43));
-			btnCasilla05.setMinimumSize(new Dimension(245, 43));
-			btnCasilla05.setMaximumSize(new Dimension(245, 43));
-			btnCasilla05.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla05.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla05.setForeground(Color.WHITE);
-			btnCasilla05.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla05.setContentAreaFilled(false);
-			btnCasilla05.setBorder(null);
-			btnCasilla05.setBounds(634, 62, 55, 55);
+	private JButton getBtnCasilla_08() {
+		if (btnCasilla_08 == null) {
+			btnCasilla_08 = new JButton("08");
+			btnCasilla_08.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_08.setVisible(false);
+			btnCasilla_08.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_08.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_08.setRequestFocusEnabled(false);
+			btnCasilla_08.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_08.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_08.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_08.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_08.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_08.setForeground(Color.WHITE);
+			btnCasilla_08.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_08.setContentAreaFilled(false);
+			btnCasilla_08.setBorder(null);
+			btnCasilla_08.setBounds(634, 62, 55, 55);
 		}
-		return btnCasilla05;
+		return btnCasilla_08;
 	}
-	private JButton getBtnCasilla06() {
-		if (btnCasilla06 == null) {
-			btnCasilla06 = new JButton("06");
-			btnCasilla06.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla06.setVisible(false);
-			btnCasilla06.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla06.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla06.setRequestFocusEnabled(false);
-			btnCasilla06.setPreferredSize(new Dimension(245, 43));
-			btnCasilla06.setMinimumSize(new Dimension(245, 43));
-			btnCasilla06.setMaximumSize(new Dimension(245, 43));
-			btnCasilla06.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla06.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla06.setForeground(Color.WHITE);
-			btnCasilla06.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla06.setContentAreaFilled(false);
-			btnCasilla06.setBorder(null);
-			btnCasilla06.setBounds(697, 62, 55, 55);
+	private JButton getBtnCasilla_09() {
+		if (btnCasilla_09 == null) {
+			btnCasilla_09 = new JButton("09");
+			btnCasilla_09.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_09.setVisible(false);
+			btnCasilla_09.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_09.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_09.setRequestFocusEnabled(false);
+			btnCasilla_09.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_09.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_09.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_09.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_09.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_09.setForeground(Color.WHITE);
+			btnCasilla_09.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_09.setContentAreaFilled(false);
+			btnCasilla_09.setBorder(null);
+			btnCasilla_09.setBounds(697, 62, 55, 55);
 		}
-		return btnCasilla06;
+		return btnCasilla_09;
 	}
-	private JButton getBtnCasilla07() {
-		if (btnCasilla07 == null) {
-			btnCasilla07 = new JButton("07");
-			btnCasilla07.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla07.setVisible(false);
-			btnCasilla07.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla07.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla07.setRequestFocusEnabled(false);
-			btnCasilla07.setPreferredSize(new Dimension(245, 43));
-			btnCasilla07.setMinimumSize(new Dimension(245, 43));
-			btnCasilla07.setMaximumSize(new Dimension(245, 43));
-			btnCasilla07.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla07.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla07.setForeground(Color.WHITE);
-			btnCasilla07.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla07.setContentAreaFilled(false);
-			btnCasilla07.setBorder(null);
-			btnCasilla07.setBounds(760, 62, 55, 55);
+	private JButton getBtnCasilla_10() {
+		if (btnCasilla_10 == null) {
+			btnCasilla_10 = new JButton("10");
+			btnCasilla_10.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_10.setVisible(false);
+			btnCasilla_10.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_10.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_10.setRequestFocusEnabled(false);
+			btnCasilla_10.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_10.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_10.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_10.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_10.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_10.setForeground(Color.WHITE);
+			btnCasilla_10.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_10.setContentAreaFilled(false);
+			btnCasilla_10.setBorder(null);
+			btnCasilla_10.setBounds(760, 62, 55, 55);
 		}
-		return btnCasilla07;
+		return btnCasilla_10;
 	}
-	private JButton getBtnCasilla08() {
-		if (btnCasilla08 == null) {
-			btnCasilla08 = new JButton("08");
-			btnCasilla08.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla08.setVisible(false);
-			btnCasilla08.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla08.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla08.setRequestFocusEnabled(false);
-			btnCasilla08.setPreferredSize(new Dimension(245, 43));
-			btnCasilla08.setMinimumSize(new Dimension(245, 43));
-			btnCasilla08.setMaximumSize(new Dimension(245, 43));
-			btnCasilla08.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla08.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla08.setForeground(Color.WHITE);
-			btnCasilla08.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla08.setContentAreaFilled(false);
-			btnCasilla08.setBorder(null);
-			btnCasilla08.setBounds(823, 62, 55, 55);
+	private JButton getBtnCasilla_11() {
+		if (btnCasilla_11 == null) {
+			btnCasilla_11 = new JButton("11");
+			btnCasilla_11.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_11.setVisible(false);
+			btnCasilla_11.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_11.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_11.setRequestFocusEnabled(false);
+			btnCasilla_11.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_11.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_11.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_11.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_11.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_11.setForeground(Color.WHITE);
+			btnCasilla_11.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_11.setContentAreaFilled(false);
+			btnCasilla_11.setBorder(null);
+			btnCasilla_11.setBounds(823, 62, 55, 55);
 		}
-		return btnCasilla08;
+		return btnCasilla_11;
 	}
-	private JButton getBtnCasilla09() {
-		if (btnCasilla09 == null) {
-			btnCasilla09 = new JButton("09");
-			btnCasilla09.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla09.setVisible(false);
-			btnCasilla09.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla09.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla09.setRequestFocusEnabled(false);
-			btnCasilla09.setPreferredSize(new Dimension(245, 43));
-			btnCasilla09.setMinimumSize(new Dimension(245, 43));
-			btnCasilla09.setMaximumSize(new Dimension(245, 43));
-			btnCasilla09.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla09.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla09.setForeground(Color.WHITE);
-			btnCasilla09.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla09.setContentAreaFilled(false);
-			btnCasilla09.setBorder(null);
-			btnCasilla09.setBounds(886, 62, 55, 55);
+	private JButton getBtnCasilla_12() {
+		if (btnCasilla_12 == null) {
+			btnCasilla_12 = new JButton("12");
+			btnCasilla_12.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_12.setVisible(false);
+			btnCasilla_12.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_12.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_12.setRequestFocusEnabled(false);
+			btnCasilla_12.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_12.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_12.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_12.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_12.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_12.setForeground(Color.WHITE);
+			btnCasilla_12.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_12.setContentAreaFilled(false);
+			btnCasilla_12.setBorder(null);
+			btnCasilla_12.setBounds(886, 62, 55, 55);
 		}
-		return btnCasilla09;
+		return btnCasilla_12;
 	}
-	private JButton getBtnCasilla10() {
-		if (btnCasilla10 == null) {
-			btnCasilla10 = new JButton("10");
-			btnCasilla10.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla10.setVisible(false);
-			btnCasilla10.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla10.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla10.setRequestFocusEnabled(false);
-			btnCasilla10.setPreferredSize(new Dimension(245, 43));
-			btnCasilla10.setMinimumSize(new Dimension(245, 43));
-			btnCasilla10.setMaximumSize(new Dimension(245, 43));
-			btnCasilla10.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla10.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla10.setForeground(Color.WHITE);
-			btnCasilla10.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla10.setContentAreaFilled(false);
-			btnCasilla10.setBorder(null);
-			btnCasilla10.setBounds(886, 125, 55, 55);
+	private JButton getBtnCasilla_13() {
+		if (btnCasilla_13 == null) {
+			btnCasilla_13 = new JButton("13");
+			btnCasilla_13.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_13.setVisible(false);
+			btnCasilla_13.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_13.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_13.setRequestFocusEnabled(false);
+			btnCasilla_13.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_13.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_13.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_13.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_13.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_13.setForeground(Color.WHITE);
+			btnCasilla_13.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_13.setContentAreaFilled(false);
+			btnCasilla_13.setBorder(null);
+			btnCasilla_13.setBounds(886, 125, 55, 55);
 		}
-		return btnCasilla10;
+		return btnCasilla_13;
 	}
-	private JButton getBtnCasilla11() {
-		if (btnCasilla11 == null) {
-			btnCasilla11 = new JButton("11");
-			btnCasilla11.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla11.setVisible(false);
-			btnCasilla11.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla11.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla11.setRequestFocusEnabled(false);
-			btnCasilla11.setPreferredSize(new Dimension(245, 43));
-			btnCasilla11.setMinimumSize(new Dimension(245, 43));
-			btnCasilla11.setMaximumSize(new Dimension(245, 43));
-			btnCasilla11.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla11.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla11.setForeground(Color.WHITE);
-			btnCasilla11.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla11.setContentAreaFilled(false);
-			btnCasilla11.setBorder(null);
-			btnCasilla11.setBounds(886, 188, 55, 55);
+	private JButton getBtnCasilla_14() {
+		if (btnCasilla_14 == null) {
+			btnCasilla_14 = new JButton("14");
+			btnCasilla_14.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_14.setVisible(false);
+			btnCasilla_14.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_14.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_14.setRequestFocusEnabled(false);
+			btnCasilla_14.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_14.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_14.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_14.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_14.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_14.setForeground(Color.WHITE);
+			btnCasilla_14.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_14.setContentAreaFilled(false);
+			btnCasilla_14.setBorder(null);
+			btnCasilla_14.setBounds(886, 188, 55, 55);
 		}
-		return btnCasilla11;
+		return btnCasilla_14;
 	}
-	private JButton getBtnCasilla12() {
-		if (btnCasilla12 == null) {
-			btnCasilla12 = new JButton("12");
-			btnCasilla12.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla12.setVisible(false);
-			btnCasilla12.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla12.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla12.setRequestFocusEnabled(false);
-			btnCasilla12.setPreferredSize(new Dimension(245, 43));
-			btnCasilla12.setMinimumSize(new Dimension(245, 43));
-			btnCasilla12.setMaximumSize(new Dimension(245, 43));
-			btnCasilla12.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla12.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla12.setForeground(Color.WHITE);
-			btnCasilla12.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla12.setContentAreaFilled(false);
-			btnCasilla12.setBorder(null);
-			btnCasilla12.setBounds(886, 251, 55, 55);
+	private JButton getBtnCasilla_15() {
+		if (btnCasilla_15 == null) {
+			btnCasilla_15 = new JButton("15");
+			btnCasilla_15.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_15.setVisible(false);
+			btnCasilla_15.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_15.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_15.setRequestFocusEnabled(false);
+			btnCasilla_15.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_15.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_15.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_15.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_15.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_15.setForeground(Color.WHITE);
+			btnCasilla_15.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_15.setContentAreaFilled(false);
+			btnCasilla_15.setBorder(null);
+			btnCasilla_15.setBounds(886, 251, 55, 55);
 		}
-		return btnCasilla12;
+		return btnCasilla_15;
 	}
-	private JButton getBtnCasilla13() {
-		if (btnCasilla13 == null) {
-			btnCasilla13 = new JButton("13");
-			btnCasilla13.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla13.setVisible(false);
-			btnCasilla13.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla13.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla13.setRequestFocusEnabled(false);
-			btnCasilla13.setPreferredSize(new Dimension(245, 43));
-			btnCasilla13.setMinimumSize(new Dimension(245, 43));
-			btnCasilla13.setMaximumSize(new Dimension(245, 43));
-			btnCasilla13.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla13.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla13.setForeground(Color.WHITE);
-			btnCasilla13.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla13.setContentAreaFilled(false);
-			btnCasilla13.setBorder(null);
-			btnCasilla13.setBounds(886, 314, 55, 55);
+	private JButton getBtnCasilla_16() {
+		if (btnCasilla_16 == null) {
+			btnCasilla_16 = new JButton("16");
+			btnCasilla_16.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_16.setVisible(false);
+			btnCasilla_16.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_16.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_16.setRequestFocusEnabled(false);
+			btnCasilla_16.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_16.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_16.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_16.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_16.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_16.setForeground(Color.WHITE);
+			btnCasilla_16.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_16.setContentAreaFilled(false);
+			btnCasilla_16.setBorder(null);
+			btnCasilla_16.setBounds(886, 314, 55, 55);
 		}
-		return btnCasilla13;
+		return btnCasilla_16;
 	}
-	private JButton getBtnCasilla14() {
-		if (btnCasilla14 == null) {
-			btnCasilla14 = new JButton("14");
-			btnCasilla14.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla14.setVisible(false);
-			btnCasilla14.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla14.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla14.setRequestFocusEnabled(false);
-			btnCasilla14.setPreferredSize(new Dimension(245, 43));
-			btnCasilla14.setMinimumSize(new Dimension(245, 43));
-			btnCasilla14.setMaximumSize(new Dimension(245, 43));
-			btnCasilla14.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla14.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla14.setForeground(Color.WHITE);
-			btnCasilla14.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla14.setContentAreaFilled(false);
-			btnCasilla14.setBorder(null);
-			btnCasilla14.setBounds(886, 377, 55, 55);
+	private JButton getBtnCasilla_17() {
+		if (btnCasilla_17 == null) {
+			btnCasilla_17 = new JButton("17");
+			btnCasilla_17.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_17.setVisible(false);
+			btnCasilla_17.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_17.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_17.setRequestFocusEnabled(false);
+			btnCasilla_17.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_17.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_17.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_17.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_17.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_17.setForeground(Color.WHITE);
+			btnCasilla_17.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_17.setContentAreaFilled(false);
+			btnCasilla_17.setBorder(null);
+			btnCasilla_17.setBounds(886, 377, 55, 55);
 		}
-		return btnCasilla14;
+		return btnCasilla_17;
 	}
-	private JButton getBtnCasilla15() {
-		if (btnCasilla15 == null) {
-			btnCasilla15 = new JButton("15");
-			btnCasilla15.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla15.setVisible(false);
-			btnCasilla15.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla15.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla15.setRequestFocusEnabled(false);
-			btnCasilla15.setPreferredSize(new Dimension(245, 43));
-			btnCasilla15.setMinimumSize(new Dimension(245, 43));
-			btnCasilla15.setMaximumSize(new Dimension(245, 43));
-			btnCasilla15.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla15.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla15.setForeground(Color.WHITE);
-			btnCasilla15.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla15.setContentAreaFilled(false);
-			btnCasilla15.setBorder(null);
-			btnCasilla15.setBounds(886, 440, 55, 55);
+	private JButton getBtnCasilla_18() {
+		if (btnCasilla_18 == null) {
+			btnCasilla_18 = new JButton("18");
+			btnCasilla_18.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_18.setVisible(false);
+			btnCasilla_18.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_18.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_18.setRequestFocusEnabled(false);
+			btnCasilla_18.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_18.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_18.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_18.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_18.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_18.setForeground(Color.WHITE);
+			btnCasilla_18.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_18.setContentAreaFilled(false);
+			btnCasilla_18.setBorder(null);
+			btnCasilla_18.setBounds(886, 440, 55, 55);
 		}
-		return btnCasilla15;
+		return btnCasilla_18;
 	}
-	private JButton getBtnCasilla16() {
-		if (btnCasilla16 == null) {
-			btnCasilla16 = new JButton("16");
-			btnCasilla16.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla16.setVisible(false);
-			btnCasilla16.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla16.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla16.setRequestFocusEnabled(false);
-			btnCasilla16.setPreferredSize(new Dimension(245, 43));
-			btnCasilla16.setMinimumSize(new Dimension(245, 43));
-			btnCasilla16.setMaximumSize(new Dimension(245, 43));
-			btnCasilla16.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla16.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla16.setForeground(Color.WHITE);
-			btnCasilla16.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla16.setContentAreaFilled(false);
-			btnCasilla16.setBorder(null);
-			btnCasilla16.setBounds(886, 503, 55, 55);
+	private JButton getBtnCasilla_19() {
+		if (btnCasilla_19 == null) {
+			btnCasilla_19 = new JButton("19");
+			btnCasilla_19.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_19.setVisible(false);
+			btnCasilla_19.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_19.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_19.setRequestFocusEnabled(false);
+			btnCasilla_19.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_19.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_19.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_19.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_19.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_19.setForeground(Color.WHITE);
+			btnCasilla_19.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_19.setContentAreaFilled(false);
+			btnCasilla_19.setBorder(null);
+			btnCasilla_19.setBounds(886, 503, 55, 55);
 		}
-		return btnCasilla16;
+		return btnCasilla_19;
 	}
-	private JButton getBtnCasilla17() {
-		if (btnCasilla17 == null) {
-			btnCasilla17 = new JButton("17");
-			btnCasilla17.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla17.setVisible(false);
-			btnCasilla17.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla17.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla17.setRequestFocusEnabled(false);
-			btnCasilla17.setPreferredSize(new Dimension(245, 43));
-			btnCasilla17.setMinimumSize(new Dimension(245, 43));
-			btnCasilla17.setMaximumSize(new Dimension(245, 43));
-			btnCasilla17.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla17.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla17.setForeground(Color.WHITE);
-			btnCasilla17.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla17.setContentAreaFilled(false);
-			btnCasilla17.setBorder(null);
-			btnCasilla17.setBounds(886, 566, 55, 55);
+	private JButton getBtnCasilla_20() {
+		if (btnCasilla_20 == null) {
+			btnCasilla_20 = new JButton("20");
+			btnCasilla_20.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_20.setVisible(false);
+			btnCasilla_20.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_20.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_20.setRequestFocusEnabled(false);
+			btnCasilla_20.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_20.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_20.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_20.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_20.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_20.setForeground(Color.WHITE);
+			btnCasilla_20.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_20.setContentAreaFilled(false);
+			btnCasilla_20.setBorder(null);
+			btnCasilla_20.setBounds(886, 566, 55, 55);
 		}
-		return btnCasilla17;
+		return btnCasilla_20;
 	}
-	private JButton getBtnCasilla18() {
-		if (btnCasilla18 == null) {
-			btnCasilla18 = new JButton("18");
-			btnCasilla18.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla18.setVisible(false);
-			btnCasilla18.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla18.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla18.setRequestFocusEnabled(false);
-			btnCasilla18.setPreferredSize(new Dimension(245, 43));
-			btnCasilla18.setMinimumSize(new Dimension(245, 43));
-			btnCasilla18.setMaximumSize(new Dimension(245, 43));
-			btnCasilla18.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla18.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla18.setForeground(Color.WHITE);
-			btnCasilla18.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla18.setContentAreaFilled(false);
-			btnCasilla18.setBorder(null);
-			btnCasilla18.setBounds(823, 566, 55, 55);
+	private JButton getBtnCasilla_21() {
+		if (btnCasilla_21 == null) {
+			btnCasilla_21 = new JButton("21");
+			btnCasilla_21.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_21.setVisible(false);
+			btnCasilla_21.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_21.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_21.setRequestFocusEnabled(false);
+			btnCasilla_21.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_21.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_21.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_21.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_21.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_21.setForeground(Color.WHITE);
+			btnCasilla_21.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_21.setContentAreaFilled(false);
+			btnCasilla_21.setBorder(null);
+			btnCasilla_21.setBounds(823, 566, 55, 55);
 		}
-		return btnCasilla18;
+		return btnCasilla_21;
 	}
-	private JButton getBtnCasilla19() {
-		if (btnCasilla19 == null) {
-			btnCasilla19 = new JButton("19");
-			btnCasilla19.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla19.setVisible(false);
-			btnCasilla19.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla19.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla19.setRequestFocusEnabled(false);
-			btnCasilla19.setPreferredSize(new Dimension(245, 43));
-			btnCasilla19.setMinimumSize(new Dimension(245, 43));
-			btnCasilla19.setMaximumSize(new Dimension(245, 43));
-			btnCasilla19.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla19.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla19.setForeground(Color.WHITE);
-			btnCasilla19.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla19.setContentAreaFilled(false);
-			btnCasilla19.setBorder(null);
-			btnCasilla19.setBounds(760, 566, 55, 55);
+	private JButton getBtnCasilla_22() {
+		if (btnCasilla_22 == null) {
+			btnCasilla_22 = new JButton("22");
+			btnCasilla_22.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_22.setVisible(false);
+			btnCasilla_22.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_22.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_22.setRequestFocusEnabled(false);
+			btnCasilla_22.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_22.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_22.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_22.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_22.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_22.setForeground(Color.WHITE);
+			btnCasilla_22.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_22.setContentAreaFilled(false);
+			btnCasilla_22.setBorder(null);
+			btnCasilla_22.setBounds(760, 566, 55, 55);
 		}
-		return btnCasilla19;
+		return btnCasilla_22;
 	}
-	private JButton getBtnCasilla20() {
-		if (btnCasilla20 == null) {
-			btnCasilla20 = new JButton("20");
-			btnCasilla20.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla20.setVisible(false);
-			btnCasilla20.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla20.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla20.setRequestFocusEnabled(false);
-			btnCasilla20.setPreferredSize(new Dimension(245, 43));
-			btnCasilla20.setMinimumSize(new Dimension(245, 43));
-			btnCasilla20.setMaximumSize(new Dimension(245, 43));
-			btnCasilla20.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla20.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla20.setForeground(Color.WHITE);
-			btnCasilla20.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla20.setContentAreaFilled(false);
-			btnCasilla20.setBorder(null);
-			btnCasilla20.setBounds(697, 566, 55, 55);
+	private JButton getBtnCasilla_23() {
+		if (btnCasilla_23 == null) {
+			btnCasilla_23 = new JButton("23");
+			btnCasilla_23.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_23.setVisible(false);
+			btnCasilla_23.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_23.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_23.setRequestFocusEnabled(false);
+			btnCasilla_23.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_23.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_23.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_23.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_23.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_23.setForeground(Color.WHITE);
+			btnCasilla_23.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_23.setContentAreaFilled(false);
+			btnCasilla_23.setBorder(null);
+			btnCasilla_23.setBounds(697, 566, 55, 55);
 		}
-		return btnCasilla20;
+		return btnCasilla_23;
 	}
-	private JButton getBtnCasilla21() {
-		if (btnCasilla21 == null) {
-			btnCasilla21 = new JButton("21");
-			btnCasilla21.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla21.setVisible(false);
-			btnCasilla21.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla21.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla21.setRequestFocusEnabled(false);
-			btnCasilla21.setPreferredSize(new Dimension(245, 43));
-			btnCasilla21.setMinimumSize(new Dimension(245, 43));
-			btnCasilla21.setMaximumSize(new Dimension(245, 43));
-			btnCasilla21.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla21.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla21.setForeground(Color.WHITE);
-			btnCasilla21.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla21.setContentAreaFilled(false);
-			btnCasilla21.setBorder(null);
-			btnCasilla21.setBounds(634, 566, 55, 55);
+	private JButton getBtnCasilla_24() {
+		if (btnCasilla_24 == null) {
+			btnCasilla_24 = new JButton("24");
+			btnCasilla_24.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_24.setVisible(false);
+			btnCasilla_24.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_24.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_24.setRequestFocusEnabled(false);
+			btnCasilla_24.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_24.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_24.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_24.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_24.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_24.setForeground(Color.WHITE);
+			btnCasilla_24.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_24.setContentAreaFilled(false);
+			btnCasilla_24.setBorder(null);
+			btnCasilla_24.setBounds(634, 566, 55, 55);
 		}
-		return btnCasilla21;
+		return btnCasilla_24;
 	}
-	private JButton getBtnCasilla22() {
-		if (btnCasilla22 == null) {
-			btnCasilla22 = new JButton("22");
-			btnCasilla22.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla22.setVisible(false);
-			btnCasilla22.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla22.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla22.setRequestFocusEnabled(false);
-			btnCasilla22.setPreferredSize(new Dimension(245, 43));
-			btnCasilla22.setMinimumSize(new Dimension(245, 43));
-			btnCasilla22.setMaximumSize(new Dimension(245, 43));
-			btnCasilla22.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla22.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla22.setForeground(Color.WHITE);
-			btnCasilla22.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla22.setContentAreaFilled(false);
-			btnCasilla22.setBorder(null);
-			btnCasilla22.setBounds(571, 566, 55, 55);
+	private JButton getBtnCasilla_25() {
+		if (btnCasilla_25 == null) {
+			btnCasilla_25 = new JButton("25");
+			btnCasilla_25.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_25.setVisible(false);
+			btnCasilla_25.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_25.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_25.setRequestFocusEnabled(false);
+			btnCasilla_25.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_25.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_25.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_25.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_25.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_25.setForeground(Color.WHITE);
+			btnCasilla_25.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_25.setContentAreaFilled(false);
+			btnCasilla_25.setBorder(null);
+			btnCasilla_25.setBounds(571, 566, 55, 55);
 		}
-		return btnCasilla22;
+		return btnCasilla_25;
 	}
-	private JButton getBtnCasilla23() {
-		if (btnCasilla23 == null) {
-			btnCasilla23 = new JButton("23");
-			btnCasilla23.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla23.setVisible(false);
-			btnCasilla23.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla23.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla23.setRequestFocusEnabled(false);
-			btnCasilla23.setPreferredSize(new Dimension(245, 43));
-			btnCasilla23.setMinimumSize(new Dimension(245, 43));
-			btnCasilla23.setMaximumSize(new Dimension(245, 43));
-			btnCasilla23.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla23.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla23.setForeground(Color.WHITE);
-			btnCasilla23.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla23.setContentAreaFilled(false);
-			btnCasilla23.setBorder(null);
-			btnCasilla23.setBounds(508, 566, 55, 55);
+	private JButton getBtnCasilla_26() {
+		if (btnCasilla_26 == null) {
+			btnCasilla_26 = new JButton("26");
+			btnCasilla_26.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_26.setVisible(false);
+			btnCasilla_26.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_26.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_26.setRequestFocusEnabled(false);
+			btnCasilla_26.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_26.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_26.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_26.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_26.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_26.setForeground(Color.WHITE);
+			btnCasilla_26.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_26.setContentAreaFilled(false);
+			btnCasilla_26.setBorder(null);
+			btnCasilla_26.setBounds(508, 566, 55, 55);
 		}
-		return btnCasilla23;
+		return btnCasilla_26;
 	}
-	private JButton getBtnCasilla24() {
-		if (btnCasilla24 == null) {
-			btnCasilla24 = new JButton("24");
-			btnCasilla24.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla24.setVisible(false);
-			btnCasilla24.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla24.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla24.setRequestFocusEnabled(false);
-			btnCasilla24.setPreferredSize(new Dimension(245, 43));
-			btnCasilla24.setMinimumSize(new Dimension(245, 43));
-			btnCasilla24.setMaximumSize(new Dimension(245, 43));
-			btnCasilla24.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla24.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla24.setForeground(Color.WHITE);
-			btnCasilla24.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla24.setContentAreaFilled(false);
-			btnCasilla24.setBorder(null);
-			btnCasilla24.setBounds(445, 566, 55, 55);
+	private JButton getBtnCasilla_27() {
+		if (btnCasilla_27 == null) {
+			btnCasilla_27 = new JButton("27");
+			btnCasilla_27.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_27.setVisible(false);
+			btnCasilla_27.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_27.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_27.setRequestFocusEnabled(false);
+			btnCasilla_27.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_27.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_27.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_27.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_27.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_27.setForeground(Color.WHITE);
+			btnCasilla_27.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_27.setContentAreaFilled(false);
+			btnCasilla_27.setBorder(null);
+			btnCasilla_27.setBounds(445, 566, 55, 55);
 		}
-		return btnCasilla24;
+		return btnCasilla_27;
 	}
-	private JButton getBtnCasilla25() {
-		if (btnCasilla25 == null) {
-			btnCasilla25 = new JButton("25");
-			btnCasilla25.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla25.setVisible(false);
-			btnCasilla25.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla25.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla25.setRequestFocusEnabled(false);
-			btnCasilla25.setPreferredSize(new Dimension(245, 43));
-			btnCasilla25.setMinimumSize(new Dimension(245, 43));
-			btnCasilla25.setMaximumSize(new Dimension(245, 43));
-			btnCasilla25.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla25.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla25.setForeground(Color.WHITE);
-			btnCasilla25.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla25.setContentAreaFilled(false);
-			btnCasilla25.setBorder(null);
-			btnCasilla25.setBounds(382, 566, 55, 55);
+	private JButton getBtnCasilla_28() {
+		if (btnCasilla_28 == null) {
+			btnCasilla_28 = new JButton("28");
+			btnCasilla_28.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_28.setVisible(false);
+			btnCasilla_28.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_28.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_28.setRequestFocusEnabled(false);
+			btnCasilla_28.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_28.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_28.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_28.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_28.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_28.setForeground(Color.WHITE);
+			btnCasilla_28.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_28.setContentAreaFilled(false);
+			btnCasilla_28.setBorder(null);
+			btnCasilla_28.setBounds(382, 566, 55, 55);
 		}
-		return btnCasilla25;
+		return btnCasilla_28;
 	}
-	private JButton getBtnCasilla26() {
-		if (btnCasilla26 == null) {
-			btnCasilla26 = new JButton("26");
-			btnCasilla26.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla26.setVisible(false);
-			btnCasilla26.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla26.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla26.setRequestFocusEnabled(false);
-			btnCasilla26.setPreferredSize(new Dimension(245, 43));
-			btnCasilla26.setMinimumSize(new Dimension(245, 43));
-			btnCasilla26.setMaximumSize(new Dimension(245, 43));
-			btnCasilla26.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla26.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla26.setForeground(Color.WHITE);
-			btnCasilla26.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla26.setContentAreaFilled(false);
-			btnCasilla26.setBorder(null);
-			btnCasilla26.setBounds(382, 503, 55, 55);
+	private JButton getBtnCasilla_29() {
+		if (btnCasilla_29 == null) {
+			btnCasilla_29 = new JButton("29");
+			btnCasilla_29.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_29.setVisible(false);
+			btnCasilla_29.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_29.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_29.setRequestFocusEnabled(false);
+			btnCasilla_29.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_29.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_29.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_29.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_29.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_29.setForeground(Color.WHITE);
+			btnCasilla_29.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_29.setContentAreaFilled(false);
+			btnCasilla_29.setBorder(null);
+			btnCasilla_29.setBounds(382, 503, 55, 55);
 		}
-		return btnCasilla26;
+		return btnCasilla_29;
 	}
-	private JButton getBtnCasilla27() {
-		if (btnCasilla27 == null) {
-			btnCasilla27 = new JButton("27");
-			btnCasilla27.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla27.setVisible(false);
-			btnCasilla27.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla27.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla27.setRequestFocusEnabled(false);
-			btnCasilla27.setPreferredSize(new Dimension(245, 43));
-			btnCasilla27.setMinimumSize(new Dimension(245, 43));
-			btnCasilla27.setMaximumSize(new Dimension(245, 43));
-			btnCasilla27.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla27.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla27.setForeground(Color.WHITE);
-			btnCasilla27.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla27.setContentAreaFilled(false);
-			btnCasilla27.setBorder(null);
-			btnCasilla27.setBounds(382, 440, 55, 55);
+	private JButton getBtnCasilla_30() {
+		if (btnCasilla_30 == null) {
+			btnCasilla_30 = new JButton("30");
+			btnCasilla_30.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_30.setVisible(false);
+			btnCasilla_30.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_30.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_30.setRequestFocusEnabled(false);
+			btnCasilla_30.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_30.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_30.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_30.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_30.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_30.setForeground(Color.WHITE);
+			btnCasilla_30.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_30.setContentAreaFilled(false);
+			btnCasilla_30.setBorder(null);
+			btnCasilla_30.setBounds(382, 440, 55, 55);
 		}
-		return btnCasilla27;
+		return btnCasilla_30;
 	}
-	private JButton getBtnCasilla28() {
-		if (btnCasilla28 == null) {
-			btnCasilla28 = new JButton("28");
-			btnCasilla28.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla28.setVisible(false);
-			btnCasilla28.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla28.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla28.setRequestFocusEnabled(false);
-			btnCasilla28.setPreferredSize(new Dimension(245, 43));
-			btnCasilla28.setMinimumSize(new Dimension(245, 43));
-			btnCasilla28.setMaximumSize(new Dimension(245, 43));
-			btnCasilla28.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla28.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla28.setForeground(Color.WHITE);
-			btnCasilla28.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla28.setContentAreaFilled(false);
-			btnCasilla28.setBorder(null);
-			btnCasilla28.setBounds(382, 377, 55, 55);
+	private JButton getBtnCasilla_31() {
+		if (btnCasilla_31 == null) {
+			btnCasilla_31 = new JButton("31");
+			btnCasilla_31.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_31.setVisible(false);
+			btnCasilla_31.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_31.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_31.setRequestFocusEnabled(false);
+			btnCasilla_31.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_31.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_31.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_31.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_31.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_31.setForeground(Color.WHITE);
+			btnCasilla_31.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_31.setContentAreaFilled(false);
+			btnCasilla_31.setBorder(null);
+			btnCasilla_31.setBounds(382, 377, 55, 55);
 		}
-		return btnCasilla28;
+		return btnCasilla_31;
 	}
-	private JButton getBtnCasilla29() {
-		if (btnCasilla29 == null) {
-			btnCasilla29 = new JButton("29");
-			btnCasilla29.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla29.setVisible(false);
-			btnCasilla29.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla29.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla29.setRequestFocusEnabled(false);
-			btnCasilla29.setPreferredSize(new Dimension(245, 43));
-			btnCasilla29.setMinimumSize(new Dimension(245, 43));
-			btnCasilla29.setMaximumSize(new Dimension(245, 43));
-			btnCasilla29.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla29.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla29.setForeground(Color.WHITE);
-			btnCasilla29.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla29.setContentAreaFilled(false);
-			btnCasilla29.setBorder(null);
-			btnCasilla29.setBounds(382, 314, 55, 55);
+	private JButton getBtnCasilla_00() {
+		if (btnCasilla_00 == null) {
+			btnCasilla_00 = new JButton("00");
+			btnCasilla_00.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_00.setVisible(false);
+			btnCasilla_00.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_00.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_00.setRequestFocusEnabled(false);
+			btnCasilla_00.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_00.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_00.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_00.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_00.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_00.setForeground(Color.WHITE);
+			btnCasilla_00.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_00.setContentAreaFilled(false);
+			btnCasilla_00.setBorder(null);
+			btnCasilla_00.setBounds(382, 314, 55, 55);
 		}
-		return btnCasilla29;
+		return btnCasilla_00;
 	}
-	private JButton getBtnCasilla30() {
-		if (btnCasilla30 == null) {
-			btnCasilla30 = new JButton("30");
-			btnCasilla30.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla30.setVisible(false);
-			btnCasilla30.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla30.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla30.setRequestFocusEnabled(false);
-			btnCasilla30.setPreferredSize(new Dimension(245, 43));
-			btnCasilla30.setMinimumSize(new Dimension(245, 43));
-			btnCasilla30.setMaximumSize(new Dimension(245, 43));
-			btnCasilla30.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla30.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla30.setForeground(Color.WHITE);
-			btnCasilla30.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla30.setContentAreaFilled(false);
-			btnCasilla30.setBorder(null);
-			btnCasilla30.setBounds(382, 251, 55, 55);
+	private JButton getBtnCasilla_01() {
+		if (btnCasilla_01 == null) {
+			btnCasilla_01 = new JButton("01");
+			btnCasilla_01.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_01.setVisible(false);
+			btnCasilla_01.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_01.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_01.setRequestFocusEnabled(false);
+			btnCasilla_01.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_01.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_01.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_01.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_01.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_01.setForeground(Color.WHITE);
+			btnCasilla_01.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_01.setContentAreaFilled(false);
+			btnCasilla_01.setBorder(null);
+			btnCasilla_01.setBounds(382, 251, 55, 55);
 		}
-		return btnCasilla30;
+		return btnCasilla_01;
 	}
-	private JButton getBtnCasilla31() {
-		if (btnCasilla31 == null) {
-			btnCasilla31 = new JButton("31");
-			btnCasilla31.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla31.setVisible(false);
-			btnCasilla31.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla31.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla31.setRequestFocusEnabled(false);
-			btnCasilla31.setPreferredSize(new Dimension(245, 43));
-			btnCasilla31.setMinimumSize(new Dimension(245, 43));
-			btnCasilla31.setMaximumSize(new Dimension(245, 43));
-			btnCasilla31.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla31.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla31.setForeground(Color.WHITE);
-			btnCasilla31.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla31.setContentAreaFilled(false);
-			btnCasilla31.setBorder(null);
-			btnCasilla31.setBounds(382, 188, 55, 55);
+	private JButton getBtnCasilla_02() {
+		if (btnCasilla_02 == null) {
+			btnCasilla_02 = new JButton("02");
+			btnCasilla_02.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_02.setVisible(false);
+			btnCasilla_02.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_02.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_02.setRequestFocusEnabled(false);
+			btnCasilla_02.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_02.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_02.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_02.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_02.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_02.setForeground(Color.WHITE);
+			btnCasilla_02.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_02.setContentAreaFilled(false);
+			btnCasilla_02.setBorder(null);
+			btnCasilla_02.setBounds(382, 188, 55, 55);
 		}
-		return btnCasilla31;
+		return btnCasilla_02;
 	}
-	private JButton getBtnCasilla32() {
-		if (btnCasilla32 == null) {
-			btnCasilla32 = new JButton("32");
-			btnCasilla32.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla32.setVisible(false);
-			btnCasilla32.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla32.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla32.setRequestFocusEnabled(false);
-			btnCasilla32.setPreferredSize(new Dimension(245, 43));
-			btnCasilla32.setMinimumSize(new Dimension(245, 43));
-			btnCasilla32.setMaximumSize(new Dimension(245, 43));
-			btnCasilla32.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla32.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla32.setForeground(Color.WHITE);
-			btnCasilla32.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla32.setContentAreaFilled(false);
-			btnCasilla32.setBorder(null);
-			btnCasilla32.setBounds(382, 125, 55, 55);
+	private JButton getBtnCasilla_03() {
+		if (btnCasilla_03 == null) {
+			btnCasilla_03 = new JButton("03");
+			btnCasilla_03.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_03.setVisible(false);
+			btnCasilla_03.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_03.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_03.setRequestFocusEnabled(false);
+			btnCasilla_03.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_03.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_03.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_03.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_03.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_03.setForeground(Color.WHITE);
+			btnCasilla_03.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_03.setContentAreaFilled(false);
+			btnCasilla_03.setBorder(null);
+			btnCasilla_03.setBounds(382, 125, 55, 55);
 		}
-		return btnCasilla32;
+		return btnCasilla_03;
 	}
-	private JButton getBtnCasilla33() {
-		if (btnCasilla33 == null) {
-			btnCasilla33 = new JButton("33");
-			btnCasilla33.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla33.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla33.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla33.setVisible(false);
-			btnCasilla33.setRequestFocusEnabled(false);
-			btnCasilla33.setPreferredSize(new Dimension(245, 43));
-			btnCasilla33.setMinimumSize(new Dimension(245, 43));
-			btnCasilla33.setMaximumSize(new Dimension(245, 43));
-			btnCasilla33.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla33.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla33.setForeground(Color.WHITE);
-			btnCasilla33.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla33.setContentAreaFilled(false);
-			btnCasilla33.setBorder(null);
-			btnCasilla33.setBounds(634, 125, 55, 55);
+	private JButton getBtnCasilla_35() {
+		if (btnCasilla_35 == null) {
+			btnCasilla_35 = new JButton("35");
+			btnCasilla_35.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_35.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_35.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_35.setVisible(false);
+			btnCasilla_35.setRequestFocusEnabled(false);
+			btnCasilla_35.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_35.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_35.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_35.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_35.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_35.setForeground(Color.WHITE);
+			btnCasilla_35.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_35.setContentAreaFilled(false);
+			btnCasilla_35.setBorder(null);
+			btnCasilla_35.setBounds(634, 125, 55, 55);
 		}
-		return btnCasilla33;
+		return btnCasilla_35;
 	}
-	private JButton getBtnCasilla34() {
-		if (btnCasilla34 == null) {
-			btnCasilla34 = new JButton("34");
-			btnCasilla34.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla34.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla34.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla34.setVisible(false);
-			btnCasilla34.setRequestFocusEnabled(false);
-			btnCasilla34.setPreferredSize(new Dimension(245, 43));
-			btnCasilla34.setMinimumSize(new Dimension(245, 43));
-			btnCasilla34.setMaximumSize(new Dimension(245, 43));
-			btnCasilla34.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla34.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla34.setForeground(Color.WHITE);
-			btnCasilla34.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla34.setContentAreaFilled(false);
-			btnCasilla34.setBorder(null);
-			btnCasilla34.setBounds(634, 188, 55, 55);
+	private JButton getBtnCasilla_36() {
+		if (btnCasilla_36 == null) {
+			btnCasilla_36 = new JButton("36");
+			btnCasilla_36.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_36.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_36.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_36.setVisible(false);
+			btnCasilla_36.setRequestFocusEnabled(false);
+			btnCasilla_36.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_36.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_36.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_36.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_36.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_36.setForeground(Color.WHITE);
+			btnCasilla_36.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_36.setContentAreaFilled(false);
+			btnCasilla_36.setBorder(null);
+			btnCasilla_36.setBounds(634, 188, 55, 55);
 		}
-		return btnCasilla34;
+		return btnCasilla_36;
 	}
-	private JButton getBtnCasilla35() {
-		if (btnCasilla35 == null) {
-			btnCasilla35 = new JButton("35");
-			btnCasilla35.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla35.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla35.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla35.setVisible(false);
-			btnCasilla35.setRequestFocusEnabled(false);
-			btnCasilla35.setPreferredSize(new Dimension(245, 43));
-			btnCasilla35.setMinimumSize(new Dimension(245, 43));
-			btnCasilla35.setMaximumSize(new Dimension(245, 43));
-			btnCasilla35.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla35.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla35.setForeground(Color.WHITE);
-			btnCasilla35.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla35.setContentAreaFilled(false);
-			btnCasilla35.setBorder(null);
-			btnCasilla35.setBounds(634, 251, 55, 55);
+	private JButton getBtnCasilla_37() {
+		if (btnCasilla_37 == null) {
+			btnCasilla_37 = new JButton("37");
+			btnCasilla_37.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_37.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_37.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_37.setVisible(false);
+			btnCasilla_37.setRequestFocusEnabled(false);
+			btnCasilla_37.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_37.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_37.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_37.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_37.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_37.setForeground(Color.WHITE);
+			btnCasilla_37.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_37.setContentAreaFilled(false);
+			btnCasilla_37.setBorder(null);
+			btnCasilla_37.setBounds(634, 251, 55, 55);
 		}
-		return btnCasilla35;
+		return btnCasilla_37;
 	}
-	private JButton getBtnCasilla36() {
-		if (btnCasilla36 == null) {
-			btnCasilla36 = new JButton("36");
-			btnCasilla36.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla36.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla36.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla36.setVisible(false);
-			btnCasilla36.setRequestFocusEnabled(false);
-			btnCasilla36.setPreferredSize(new Dimension(245, 43));
-			btnCasilla36.setMinimumSize(new Dimension(245, 43));
-			btnCasilla36.setMaximumSize(new Dimension(245, 43));
-			btnCasilla36.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla36.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla36.setForeground(Color.WHITE);
-			btnCasilla36.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla36.setContentAreaFilled(false);
-			btnCasilla36.setBorder(null);
-			btnCasilla36.setBounds(634, 314, 55, 55);
+	private JButton getBtnCasilla_44() {
+		if (btnCasilla_44 == null) {
+			btnCasilla_44 = new JButton("44");
+			btnCasilla_44.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_44.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_44.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_44.setVisible(false);
+			btnCasilla_44.setRequestFocusEnabled(false);
+			btnCasilla_44.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_44.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_44.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_44.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_44.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_44.setForeground(Color.WHITE);
+			btnCasilla_44.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_44.setContentAreaFilled(false);
+			btnCasilla_44.setBorder(null);
+			btnCasilla_44.setBounds(634, 314, 55, 55);
 		}
-		return btnCasilla36;
+		return btnCasilla_44;
 	}
-	private JButton getBtnCasilla37() {
-		if (btnCasilla37 == null) {
-			btnCasilla37 = new JButton("37");
-			btnCasilla37.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla37.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla37.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla37.setVisible(false);
-			btnCasilla37.setRequestFocusEnabled(false);
-			btnCasilla37.setPreferredSize(new Dimension(245, 43));
-			btnCasilla37.setMinimumSize(new Dimension(245, 43));
-			btnCasilla37.setMaximumSize(new Dimension(245, 43));
-			btnCasilla37.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla37.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla37.setForeground(Color.WHITE);
-			btnCasilla37.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla37.setContentAreaFilled(false);
-			btnCasilla37.setBorder(null);
-			btnCasilla37.setBounds(634, 377, 55, 55);
+	private JButton getBtnCasilla_43() {
+		if (btnCasilla_43 == null) {
+			btnCasilla_43 = new JButton("43");
+			btnCasilla_43.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_43.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_43.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_43.setVisible(false);
+			btnCasilla_43.setRequestFocusEnabled(false);
+			btnCasilla_43.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_43.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_43.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_43.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_43.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_43.setForeground(Color.WHITE);
+			btnCasilla_43.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_43.setContentAreaFilled(false);
+			btnCasilla_43.setBorder(null);
+			btnCasilla_43.setBounds(634, 377, 55, 55);
 		}
-		return btnCasilla37;
+		return btnCasilla_43;
 	}
-	private JButton getBtnCasilla38() {
-		if (btnCasilla38 == null) {
-			btnCasilla38 = new JButton("38");
-			btnCasilla38.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla38.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla38.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla38.setVisible(false);
-			btnCasilla38.setRequestFocusEnabled(false);
-			btnCasilla38.setPreferredSize(new Dimension(245, 43));
-			btnCasilla38.setMinimumSize(new Dimension(245, 43));
-			btnCasilla38.setMaximumSize(new Dimension(245, 43));
-			btnCasilla38.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla38.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla38.setForeground(Color.WHITE);
-			btnCasilla38.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla38.setContentAreaFilled(false);
-			btnCasilla38.setBorder(null);
-			btnCasilla38.setBounds(634, 440, 55, 55);
+	private JButton getBtnCasilla_42() {
+		if (btnCasilla_42 == null) {
+			btnCasilla_42 = new JButton("42");
+			btnCasilla_42.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_42.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_42.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_42.setVisible(false);
+			btnCasilla_42.setRequestFocusEnabled(false);
+			btnCasilla_42.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_42.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_42.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_42.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_42.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_42.setForeground(Color.WHITE);
+			btnCasilla_42.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_42.setContentAreaFilled(false);
+			btnCasilla_42.setBorder(null);
+			btnCasilla_42.setBounds(634, 440, 55, 55);
 		}
-		return btnCasilla38;
+		return btnCasilla_42;
 	}
-	private JButton getBtnCasilla39() {
-		if (btnCasilla39 == null) {
-			btnCasilla39 = new JButton("39");
-			btnCasilla39.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla39.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla39.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla39.setVisible(false);
-			btnCasilla39.setRequestFocusEnabled(false);
-			btnCasilla39.setPreferredSize(new Dimension(245, 43));
-			btnCasilla39.setMinimumSize(new Dimension(245, 43));
-			btnCasilla39.setMaximumSize(new Dimension(245, 43));
-			btnCasilla39.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla39.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla39.setForeground(Color.WHITE);
-			btnCasilla39.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla39.setContentAreaFilled(false);
-			btnCasilla39.setBorder(null);
-			btnCasilla39.setBounds(634, 503, 55, 55);
+	private JButton getBtnCasilla_41() {
+		if (btnCasilla_41 == null) {
+			btnCasilla_41 = new JButton("41");
+			btnCasilla_41.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_41.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_41.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_41.setVisible(false);
+			btnCasilla_41.setRequestFocusEnabled(false);
+			btnCasilla_41.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_41.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_41.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_41.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_41.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_41.setForeground(Color.WHITE);
+			btnCasilla_41.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_41.setContentAreaFilled(false);
+			btnCasilla_41.setBorder(null);
+			btnCasilla_41.setBounds(634, 503, 55, 55);
 		}
-		return btnCasilla39;
+		return btnCasilla_41;
 	}
-	private JButton getBtnCasilla40() {
-		if (btnCasilla40 == null) {
-			btnCasilla40 = new JButton("40");
-			btnCasilla40.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla40.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla40.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla40.setVisible(false);
-			btnCasilla40.setRequestFocusEnabled(false);
-			btnCasilla40.setPreferredSize(new Dimension(245, 43));
-			btnCasilla40.setMinimumSize(new Dimension(245, 43));
-			btnCasilla40.setMaximumSize(new Dimension(245, 43));
-			btnCasilla40.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla40.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla40.setForeground(Color.WHITE);
-			btnCasilla40.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla40.setContentAreaFilled(false);
-			btnCasilla40.setBorder(null);
-			btnCasilla40.setBounds(445, 314, 55, 55);
+	private JButton getBtnCasilla_32() {
+		if (btnCasilla_32 == null) {
+			btnCasilla_32 = new JButton("32");
+			btnCasilla_32.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_32.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_32.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_32.setVisible(false);
+			btnCasilla_32.setRequestFocusEnabled(false);
+			btnCasilla_32.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_32.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_32.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_32.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_32.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_32.setForeground(Color.WHITE);
+			btnCasilla_32.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_32.setContentAreaFilled(false);
+			btnCasilla_32.setBorder(null);
+			btnCasilla_32.setBounds(445, 314, 55, 55);
 		}
-		return btnCasilla40;
+		return btnCasilla_32;
 	}
-	private JButton getBtnCasilla41() {
-		if (btnCasilla41 == null) {
-			btnCasilla41 = new JButton("41");
-			btnCasilla41.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla41.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla41.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla41.setVisible(false);
-			btnCasilla41.setRequestFocusEnabled(false);
-			btnCasilla41.setPreferredSize(new Dimension(245, 43));
-			btnCasilla41.setMinimumSize(new Dimension(245, 43));
-			btnCasilla41.setMaximumSize(new Dimension(245, 43));
-			btnCasilla41.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla41.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla41.setForeground(Color.WHITE);
-			btnCasilla41.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla41.setContentAreaFilled(false);
-			btnCasilla41.setBorder(null);
-			btnCasilla41.setBounds(508, 314, 55, 55);
+	private JButton getBtnCasilla_33() {
+		if (btnCasilla_33 == null) {
+			btnCasilla_33 = new JButton("33");
+			btnCasilla_33.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_33.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_33.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_33.setVisible(false);
+			btnCasilla_33.setRequestFocusEnabled(false);
+			btnCasilla_33.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_33.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_33.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_33.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_33.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_33.setForeground(Color.WHITE);
+			btnCasilla_33.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_33.setContentAreaFilled(false);
+			btnCasilla_33.setBorder(null);
+			btnCasilla_33.setBounds(508, 314, 55, 55);
 		}
-		return btnCasilla41;
+		return btnCasilla_33;
 	}
-	private JButton getBtnCasilla42() {
-		if (btnCasilla42 == null) {
-			btnCasilla42 = new JButton("42");
-			btnCasilla42.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla42.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla42.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla42.setVisible(false);
-			btnCasilla42.setRequestFocusEnabled(false);
-			btnCasilla42.setPreferredSize(new Dimension(245, 43));
-			btnCasilla42.setMinimumSize(new Dimension(245, 43));
-			btnCasilla42.setMaximumSize(new Dimension(245, 43));
-			btnCasilla42.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla42.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla42.setForeground(Color.WHITE);
-			btnCasilla42.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla42.setContentAreaFilled(false);
-			btnCasilla42.setBorder(null);
-			btnCasilla42.setBounds(571, 314, 55, 55);
+	private JButton getBtnCasilla_34() {
+		if (btnCasilla_34 == null) {
+			btnCasilla_34 = new JButton("34");
+			btnCasilla_34.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_34.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_34.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_34.setVisible(false);
+			btnCasilla_34.setRequestFocusEnabled(false);
+			btnCasilla_34.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_34.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_34.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_34.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_34.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_34.setForeground(Color.WHITE);
+			btnCasilla_34.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_34.setContentAreaFilled(false);
+			btnCasilla_34.setBorder(null);
+			btnCasilla_34.setBounds(571, 314, 55, 55);
 		}
-		return btnCasilla42;
+		return btnCasilla_34;
 	}
-	private JButton getBtnCasilla43() {
-		if (btnCasilla43 == null) {
-			btnCasilla43 = new JButton("43");
-			btnCasilla43.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla43.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla43.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla43.setVisible(false);
-			btnCasilla43.setRequestFocusEnabled(false);
-			btnCasilla43.setPreferredSize(new Dimension(245, 43));
-			btnCasilla43.setMinimumSize(new Dimension(245, 43));
-			btnCasilla43.setMaximumSize(new Dimension(245, 43));
-			btnCasilla43.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla43.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla43.setForeground(Color.WHITE);
-			btnCasilla43.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla43.setContentAreaFilled(false);
-			btnCasilla43.setBorder(null);
-			btnCasilla43.setBounds(697, 314, 55, 55);
+	private JButton getBtnCasilla_40() {
+		if (btnCasilla_40 == null) {
+			btnCasilla_40 = new JButton("40");
+			btnCasilla_40.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_40.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_40.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_40.setVisible(false);
+			btnCasilla_40.setRequestFocusEnabled(false);
+			btnCasilla_40.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_40.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_40.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_40.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_40.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_40.setForeground(Color.WHITE);
+			btnCasilla_40.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_40.setContentAreaFilled(false);
+			btnCasilla_40.setBorder(null);
+			btnCasilla_40.setBounds(697, 314, 55, 55);
 		}
-		return btnCasilla43;
+		return btnCasilla_40;
 	}
-	private JButton getBtnCasilla44() {
-		if (btnCasilla44 == null) {
-			btnCasilla44 = new JButton("44");
-			btnCasilla44.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla44.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla44.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla44.setVisible(false);
-			btnCasilla44.setRequestFocusEnabled(false);
-			btnCasilla44.setPreferredSize(new Dimension(245, 43));
-			btnCasilla44.setMinimumSize(new Dimension(245, 43));
-			btnCasilla44.setMaximumSize(new Dimension(245, 43));
-			btnCasilla44.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla44.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla44.setForeground(Color.WHITE);
-			btnCasilla44.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla44.setContentAreaFilled(false);
-			btnCasilla44.setBorder(null);
-			btnCasilla44.setBounds(760, 314, 55, 55);
+	private JButton getBtnCasilla_39() {
+		if (btnCasilla_39 == null) {
+			btnCasilla_39 = new JButton("39");
+			btnCasilla_39.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_39.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_39.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_39.setVisible(false);
+			btnCasilla_39.setRequestFocusEnabled(false);
+			btnCasilla_39.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_39.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_39.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_39.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_39.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_39.setForeground(Color.WHITE);
+			btnCasilla_39.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_39.setContentAreaFilled(false);
+			btnCasilla_39.setBorder(null);
+			btnCasilla_39.setBounds(760, 314, 55, 55);
 		}
-		return btnCasilla44;
+		return btnCasilla_39;
 	}
-	private JButton getBtnCasilla45() {
-		if (btnCasilla45 == null) {
-			btnCasilla45 = new JButton("45");
-			btnCasilla45.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
-			btnCasilla45.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			btnCasilla45.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
-			btnCasilla45.setVisible(false);
-			btnCasilla45.setRequestFocusEnabled(false);
-			btnCasilla45.setPreferredSize(new Dimension(245, 43));
-			btnCasilla45.setMinimumSize(new Dimension(245, 43));
-			btnCasilla45.setMaximumSize(new Dimension(245, 43));
-			btnCasilla45.setMargin(new Insets(0, 0, 0, 0));
-			btnCasilla45.setHorizontalTextPosition(SwingConstants.CENTER);
-			btnCasilla45.setForeground(Color.WHITE);
-			btnCasilla45.setFont(new Font("Arial", Font.PLAIN, 20));
-			btnCasilla45.setContentAreaFilled(false);
-			btnCasilla45.setBorder(null);
-			btnCasilla45.setBounds(823, 314, 55, 55);
+	private JButton getBtnCasilla_38() {
+		if (btnCasilla_38 == null) {
+			btnCasilla_38 = new JButton("38");
+			btnCasilla_38.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
+			btnCasilla_38.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnCasilla_38.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
+			btnCasilla_38.setVisible(false);
+			btnCasilla_38.setRequestFocusEnabled(false);
+			btnCasilla_38.setPreferredSize(new Dimension(245, 43));
+			btnCasilla_38.setMinimumSize(new Dimension(245, 43));
+			btnCasilla_38.setMaximumSize(new Dimension(245, 43));
+			btnCasilla_38.setMargin(new Insets(0, 0, 0, 0));
+			btnCasilla_38.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnCasilla_38.setForeground(Color.WHITE);
+			btnCasilla_38.setFont(new Font("Arial", Font.PLAIN, 20));
+			btnCasilla_38.setContentAreaFilled(false);
+			btnCasilla_38.setBorder(null);
+			btnCasilla_38.setBounds(823, 314, 55, 55);
 		}
-		return btnCasilla45;
+		return btnCasilla_38;
 	}
 	private JMenuItem getMntmNewMenuItem_8() {
 		if (mntmNewMenuItem_8 == null) {
