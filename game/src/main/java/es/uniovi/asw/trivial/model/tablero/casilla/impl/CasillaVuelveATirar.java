@@ -13,6 +13,11 @@ public class CasillaVuelveATirar implements Casilla{
 				System.out.println("Casilla vuelve a tirar");
 			}
 		};
-	}	
+	}
+	
+	@Override
+	public String toString() {
+		return "Vuelve a tirar";
+	}
 	
 }

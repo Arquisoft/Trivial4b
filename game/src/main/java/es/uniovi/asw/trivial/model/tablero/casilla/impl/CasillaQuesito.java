@@ -21,4 +21,9 @@ public class CasillaQuesito implements Casilla {
 		};
 	}
 
+	@Override
+	public String toString() {
+		return "Quesito de " + categoria;
+	}
+
 }

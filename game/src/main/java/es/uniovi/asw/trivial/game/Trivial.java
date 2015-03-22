@@ -2,11 +2,10 @@ package es.uniovi.asw.trivial.game;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
+import es.uniovi.asw.trivial.factories.TableroFactory;
 import es.uniovi.asw.trivial.model.pregunta.Pregunta;
 import es.uniovi.asw.trivial.model.tablero.Casilla;
-import es.uniovi.asw.trivial.model.tablero.TableroFactory;
 
 /**
  * En esta clase se concentra la lógica del juego (el tablero, tirar los dados, moverse de posicion...)
@@ -48,11 +47,14 @@ public class Trivial {
 		Tira otra vez:
 			4, 12, 20, 28
 	 */
+	private Grafo grafoTablero;
 	private Casilla[] tablero;
 	
 	public Trivial(List<Pregunta> listaPreguntas) {
 		this.listaPreguntas = listaPreguntas;
-		tablero = TableroFactory.createTablero(listaPreguntas);
+		tablero = TableroFactory.createTablero();
+		grafoTablero = new Grafo(tablero);
+		
 		
 //		System.out.println("\n--------------- Tablero ---------------");
 //		for (Casilla casilla: tablero) {
@@ -62,10 +64,19 @@ public class Trivial {
 	//System.out.println("\nPregunta:");
 	//tablero[31].usoCasilla().execute(this);
 		
+		System.out.println("Casilla 0, saco un 6, puedo ir a: "+grafoTablero.getDestinos(0, 6));
+		System.out.println("Casilla 13, saco un 3, puedo ir a: "+grafoTablero.getDestinos(13, 3));
+		System.out.println("Casilla 36, saco un 4, puedo ir a: "+grafoTablero.getDestinos(36, 4));
+		System.out.println("Casilla 44, saco un 1, puedo ir a: "+grafoTablero.getDestinos(44, 1));
+		
 	}
 	
 	public void usarCasilla(int i){
 		tablero[i].usoCasilla().execute(this);
+	}
+	
+	public List<Integer> obtenerDestinos(int casillaActual, int tirada){
+		return grafoTablero.getDestinos(casillaActual, tirada);
 	}
 	
 	public int lanzarDado(){

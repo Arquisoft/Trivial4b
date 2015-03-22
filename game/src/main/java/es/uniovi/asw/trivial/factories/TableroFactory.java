@@ -1,8 +1,10 @@
-package es.uniovi.asw.trivial.model.tablero;
+package es.uniovi.asw.trivial.factories;
 
-import java.util.List;
+import org.jgrapht.Graph;
+import org.jgrapht.graph.DefaultEdge;
+import org.jgrapht.graph.SimpleGraph;
 
-import es.uniovi.asw.trivial.model.pregunta.Pregunta;
+import es.uniovi.asw.trivial.model.tablero.Casilla;
 import es.uniovi.asw.trivial.model.tablero.casilla.impl.CasillaFinal;
 import es.uniovi.asw.trivial.model.tablero.casilla.impl.CasillaPregunta;
 import es.uniovi.asw.trivial.model.tablero.casilla.impl.CasillaQuesito;
@@ -10,9 +12,9 @@ import es.uniovi.asw.trivial.model.tablero.casilla.impl.CasillaVuelveATirar;
 
 public class TableroFactory {
 
-	public static Casilla[] createTablero(List<Pregunta> listaPreguntas) {
+	public static Casilla[] createTablero() {
 		Casilla[] tablero = new Casilla[45];
-		
+
 		// Esquina inferior izquierda
 		tablero[28] = new CasillaVuelveATirar();
 
@@ -20,10 +22,10 @@ public class TableroFactory {
 		tablero[29] = new CasillaPregunta("espectaculo");
 		tablero[30] = new CasillaPregunta("geografia");
 		tablero[31] = new CasillaPregunta("ciencias y naturaleza");
-		
+
 		// Quesito de historia
 		tablero[0] = new CasillaQuesito("historia");
-		
+
 		tablero[1] = new CasillaPregunta("ciencias y naturaleza");
 		tablero[2] = new CasillaPregunta("espectaculo");
 		tablero[3] = new CasillaPregunta("geografia");
@@ -35,10 +37,10 @@ public class TableroFactory {
 		tablero[5] = new CasillaPregunta("historia");
 		tablero[6] = new CasillaPregunta("ciencias y naturaleza");
 		tablero[7] = new CasillaPregunta("geografia");
-		
+
 		// Quesito de espectaculos
 		tablero[8] = new CasillaQuesito("espectaculos");
-		
+
 		tablero[9] = new CasillaPregunta("geografia");
 		tablero[10] = new CasillaPregunta("historia");
 		tablero[11] = new CasillaPregunta("ciencias y naturaleza");
@@ -50,10 +52,10 @@ public class TableroFactory {
 		tablero[13] = new CasillaPregunta("espectaculo");
 		tablero[14] = new CasillaPregunta("geografia");
 		tablero[15] = new CasillaPregunta("historia");
-		
+
 		// Quesito de ciencias y naturaleza
 		tablero[16] = new CasillaQuesito("ciencias y naturaleza");
-		
+
 		tablero[17] = new CasillaPregunta("historia");
 		tablero[18] = new CasillaPregunta("espectaculo");
 		tablero[19] = new CasillaPregunta("geografia");
@@ -65,10 +67,10 @@ public class TableroFactory {
 		tablero[21] = new CasillaPregunta("historia");
 		tablero[22] = new CasillaPregunta("ciencias y naturaleza");
 		tablero[23] = new CasillaPregunta("espectaculos");
-		
+
 		// Quesito de geografia
 		tablero[24] = new CasillaQuesito("geografia");
-		
+
 		tablero[25] = new CasillaPregunta("espectaculos");
 		tablero[26] = new CasillaPregunta("historia");
 		tablero[27] = new CasillaPregunta("ciencias y naturaleza");
@@ -95,7 +97,7 @@ public class TableroFactory {
 
 		// Casilla central (inicial)
 		tablero[44] = new CasillaFinal();
-		
+
 		return tablero;
 	}
 

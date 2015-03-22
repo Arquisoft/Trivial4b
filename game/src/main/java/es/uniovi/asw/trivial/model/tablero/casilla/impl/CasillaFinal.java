@@ -15,4 +15,9 @@ public class CasillaFinal implements Casilla{
 		};
 	}
 	
+	@Override
+	public String toString() {
+		return "Casilla final";
+	}
+	
 }
