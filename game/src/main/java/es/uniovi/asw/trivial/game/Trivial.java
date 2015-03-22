@@ -5,6 +5,7 @@ import java.util.List;
 
 import es.uniovi.asw.trivial.factories.TableroFactory;
 import es.uniovi.asw.trivial.model.pregunta.Pregunta;
+import es.uniovi.asw.trivial.model.pregunta.PreguntaGame;
 import es.uniovi.asw.trivial.model.tablero.Casilla;
 
 /**
@@ -50,6 +51,8 @@ public class Trivial {
 	private Grafo grafoTablero;
 	private Casilla[] tablero;
 	
+	private PreguntaGame preguntaActual;
+	
 	public Trivial(List<Pregunta> listaPreguntas) {
 		this.listaPreguntas = listaPreguntas;
 		tablero = TableroFactory.createTablero();
@@ -83,11 +86,8 @@ public class Trivial {
 		return (int) (Math.random() * (7 - 1) + 1);
 	}
 	
-	public Object[] hacerPregunta(String categoria, boolean esQuesito){
-		Object[] result = new Object[2];
-		result[0] = obtenerPregunta(categoria);
-		result[1] = esQuesito;
-		return result;
+	public void hacerPregunta(String categoria, boolean esQuesito){		
+		preguntaActual = new PreguntaGame(obtenerPregunta(categoria), esQuesito);
 	}
 	
 	private Pregunta obtenerPregunta(String categoria) {
@@ -105,6 +105,10 @@ public class Trivial {
 		} else {
 			return null;
 		}
+	}
+	
+	public PreguntaGame getPreguntaActual() {
+		return preguntaActual;
 	}
 
 }
