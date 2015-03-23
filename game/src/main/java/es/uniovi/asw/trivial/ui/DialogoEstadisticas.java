@@ -68,6 +68,7 @@ public class DialogoEstadisticas extends JDialog {
 		}
 		return panelPrincipal;
 	}
+	
 	private JScrollPane getScrollTabla() {
 		if (scrollTabla == null) {
 			scrollTabla = new JScrollPane();
