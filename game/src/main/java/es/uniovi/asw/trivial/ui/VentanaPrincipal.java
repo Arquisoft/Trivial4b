@@ -1,4 +1,4 @@
-package gui;
+package es.uniovi.asw.trivial.ui;
 
 import java.awt.EventQueue;
 
@@ -194,8 +194,8 @@ public class VentanaPrincipal extends JFrame {
 			mntmNewMenuItem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					
-					//Menú Juego > Nueva partida
-					// Mostrar Diálogo de selección de jugadores
+					//Menï¿½ Juego > Nueva partida
+					// Mostrar Diï¿½logo de selecciï¿½n de jugadores
 					DialogoJugadores frame = new DialogoJugadores(); 
 					frame.setLocationRelativeTo(null); 
 					frame.setVisible(true);
@@ -220,8 +220,8 @@ public class VentanaPrincipal extends JFrame {
 			mntmNewMenuItem_1.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					
-					//Menú Juego > Estadísticas
-					// Mostrar Diálogo de estadísiticas
+					//Menï¿½ Juego > Estadï¿½sticas
+					// Mostrar Diï¿½logo de estadï¿½siticas
 					DialogoEstadisticas frame = new DialogoEstadisticas(); 
 					frame.setLocationRelativeTo(null); 
 					frame.setVisible(true);
@@ -283,8 +283,8 @@ public class VentanaPrincipal extends JFrame {
 			mntmNewMenuItem_4.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					
-					//Menú Ayuda > Acerca de
-					// Mostrar Diálogo de Acerca de
+					//Menï¿½ Ayuda > Acerca de
+					// Mostrar Diï¿½logo de Acerca de
 					DialogoAcercade frame = new DialogoAcercade(); 
 					frame.setLocationRelativeTo(null); 
 					frame.setVisible(true);
@@ -655,7 +655,7 @@ public class VentanaPrincipal extends JFrame {
 			btnComenzar3.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					
-					//Acción al pulsar
+					//Acciï¿½n al pulsar
 					
 				}
 			});
@@ -712,9 +712,9 @@ public class VentanaPrincipal extends JFrame {
 			mntmNewMenuItem_6.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					
-					//Menú TempPruebas > Tirar dado
+					//Menï¿½ TempPruebas > Tirar dado
 					lblDadoImg.setVisible(false); //Ocultar imagen de dado
-					btnComenzar3.setVisible(false); //Ocultar botón mensaje tirar
+					btnComenzar3.setVisible(false); //Ocultar botï¿½n mensaje tirar
 					lblDadoTirada.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Dado_06.png"))); //Cargar imagen con resultado de tirada
 					lblDadoTirada.setVisible(true); //Mostrar imagen con tirada de dado
 					lblMensajes.setText("elije casilla en el tablero"); //Cargar mensaje a mostrar
@@ -1760,8 +1760,8 @@ public class VentanaPrincipal extends JFrame {
 			mntmNewMenuItem_8.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					
-					//Menú Juego > Ajustes
-					// Mostrar Diálogo de ajustes
+					//Menï¿½ Juego > Ajustes
+					// Mostrar Diï¿½logo de ajustes
 					DialogoAjustes frame = new DialogoAjustes(); 
 					frame.setLocationRelativeTo(null); 
 					frame.setVisible(true);

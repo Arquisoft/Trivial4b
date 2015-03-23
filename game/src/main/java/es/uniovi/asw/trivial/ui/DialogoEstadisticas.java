@@ -1,4 +1,4 @@
-package gui;
+package es.uniovi.asw.trivial.ui;
 
 import java.awt.EventQueue;
 
@@ -118,14 +118,14 @@ public class DialogoEstadisticas extends JDialog {
 			tablaEstadisticas.getTableHeader().getColumnModel().getColumn(2).setPreferredWidth(70);  //Modifica el ancho de la columna 3
 			tablaEstadisticas.getTableHeader().getColumnModel().getColumn(3).setPreferredWidth(70);  //Modifica el ancho de la columna 4
 			
-			tablaEstadisticas.getTableHeader().setReorderingAllowed(false); 		// Impedir que se entercambien entre sí
+			tablaEstadisticas.getTableHeader().setReorderingAllowed(false); 		// Impedir que se entercambien entre sï¿½
 
-//			añadirFilas(); //Pintar contenido en la tabla.			
+//			aï¿½adirFilas(); //Pintar contenido en la tabla.			
 		}
 		return tablaEstadisticas;
 	}
 	
-//	private void añadirFilas() { 
+//	private void aï¿½adirFilas() { 
 //		Object[] nuevaFila = new Object[6];
 //		java.util.List<Jugador> jugadores = juego.getJugadores();
 //		for (Jugador j:jugadores) {

@@ -9,17 +9,17 @@ import es.uniovi.asw.trivial.model.tablero.Casilla;
 public class GrafoFactory {
 
 	public static Graph<Casilla, DefaultEdge> crearGrafo(Casilla[] casillas) {
+		int tamTablero1 = 32;
 		Graph<Casilla, DefaultEdge> tablero = new SimpleGraph<Casilla, DefaultEdge>(
 				DefaultEdge.class);
 
 		for (int i = 0; i < casillas.length; i++)
 			tablero.addVertex(casillas[i]);
 
-		for (int i = 0; i < 32; i++)
-			if (i != 31)
+		
+		for (int i = 0; i < tamTablero1; i++)
 				tablero.addEdge(casillas[i], casillas[(i + 1)]);
-			else
-				tablero.addEdge(casillas[i], casillas[0]);
+		tablero.addEdge(casillas[tamTablero1 - 1], casillas[0]);
 
 		tablero.addEdge(casillas[0], casillas[32]);
 		tablero.addEdge(casillas[32], casillas[33]);

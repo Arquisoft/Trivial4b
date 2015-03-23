@@ -1,4 +1,4 @@
-package gui;
+package es.uniovi.asw.trivial.ui;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
