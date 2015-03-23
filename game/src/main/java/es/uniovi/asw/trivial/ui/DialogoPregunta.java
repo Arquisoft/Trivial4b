@@ -24,10 +24,6 @@ import javax.swing.JLabel;
 
 import java.awt.Toolkit;
 
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JPasswordField;
 import javax.swing.JTextPane;
 
 public class DialogoPregunta extends JDialog {
@@ -46,6 +42,9 @@ public class DialogoPregunta extends JDialog {
 	private JLabel lblImgCheck3;
 	private JButton btnContinuar;
 	private JLabel lblImgQuesito;
+	private JLabel lblRespuesta1;
+	private JLabel lblRespuesta2;
+	private JLabel lblRespuesta3;
 
 	/**
 	 * Launch the application.
@@ -84,8 +83,11 @@ public class DialogoPregunta extends JDialog {
 		panelPrincipal.add(getLblImgCheck3());
 		panelPrincipal.add(getLblImgCheck2());
 		panelPrincipal.add(getLblImgCheck1());
+		panelPrincipal.add(getLblRespuesta3());
 		panelPrincipal.add(getBtnRespuesta3());
+		panelPrincipal.add(getLblRespuesta2());
 		panelPrincipal.add(getBtnRespuesta2());
+		panelPrincipal.add(getLblRespuesta1());
 		panelPrincipal.add(getBtnRespuesta1());
 		panelPrincipal.add(getTxtPregunta());
 		panelPrincipal.add(getLblImgCategoria());
@@ -130,20 +132,22 @@ public class DialogoPregunta extends JDialog {
 					
 					// Check1 > Mostrar
 					lblImgCheck1.setVisible(true); 
-					// Respuesta1 > icon verde
-					btnRespuesta1.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Verde.png"))); 
-					// Respuesta1 > texto blanco
-					btnRespuesta1.setForeground(Color.WHITE);
+					// Botones Respuesta 1, 2, 3 > ocultar
+					btnRespuesta1.setVisible(false);
+					btnRespuesta2.setVisible(false);
+					btnRespuesta3.setVisible(false);
+					//Labels Respuesta 1, 2, 3 > mostrar
+					lblRespuesta1.setForeground(Color.WHITE);
+					lblRespuesta1.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Verde.png")));
+					lblRespuesta1.setVisible(true);
+					lblRespuesta2.setVisible(true);
+					lblRespuesta3.setVisible(true);
 					// Bot�n Continuar > Texto Correcta
 					btnContinuar.setText("Correcta > Continuar");
 					// Bot�n Continuar > Mostrar
 					btnContinuar.setVisible(true);
 					// Quesito > Mostrar
 					lblImgQuesito.setVisible(true);
-					// Respuesta1, 2 y 3 > Deshabilitar botones
-					btnRespuesta1.setRolloverEnabled(false);
-					btnRespuesta2.setRolloverEnabled(false);
-					btnRespuesta3.setRolloverEnabled(false);
 
 				}
 			});
@@ -174,18 +178,20 @@ public class DialogoPregunta extends JDialog {
 					
 					// Check1 > Mostrar
 					lblImgCheck1.setVisible(true); 
-					// Respuesta2 > icon rojo
-					btnRespuesta2.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Rojo.png"))); 
-					// Respuesta2 > texto blanco
-					btnRespuesta2.setForeground(Color.WHITE);
+					// Botones Respuesta 1, 2, 3 > ocultar
+					btnRespuesta1.setVisible(false);
+					btnRespuesta2.setVisible(false);
+					btnRespuesta3.setVisible(false);
+					//Labels Respuesta 1, 2, 3 > mostrar
+					lblRespuesta2.setForeground(Color.WHITE);
+					lblRespuesta2.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Rojo.png")));
+					lblRespuesta1.setVisible(true);
+					lblRespuesta2.setVisible(true);
+					lblRespuesta3.setVisible(true);
 					// Bot�n Continuar > Texto Correcta
 					btnContinuar.setText("Incorrecta > Continuar");
 					// Bot�n Continuar > Mostrar
 					btnContinuar.setVisible(true);
-					// Respuesta1, 2 y 3 > Deshabilitar botones
-					btnRespuesta1.setRolloverEnabled(false);
-					btnRespuesta2.setRolloverEnabled(false);
-					btnRespuesta3.setRolloverEnabled(false);
 					
 				}
 			});
@@ -213,22 +219,24 @@ public class DialogoPregunta extends JDialog {
 			btnRespuesta3.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					
-					// Acci�n al pulsar la Respuesta1
+					// Acci�n al pulsar la Respuesta3
 					
 					// Check1 > Mostrar
 					lblImgCheck1.setVisible(true); 
-					// Respuesta3 > icon rojo
-					btnRespuesta3.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Rojo.png"))); 
-					// Respuesta3 > texto blanco
-					btnRespuesta3.setForeground(Color.WHITE);
+					// Botones Respuesta 1, 2, 3 > ocultar
+					btnRespuesta1.setVisible(false);
+					btnRespuesta2.setVisible(false);
+					btnRespuesta3.setVisible(false);
+					//Labels Respuesta 1, 2, 3 > mostrar
+					lblRespuesta3.setForeground(Color.WHITE);
+					lblRespuesta3.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Rojo.png")));
+					lblRespuesta1.setVisible(true);
+					lblRespuesta2.setVisible(true);
+					lblRespuesta3.setVisible(true);
 					// Bot�n Continuar > Texto Correcta
 					btnContinuar.setText("Incorrecta > Continuar");
 					// Bot�n Continuar > Mostrar
 					btnContinuar.setVisible(true);
-					// Respuesta1, 2 y 3 > Deshabilitar botones
-					btnRespuesta1.setRolloverEnabled(false);
-					btnRespuesta2.setRolloverEnabled(false);
-					btnRespuesta3.setRolloverEnabled(false);
 					
 				}
 			});
@@ -313,5 +321,44 @@ public class DialogoPregunta extends JDialog {
 			lblImgQuesito.setBounds(346, 337, 60, 66);
 		}
 		return lblImgQuesito;
+	}
+	private JLabel getLblRespuesta1() {
+		if (lblRespuesta1 == null) {
+			lblRespuesta1 = new JLabel("Caballito de mar");
+			lblRespuesta1.setVisible(false);
+			lblRespuesta1.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Blanco.png")));
+			lblRespuesta1.setHorizontalTextPosition(SwingConstants.CENTER);
+			lblRespuesta1.setForeground(Color.BLACK);
+			lblRespuesta1.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+			lblRespuesta1.setBorder(new EmptyBorder(0, 0, 0, 0));
+			lblRespuesta1.setBounds(110, 152, 267, 43);
+		}
+		return lblRespuesta1;
+	}
+	private JLabel getLblRespuesta2() {
+		if (lblRespuesta2 == null) {
+			lblRespuesta2 = new JLabel("Estrella de mar");
+			lblRespuesta2.setVisible(false);
+			lblRespuesta2.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Blanco.png")));
+			lblRespuesta2.setHorizontalTextPosition(SwingConstants.CENTER);
+			lblRespuesta2.setForeground(Color.BLACK);
+			lblRespuesta2.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+			lblRespuesta2.setBorder(new EmptyBorder(0, 0, 0, 0));
+			lblRespuesta2.setBounds(110, 216, 267, 43);
+		}
+		return lblRespuesta2;
+	}
+	private JLabel getLblRespuesta3() {
+		if (lblRespuesta3 == null) {
+			lblRespuesta3 = new JLabel("Calamar");
+			lblRespuesta3.setVisible(false);
+			lblRespuesta3.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Blanco.png")));
+			lblRespuesta3.setHorizontalTextPosition(SwingConstants.CENTER);
+			lblRespuesta3.setForeground(Color.BLACK);
+			lblRespuesta3.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+			lblRespuesta3.setBorder(new EmptyBorder(0, 0, 0, 0));
+			lblRespuesta3.setBounds(110, 280, 267, 43);
+		}
+		return lblRespuesta3;
 	}
 }
