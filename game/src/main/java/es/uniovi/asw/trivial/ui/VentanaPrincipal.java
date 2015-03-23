@@ -513,7 +513,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblQuesoRo() {
 		if (lblQuesoRo == null) {
 			lblQuesoRo = new JLabel("");
-			lblQuesoRo.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaRo.png")));
+			lblQuesoRo.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaRo_00_00_Az_Am.png")));
 			lblQuesoRo.setSize(new Dimension(221, 43));
 			lblQuesoRo.setRequestFocusEnabled(false);
 			lblQuesoRo.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -530,7 +530,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblQuesoVe() {
 		if (lblQuesoVe == null) {
 			lblQuesoVe = new JLabel("");
-			lblQuesoVe.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaVe.png")));
+			lblQuesoVe.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaVe_Ro_Ve_00_00.png")));
 			lblQuesoVe.setSize(new Dimension(221, 43));
 			lblQuesoVe.setRequestFocusEnabled(false);
 			lblQuesoVe.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -547,7 +547,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblQuesoAm() {
 		if (lblQuesoAm == null) {
 			lblQuesoAm = new JLabel("");
-			lblQuesoAm.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaAm.png")));
+			lblQuesoAm.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaAm_Ro_Ve_00_Am.png")));
 			lblQuesoAm.setSize(new Dimension(221, 43));
 			lblQuesoAm.setRequestFocusEnabled(false);
 			lblQuesoAm.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -564,7 +564,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblQuesoAz() {
 		if (lblQuesoAz == null) {
 			lblQuesoAz = new JLabel("");
-			lblQuesoAz.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaAz.png")));
+			lblQuesoAz.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaAz_00_Ve_00_00.png")));
 			lblQuesoAz.setSize(new Dimension(221, 43));
 			lblQuesoAz.setRequestFocusEnabled(false);
 			lblQuesoAz.setHorizontalTextPosition(SwingConstants.CENTER);
