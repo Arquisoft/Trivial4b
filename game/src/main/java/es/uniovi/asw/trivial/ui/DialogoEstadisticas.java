@@ -1,19 +1,18 @@
 package es.uniovi.asw.trivial.ui;
 
-import java.awt.EventQueue;
-
-import javax.swing.JDialog;
-
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Toolkit;
+
+import javax.swing.JDialog;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 public class DialogoEstadisticas extends JDialog {

@@ -1,23 +1,20 @@
 package es.uniovi.asw.trivial.ui;
 
-import javax.swing.JDialog;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.Rectangle;
 import java.awt.Dimension;
-import java.awt.Toolkit;
-
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-
 import java.awt.Font;
-
+import java.awt.Rectangle;
 import java.awt.SystemColor;
+import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import javax.swing.ImageIcon;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 public class DialogoAcercade extends JDialog {
 
