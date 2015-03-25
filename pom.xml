@@ -68,7 +68,12 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.5.2</version>
+				<configuration>
+					<formats>
+						<format>html</format>
+					</formats>
+				</configuration>
+				<version>2.7</version>
 			</plugin>
 
 			<plugin>
@@ -106,7 +111,7 @@
 		</developer>
 		<developer>
 			<id>pedromenendez93</id>
-			<name>Pedro Menéndez Piera</name>
+			<name>Pedro MenÃ©ndez Piera</name>
 			<email> @uniovi.es</email>
 			<organization>University of Oviedo</organization>
 			<organizationUrl>http://www.uniovi.es</organizationUrl>
@@ -118,7 +123,7 @@
 		</developer>
 		<developer>
 			<id>SergioRodriguez7</id>
-			<name>Sergio Rodríguez Pérez</name>
+			<name>Sergio RodrÃ­guez PÃ©rez</name>
 			<email> uo219496@uniovi.es</email>
 			<organization>University of Oviedo</organization>
 			<organizationUrl>http://www.uniovi.es</organizationUrl>
@@ -130,7 +135,7 @@
 		</developer>
 		<developer>
 			<id>angelasuarez</id>
-			<name>�?ngela Suárez Alonso</name>
+			<name>Ã?ngela SuÃ¡rez Alonso</name>
 			<email> @uniovi.es</email>
 			<organization>University of Oviedo</organization>
 			<organizationUrl>http://www.uniovi.es</organizationUrl>
@@ -142,7 +147,7 @@
 		</developer>
 		<developer>
 			<id>asgnmmo</id>
-			<name>Andrés Sampedro Gimeno</name>
+			<name>AndrÃ©s Sampedro Gimeno</name>
 			<email>labra@uniovi.es</email>
 			<organization>University of Oviedo</organization>
 			<organizationUrl>http://www.uniovi.es</organizationUrl>
@@ -166,7 +171,7 @@
 		</developer>
 		<developer>
 			<id>Joaquingm</id>
-			<name>Joaquín García Muñiz</name>
+			<name>JoaquÃ­n GarcÃ­a MuÃ±iz</name>
 			<email>uo205060@uniovi.es</email>
 			<organization>University of Oviedo</organization>
 			<organizationUrl>http://www.uniovi.es</organizationUrl>
@@ -178,7 +183,7 @@
 		</developer>
 		<developer>
 			<id>segius02</id>
-			<name>Sergio Fernández Celorio</name>
+			<name>Sergio FernÃ¡ndez Celorio</name>
 			<email> @uniovi.es</email>
 			<organization>University of Oviedo</organization>
 			<organizationUrl>http://www.uniovi.es</organizationUrl>
