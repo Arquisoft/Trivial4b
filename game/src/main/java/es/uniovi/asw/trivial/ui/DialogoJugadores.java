@@ -126,6 +126,10 @@ public class DialogoJugadores extends JDialog {
 			btnComenzar2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 //					((CardLayout)pnContenido.getLayout()).show(pnContenido,"name_9358627801380");
+					if (!txtJug1Nombre.getText().equals(" ")) {
+						//Crear usuario1 en la base de datos, crear usuario1 en memoria.
+					}
+					
 				}
 			});
 			btnComenzar2.setRequestFocusEnabled(false);

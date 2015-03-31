@@ -7,6 +7,7 @@ import es.uniovi.asw.trivial.db.DBManager;
 import es.uniovi.asw.trivial.game.Trivial;
 import es.uniovi.asw.trivial.model.pregunta.Pregunta;
 import es.uniovi.asw.trivial.model.pregunta.PreguntaComparator;
+import es.uniovi.asw.trivial.ui.VentanaPrincipal;
 
 public class Main {
 
@@ -37,6 +38,9 @@ public class Main {
 
 		// Se debe inicializar el tablero
 		Trivial trivial = new Trivial(listaPreguntas);
+		VentanaPrincipal vInicio = new VentanaPrincipal();
+		vInicio.setVisible(true);
+		
 
 		// Cuando este inicializado se deben crear los objetos Jugador y se
 		// deben "colocar" en el tablero en la posicion de salida

@@ -405,6 +405,12 @@ public class VentanaPrincipal extends JFrame {
 					
 					// Mostrar Panel principal con tablero
 					((CardLayout)pnContenido.getLayout()).show(pnContenido,"name_9358627801380");
+					
+					// Pedir número de usuarios antes de empezar.
+					DialogoJugadores frame = new DialogoJugadores(); 
+					frame.setLocationRelativeTo(null); 
+					frame.setVisible(true);
+					frame.setModalityType(DialogoJugadores.ModalityType.APPLICATION_MODAL);
 
 				}
 			});
