@@ -49,6 +49,9 @@ public class AppTest
 	}
 	
 	
+	/*
+	 * Cargar preguntas en local.
+	 * 
 	public void testPreguntas() {
 		DBManager dbManager = new DBManager();
 		List<Pregunta> preguntas = dbManager.cargarPreguntasRemoto();
@@ -77,7 +80,7 @@ public class AppTest
 
 	}
 	
-	
+	*/
 	
 	
     /**
