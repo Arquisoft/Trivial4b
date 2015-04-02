@@ -26,4 +26,5 @@ local.properties
 *.DS_Store
 *.json
 *.mongouser
+app.log
 
