@@ -11,7 +11,7 @@ public class JustLoadHibernate {
 		// se analizen todos los mapeos y si procede se crea la BDD
 		
 		EntityManagerFactory emf =
-            Persistence.createEntityManagerFactory("carworkshop");
+            Persistence.createEntityManagerFactory("trivial4b");
 		
 		emf.close();
 		

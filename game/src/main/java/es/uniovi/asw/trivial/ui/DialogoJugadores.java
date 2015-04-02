@@ -9,6 +9,7 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
@@ -21,6 +22,10 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import es.uniovi.asw.trivial.db.impl.local.persistencia.consultas.PersistenceFactory;
+import es.uniovi.asw.trivial.db.impl.local.persistencia.consultas.impl.SimplePersistenceFactory;
+import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Usuario;
 
 public class DialogoJugadores extends JDialog {
 
@@ -56,6 +61,8 @@ public class DialogoJugadores extends JDialog {
 	private JLabel lblJug2Contras;
 	private JLabel lblJug3Contras;
 	private JLabel lblJug4Contras;
+	private String[] nicks;
+	
 
 	/**
 	 * Launch the application.
@@ -68,12 +75,21 @@ public class DialogoJugadores extends JDialog {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		
 	}
 
 	/**
 	 * Create the dialog.
 	 */
 	public DialogoJugadores() {
+		PersistenceFactory pf = new SimplePersistenceFactory();
+		List<Usuario> usuarios = pf.createUsuarioFinder().findAll();
+		nicks = new String[usuarios.size()];
+		for (int i = 0; i < usuarios.size(); i++) {
+			nicks[i] = usuarios.get(i).getUsuario();
+		}
+				
 		setResizable(false);
 		setModalityType(ModalityType.APPLICATION_MODAL);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DialogoJugadores.class.getResource("/img/ico_32x32_jugadores.png")));
@@ -118,6 +134,9 @@ public class DialogoJugadores extends JDialog {
 		panelPrincipal.add(getCbxJug4Nombre());
 		panelPrincipal.add(getLblJug4Contras());
 		panelPrincipal.add(getPswJug4());
+		
+		
+				
 	}
 	private JButton getBtnComenzar2() {
 		if (btnComenzar2 == null) {
@@ -126,10 +145,9 @@ public class DialogoJugadores extends JDialog {
 			btnComenzar2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 //					((CardLayout)pnContenido.getLayout()).show(pnContenido,"name_9358627801380");
-					if (!txtJug1Nombre.getText().equals(" ")) {
-						//Crear usuario1 en la base de datos, crear usuario1 en memoria.
+					if (!txtJug1Nombre.getText().equals("")) {
+						//Crear usuario1 en la base de datos, crear usuario1 en memoria.						
 					}
-					
 				}
 			});
 			btnComenzar2.setRequestFocusEnabled(false);
@@ -300,7 +318,7 @@ public class DialogoJugadores extends JDialog {
 		if (cbxJug1Nombre == null) {
 			cbxJug1Nombre = new JComboBox<String>();
 			cbxJug1Nombre.setBorder(null);
-			cbxJug1Nombre.setModel(new DefaultComboBoxModel<String>(new String[] {"seleccionar", "NombreJugador1", "NombreJugador2"}));
+			cbxJug1Nombre.setModel(new DefaultComboBoxModel<String>(nicks));
 			cbxJug1Nombre.setBackground(Color.WHITE);
 			cbxJug1Nombre.setFont(new Font("Arial", Font.PLAIN, 17));
 			cbxJug1Nombre.setBounds(272, 55, 150, 29);
@@ -310,7 +328,7 @@ public class DialogoJugadores extends JDialog {
 	private JComboBox<String> getCbxJug2Nombre() {
 		if (cbxJug2Nombre == null) {
 			cbxJug2Nombre = new JComboBox<String>();
-			cbxJug2Nombre.setModel(new DefaultComboBoxModel<String>(new String[] {"seleccionar", "NombreJugador1", "NombreJugador2"}));
+			cbxJug2Nombre.setModel(new DefaultComboBoxModel<String>(nicks));
 			cbxJug2Nombre.setFont(new Font("Arial", Font.PLAIN, 17));
 			cbxJug2Nombre.setBorder(null);
 			cbxJug2Nombre.setBackground(Color.WHITE);
@@ -321,7 +339,7 @@ public class DialogoJugadores extends JDialog {
 	private JComboBox<String> getCbxJug3Nombre() {
 		if (cbxJug3Nombre == null) {
 			cbxJug3Nombre = new JComboBox<String>();
-			cbxJug3Nombre.setModel(new DefaultComboBoxModel<String>(new String[] {"seleccionar", "NombreJugador1", "NombreJugador2"}));
+			cbxJug3Nombre.setModel(new DefaultComboBoxModel<String>(nicks));
 			cbxJug3Nombre.setFont(new Font("Arial", Font.PLAIN, 17));
 			cbxJug3Nombre.setBorder(null);
 			cbxJug3Nombre.setBackground(Color.WHITE);
@@ -332,7 +350,7 @@ public class DialogoJugadores extends JDialog {
 	private JComboBox<String> getCbxJug4Nombre() {
 		if (cbxJug4Nombre == null) {
 			cbxJug4Nombre = new JComboBox<String>();
-			cbxJug4Nombre.setModel(new DefaultComboBoxModel<String>(new String[] {"seleccionar", "NombreJugador1", "NombreJugador2"}));
+			cbxJug4Nombre.setModel(new DefaultComboBoxModel<String>(nicks));
 			cbxJug4Nombre.setFont(new Font("Arial", Font.PLAIN, 17));
 			cbxJug4Nombre.setBorder(null);
 			cbxJug4Nombre.setBackground(Color.WHITE);

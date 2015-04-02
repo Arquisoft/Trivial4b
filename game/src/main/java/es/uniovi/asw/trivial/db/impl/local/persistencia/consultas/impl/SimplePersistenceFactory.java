@@ -13,5 +13,6 @@ public class SimplePersistenceFactory implements PersistenceFactory {
 	public PartidaFinder createPartidaFinder() {
 		return new PartidaFinderImpl();
 	}
-
+	
+	
 }

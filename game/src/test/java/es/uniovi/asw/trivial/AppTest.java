@@ -49,15 +49,12 @@ public class AppTest
 	}
 	
 	
-	/*
-	 * Cargar preguntas en local.
-	 * 
+
 	public void testPreguntas() {
 		DBManager dbManager = new DBManager();
-		List<Pregunta> preguntas = dbManager.cargarPreguntasRemoto();
-		
+		List<Pregunta> preguntas = dbManager.cargarPreguntasRemoto();	
 		assert(PreguntaComparator.comparatorCategoria.compare(preguntas.get(0), preguntas.get(1)) == 0);
-		assert(preguntas.get(0).getCategoria().equals(preguntas.get(1)));
+		assert(preguntas.get(0).getCategoria().equals(preguntas.get(1).getCategoria()));
 	}
 	
 	
@@ -80,7 +77,6 @@ public class AppTest
 
 	}
 	
-	*/
 	
 	
     /**

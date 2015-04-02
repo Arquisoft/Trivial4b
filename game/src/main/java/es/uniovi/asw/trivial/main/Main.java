@@ -2,6 +2,10 @@ package es.uniovi.asw.trivial.main;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Properties;
+
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.PropertyConfigurator;
 
 import es.uniovi.asw.trivial.db.DBManager;
 import es.uniovi.asw.trivial.game.Trivial;
@@ -13,6 +17,16 @@ public class Main {
 
 	public static void main(String[] args) {
 		new Main().run();
+		/*
+		Properties props = new Properties();
+        props.setProperty("log4j.rootLogger", "DEBUG, R");
+        props.setProperty("log4j.appender.R.layout", "org.apache.log4j.PatternLayout");
+        props.setProperty("log4j.appender.R.layout.ConversionPattern", "%p-> %m%n");
+        props.setProperty("log4j.appender.R", "org.apache.log4j.FileAppender");
+        props.setProperty("log4j.appender.R.File", "app.log");
+        PropertyConfigurator.configure(props);
+        */
+		//BasicConfigurator.configure();
 	}
 
 	public void run() {
