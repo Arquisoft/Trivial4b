@@ -25,6 +25,6 @@ local.properties
 .texlipse
 *.DS_Store
 *.json
-*.mongouser
+user.mongouser
 app.log
 
