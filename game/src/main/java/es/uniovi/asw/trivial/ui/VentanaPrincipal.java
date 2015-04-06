@@ -2034,6 +2034,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_04() {
 		if (lblCasilla_04 == null) {
 			lblCasilla_04 = new JLabel("");
+			lblCasilla_04.setVisible(false);
 			lblCasilla_04.setBounds(382, 62, 55, 55);
 		}
 		return lblCasilla_04;
@@ -2041,6 +2042,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_05() {
 		if (lblCasilla_05 == null) {
 			lblCasilla_05 = new JLabel("");
+			lblCasilla_05.setVisible(false);
 			lblCasilla_05.setBounds(445, 62, 55, 55);
 		}
 		return lblCasilla_05;
@@ -2048,6 +2050,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_06() {
 		if (lblCasilla_06 == null) {
 			lblCasilla_06 = new JLabel("");
+			lblCasilla_06.setVisible(false);
 			lblCasilla_06.setBounds(508, 62, 55, 55);
 		}
 		return lblCasilla_06;
@@ -2055,6 +2058,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_07() {
 		if (lblCasilla_07 == null) {
 			lblCasilla_07 = new JLabel("");
+			lblCasilla_07.setVisible(false);
 			lblCasilla_07.setBounds(571, 62, 55, 55);
 		}
 		return lblCasilla_07;
@@ -2062,6 +2066,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_09() {
 		if (lblCasilla_09 == null) {
 			lblCasilla_09 = new JLabel("");
+			lblCasilla_09.setVisible(false);
 			lblCasilla_09.setBounds(697, 62, 55, 55);
 		}
 		return lblCasilla_09;
@@ -2069,6 +2074,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_10() {
 		if (lblCasilla_10 == null) {
 			lblCasilla_10 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_10.setBounds(760, 62, 55, 55);
 		}
 		return lblCasilla_10;
@@ -2076,6 +2082,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_38() {
 		if (lblCasilla_38 == null) {
 			lblCasilla_38 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_38.setBounds(823, 314, 55, 55);
 		}
 		return lblCasilla_38;
@@ -2083,6 +2090,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_39() {
 		if (lblCasilla_39 == null) {
 			lblCasilla_39 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_39.setBounds(760, 314, 55, 55);
 		}
 		return lblCasilla_39;
@@ -2090,6 +2098,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_32() {
 		if (lblCasilla_32 == null) {
 			lblCasilla_32 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_32.setBounds(445, 314, 55, 55);
 		}
 		return lblCasilla_32;
@@ -2097,6 +2106,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_41() {
 		if (lblCasilla_41 == null) {
 			lblCasilla_41 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_41.setBounds(634, 503, 55, 55);
 		}
 		return lblCasilla_41;
@@ -2104,6 +2114,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_42() {
 		if (lblCasilla_42 == null) {
 			lblCasilla_42 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_42.setBounds(634, 440, 55, 55);
 		}
 		return lblCasilla_42;
@@ -2111,6 +2122,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_43() {
 		if (lblCasilla_43 == null) {
 			lblCasilla_43 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_43.setBounds(634, 377, 55, 55);
 		}
 		return lblCasilla_43;
@@ -2118,6 +2130,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_44() {
 		if (lblCasilla_44 == null) {
 			lblCasilla_44 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_44.setBounds(634, 314, 55, 55);
 		}
 		return lblCasilla_44;
@@ -2125,6 +2138,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_37() {
 		if (lblCasilla_37 == null) {
 			lblCasilla_37 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_37.setBounds(634, 251, 55, 55);
 		}
 		return lblCasilla_37;
@@ -2132,6 +2146,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_35() {
 		if (lblCasilla_35 == null) {
 			lblCasilla_35 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_35.setBounds(634, 125, 55, 55);
 		}
 		return lblCasilla_35;
@@ -2139,6 +2154,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_03() {
 		if (lblCasilla_03 == null) {
 			lblCasilla_03 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_03.setBounds(382, 125, 55, 55);
 		}
 		return lblCasilla_03;
@@ -2146,6 +2162,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_01() {
 		if (lblCasilla_01 == null) {
 			lblCasilla_01 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_01.setBounds(382, 251, 55, 55);
 		}
 		return lblCasilla_01;
@@ -2153,6 +2170,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_00() {
 		if (lblCasilla_00 == null) {
 			lblCasilla_00 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_00.setBounds(382, 314, 55, 55);
 		}
 		return lblCasilla_00;
@@ -2160,6 +2178,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_31() {
 		if (lblCasilla_31 == null) {
 			lblCasilla_31 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_31.setBounds(382, 377, 55, 55);
 		}
 		return lblCasilla_31;
@@ -2167,6 +2186,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_29() {
 		if (lblCasilla_29 == null) {
 			lblCasilla_29 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_29.setBounds(382, 503, 55, 55);
 		}
 		return lblCasilla_29;
@@ -2174,6 +2194,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_28() {
 		if (lblCasilla_28 == null) {
 			lblCasilla_28 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_28.setBounds(382, 566, 55, 55);
 		}
 		return lblCasilla_28;
@@ -2181,6 +2202,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_27() {
 		if (lblCasilla_27 == null) {
 			lblCasilla_27 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_27.setBounds(445, 566, 55, 55);
 		}
 		return lblCasilla_27;
@@ -2188,6 +2210,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_26() {
 		if (lblCasilla_26 == null) {
 			lblCasilla_26 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_26.setBounds(508, 566, 55, 55);
 		}
 		return lblCasilla_26;
@@ -2195,6 +2218,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_25() {
 		if (lblCasilla_25 == null) {
 			lblCasilla_25 = new JLabel("");
+			lblCasilla_10.setVisible(false);
 			lblCasilla_25.setBounds(571, 566, 55, 55);
 		}
 		return lblCasilla_25;
@@ -2202,6 +2226,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_23() {
 		if (lblCasilla_23 == null) {
 			lblCasilla_23 = new JLabel("");
+			lblCasilla_23.setVisible(false);
 			lblCasilla_23.setBounds(697, 566, 55, 55);
 		}
 		return lblCasilla_23;
@@ -2209,6 +2234,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_22() {
 		if (lblCasilla_22 == null) {
 			lblCasilla_22 = new JLabel("");
+			lblCasilla_22.setVisible(false);
 			lblCasilla_22.setBounds(760, 566, 55, 55);
 		}
 		return lblCasilla_22;
@@ -2216,6 +2242,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_21() {
 		if (lblCasilla_21 == null) {
 			lblCasilla_21 = new JLabel("");
+			lblCasilla_21.setVisible(false);
 			lblCasilla_21.setBounds(823, 566, 55, 55);
 		}
 		return lblCasilla_21;
@@ -2223,6 +2250,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_20() {
 		if (lblCasilla_20 == null) {
 			lblCasilla_20 = new JLabel("");
+			lblCasilla_20.setVisible(false);
 			lblCasilla_20.setBounds(886, 566, 55, 55);
 		}
 		return lblCasilla_20;
@@ -2230,6 +2258,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_19() {
 		if (lblCasilla_19 == null) {
 			lblCasilla_19 = new JLabel("");
+			lblCasilla_19.setVisible(false);
 			lblCasilla_19.setBounds(886, 503, 55, 55);
 		}
 		return lblCasilla_19;
@@ -2237,6 +2266,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_18() {
 		if (lblCasilla_18 == null) {
 			lblCasilla_18 = new JLabel("");
+			lblCasilla_18.setVisible(false);
 			lblCasilla_18.setBounds(884, 440, 55, 55);
 		}
 		return lblCasilla_18;
@@ -2244,6 +2274,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_17() {
 		if (lblCasilla_17 == null) {
 			lblCasilla_17 = new JLabel("");
+			lblCasilla_17.setVisible(false);
 			lblCasilla_17.setBounds(886, 377, 55, 55);
 		}
 		return lblCasilla_17;
@@ -2251,6 +2282,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_15() {
 		if (lblCasilla_15 == null) {
 			lblCasilla_15 = new JLabel("");
+			lblCasilla_15.setVisible(false);
 			lblCasilla_15.setBounds(886, 251, 55, 55);
 		}
 		return lblCasilla_15;
@@ -2258,6 +2290,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_14() {
 		if (lblCasilla_14 == null) {
 			lblCasilla_14 = new JLabel("");
+			lblCasilla_14.setVisible(false);
 			lblCasilla_14.setBounds(886, 188, 55, 55);
 		}
 		return lblCasilla_14;
@@ -2265,6 +2298,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_13() {
 		if (lblCasilla_13 == null) {
 			lblCasilla_13 = new JLabel("");
+			lblCasilla_13.setVisible(false);
 			lblCasilla_13.setBounds(886, 125, 55, 55);
 		}
 		return lblCasilla_13;
@@ -2272,6 +2306,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_12() {
 		if (lblCasilla_12 == null) {
 			lblCasilla_12 = new JLabel("");
+			lblCasilla_12.setVisible(false);
 			lblCasilla_12.setBounds(886, 62, 55, 55);
 		}
 		return lblCasilla_12;
@@ -2279,6 +2314,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblCasilla_11() {
 		if (lblCasilla_11 == null) {
 			lblCasilla_11 = new JLabel("");
+			lblCasilla_11.setVisible(false);
 			lblCasilla_11.setBounds(823, 62, 55, 55);
 		}
 		return lblCasilla_11;
