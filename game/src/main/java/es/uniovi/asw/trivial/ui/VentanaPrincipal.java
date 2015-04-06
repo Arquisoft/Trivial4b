@@ -121,6 +121,54 @@ public class VentanaPrincipal extends JFrame {
 	private JButton btnCasilla_39;
 	private JButton btnCasilla_38;
 	private JMenuItem mntmNewMenuItem_8;
+	private JMenuItem mntmNewMenuItem_5;
+	private JMenuItem mntmNewMenuItem_7;
+	private JMenuItem mntmNewMenuItem_9;
+	private JLabel lblCasilla_33;
+	private JLabel lblCasilla_34;
+	private JLabel lblCasilla_02;
+	private JLabel lblCasilla_30;
+	private JLabel lblCasilla_16;
+	private JLabel lblCasilla_08;
+	private JLabel lblCasilla_24;
+	private JLabel lblCasilla_36;
+	private JLabel lblCasilla_40;
+	private JLabel lblCasilla_04;
+	private JLabel lblCasilla_05;
+	private JLabel lblCasilla_06;
+	private JLabel lblCasilla_07;
+	private JLabel lblCasilla_09;
+	private JLabel lblCasilla_10;
+	private JLabel lblCasilla_38;
+	private JLabel lblCasilla_39;
+	private JLabel lblCasilla_32;
+	private JLabel lblCasilla_41;
+	private JLabel lblCasilla_42;
+	private JLabel lblCasilla_43;
+	private JLabel lblCasilla_44;
+	private JLabel lblCasilla_37;
+	private JLabel lblCasilla_35;
+	private JLabel lblCasilla_03;
+	private JLabel lblCasilla_01;
+	private JLabel lblCasilla_00;
+	private JLabel lblCasilla_31;
+	private JLabel lblCasilla_29;
+	private JLabel lblCasilla_28;
+	private JLabel lblCasilla_27;
+	private JLabel lblCasilla_26;
+	private JLabel lblCasilla_25;
+	private JLabel lblCasilla_23;
+	private JLabel lblCasilla_22;
+	private JLabel lblCasilla_21;
+	private JLabel lblCasilla_20;
+	private JLabel lblCasilla_19;
+	private JLabel lblCasilla_18;
+	private JLabel lblCasilla_17;
+	private JLabel lblCasilla_15;
+	private JLabel lblCasilla_14;
+	private JLabel lblCasilla_13;
+	private JLabel lblCasilla_12;
+	private JLabel lblCasilla_11;
 
 	/**
 	 * Launch the application.
@@ -349,50 +397,95 @@ public class VentanaPrincipal extends JFrame {
 			panel1.add(getLblJugador4Off());
 			panel1.add(getLblQuesoAz());
 			panel1.add(getLblJugador4());
+			panel1.add(getLblCasilla_04());
 			panel1.add(getBtnCasilla_04());
+			panel1.add(getLblCasilla_05());
 			panel1.add(getBtnCasilla_05());
+			panel1.add(getLblCasilla_06());
 			panel1.add(getBtnCasilla_06());
+			panel1.add(getLblCasilla_07());
 			panel1.add(getBtnCasilla_07());
+			panel1.add(getLblCasilla_08());
 			panel1.add(getBtnCasilla_08());
+			panel1.add(getLblCasilla_09());
 			panel1.add(getBtnCasilla_09());
+			panel1.add(getLblCasilla_10());
 			panel1.add(getBtnCasilla_10());
+			panel1.add(getLblCasilla_11());
 			panel1.add(getBtnCasilla_11());
+			panel1.add(getLblCasilla_12());
 			panel1.add(getBtnCasilla_12());
+			panel1.add(getLblCasilla_13());
 			panel1.add(getBtnCasilla_13());
+			panel1.add(getLblCasilla_14());
 			panel1.add(getBtnCasilla_14());
+			panel1.add(getLblCasilla_15());
 			panel1.add(getBtnCasilla_15());
+			panel1.add(getLblCasilla_16());
 			panel1.add(getBtnCasilla_16());
+			panel1.add(getLblCasilla_17());
 			panel1.add(getBtnCasilla_17());
+			panel1.add(getLblCasilla_18());
 			panel1.add(getBtnCasilla_18());
+			panel1.add(getLblCasilla_19());
 			panel1.add(getBtnCasilla_19());
+			panel1.add(getLblCasilla_20());
 			panel1.add(getBtnCasilla_20());
+			panel1.add(getLblCasilla_21());
 			panel1.add(getBtnCasilla_21());
+			panel1.add(getLblCasilla_22());
 			panel1.add(getBtnCasilla_22());
+			panel1.add(getLblCasilla_23());
 			panel1.add(getBtnCasilla_23());
+			panel1.add(getLblCasilla_24());
 			panel1.add(getBtnCasilla_24());
+			panel1.add(getLblCasilla_25());
 			panel1.add(getBtnCasilla_25());
+			panel1.add(getLblCasilla_26());
 			panel1.add(getBtnCasilla_26());
+			panel1.add(getLblCasilla_27());
 			panel1.add(getBtnCasilla_27());
+			panel1.add(getLblCasilla_28());
 			panel1.add(getBtnCasilla_28());
+			panel1.add(getLblCasilla_29());
 			panel1.add(getBtnCasilla_29());
+			panel1.add(getLblCasilla_30());
 			panel1.add(getBtnCasilla_30());
+			panel1.add(getLblCasilla_31());
 			panel1.add(getBtnCasilla_31());
+			panel1.add(getLblCasilla_00());
 			panel1.add(getBtnCasilla_00());
+			panel1.add(getLblCasilla_01());
 			panel1.add(getBtnCasilla_01());
+			panel1.add(getLblCasilla_02());
 			panel1.add(getBtnCasilla_02());
+			panel1.add(getLblCasilla_03());
 			panel1.add(getBtnCasilla_03());
+			panel1.add(getLblCasilla_35());
 			panel1.add(getBtnCasilla_35());
+			panel1.add(getLblCasilla_36());
 			panel1.add(getBtnCasilla_36());
+			panel1.add(getLblCasilla_37());
 			panel1.add(getBtnCasilla_37());
+			panel1.add(getLblCasilla_44());
 			panel1.add(getBtnCasilla_44());
+			panel1.add(getLblCasilla_43());
 			panel1.add(getBtnCasilla_43());
+			panel1.add(getLblCasilla_42());
 			panel1.add(getBtnCasilla_42());
+			panel1.add(getLblCasilla_41());
 			panel1.add(getBtnCasilla_41());
+			panel1.add(getLblCasilla_32());
 			panel1.add(getBtnCasilla_32());
+			panel1.add(getLblCasilla_33());
 			panel1.add(getBtnCasilla_33());
+			panel1.add(getLblCasilla_34());
 			panel1.add(getBtnCasilla_34());
+			panel1.add(getLblCasilla_40());
 			panel1.add(getBtnCasilla_40());
+			panel1.add(getLblCasilla_39());
 			panel1.add(getBtnCasilla_39());
+			panel1.add(getLblCasilla_38());
 			panel1.add(getBtnCasilla_38());
 			panel1.add(getLblFondoPcpal());
 		}
@@ -698,6 +791,9 @@ public class VentanaPrincipal extends JFrame {
 			mnTemppruebas.setMnemonic('t');
 			mnTemppruebas.setFont(new Font("Arial", Font.PLAIN, 15));
 			mnTemppruebas.add(getMntmNewMenuItem_6());
+			mnTemppruebas.add(getMntmNewMenuItem_7());
+			mnTemppruebas.add(getMntmNewMenuItem_5());
+			mnTemppruebas.add(getMntmNewMenuItem_9());
 		}
 		return mnTemppruebas;
 	}
@@ -809,7 +905,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_04() {
 		if (btnCasilla_04 == null) {
-			btnCasilla_04 = new JButton("04");
+			btnCasilla_04 = new JButton("");
 			btnCasilla_04.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_04.setVisible(false);
 			btnCasilla_04.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -830,7 +926,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_05() {
 		if (btnCasilla_05 == null) {
-			btnCasilla_05 = new JButton("05");
+			btnCasilla_05 = new JButton("");
 			btnCasilla_05.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_05.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_05.setVisible(false);
@@ -852,7 +948,7 @@ public class VentanaPrincipal extends JFrame {
 
 	private JButton getBtnCasilla_06() {
 		if (btnCasilla_06 == null) {
-			btnCasilla_06 = new JButton("06");
+			btnCasilla_06 = new JButton("");
 			btnCasilla_06.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_06.setVisible(false);
 			btnCasilla_06.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -873,7 +969,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_07() {
 		if (btnCasilla_07 == null) {
-			btnCasilla_07 = new JButton("07");
+			btnCasilla_07 = new JButton("");
 			btnCasilla_07.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_07.setVisible(false);
 			btnCasilla_07.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -894,7 +990,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_08() {
 		if (btnCasilla_08 == null) {
-			btnCasilla_08 = new JButton("08");
+			btnCasilla_08 = new JButton("");
 			btnCasilla_08.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_08.setVisible(false);
 			btnCasilla_08.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -915,7 +1011,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_09() {
 		if (btnCasilla_09 == null) {
-			btnCasilla_09 = new JButton("09");
+			btnCasilla_09 = new JButton("");
 			btnCasilla_09.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_09.setVisible(false);
 			btnCasilla_09.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -936,7 +1032,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_10() {
 		if (btnCasilla_10 == null) {
-			btnCasilla_10 = new JButton("10");
+			btnCasilla_10 = new JButton("");
 			btnCasilla_10.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_10.setVisible(false);
 			btnCasilla_10.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -957,7 +1053,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_11() {
 		if (btnCasilla_11 == null) {
-			btnCasilla_11 = new JButton("11");
+			btnCasilla_11 = new JButton("");
 			btnCasilla_11.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_11.setVisible(false);
 			btnCasilla_11.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -978,7 +1074,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_12() {
 		if (btnCasilla_12 == null) {
-			btnCasilla_12 = new JButton("12");
+			btnCasilla_12 = new JButton("");
 			btnCasilla_12.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_12.setVisible(false);
 			btnCasilla_12.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -999,7 +1095,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_13() {
 		if (btnCasilla_13 == null) {
-			btnCasilla_13 = new JButton("13");
+			btnCasilla_13 = new JButton("");
 			btnCasilla_13.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_13.setVisible(false);
 			btnCasilla_13.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1020,7 +1116,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_14() {
 		if (btnCasilla_14 == null) {
-			btnCasilla_14 = new JButton("14");
+			btnCasilla_14 = new JButton("");
 			btnCasilla_14.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_14.setVisible(false);
 			btnCasilla_14.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1041,7 +1137,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_15() {
 		if (btnCasilla_15 == null) {
-			btnCasilla_15 = new JButton("15");
+			btnCasilla_15 = new JButton("");
 			btnCasilla_15.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_15.setVisible(false);
 			btnCasilla_15.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1062,7 +1158,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_16() {
 		if (btnCasilla_16 == null) {
-			btnCasilla_16 = new JButton("16");
+			btnCasilla_16 = new JButton("");
 			btnCasilla_16.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_16.setVisible(false);
 			btnCasilla_16.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1083,7 +1179,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_17() {
 		if (btnCasilla_17 == null) {
-			btnCasilla_17 = new JButton("17");
+			btnCasilla_17 = new JButton("");
 			btnCasilla_17.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_17.setVisible(false);
 			btnCasilla_17.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1104,7 +1200,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_18() {
 		if (btnCasilla_18 == null) {
-			btnCasilla_18 = new JButton("18");
+			btnCasilla_18 = new JButton("");
 			btnCasilla_18.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_18.setVisible(false);
 			btnCasilla_18.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1125,7 +1221,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_19() {
 		if (btnCasilla_19 == null) {
-			btnCasilla_19 = new JButton("19");
+			btnCasilla_19 = new JButton("");
 			btnCasilla_19.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_19.setVisible(false);
 			btnCasilla_19.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1146,7 +1242,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_20() {
 		if (btnCasilla_20 == null) {
-			btnCasilla_20 = new JButton("20");
+			btnCasilla_20 = new JButton("");
 			btnCasilla_20.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_20.setVisible(false);
 			btnCasilla_20.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1167,7 +1263,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_21() {
 		if (btnCasilla_21 == null) {
-			btnCasilla_21 = new JButton("21");
+			btnCasilla_21 = new JButton("");
 			btnCasilla_21.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_21.setVisible(false);
 			btnCasilla_21.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1188,7 +1284,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_22() {
 		if (btnCasilla_22 == null) {
-			btnCasilla_22 = new JButton("22");
+			btnCasilla_22 = new JButton("");
 			btnCasilla_22.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_22.setVisible(false);
 			btnCasilla_22.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1209,7 +1305,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_23() {
 		if (btnCasilla_23 == null) {
-			btnCasilla_23 = new JButton("23");
+			btnCasilla_23 = new JButton("");
 			btnCasilla_23.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_23.setVisible(false);
 			btnCasilla_23.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1230,7 +1326,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_24() {
 		if (btnCasilla_24 == null) {
-			btnCasilla_24 = new JButton("24");
+			btnCasilla_24 = new JButton("");
 			btnCasilla_24.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_24.setVisible(false);
 			btnCasilla_24.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1251,7 +1347,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_25() {
 		if (btnCasilla_25 == null) {
-			btnCasilla_25 = new JButton("25");
+			btnCasilla_25 = new JButton("");
 			btnCasilla_25.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_25.setVisible(false);
 			btnCasilla_25.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1272,7 +1368,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_26() {
 		if (btnCasilla_26 == null) {
-			btnCasilla_26 = new JButton("26");
+			btnCasilla_26 = new JButton("");
 			btnCasilla_26.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_26.setVisible(false);
 			btnCasilla_26.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1293,7 +1389,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_27() {
 		if (btnCasilla_27 == null) {
-			btnCasilla_27 = new JButton("27");
+			btnCasilla_27 = new JButton("");
 			btnCasilla_27.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_27.setVisible(false);
 			btnCasilla_27.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1314,7 +1410,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_28() {
 		if (btnCasilla_28 == null) {
-			btnCasilla_28 = new JButton("28");
+			btnCasilla_28 = new JButton("");
 			btnCasilla_28.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_28.setVisible(false);
 			btnCasilla_28.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1335,7 +1431,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_29() {
 		if (btnCasilla_29 == null) {
-			btnCasilla_29 = new JButton("29");
+			btnCasilla_29 = new JButton("");
 			btnCasilla_29.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_29.setVisible(false);
 			btnCasilla_29.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1356,7 +1452,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_30() {
 		if (btnCasilla_30 == null) {
-			btnCasilla_30 = new JButton("30");
+			btnCasilla_30 = new JButton("");
 			btnCasilla_30.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_30.setVisible(false);
 			btnCasilla_30.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1377,7 +1473,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_31() {
 		if (btnCasilla_31 == null) {
-			btnCasilla_31 = new JButton("31");
+			btnCasilla_31 = new JButton("");
 			btnCasilla_31.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_31.setVisible(false);
 			btnCasilla_31.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1398,7 +1494,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_00() {
 		if (btnCasilla_00 == null) {
-			btnCasilla_00 = new JButton("00");
+			btnCasilla_00 = new JButton("");
 			btnCasilla_00.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_00.setVisible(false);
 			btnCasilla_00.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1419,7 +1515,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_01() {
 		if (btnCasilla_01 == null) {
-			btnCasilla_01 = new JButton("01");
+			btnCasilla_01 = new JButton("");
 			btnCasilla_01.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_01.setVisible(false);
 			btnCasilla_01.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1440,7 +1536,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_02() {
 		if (btnCasilla_02 == null) {
-			btnCasilla_02 = new JButton("02");
+			btnCasilla_02 = new JButton("");
 			btnCasilla_02.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_02.setVisible(false);
 			btnCasilla_02.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1461,7 +1557,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_03() {
 		if (btnCasilla_03 == null) {
-			btnCasilla_03 = new JButton("03");
+			btnCasilla_03 = new JButton("");
 			btnCasilla_03.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_03.setVisible(false);
 			btnCasilla_03.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1482,7 +1578,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_35() {
 		if (btnCasilla_35 == null) {
-			btnCasilla_35 = new JButton("35");
+			btnCasilla_35 = new JButton("");
 			btnCasilla_35.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_35.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_35.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1503,7 +1599,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_36() {
 		if (btnCasilla_36 == null) {
-			btnCasilla_36 = new JButton("36");
+			btnCasilla_36 = new JButton("");
 			btnCasilla_36.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_36.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_36.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1524,7 +1620,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_37() {
 		if (btnCasilla_37 == null) {
-			btnCasilla_37 = new JButton("37");
+			btnCasilla_37 = new JButton("");
 			btnCasilla_37.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_37.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_37.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1545,7 +1641,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_44() {
 		if (btnCasilla_44 == null) {
-			btnCasilla_44 = new JButton("44");
+			btnCasilla_44 = new JButton("");
 			btnCasilla_44.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_44.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_44.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1566,7 +1662,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_43() {
 		if (btnCasilla_43 == null) {
-			btnCasilla_43 = new JButton("43");
+			btnCasilla_43 = new JButton("");
 			btnCasilla_43.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_43.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_43.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1587,7 +1683,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_42() {
 		if (btnCasilla_42 == null) {
-			btnCasilla_42 = new JButton("42");
+			btnCasilla_42 = new JButton("");
 			btnCasilla_42.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_42.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_42.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1608,7 +1704,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_41() {
 		if (btnCasilla_41 == null) {
-			btnCasilla_41 = new JButton("41");
+			btnCasilla_41 = new JButton("");
 			btnCasilla_41.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_41.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_41.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1629,7 +1725,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_32() {
 		if (btnCasilla_32 == null) {
-			btnCasilla_32 = new JButton("32");
+			btnCasilla_32 = new JButton("");
 			btnCasilla_32.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_32.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_32.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1650,7 +1746,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_33() {
 		if (btnCasilla_33 == null) {
-			btnCasilla_33 = new JButton("33");
+			btnCasilla_33 = new JButton("");
 			btnCasilla_33.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_33.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_33.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1671,7 +1767,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_34() {
 		if (btnCasilla_34 == null) {
-			btnCasilla_34 = new JButton("34");
+			btnCasilla_34 = new JButton("");
 			btnCasilla_34.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_34.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_34.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1692,7 +1788,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_40() {
 		if (btnCasilla_40 == null) {
-			btnCasilla_40 = new JButton("40");
+			btnCasilla_40 = new JButton("");
 			btnCasilla_40.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_40.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_40.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1713,7 +1809,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_39() {
 		if (btnCasilla_39 == null) {
-			btnCasilla_39 = new JButton("39");
+			btnCasilla_39 = new JButton("");
 			btnCasilla_39.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_39.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_39.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1734,7 +1830,7 @@ public class VentanaPrincipal extends JFrame {
 	}
 	private JButton getBtnCasilla_38() {
 		if (btnCasilla_38 == null) {
-			btnCasilla_38 = new JButton("38");
+			btnCasilla_38 = new JButton("");
 			btnCasilla_38.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_38.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_38.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1773,5 +1869,418 @@ public class VentanaPrincipal extends JFrame {
 			mntmNewMenuItem_8.setFont(new Font("Arial", Font.PLAIN, 15));
 		}
 		return mntmNewMenuItem_8;
+	}
+	private JMenuItem getMntmNewMenuItem_5() {
+		if (mntmNewMenuItem_5 == null) {
+			mntmNewMenuItem_5 = new JMenuItem("1 - Tirar dado > tirada: 4");
+			mntmNewMenuItem_5.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			mntmNewMenuItem_5.setFont(new Font("Arial", Font.PLAIN, 15));
+			mntmNewMenuItem_5.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					//Código de la acción
+					
+					//Mostrar posibles casillas destino para mover 4 (mostrar botones)
+					btnCasilla_35.setVisible(true);
+					btnCasilla_38.setVisible(true);
+					btnCasilla_41.setVisible(true);
+					btnCasilla_01.setVisible(true);
+					btnCasilla_31.setVisible(true);
+					
+					//Mostrar Dado con la tirada (4)
+					lblDadoImg.setVisible(false); //Ocultar imagen de dado
+					btnComenzar3.setVisible(false); //Ocultar botón mensaje tirar
+					lblDadoTirada.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Dado_04.png"))); //Cargar imagen con resultado de tirada
+					lblDadoTirada.setVisible(true); //Mostrar imagen con tirada de dado
+					lblMensajes.setText("elije casilla en el tablero"); //Cargar mensaje a mostrar
+					lblMensajes.setVisible(true); //Mostrar label mensajes
+					
+					
+				}
+			});
+		}
+		return mntmNewMenuItem_5;
+	}
+	private JMenuItem getMntmNewMenuItem_7() {
+		if (mntmNewMenuItem_7 == null) {
+			mntmNewMenuItem_7 = new JMenuItem("0 - Posición de partida");
+			mntmNewMenuItem_7.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			mntmNewMenuItem_7.setFont(new Font("Arial", Font.PLAIN, 15));
+			mntmNewMenuItem_7.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					
+					//Código de la acción
+					
+					//Ficha Rosa del jugador 1 en la casilla 34 (imagen en la label, label visible)
+					lblCasilla_34.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/FichaRo_00_00_Az_Am.png")));
+					lblCasilla_34.setVisible(true);
+					
+					//Ficha Verde del jugador 2 en la casilla 36 (imagen en la label, label visible)
+					lblCasilla_36.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/FichaVe_Ro_Ve_00_00.png")));
+					lblCasilla_36.setVisible(true);
+					
+					//Ficha Amarilla del jugador 3 en la casilla 02 (imagen en la label, label visible)
+					lblCasilla_02.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/FichaAm_Ro_Ve_00_Am.png")));
+					lblCasilla_02.setVisible(true);
+					
+					//Ficha Azul del jugador 4 en la casilla 40 (imagen en la label, label visible)
+					lblCasilla_40.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/FichaAz_00_Ve_00_Am.png")));
+					lblCasilla_40.setVisible(true);
+						
+				}
+			});
+		}
+		return mntmNewMenuItem_7;
+	}
+	private JMenuItem getMntmNewMenuItem_9() {
+		if (mntmNewMenuItem_9 == null) {
+			mntmNewMenuItem_9 = new JMenuItem("2 - Casilla destino > mover");
+			mntmNewMenuItem_9.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			mntmNewMenuItem_9.setFont(new Font("Arial", Font.PLAIN, 15));
+			mntmNewMenuItem_9.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					//Código de la acción
+					
+					//Mover 34 --> 38
+					lblCasilla_34.setVisible(false);
+					
+					lblCasilla_38.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/FichaRo_00_00_Az_Am.png")));
+					lblCasilla_38.setVisible(true);
+					
+					btnCasilla_35.setVisible(false);
+					btnCasilla_38.setVisible(false);
+					btnCasilla_41.setVisible(false);
+					btnCasilla_01.setVisible(false);
+					btnCasilla_31.setVisible(false);
+
+				}
+			});
+		}
+		return mntmNewMenuItem_9;
+	}
+	private JLabel getLblCasilla_33() {
+		if (lblCasilla_33 == null) {
+			lblCasilla_33 = new JLabel("");
+			lblCasilla_33.setVisible(false);
+			lblCasilla_33.setBounds(508, 314, 55, 55);
+		}
+		return lblCasilla_33;
+	}
+	private JLabel getLblCasilla_34() {
+		if (lblCasilla_34 == null) {
+			lblCasilla_34 = new JLabel("");
+			lblCasilla_34.setVisible(false);
+			lblCasilla_34.setBounds(571, 314, 55, 55);
+		}
+		return lblCasilla_34;
+	}
+	private JLabel getLblCasilla_02() {
+		if (lblCasilla_02 == null) {
+			lblCasilla_02 = new JLabel("");
+			lblCasilla_02.setVisible(false);
+			lblCasilla_02.setBounds(382, 188, 55, 55);
+		}
+		return lblCasilla_02;
+	}
+	private JLabel getLblCasilla_30() {
+		if (lblCasilla_30 == null) {
+			lblCasilla_30 = new JLabel("");
+			lblCasilla_30.setVisible(false);
+			lblCasilla_30.setBounds(382, 440, 55, 55);
+		}
+		return lblCasilla_30;
+	}
+	private JLabel getLblCasilla_16() {
+		if (lblCasilla_16 == null) {
+			lblCasilla_16 = new JLabel("");
+			lblCasilla_16.setVisible(false);
+			lblCasilla_16.setBounds(886, 314, 55, 55);
+		}
+		return lblCasilla_16;
+	}
+	private JLabel getLblCasilla_08() {
+		if (lblCasilla_08 == null) {
+			lblCasilla_08 = new JLabel("");
+			lblCasilla_08.setVisible(false);
+			lblCasilla_08.setBounds(634, 62, 55, 55);
+		}
+		return lblCasilla_08;
+	}
+	private JLabel getLblCasilla_24() {
+		if (lblCasilla_24 == null) {
+			lblCasilla_24 = new JLabel("");
+			lblCasilla_24.setVisible(false);
+			lblCasilla_24.setBounds(634, 566, 55, 55);
+		}
+		return lblCasilla_24;
+	}
+	private JLabel getLblCasilla_36() {
+		if (lblCasilla_36 == null) {
+			lblCasilla_36 = new JLabel("");
+			lblCasilla_36.setVisible(false);
+			lblCasilla_36.setBounds(634, 188, 55, 55);
+		}
+		return lblCasilla_36;
+	}
+	private JLabel getLblCasilla_40() {
+		if (lblCasilla_40 == null) {
+			lblCasilla_40 = new JLabel("");
+			lblCasilla_40.setVisible(false);
+			lblCasilla_40.setBounds(697, 314, 55, 55);
+		}
+		return lblCasilla_40;
+	}
+	private JLabel getLblCasilla_04() {
+		if (lblCasilla_04 == null) {
+			lblCasilla_04 = new JLabel("");
+			lblCasilla_04.setBounds(382, 62, 55, 55);
+		}
+		return lblCasilla_04;
+	}
+	private JLabel getLblCasilla_05() {
+		if (lblCasilla_05 == null) {
+			lblCasilla_05 = new JLabel("");
+			lblCasilla_05.setBounds(445, 62, 55, 55);
+		}
+		return lblCasilla_05;
+	}
+	private JLabel getLblCasilla_06() {
+		if (lblCasilla_06 == null) {
+			lblCasilla_06 = new JLabel("");
+			lblCasilla_06.setBounds(508, 62, 55, 55);
+		}
+		return lblCasilla_06;
+	}
+	private JLabel getLblCasilla_07() {
+		if (lblCasilla_07 == null) {
+			lblCasilla_07 = new JLabel("");
+			lblCasilla_07.setBounds(571, 62, 55, 55);
+		}
+		return lblCasilla_07;
+	}
+	private JLabel getLblCasilla_09() {
+		if (lblCasilla_09 == null) {
+			lblCasilla_09 = new JLabel("");
+			lblCasilla_09.setBounds(697, 62, 55, 55);
+		}
+		return lblCasilla_09;
+	}
+	private JLabel getLblCasilla_10() {
+		if (lblCasilla_10 == null) {
+			lblCasilla_10 = new JLabel("");
+			lblCasilla_10.setBounds(760, 62, 55, 55);
+		}
+		return lblCasilla_10;
+	}
+	private JLabel getLblCasilla_38() {
+		if (lblCasilla_38 == null) {
+			lblCasilla_38 = new JLabel("");
+			lblCasilla_38.setBounds(823, 314, 55, 55);
+		}
+		return lblCasilla_38;
+	}
+	private JLabel getLblCasilla_39() {
+		if (lblCasilla_39 == null) {
+			lblCasilla_39 = new JLabel("");
+			lblCasilla_39.setBounds(760, 314, 55, 55);
+		}
+		return lblCasilla_39;
+	}
+	private JLabel getLblCasilla_32() {
+		if (lblCasilla_32 == null) {
+			lblCasilla_32 = new JLabel("");
+			lblCasilla_32.setBounds(445, 314, 55, 55);
+		}
+		return lblCasilla_32;
+	}
+	private JLabel getLblCasilla_41() {
+		if (lblCasilla_41 == null) {
+			lblCasilla_41 = new JLabel("");
+			lblCasilla_41.setBounds(634, 503, 55, 55);
+		}
+		return lblCasilla_41;
+	}
+	private JLabel getLblCasilla_42() {
+		if (lblCasilla_42 == null) {
+			lblCasilla_42 = new JLabel("");
+			lblCasilla_42.setBounds(634, 440, 55, 55);
+		}
+		return lblCasilla_42;
+	}
+	private JLabel getLblCasilla_43() {
+		if (lblCasilla_43 == null) {
+			lblCasilla_43 = new JLabel("");
+			lblCasilla_43.setBounds(634, 377, 55, 55);
+		}
+		return lblCasilla_43;
+	}
+	private JLabel getLblCasilla_44() {
+		if (lblCasilla_44 == null) {
+			lblCasilla_44 = new JLabel("");
+			lblCasilla_44.setBounds(634, 314, 55, 55);
+		}
+		return lblCasilla_44;
+	}
+	private JLabel getLblCasilla_37() {
+		if (lblCasilla_37 == null) {
+			lblCasilla_37 = new JLabel("");
+			lblCasilla_37.setBounds(634, 251, 55, 55);
+		}
+		return lblCasilla_37;
+	}
+	private JLabel getLblCasilla_35() {
+		if (lblCasilla_35 == null) {
+			lblCasilla_35 = new JLabel("");
+			lblCasilla_35.setBounds(634, 125, 55, 55);
+		}
+		return lblCasilla_35;
+	}
+	private JLabel getLblCasilla_03() {
+		if (lblCasilla_03 == null) {
+			lblCasilla_03 = new JLabel("");
+			lblCasilla_03.setBounds(382, 125, 55, 55);
+		}
+		return lblCasilla_03;
+	}
+	private JLabel getLblCasilla_01() {
+		if (lblCasilla_01 == null) {
+			lblCasilla_01 = new JLabel("");
+			lblCasilla_01.setBounds(382, 251, 55, 55);
+		}
+		return lblCasilla_01;
+	}
+	private JLabel getLblCasilla_00() {
+		if (lblCasilla_00 == null) {
+			lblCasilla_00 = new JLabel("");
+			lblCasilla_00.setBounds(382, 314, 55, 55);
+		}
+		return lblCasilla_00;
+	}
+	private JLabel getLblCasilla_31() {
+		if (lblCasilla_31 == null) {
+			lblCasilla_31 = new JLabel("");
+			lblCasilla_31.setBounds(382, 377, 55, 55);
+		}
+		return lblCasilla_31;
+	}
+	private JLabel getLblCasilla_29() {
+		if (lblCasilla_29 == null) {
+			lblCasilla_29 = new JLabel("");
+			lblCasilla_29.setBounds(382, 503, 55, 55);
+		}
+		return lblCasilla_29;
+	}
+	private JLabel getLblCasilla_28() {
+		if (lblCasilla_28 == null) {
+			lblCasilla_28 = new JLabel("");
+			lblCasilla_28.setBounds(382, 566, 55, 55);
+		}
+		return lblCasilla_28;
+	}
+	private JLabel getLblCasilla_27() {
+		if (lblCasilla_27 == null) {
+			lblCasilla_27 = new JLabel("");
+			lblCasilla_27.setBounds(445, 566, 55, 55);
+		}
+		return lblCasilla_27;
+	}
+	private JLabel getLblCasilla_26() {
+		if (lblCasilla_26 == null) {
+			lblCasilla_26 = new JLabel("");
+			lblCasilla_26.setBounds(508, 566, 55, 55);
+		}
+		return lblCasilla_26;
+	}
+	private JLabel getLblCasilla_25() {
+		if (lblCasilla_25 == null) {
+			lblCasilla_25 = new JLabel("");
+			lblCasilla_25.setBounds(571, 566, 55, 55);
+		}
+		return lblCasilla_25;
+	}
+	private JLabel getLblCasilla_23() {
+		if (lblCasilla_23 == null) {
+			lblCasilla_23 = new JLabel("");
+			lblCasilla_23.setBounds(697, 566, 55, 55);
+		}
+		return lblCasilla_23;
+	}
+	private JLabel getLblCasilla_22() {
+		if (lblCasilla_22 == null) {
+			lblCasilla_22 = new JLabel("");
+			lblCasilla_22.setBounds(760, 566, 55, 55);
+		}
+		return lblCasilla_22;
+	}
+	private JLabel getLblCasilla_21() {
+		if (lblCasilla_21 == null) {
+			lblCasilla_21 = new JLabel("");
+			lblCasilla_21.setBounds(823, 566, 55, 55);
+		}
+		return lblCasilla_21;
+	}
+	private JLabel getLblCasilla_20() {
+		if (lblCasilla_20 == null) {
+			lblCasilla_20 = new JLabel("");
+			lblCasilla_20.setBounds(886, 566, 55, 55);
+		}
+		return lblCasilla_20;
+	}
+	private JLabel getLblCasilla_19() {
+		if (lblCasilla_19 == null) {
+			lblCasilla_19 = new JLabel("");
+			lblCasilla_19.setBounds(886, 503, 55, 55);
+		}
+		return lblCasilla_19;
+	}
+	private JLabel getLblCasilla_18() {
+		if (lblCasilla_18 == null) {
+			lblCasilla_18 = new JLabel("");
+			lblCasilla_18.setBounds(884, 440, 55, 55);
+		}
+		return lblCasilla_18;
+	}
+	private JLabel getLblCasilla_17() {
+		if (lblCasilla_17 == null) {
+			lblCasilla_17 = new JLabel("");
+			lblCasilla_17.setBounds(886, 377, 55, 55);
+		}
+		return lblCasilla_17;
+	}
+	private JLabel getLblCasilla_15() {
+		if (lblCasilla_15 == null) {
+			lblCasilla_15 = new JLabel("");
+			lblCasilla_15.setBounds(886, 251, 55, 55);
+		}
+		return lblCasilla_15;
+	}
+	private JLabel getLblCasilla_14() {
+		if (lblCasilla_14 == null) {
+			lblCasilla_14 = new JLabel("");
+			lblCasilla_14.setBounds(886, 188, 55, 55);
+		}
+		return lblCasilla_14;
+	}
+	private JLabel getLblCasilla_13() {
+		if (lblCasilla_13 == null) {
+			lblCasilla_13 = new JLabel("");
+			lblCasilla_13.setBounds(886, 125, 55, 55);
+		}
+		return lblCasilla_13;
+	}
+	private JLabel getLblCasilla_12() {
+		if (lblCasilla_12 == null) {
+			lblCasilla_12 = new JLabel("");
+			lblCasilla_12.setBounds(886, 62, 55, 55);
+		}
+		return lblCasilla_12;
+	}
+	private JLabel getLblCasilla_11() {
+		if (lblCasilla_11 == null) {
+			lblCasilla_11 = new JLabel("");
+			lblCasilla_11.setBounds(823, 62, 55, 55);
+		}
+		return lblCasilla_11;
 	}
 }
