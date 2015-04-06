@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 
@@ -22,6 +23,8 @@ public class Usuario implements Serializable{
 	private String usuario;
 	private String contrasenia;
 	private String nombre;
+	@Transient
+	private String color;
 	@OneToMany(mappedBy = "usuario")
 	protected Set<UsuariosPartida> partidas= new HashSet<UsuariosPartida>();
 
@@ -41,7 +44,8 @@ public class Usuario implements Serializable{
 		this.id = id;
 		this.usuario = usuario;
 		this.contrasenia = contrasenia;
-		this.nombre = nombre;		
+		this.nombre = nombre;
+		this.color = "";
 	}
 	
 	public Long getId() {
@@ -58,6 +62,9 @@ public class Usuario implements Serializable{
 	}
 	public void setContrasenia(String contrasenia) {
 		this.contrasenia = contrasenia;
+	}
+	public void setColor(String colorJugador) {
+		this.color = colorJugador;
 	}
 	public String getContrasenia(){
 		return contrasenia;

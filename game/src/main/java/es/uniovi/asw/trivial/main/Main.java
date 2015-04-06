@@ -52,7 +52,7 @@ public class Main {
 
 		// Se debe inicializar el tablero
 		Trivial trivial = new Trivial(listaPreguntas);
-		VentanaPrincipal vInicio = new VentanaPrincipal();
+		VentanaPrincipal vInicio = new VentanaPrincipal(trivial);
 		vInicio.setVisible(true);
 		
 

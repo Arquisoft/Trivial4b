@@ -16,12 +16,9 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
-	
+	List<Pregunta> preguntas;
 	
 	public void testCaminosGrafo() {
-		DBManager dbManager = new DBManager();
-		List<Pregunta> preguntas = dbManager.cargarPreguntasRemoto();
-		
 		Trivial t = new Trivial(preguntas);
 		Grafo g = t.getGrafoTablero();
 		assert(g.getDestinos(0, 6).contains(6));
@@ -51,8 +48,6 @@ public class AppTest
 	
 
 	public void testPreguntas() {
-		DBManager dbManager = new DBManager();
-		List<Pregunta> preguntas = dbManager.cargarPreguntasRemoto();	
 		assert(PreguntaComparator.comparatorCategoria.compare(preguntas.get(0), preguntas.get(1)) == 0);
 		assert(preguntas.get(0).getCategoria().equals(preguntas.get(1).getCategoria()));
 	}
@@ -60,9 +55,7 @@ public class AppTest
 	
 	
 	
-	public void testEstructuraPreguntas() {
-		DBManager dbManager = new DBManager();
-		List<Pregunta> preguntas = dbManager.cargarPreguntasRemoto();
+	public void testEstructuraPreguntas() {	
 		for (int i = 0; i < preguntas.size(); i++) {
 			assert(preguntas.get(0).getEnunciado().length() > 5);
 			assertNotNull(preguntas.get(i).getRespuestaCorrecta());
@@ -72,6 +65,7 @@ public class AppTest
 					respuestasCorrectas++;
 				}
 			}
+			// Comprobación que las preguntas son ÚNICA respuesta, comentar esta linea, si existen MULTIRESPUESTA.
 			assert(respuestasCorrectas == 1);
 		}
 
@@ -87,6 +81,8 @@ public class AppTest
     public AppTest( String testName )
     {
         super( testName );
+        DBManager dbManager = new DBManager();
+        preguntas = dbManager.cargarPreguntasRemoto();
     }
 
     /**

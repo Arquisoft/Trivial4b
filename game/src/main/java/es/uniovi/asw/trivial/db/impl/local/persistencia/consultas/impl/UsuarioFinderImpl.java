@@ -21,6 +21,8 @@ public class UsuarioFinderImpl implements UsuarioFinder {
 		Jpa.getManager().remove(usuario);		
 	}
 	
+	
+	
 	public List<Usuario> findAll() {
 		EntityManager em = Jpa.createEntityManager();
 		EntityTransaction trx = em.getTransaction();

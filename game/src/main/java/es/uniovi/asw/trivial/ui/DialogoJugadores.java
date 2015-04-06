@@ -1,5 +1,6 @@
 package es.uniovi.asw.trivial.ui;
 
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -9,6 +10,7 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.DefaultComboBoxModel;
@@ -17,6 +19,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -62,6 +65,12 @@ public class DialogoJugadores extends JDialog {
 	private JLabel lblJug3Contras;
 	private JLabel lblJug4Contras;
 	private String[] nicks;
+	private DialogoJugadores vJugadores;
+	private List<Usuario> usuariosBD;
+	private VentanaPrincipal vPrincipal;
+	private List<Usuario> listaJugadores;
+	private final String[] colores = {"Ro", "Ve", "Am", "Az"};
+
 	
 
 	/**
@@ -69,27 +78,35 @@ public class DialogoJugadores extends JDialog {
 	 */
 	public static void main(String[] args) {
 		try {
-			DialogoJugadores dialog = new DialogoJugadores();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
+			DialogoJugadores dialog1 = new DialogoJugadores(null);
+			dialog1.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog1.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		
 	}
+	
+	public void setDialogoJugadores(DialogoJugadores d){
+		this.vJugadores = d;
+	}
 
 	/**
 	 * Create the dialog.
+	 * @param ventanaPrincipal 
+	 * @param vJugadores 
 	 */
-	public DialogoJugadores() {
+	public DialogoJugadores(VentanaPrincipal ventanaPrincipal) {
+		this.vPrincipal = ventanaPrincipal;
+		this.listaJugadores = new ArrayList<Usuario>();
 		PersistenceFactory pf = new SimplePersistenceFactory();
-		List<Usuario> usuarios = pf.createUsuarioFinder().findAll();
-		nicks = new String[usuarios.size()];
-		for (int i = 0; i < usuarios.size(); i++) {
-			nicks[i] = usuarios.get(i).getUsuario();
-		}
-				
+		usuariosBD = pf.createUsuarioFinder().findAll();
+		nicks = new String[usuariosBD.size() + 1];
+		nicks[0] = "";
+		for (int i = 1; i < usuariosBD.size() + 1; i++) {
+			nicks[i] = usuariosBD.get(i - 1).getUsuario();
+		}	
 		setResizable(false);
 		setModalityType(ModalityType.APPLICATION_MODAL);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DialogoJugadores.class.getResource("/img/ico_32x32_jugadores.png")));
@@ -143,11 +160,164 @@ public class DialogoJugadores extends JDialog {
 			btnComenzar2 = new JButton("Comenzar");
 			btnComenzar2.setRolloverIcon(new ImageIcon(DialogoJugadores.class.getResource("/img/Mensaje_over.png")));
 			btnComenzar2.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
+				public void actionPerformed(ActionEvent arg0) {				
 //					((CardLayout)pnContenido.getLayout()).show(pnContenido,"name_9358627801380");
-					if (!txtJug1Nombre.getText().equals("")) {
-						//Crear usuario1 en la base de datos, crear usuario1 en memoria.						
+					
+					boolean valido = true;
+					// Para Nuevos Jugadores.
+					if (!txtJug1Nombre.getText().equals("") || cbxJug1Nombre.getSelectedItem().equals("")) {
+						//Crear usuario1 en la base de datos, crear usuario1 en memoria.
+						todoUnable1();
 					}
+					if (!txtJug2Nombre.getText().equals("") || cbxJug2Nombre.getSelectedItem().equals("")) {
+						//Crear usuario2 en la base de datos, crear usuario1 en memoria.
+						todoUnable2();
+					}
+					if (!txtJug3Nombre.getText().equals("") || cbxJug3Nombre.getSelectedItem().equals("")) {
+						//Crear usuario3 en la base de datos, crear usuario1 en memoria.
+						todoUnable3();
+					}
+					if (!txtJug4Nombre.getText().equals("") || cbxJug4Nombre.getSelectedItem().equals("")) {
+						//Crear usuario4 en la base de datos, crear usuario1 en memoria.
+						todoUnable4();
+					}
+					
+						//Para Jugadores existentes.
+						//Comprobación de contraseñas.
+						if (cbxJug1Nombre.isEnabled() && !cbxJug1Nombre.getSelectedItem().equals("")) {
+							for (int i = 0; i < listaJugadores.size(); i++) {
+								if (listaJugadores.get(i).getUsuario().equals(cbxJug1Nombre.getSelectedItem())) {
+									valido = false;
+									JOptionPane.showMessageDialog(null, "¡ Jugador 1 - Este nombre ya está elegido. !","¡Atención!",JOptionPane.WARNING_MESSAGE);
+								}
+							}	
+							for (int i = 0; i < usuariosBD.size() && valido == true; i++) {
+								if (usuariosBD.get(i).getUsuario().equals(cbxJug1Nombre.getSelectedItem())) {								
+									String pass = usuariosBD.get(i).getContrasenia();
+									if (new String (pswJug1.getPassword()).equals(pass)) {
+										usuariosBD.get(i).setColor(colores[0]);
+										listaJugadores.add(usuariosBD.get(i));
+										todoUnable1();
+										vPrincipal.getBtnCasilla_24().setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/Ficha" + colores[0] + "_00_00_00_00.png")));
+										vPrincipal.getBtnCasilla_24().setEnabled(true);
+										vPrincipal.getBtnCasilla_24().setVisible(true);
+									} else {
+										JOptionPane.showMessageDialog(null, "¡ Jugador 1 - Contraseña Incorrecta !","¡Atención!",JOptionPane.WARNING_MESSAGE);
+									}
+								}
+							}
+							
+						}
+						if (cbxJug2Nombre.isEnabled() && !cbxJug2Nombre.getSelectedItem().equals("")) {
+							for (int i = 0; i < listaJugadores.size(); i++) {
+								if (listaJugadores.get(i).getUsuario().equals(cbxJug2Nombre.getSelectedItem())) {
+									valido = false;
+									JOptionPane.showMessageDialog(null, "¡ Jugador 2 - Este nombre ya está elegido. !","¡Atención!",JOptionPane.WARNING_MESSAGE);
+								}
+							}	
+							for (int i = 0; i < usuariosBD.size() && valido == true; i++) {
+								if (usuariosBD.get(i).getUsuario().equals(cbxJug2Nombre.getSelectedItem())) {
+									String pass = usuariosBD.get(i).getContrasenia();
+									if (new String (pswJug2.getPassword()).equals(pass)) {
+										usuariosBD.get(i).setColor(colores[1]);
+										listaJugadores.add(usuariosBD.get(i));
+										todoUnable2();
+										vPrincipal.getBtnCasilla_00().setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/Ficha" + colores[1] + "_00_00_00_00.png")));
+										vPrincipal.getBtnCasilla_00().setEnabled(true);
+										vPrincipal.getBtnCasilla_00().setVisible(true);
+									} else {
+										JOptionPane.showMessageDialog(null, "¡ Jugador 2 - Contraseña Incorrecta !","¡Atención!",JOptionPane.WARNING_MESSAGE);
+									}
+								}
+							}
+							
+						}
+						if (cbxJug3Nombre.isEnabled() && !cbxJug3Nombre.getSelectedItem().equals("")) {
+							for (int i = 0; i < listaJugadores.size(); i++) {
+								if (listaJugadores.get(i).getUsuario().equals(cbxJug3Nombre.getSelectedItem())) {
+									valido = false;
+									JOptionPane.showMessageDialog(null, "¡ Jugador 3 - Este nombre ya está elegido. !","¡Atención!",JOptionPane.WARNING_MESSAGE);
+								}
+							}	
+							for (int i = 0; i < usuariosBD.size() && valido == true; i++) {
+								if (usuariosBD.get(i).getUsuario().equals(cbxJug3Nombre.getSelectedItem())) {
+									String pass = usuariosBD.get(i).getContrasenia();
+									if (new String (pswJug3.getPassword()).equals(pass)) {
+										usuariosBD.get(i).setColor(colores[2]);
+										listaJugadores.add(usuariosBD.get(i));
+										todoUnable3();
+										vPrincipal.getBtnCasilla_16().setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/Ficha" + colores[2] + "_00_00_00_00.png")));
+										vPrincipal.getBtnCasilla_16().setEnabled(true);
+										vPrincipal.getBtnCasilla_16().setVisible(true);
+									} else {
+										JOptionPane.showMessageDialog(null, "¡ Jugador 3 - Contraseña Incorrecta !","¡Atención!",JOptionPane.WARNING_MESSAGE);
+									}
+								}
+							}
+							
+						}
+						if (cbxJug4Nombre.isEnabled() && !cbxJug4Nombre.getSelectedItem().equals("")) {
+							for (int i = 0; i < listaJugadores.size(); i++) {
+								if (listaJugadores.get(i).getUsuario().equals(cbxJug4Nombre.getSelectedItem())) {
+									valido = false;
+									JOptionPane.showMessageDialog(null, "¡ Jugador 4 - Este nombre ya está elegido. !","¡Atención!",JOptionPane.WARNING_MESSAGE);
+								}
+							}		
+							for (int i = 0; i < usuariosBD.size() && valido == true; i++) {
+								if (usuariosBD.get(i).getUsuario().equals(cbxJug4Nombre.getSelectedItem())) {
+									String pass = usuariosBD.get(i).getContrasenia();
+									if (new String (pswJug4.getPassword()).equals(pass)) {
+										usuariosBD.get(i).setColor(colores[3]);
+										listaJugadores.add(usuariosBD.get(i));
+										todoUnable4();
+										vPrincipal.getBtnCasilla_08().setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/Ficha" + colores[3] + "_00_00_00_00.png")));
+										vPrincipal.getBtnCasilla_08().setEnabled(true);
+										vPrincipal.getBtnCasilla_08().setVisible(true);
+									} else {
+										JOptionPane.showMessageDialog(null, "¡ Jugador 4 - Contraseña Incorrecta !","¡Atención!",JOptionPane.WARNING_MESSAGE);
+									}
+								}
+							}
+							
+						}					
+						if (!cbxJug1Nombre.isEnabled() && !cbxJug2Nombre.isEnabled() && !cbxJug3Nombre.isEnabled() && !cbxJug4Nombre.isEnabled()) {
+							vPrincipal.setListaJugadores(listaJugadores);
+							vJugadores.dispose();
+							JOptionPane.showMessageDialog(null, "¡ Bienvenido a Trivial4B para - " + listaJugadores.size() + " jugadores !"," Trivial4B",JOptionPane.PLAIN_MESSAGE);
+							JOptionPane.showMessageDialog(null, "Turno del jugador : " + listaJugadores.get(0).getUsuario()," Trivial4B",JOptionPane.PLAIN_MESSAGE);
+						} else {
+							
+						}			
+					
+				}
+
+				private String calculaColor() {
+					// usuariosBD
+					return null;
+				}
+
+				private void todoUnable4() {
+					cbxJug4Nombre.setEnabled(false);
+					txtJug4Nombre.setEnabled(false);
+					pswJug4.setEnabled(false);
+				}
+
+				private void todoUnable3() {
+					cbxJug3Nombre.setEnabled(false);
+					txtJug3Nombre.setEnabled(false);
+					pswJug3.setEnabled(false);
+				}
+
+				private void todoUnable2() {
+					cbxJug2Nombre.setEnabled(false);
+					txtJug2Nombre.setEnabled(false);
+					pswJug2.setEnabled(false);
+				}
+
+				private void todoUnable1() {
+					cbxJug1Nombre.setEnabled(false);
+					txtJug1Nombre.setEnabled(false);
+					pswJug1.setEnabled(false);
 				}
 			});
 			btnComenzar2.setRequestFocusEnabled(false);
@@ -166,6 +336,7 @@ public class DialogoJugadores extends JDialog {
 		}
 		return btnComenzar2;
 	}
+	
 	private JLabel getLblQuesitoRo() {
 		if (lblQuesitoRo == null) {
 			lblQuesitoRo = new JLabel("");
@@ -185,7 +356,7 @@ public class DialogoJugadores extends JDialog {
 	private JLabel getLblQuesitoAm() {
 		if (lblQuesitoAm == null) {
 			lblQuesitoAm = new JLabel("");
-			lblQuesitoAm.setIcon(new ImageIcon(DialogoJugadores.class.getResource("/img/FichasSmall/FichaAm_00_00_00.png")));
+			lblQuesitoAm.setIcon(new ImageIcon(DialogoJugadores.class.getResource("/img/FichasSmall/FichaAm_00_00_00_00.png")));
 			lblQuesitoAm.setBounds(41, 198, 55, 55);
 		}
 		return lblQuesitoAm;
