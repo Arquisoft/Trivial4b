@@ -291,10 +291,6 @@ public class DialogoJugadores extends JDialog {
 					
 				}
 
-				private String calculaColor() {
-					// usuariosBD
-					return null;
-				}
 
 				private void todoUnable4() {
 					cbxJug4Nombre.setEnabled(false);

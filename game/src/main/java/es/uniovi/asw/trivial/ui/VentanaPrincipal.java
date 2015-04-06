@@ -922,7 +922,6 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return btnCasilla_05;
 	}
-
 	private JButton getBtnCasilla_06() {
 		if (btnCasilla_06 == null) {
 			btnCasilla_06 = new JButton("");
