@@ -38,7 +38,7 @@ public class RemoteMongoDB implements RemoteDB {
 		BufferedReader br = null;
 
 		try {
-			br = new BufferedReader(new FileReader(new File("user.mongouser")));
+			br = new BufferedReader(new FileReader(new File("userReader.mongouser")));
 			String user = "";
 			String pass = "";
 			while (br.ready()) {

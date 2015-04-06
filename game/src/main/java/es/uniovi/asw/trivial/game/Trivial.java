@@ -67,11 +67,6 @@ public class Trivial {
 	//System.out.println("\nPregunta:");
 	//tablero[31].usoCasilla().execute(this);
 		
-		System.out.println("Casilla 0, saco un 6, puedo ir a: "+grafoTablero.getDestinos(0, 6));
-		System.out.println("Casilla 13, saco un 3, puedo ir a: "+grafoTablero.getDestinos(13, 3));
-		System.out.println("Casilla 36, saco un 4, puedo ir a: "+grafoTablero.getDestinos(36, 4));
-		System.out.println("Casilla 44, saco un 1, puedo ir a: "+grafoTablero.getDestinos(44, 1));
-		
 	}
 	
 	public void usarCasilla(int i){
@@ -109,6 +104,10 @@ public class Trivial {
 	
 	public PreguntaGame getPreguntaActual() {
 		return preguntaActual;
+	}
+	
+	public Grafo getGrafoTablero() {
+		return grafoTablero;
 	}
 
 }

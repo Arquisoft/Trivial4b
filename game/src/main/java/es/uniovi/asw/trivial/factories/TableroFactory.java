@@ -1,9 +1,5 @@
 package es.uniovi.asw.trivial.factories;
 
-import org.jgrapht.Graph;
-import org.jgrapht.graph.DefaultEdge;
-import org.jgrapht.graph.SimpleGraph;
-
 import es.uniovi.asw.trivial.model.tablero.Casilla;
 import es.uniovi.asw.trivial.model.tablero.casilla.impl.CasillaFinal;
 import es.uniovi.asw.trivial.model.tablero.casilla.impl.CasillaPregunta;

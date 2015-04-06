@@ -1,40 +1,35 @@
 package es.uniovi.asw.trivial.ui;
 
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JSeparator;
-import javax.swing.ImageIcon;
-
 import java.awt.Font;
 import java.awt.Insets;
-import java.awt.Cursor;
-
-import javax.swing.KeyStroke;
-
-import java.awt.event.KeyEvent;
-import java.awt.event.InputEvent;
-import java.awt.CardLayout;
-
-import javax.swing.JLabel;
-
 import java.awt.Rectangle;
-
-import javax.swing.JButton;
-
-import java.awt.Dimension;
-import java.awt.Color;
-
-import javax.swing.SwingConstants;
-
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.util.List;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
+import javax.swing.KeyStroke;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+
+import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Usuario;
+import es.uniovi.asw.trivial.game.Trivial;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -169,6 +164,9 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel lblCasilla_13;
 	private JLabel lblCasilla_12;
 	private JLabel lblCasilla_11;
+	private static VentanaPrincipal ventanaPrincipal;
+	private List<Usuario> listaJugadores;
+	private Trivial trivial;
 
 	/**
 	 * Launch the application.
@@ -177,7 +175,7 @@ public class VentanaPrincipal extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VentanaPrincipal frame = new VentanaPrincipal();
+					VentanaPrincipal frame = new VentanaPrincipal(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -189,7 +187,8 @@ public class VentanaPrincipal extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VentanaPrincipal() {
+	public VentanaPrincipal(Trivial t) {
+		this.trivial = t;		
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaPrincipal.class.getResource("/img/ico_150x150_app.png")));
 		setTitle("Trivial Arquisoft4b");
@@ -201,6 +200,7 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.add(getMenuBar_1());
 		contentPane.add(getPnContenido());
+		ventanaPrincipal = this;
 	}
 	private JMenuBar getMenuBar_1() {
 		if (menuBar == null) {
@@ -244,7 +244,7 @@ public class VentanaPrincipal extends JFrame {
 					
 					//Men� Juego > Nueva partida
 					// Mostrar Di�logo de selecci�n de jugadores
-					DialogoJugadores frame = new DialogoJugadores(); 
+					DialogoJugadores frame = new DialogoJugadores(ventanaPrincipal); 
 					frame.setLocationRelativeTo(null); 
 					frame.setVisible(true);
 					frame.setModalityType(DialogoJugadores.ModalityType.APPLICATION_MODAL);
@@ -508,6 +508,12 @@ public class VentanaPrincipal extends JFrame {
 					// Mostrar Panel principal con tablero
 					((CardLayout)pnContenido.getLayout()).show(pnContenido,"name_9358627801380");
 
+					// Pedir número de usuarios antes de empezar.
+					DialogoJugadores frame = new DialogoJugadores(ventanaPrincipal); 
+					frame.setLocationRelativeTo(null); 
+					frame.setDialogoJugadores(frame);
+					frame.setVisible(true);
+					frame.setModalityType(DialogoJugadores.ModalityType.APPLICATION_MODAL);
 				}
 			});
 			btnComenzar.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -749,6 +755,57 @@ public class VentanaPrincipal extends JFrame {
 				public void actionPerformed(ActionEvent arg0) {
 					
 					//Acci�n al pulsar
+					int numDado = trivial.lanzarDado();		
+					lblDadoTirada.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Dado_0" + numDado +".png"))); //Cargar imagen con resultado de tirada
+					lblDadoTirada.setVisible(true); //Mostrar imagen con tirada de dado
+					lblMensajes.setText("elije casilla en el tablero"); //Cargar mensaje a mostrar
+					lblMensajes.setVisible(true); //Mostrar label mensajes
+					
+					btnCasilla_04.setVisible(true); //Mostrar botones de las casillas
+					btnCasilla_05.setVisible(true);
+					btnCasilla_06.setVisible(true);
+					btnCasilla_07.setVisible(true);
+					btnCasilla_08.setVisible(true);
+					btnCasilla_09.setVisible(true);
+					btnCasilla_10.setVisible(true);
+					btnCasilla_11.setVisible(true);
+					btnCasilla_12.setVisible(true);
+					btnCasilla_13.setVisible(true);
+					btnCasilla_14.setVisible(true);
+					btnCasilla_15.setVisible(true);
+					btnCasilla_16.setVisible(true);
+					btnCasilla_17.setVisible(true);
+					btnCasilla_18.setVisible(true);
+					btnCasilla_19.setVisible(true);
+					btnCasilla_20.setVisible(true);
+					btnCasilla_21.setVisible(true);
+					btnCasilla_22.setVisible(true);
+					btnCasilla_23.setVisible(true);
+					btnCasilla_24.setVisible(true);
+					btnCasilla_25.setVisible(true);
+					btnCasilla_26.setVisible(true);
+					btnCasilla_27.setVisible(true);
+					btnCasilla_28.setVisible(true);
+					btnCasilla_29.setVisible(true);
+					btnCasilla_30.setVisible(true);
+					btnCasilla_31.setVisible(true);
+					btnCasilla_00.setVisible(true);
+					btnCasilla_01.setVisible(true);
+					btnCasilla_02.setVisible(true);
+					btnCasilla_03.setVisible(true);
+					btnCasilla_35.setVisible(true);
+					btnCasilla_36.setVisible(true);
+					btnCasilla_37.setVisible(true);
+					btnCasilla_44.setVisible(true);
+					btnCasilla_43.setVisible(true);
+					btnCasilla_42.setVisible(true);
+					btnCasilla_41.setVisible(true);
+					btnCasilla_32.setVisible(true);
+					btnCasilla_33.setVisible(true);
+					btnCasilla_34.setVisible(true);
+					btnCasilla_40.setVisible(true);
+					btnCasilla_39.setVisible(true);
+					btnCasilla_38.setVisible(true);
 					
 				}
 			});
@@ -988,7 +1045,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return btnCasilla_07;
 	}
-	private JButton getBtnCasilla_08() {
+	protected JButton getBtnCasilla_08() {
 		if (btnCasilla_08 == null) {
 			btnCasilla_08 = new JButton("");
 			btnCasilla_08.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
@@ -1156,7 +1213,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return btnCasilla_15;
 	}
-	private JButton getBtnCasilla_16() {
+	JButton getBtnCasilla_16() {
 		if (btnCasilla_16 == null) {
 			btnCasilla_16 = new JButton("");
 			btnCasilla_16.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
@@ -1324,7 +1381,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return btnCasilla_23;
 	}
-	private JButton getBtnCasilla_24() {
+	JButton getBtnCasilla_24() {
 		if (btnCasilla_24 == null) {
 			btnCasilla_24 = new JButton("");
 			btnCasilla_24.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
@@ -1492,7 +1549,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return btnCasilla_31;
 	}
-	private JButton getBtnCasilla_00() {
+	public JButton getBtnCasilla_00() {
 		if (btnCasilla_00 == null) {
 			btnCasilla_00 = new JButton("");
 			btnCasilla_00.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
@@ -2319,4 +2376,10 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblCasilla_11;
 	}
+
+	public void setListaJugadores(List<Usuario> listaJugadores) {
+		this.listaJugadores = listaJugadores;
+		
+	}
 }
+
