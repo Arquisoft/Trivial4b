@@ -37,14 +37,17 @@ public class DialogoPregunta extends JDialog {
 	private JButton btnRespuesta1;
 	private JButton btnRespuesta2;
 	private JButton btnRespuesta3;
+	private JButton btnRespuesta4;
 	private JLabel lblImgCheck1;
 	private JLabel lblImgCheck2;
 	private JLabel lblImgCheck3;
+	private JLabel lblImgCheck4;
 	private JButton btnContinuar;
 	private JLabel lblImgQuesito;
 	private JLabel lblRespuesta1;
 	private JLabel lblRespuesta2;
 	private JLabel lblRespuesta3;
+	private JLabel lblRespuesta4;
 
 	private PreguntaGame pregunta;
 	private VentanaPrincipal vPrincipal;
@@ -61,21 +64,24 @@ public class DialogoPregunta extends JDialog {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DialogoPregunta.class.getResource("/img/ico_32x32_pregunta.png")));
 		setTitle("Pregunta: Ciencias y Naturaleza");
 		getContentPane().setBounds(new Rectangle(0, 0, 480, 443));
-		setBounds(100, 100, 484, 476);
+		setBounds(100, 100, 484, 572);
 		getContentPane().setLayout(null);
 		panelPrincipal.setPreferredSize(new Dimension(480, 443));
 		panelPrincipal.setMinimumSize(new Dimension(480, 443));
 		panelPrincipal.setMaximumSize(new Dimension(480, 443));
-		panelPrincipal.setBounds(new Rectangle(0, 0, 478, 442));
+		panelPrincipal.setBounds(new Rectangle(0, 0, 480, 537));
 		panelPrincipal.setBackground(new Color(0, 55, 76));
 		panelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(panelPrincipal);
 		panelPrincipal.setLayout(null);
 		panelPrincipal.add(getLblImgQuesito());
 		panelPrincipal.add(getBtnContinuar());
+		panelPrincipal.add(getLblImgCheck4());
 		panelPrincipal.add(getLblImgCheck3());
 		panelPrincipal.add(getLblImgCheck2());
 		panelPrincipal.add(getLblImgCheck1());
+		panelPrincipal.add(getLblRespuesta4());
+		panelPrincipal.add(getBtnRespuesta4());
 		panelPrincipal.add(getLblRespuesta3());
 		panelPrincipal.add(getBtnRespuesta3());
 		panelPrincipal.add(getLblRespuesta2());
@@ -103,6 +109,8 @@ public class DialogoPregunta extends JDialog {
 		btnRespuesta2.setText(respuestas.get(1).getRespuesta());
 		lblRespuesta3.setText(respuestas.get(2).getRespuesta());
 		btnRespuesta3.setText(respuestas.get(2).getRespuesta());
+		lblRespuesta4.setText(respuestas.get(3).getRespuesta());
+		btnRespuesta4.setText(respuestas.get(3).getRespuesta());
 		
 		
 	}
@@ -110,7 +118,7 @@ public class DialogoPregunta extends JDialog {
 		if (lblImgFondoPreguntas == null) {
 			lblImgFondoPreguntas = new JLabel("");
 			lblImgFondoPreguntas.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Fondo_Preguntas.png")));
-			lblImgFondoPreguntas.setBounds(0, 0, 478, 442);
+			lblImgFondoPreguntas.setBounds(0, 0, 480, 537);
 		}
 		return lblImgFondoPreguntas;
 	}
@@ -129,7 +137,7 @@ public class DialogoPregunta extends JDialog {
 			txtPregunta.setFocusable(false);
 			txtPregunta.setRequestFocusEnabled(false);
 			txtPregunta.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-			txtPregunta.setBounds(64, 81, 357, 60);
+			txtPregunta.setBounds(64, 81, 357, 70);
 		}
 		return txtPregunta;
 	}
@@ -144,30 +152,34 @@ public class DialogoPregunta extends JDialog {
 					if(respuestaCorrecta == 1){
 						// Check1 > Mostrar
 						lblImgCheck1.setVisible(true);
-						// Botones Respuesta 1, 2, 3 > ocultar
+						// Botones Respuesta 1, 2, 3, 4 > ocultar
 						btnRespuesta1.setVisible(false);
 						btnRespuesta2.setVisible(false);
 						btnRespuesta3.setVisible(false);
-						//Labels Respuesta 1, 2, 3 > mostrar
+						btnRespuesta4.setVisible(false);
+						//Labels Respuesta 1, 2, 3, 4 > mostrar
 						lblRespuesta1.setForeground(Color.WHITE);
 						lblRespuesta1.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Verde.png")));
 						lblRespuesta1.setVisible(true);
 						lblRespuesta2.setVisible(true);
 						lblRespuesta3.setVisible(true);
+						lblRespuesta4.setVisible(true);
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Correcta > Continuar");
 					}
 					else{
-						// Botones Respuesta 1, 2, 3 > ocultar
+						// Botones Respuesta 1, 2, 3, 4 > ocultar
 						btnRespuesta1.setVisible(false);
 						btnRespuesta2.setVisible(false);
 						btnRespuesta3.setVisible(false);
-						//Labels Respuesta 1, 2, 3 > mostrar
+						btnRespuesta4.setVisible(false);
+						//Labels Respuesta 1, 2, 3, 4 > mostrar
 						lblRespuesta1.setForeground(Color.WHITE);
 						lblRespuesta1.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Rojo.png")));
 						lblRespuesta1.setVisible(true);
 						lblRespuesta2.setVisible(true);
 						lblRespuesta3.setVisible(true);
+						lblRespuesta4.setVisible(true);
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Incorrecta > Continuar");
 					}
@@ -193,7 +205,7 @@ public class DialogoPregunta extends JDialog {
 			btnRespuesta1.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			btnRespuesta1.setContentAreaFilled(false);
 			btnRespuesta1.setBorder(null);
-			btnRespuesta1.setBounds(110, 152, 267, 43);
+			btnRespuesta1.setBounds(110, 172, 267, 43);
 		}
 		return btnRespuesta1;
 	}
@@ -207,30 +219,34 @@ public class DialogoPregunta extends JDialog {
 					if(respuestaCorrecta == 2){
 						// Check1 > Mostrar
 						lblImgCheck2.setVisible(true);
-						// Botones Respuesta 1, 2, 3 > ocultar
+						// Botones Respuesta 1, 2, 3, 4 > ocultar
 						btnRespuesta1.setVisible(false);
 						btnRespuesta2.setVisible(false);
 						btnRespuesta3.setVisible(false);
-						//Labels Respuesta 1, 2, 3 > mostrar
+						btnRespuesta4.setVisible(false);
+						//Labels Respuesta 1, 2, 3, 4 > mostrar
 						lblRespuesta2.setForeground(Color.WHITE);
 						lblRespuesta2.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Verde.png")));
 						lblRespuesta1.setVisible(true);
 						lblRespuesta2.setVisible(true);
 						lblRespuesta3.setVisible(true);
+						lblRespuesta4.setVisible(true);
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Correcta > Continuar");
 					}
 					else{
-						// Botones Respuesta 1, 2, 3 > ocultar
+						// Botones Respuesta 1, 2, 3, 4 > ocultar
 						btnRespuesta1.setVisible(false);
 						btnRespuesta2.setVisible(false);
 						btnRespuesta3.setVisible(false);
-						//Labels Respuesta 1, 2, 3 > mostrar
+						btnRespuesta4.setVisible(false);
+						//Labels Respuesta 1, 2, 3, 4 > mostrar
 						lblRespuesta2.setForeground(Color.WHITE);
 						lblRespuesta2.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Rojo.png")));
 						lblRespuesta1.setVisible(true);
 						lblRespuesta2.setVisible(true);
 						lblRespuesta3.setVisible(true);
+						lblRespuesta4.setVisible(true);
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Incorrecta > Continuar");
 					}
@@ -250,7 +266,7 @@ public class DialogoPregunta extends JDialog {
 			btnRespuesta2.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			btnRespuesta2.setContentAreaFilled(false);
 			btnRespuesta2.setBorder(null);
-			btnRespuesta2.setBounds(110, 216, 267, 43);
+			btnRespuesta2.setBounds(109, 236, 267, 43);
 		}
 		return btnRespuesta2;
 	}
@@ -265,30 +281,34 @@ public class DialogoPregunta extends JDialog {
 					if(respuestaCorrecta == 3){
 						// Check1 > Mostrar
 						lblImgCheck3.setVisible(true);
-						// Botones Respuesta 1, 2, 3 > ocultar
+						// Botones Respuesta 1, 2, 3, 4 > ocultar
 						btnRespuesta1.setVisible(false);
 						btnRespuesta2.setVisible(false);
 						btnRespuesta3.setVisible(false);
+						btnRespuesta4.setVisible(false);
 						//Labels Respuesta 1, 2, 3 > mostrar
 						lblRespuesta3.setForeground(Color.WHITE);
 						lblRespuesta3.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Verde.png")));
 						lblRespuesta1.setVisible(true);
 						lblRespuesta2.setVisible(true);
 						lblRespuesta3.setVisible(true);
+						lblRespuesta4.setVisible(true);
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Correcta > Continuar");
 					}
 					else{
-						// Botones Respuesta 1, 2, 3 > ocultar
+						// Botones Respuesta 1, 2, 3, 4 > ocultar
 						btnRespuesta1.setVisible(false);
 						btnRespuesta2.setVisible(false);
 						btnRespuesta3.setVisible(false);
-						//Labels Respuesta 1, 2, 3 > mostrar
+						btnRespuesta4.setVisible(false);
+						//Labels Respuesta 1, 2, 3, 4 > mostrar
 						lblRespuesta3.setForeground(Color.WHITE);
 						lblRespuesta3.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Rojo.png")));
 						lblRespuesta1.setVisible(true);
 						lblRespuesta2.setVisible(true);
 						lblRespuesta3.setVisible(true);
+						lblRespuesta4.setVisible(true);
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Incorrecta > Continuar");
 					}
@@ -308,16 +328,78 @@ public class DialogoPregunta extends JDialog {
 			btnRespuesta3.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			btnRespuesta3.setContentAreaFilled(false);
 			btnRespuesta3.setBorder(null);
-			btnRespuesta3.setBounds(110, 280, 267, 43);
+			btnRespuesta3.setBounds(109, 301, 267, 43);
 		}
 		return btnRespuesta3;
+	}
+	private JButton getBtnRespuesta4() {
+		if (btnRespuesta4 == null) {
+			btnRespuesta4 = new JButton("");
+			btnRespuesta4.setBorderPainted(false);
+			btnRespuesta4.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					System.out.println(respuestaCorrecta);
+					if(respuestaCorrecta == 4){
+						// Check1 > Mostrar
+						lblImgCheck4.setVisible(true);
+						// Botones Respuesta 1, 2, 3, 4 > ocultar
+						btnRespuesta1.setVisible(false);
+						btnRespuesta2.setVisible(false);
+						btnRespuesta3.setVisible(false);
+						btnRespuesta4.setVisible(false);
+						//Labels Respuesta 1, 2, 3, 4 > mostrar
+						lblRespuesta4.setForeground(Color.WHITE);
+						lblRespuesta4.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Verde.png")));
+						lblRespuesta1.setVisible(true);
+						lblRespuesta2.setVisible(true);
+						lblRespuesta3.setVisible(true);
+						lblRespuesta4.setVisible(true);
+						// Bot�n Continuar > Texto Correcta
+						btnContinuar.setText("Correcta > Continuar");
+					}
+					else{
+						// Botones Respuesta 1, 2, 3, 4 > ocultar
+						btnRespuesta1.setVisible(false);
+						btnRespuesta2.setVisible(false);
+						btnRespuesta3.setVisible(false);
+						btnRespuesta4.setVisible(false);
+						//Labels Respuesta 1, 2, 3, 4 > mostrar
+						lblRespuesta4.setForeground(Color.WHITE);
+						lblRespuesta4.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Rojo.png")));
+						lblRespuesta1.setVisible(true);
+						lblRespuesta2.setVisible(true);
+						lblRespuesta3.setVisible(true);
+						lblRespuesta4.setVisible(true);
+						// Bot�n Continuar > Texto Correcta
+						btnContinuar.setText("Incorrecta > Continuar");
+					}
+					
+				}
+			});
+			btnRespuesta4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			btnRespuesta4.setRolloverIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Over.png")));
+			btnRespuesta4.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Blanco.png")));
+			btnRespuesta4.setRequestFocusEnabled(false);
+			btnRespuesta4.setPreferredSize(new Dimension(245, 43));
+			btnRespuesta4.setMinimumSize(new Dimension(245, 43));
+			btnRespuesta4.setMaximumSize(new Dimension(245, 43));
+			btnRespuesta4.setMargin(new Insets(0, 0, 0, 0));
+			btnRespuesta4.setHorizontalTextPosition(SwingConstants.CENTER);
+			btnRespuesta4.setForeground(Color.BLACK);
+			btnRespuesta4.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+			btnRespuesta4.setContentAreaFilled(false);
+			btnRespuesta4.setBorder(null);
+			btnRespuesta4.setBounds(109, 366, 267, 43);
+		}
+		return btnRespuesta4;
 	}
 	private JLabel getLblImgCheck1() {
 		if (lblImgCheck1 == null) {
 			lblImgCheck1 = new JLabel("");
 			lblImgCheck1.setVisible(false);
 			lblImgCheck1.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_IcoCorrecta.png")));
-			lblImgCheck1.setBounds(65, 156, 30, 30);
+			lblImgCheck1.setBounds(65, 176, 30, 30);
 		}
 		return lblImgCheck1;
 	}
@@ -326,7 +408,7 @@ public class DialogoPregunta extends JDialog {
 			lblImgCheck2 = new JLabel("");
 			lblImgCheck2.setVisible(false);
 			lblImgCheck2.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_IcoCorrecta.png")));
-			lblImgCheck2.setBounds(64, 220, 30, 30);
+			lblImgCheck2.setBounds(64, 240, 30, 30);
 		}
 		return lblImgCheck2;
 	}
@@ -335,9 +417,18 @@ public class DialogoPregunta extends JDialog {
 			lblImgCheck3 = new JLabel("");
 			lblImgCheck3.setVisible(false);
 			lblImgCheck3.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_IcoCorrecta.png")));
-			lblImgCheck3.setBounds(65, 284, 30, 30);
+			lblImgCheck3.setBounds(65, 305, 30, 30);
 		}
 		return lblImgCheck3;
+	}
+	private JLabel getLblImgCheck4() {
+		if (lblImgCheck4 == null) {
+			lblImgCheck4 = new JLabel("");
+			lblImgCheck4.setVisible(false);
+			lblImgCheck4.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_IcoCorrecta.png")));
+			lblImgCheck4.setBounds(65, 370, 30, 30);
+		}
+		return lblImgCheck4;
 	}
 	private JButton getBtnContinuar() {
 		if (btnContinuar == null) {
@@ -364,7 +455,7 @@ public class DialogoPregunta extends JDialog {
 			btnContinuar.setFont(new Font("Arial", Font.PLAIN, 20));
 			btnContinuar.setContentAreaFilled(false);
 			btnContinuar.setBorder(null);
-			btnContinuar.setBounds(110, 344, 267, 43);
+			btnContinuar.setBounds(109, 439, 267, 43);
 		}
 		return btnContinuar;
 	}
@@ -373,7 +464,7 @@ public class DialogoPregunta extends JDialog {
 			lblImgQuesito = new JLabel("");
 			lblImgQuesito.setVisible(false);
 			lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_Ro.png")));
-			lblImgQuesito.setBounds(346, 337, 60, 66);
+			lblImgQuesito.setBounds(346, 431, 60, 66);
 		}
 		return lblImgQuesito;
 	}
@@ -386,7 +477,7 @@ public class DialogoPregunta extends JDialog {
 			lblRespuesta1.setForeground(Color.BLACK);
 			lblRespuesta1.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			lblRespuesta1.setBorder(new EmptyBorder(0, 0, 0, 0));
-			lblRespuesta1.setBounds(110, 152, 267, 43);
+			lblRespuesta1.setBounds(109, 172, 267, 43);
 		}
 		return lblRespuesta1;
 	}
@@ -399,7 +490,7 @@ public class DialogoPregunta extends JDialog {
 			lblRespuesta2.setForeground(Color.BLACK);
 			lblRespuesta2.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			lblRespuesta2.setBorder(new EmptyBorder(0, 0, 0, 0));
-			lblRespuesta2.setBounds(110, 216, 267, 43);
+			lblRespuesta2.setBounds(109, 236, 267, 43);
 		}
 		return lblRespuesta2;
 	}
@@ -412,8 +503,21 @@ public class DialogoPregunta extends JDialog {
 			lblRespuesta3.setForeground(Color.BLACK);
 			lblRespuesta3.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 			lblRespuesta3.setBorder(new EmptyBorder(0, 0, 0, 0));
-			lblRespuesta3.setBounds(110, 280, 267, 43);
+			lblRespuesta3.setBounds(109, 301, 267, 43);
 		}
 		return lblRespuesta3;
+	}
+	private JLabel getLblRespuesta4() {
+		if (lblRespuesta4 == null) {
+			lblRespuesta4 = new JLabel("");
+			lblRespuesta4.setVisible(false);
+			lblRespuesta4.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Respuesta_Blanco.png")));
+			lblRespuesta4.setHorizontalTextPosition(SwingConstants.CENTER);
+			lblRespuesta4.setForeground(Color.BLACK);
+			lblRespuesta4.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+			lblRespuesta4.setBorder(new EmptyBorder(0, 0, 0, 0));
+			lblRespuesta4.setBounds(109, 366, 267, 43);
+		}
+		return lblRespuesta4;
 	}
 }
