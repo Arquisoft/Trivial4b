@@ -27,4 +27,5 @@ local.properties
 *.json
 user.mongouser
 app.log
+*Thumbs.db
 

@@ -25,6 +25,10 @@ public class Usuario implements Serializable{
 	private String nombre;
 	@Transient
 	private String color;
+	@Transient
+	private int casillaActual;
+	@Transient
+	private String icono;
 	@OneToMany(mappedBy = "usuario")
 	protected Set<UsuariosPartida> partidas= new HashSet<UsuariosPartida>();
 
@@ -46,6 +50,7 @@ public class Usuario implements Serializable{
 		this.contrasenia = contrasenia;
 		this.nombre = nombre;
 		this.color = "";
+		this.casillaActual = -1;
 	}
 	
 	public Long getId() {
@@ -65,6 +70,18 @@ public class Usuario implements Serializable{
 	}
 	public void setColor(String colorJugador) {
 		this.color = colorJugador;
+	}
+	public void setCasillaActual(int casillaActual){
+		this.casillaActual = casillaActual;
+	}
+	public int getCasillaActual(){
+		return casillaActual;
+	}
+	public void setIcono(String icono){
+		this.icono = icono;
+	}
+	public String getIcono(){
+		return icono;
 	}
 	public String getContrasenia(){
 		return contrasenia;

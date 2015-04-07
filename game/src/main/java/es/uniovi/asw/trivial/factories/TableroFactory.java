@@ -15,16 +15,16 @@ public class TableroFactory {
 		tablero[28] = new CasillaVuelveATirar();
 
 		// Calle izquierda
-		tablero[29] = new CasillaPregunta("espectaculo");
-		tablero[30] = new CasillaPregunta("geografia");
+		tablero[29] = new CasillaPregunta("espectáculos");
+		tablero[30] = new CasillaPregunta("geografía");
 		tablero[31] = new CasillaPregunta("ciencias y naturaleza");
 
 		// Quesito de historia
 		tablero[0] = new CasillaQuesito("historia");
 
 		tablero[1] = new CasillaPregunta("ciencias y naturaleza");
-		tablero[2] = new CasillaPregunta("espectaculo");
-		tablero[3] = new CasillaPregunta("geografia");
+		tablero[2] = new CasillaPregunta("espectáculos");
+		tablero[3] = new CasillaPregunta("geografía");
 
 		// Esquina superior izquierda
 		tablero[4] = new CasillaVuelveATirar();
@@ -32,12 +32,12 @@ public class TableroFactory {
 		// Calle superior
 		tablero[5] = new CasillaPregunta("historia");
 		tablero[6] = new CasillaPregunta("ciencias y naturaleza");
-		tablero[7] = new CasillaPregunta("geografia");
+		tablero[7] = new CasillaPregunta("geografía");
 
 		// Quesito de espectaculos
-		tablero[8] = new CasillaQuesito("espectaculos");
+		tablero[8] = new CasillaQuesito("espectáculos");
 
-		tablero[9] = new CasillaPregunta("geografia");
+		tablero[9] = new CasillaPregunta("geografía");
 		tablero[10] = new CasillaPregunta("historia");
 		tablero[11] = new CasillaPregunta("ciencias y naturaleza");
 
@@ -45,16 +45,16 @@ public class TableroFactory {
 		tablero[12] = new CasillaVuelveATirar();
 
 		// Calle derecha
-		tablero[13] = new CasillaPregunta("espectaculo");
-		tablero[14] = new CasillaPregunta("geografia");
+		tablero[13] = new CasillaPregunta("espectáculos");
+		tablero[14] = new CasillaPregunta("geografía");
 		tablero[15] = new CasillaPregunta("historia");
 
 		// Quesito de ciencias y naturaleza
 		tablero[16] = new CasillaQuesito("ciencias y naturaleza");
 
 		tablero[17] = new CasillaPregunta("historia");
-		tablero[18] = new CasillaPregunta("espectaculo");
-		tablero[19] = new CasillaPregunta("geografia");
+		tablero[18] = new CasillaPregunta("espectáculos");
+		tablero[19] = new CasillaPregunta("geografía");
 
 		// Esquina inferior derecha
 		tablero[20] = new CasillaVuelveATirar();
@@ -62,32 +62,32 @@ public class TableroFactory {
 		// Calle inferior
 		tablero[21] = new CasillaPregunta("historia");
 		tablero[22] = new CasillaPregunta("ciencias y naturaleza");
-		tablero[23] = new CasillaPregunta("espectaculos");
+		tablero[23] = new CasillaPregunta("espectáculos");
 
-		// Quesito de geografia
-		tablero[24] = new CasillaQuesito("geografia");
+		// Quesito de geografía
+		tablero[24] = new CasillaQuesito("geografía");
 
-		tablero[25] = new CasillaPregunta("espectaculos");
+		tablero[25] = new CasillaPregunta("espectáculos");
 		tablero[26] = new CasillaPregunta("historia");
 		tablero[27] = new CasillaPregunta("ciencias y naturaleza");
 
 		// Calle central izquierda
 		tablero[32] = new CasillaPregunta("ciencias y naturaleza");
-		tablero[33] = new CasillaPregunta("espectaculo");
-		tablero[34] = new CasillaPregunta("geografia");
+		tablero[33] = new CasillaPregunta("espectáculos");
+		tablero[34] = new CasillaPregunta("geografía");
 
 		// Calle central superior
-		tablero[35] = new CasillaPregunta("geografia");
+		tablero[35] = new CasillaPregunta("geografía");
 		tablero[36] = new CasillaPregunta("historia");
 		tablero[37] = new CasillaPregunta("ciencias y naturaleza");
 
 		// Calle central derecha
 		tablero[38] = new CasillaPregunta("historia");
-		tablero[39] = new CasillaPregunta("geografia");
-		tablero[40] = new CasillaPregunta("espectaculo");
+		tablero[39] = new CasillaPregunta("geografía");
+		tablero[40] = new CasillaPregunta("espectáculos");
 
 		// Calle central inferior
-		tablero[41] = new CasillaPregunta("espectaculos");
+		tablero[41] = new CasillaPregunta("espectáculos");
 		tablero[42] = new CasillaPregunta("ciencias y naturaleza");
 		tablero[43] = new CasillaPregunta("historia");
 

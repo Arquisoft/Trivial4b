@@ -52,6 +52,8 @@ public class Trivial {
 	private Casilla[] tablero;
 	
 	private PreguntaGame preguntaActual;
+	private boolean isVuelveATirar;
+	private boolean isCasillaFinal;
 	
 	public Trivial(List<Pregunta> listaPreguntas) {
 		this.listaPreguntas = listaPreguntas;
@@ -108,6 +110,22 @@ public class Trivial {
 	
 	public Grafo getGrafoTablero() {
 		return grafoTablero;
+	}
+
+	public void setVuelveATirar(boolean isVuelveATirar) {
+		this.isVuelveATirar = isVuelveATirar;
+	}
+
+	public boolean isCasillaFinal() {
+		return this.isCasillaFinal;
+	}
+
+	public boolean isVuelveATirar() {
+		return this.isVuelveATirar;
+	}
+
+	public void setCasillaFinal(boolean isCasillaFinal) {
+		this.isCasillaFinal = isCasillaFinal;
 	}
 
 }

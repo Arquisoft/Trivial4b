@@ -10,7 +10,7 @@ public class CasillaFinal implements Casilla{
 		// Hace una pregunta aleatoria de cualquier categoria
 		return new Action() {
 			public void execute(Trivial trivial) {
-				System.out.println("Casilla final");
+				trivial.setCasillaFinal(true);
 			}
 		};
 	}

@@ -17,7 +17,7 @@ public class GrafoFactory {
 			tablero.addVertex(casillas[i]);
 
 		
-		for (int i = 0; i < tamTablero1; i++)
+		for (int i = 0; i < tamTablero1-1; i++)
 				tablero.addEdge(casillas[i], casillas[(i + 1)]);
 		tablero.addEdge(casillas[tamTablero1 - 1], casillas[0]);
 

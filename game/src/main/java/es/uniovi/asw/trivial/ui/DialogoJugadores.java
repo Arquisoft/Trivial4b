@@ -165,22 +165,23 @@ public class DialogoJugadores extends JDialog {
 					
 					boolean valido = true;
 					// Para Nuevos Jugadores.
-					if (!txtJug1Nombre.getText().equals("") || cbxJug1Nombre.getSelectedItem().equals("")) {
-						//Crear usuario1 en la base de datos, crear usuario1 en memoria.
-						todoUnable1();
-					}
-					if (!txtJug2Nombre.getText().equals("") || cbxJug2Nombre.getSelectedItem().equals("")) {
-						//Crear usuario2 en la base de datos, crear usuario1 en memoria.
-						todoUnable2();
-					}
-					if (!txtJug3Nombre.getText().equals("") || cbxJug3Nombre.getSelectedItem().equals("")) {
-						//Crear usuario3 en la base de datos, crear usuario1 en memoria.
-						todoUnable3();
-					}
-					if (!txtJug4Nombre.getText().equals("") || cbxJug4Nombre.getSelectedItem().equals("")) {
-						//Crear usuario4 en la base de datos, crear usuario1 en memoria.
-						todoUnable4();
-					}
+					int nJugadores = 0;
+//					if (!txtJug1Nombre.getText().equals("") || cbxJug1Nombre.getSelectedItem().equals("")) {
+//						//Crear usuario1 en la base de datos, crear usuario1 en memoria.
+//						todoUnable1();
+//					}
+//					if (!txtJug2Nombre.getText().equals("") || cbxJug2Nombre.getSelectedItem().equals("")) {
+//						//Crear usuario2 en la base de datos, crear usuario1 en memoria.
+//						todoUnable2();
+//					}
+//					if (!txtJug3Nombre.getText().equals("") || cbxJug3Nombre.getSelectedItem().equals("")) {
+//						//Crear usuario3 en la base de datos, crear usuario1 en memoria.
+//						todoUnable3();
+//					}
+//					if (!txtJug4Nombre.getText().equals("") || cbxJug4Nombre.getSelectedItem().equals("")) {
+//						//Crear usuario4 en la base de datos, crear usuario1 en memoria.
+//						todoUnable4();
+//					}
 					
 						//Para Jugadores existentes.
 						//Comprobación de contraseñas.
@@ -195,12 +196,15 @@ public class DialogoJugadores extends JDialog {
 								if (usuariosBD.get(i).getUsuario().equals(cbxJug1Nombre.getSelectedItem())) {								
 									String pass = usuariosBD.get(i).getContrasenia();
 									if (new String (pswJug1.getPassword()).equals(pass)) {
+										String icono = "/img/FichasSmall/Ficha" + colores[0] + "_00_00_00_00.png";
 										usuariosBD.get(i).setColor(colores[0]);
+										usuariosBD.get(i).setCasillaActual(24);
+										usuariosBD.get(i).setIcono(icono);
 										listaJugadores.add(usuariosBD.get(i));
 										todoUnable1();
-										vPrincipal.getBtnCasilla_24().setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/Ficha" + colores[0] + "_00_00_00_00.png")));
-										vPrincipal.getBtnCasilla_24().setEnabled(true);
-										vPrincipal.getBtnCasilla_24().setVisible(true);
+										vPrincipal.getLblCasilla_24().setVisible(true);
+										vPrincipal.getLblCasilla_24().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
+										nJugadores++;
 									} else {
 										JOptionPane.showMessageDialog(null, "¡ Jugador 1 - Contraseña Incorrecta !","¡Atención!",JOptionPane.WARNING_MESSAGE);
 									}
@@ -219,12 +223,15 @@ public class DialogoJugadores extends JDialog {
 								if (usuariosBD.get(i).getUsuario().equals(cbxJug2Nombre.getSelectedItem())) {
 									String pass = usuariosBD.get(i).getContrasenia();
 									if (new String (pswJug2.getPassword()).equals(pass)) {
+										String icono = "/img/FichasSmall/Ficha" + colores[1] + "_00_00_00_00.png";
 										usuariosBD.get(i).setColor(colores[1]);
+										usuariosBD.get(i).setCasillaActual(0);
+										usuariosBD.get(i).setIcono(icono);
 										listaJugadores.add(usuariosBD.get(i));
 										todoUnable2();
-										vPrincipal.getBtnCasilla_00().setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/Ficha" + colores[1] + "_00_00_00_00.png")));
-										vPrincipal.getBtnCasilla_00().setEnabled(true);
-										vPrincipal.getBtnCasilla_00().setVisible(true);
+										vPrincipal.getLblCasilla_00().setVisible(true);
+										vPrincipal.getLblCasilla_00().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
+										nJugadores++;
 									} else {
 										JOptionPane.showMessageDialog(null, "¡ Jugador 2 - Contraseña Incorrecta !","¡Atención!",JOptionPane.WARNING_MESSAGE);
 									}
@@ -243,12 +250,15 @@ public class DialogoJugadores extends JDialog {
 								if (usuariosBD.get(i).getUsuario().equals(cbxJug3Nombre.getSelectedItem())) {
 									String pass = usuariosBD.get(i).getContrasenia();
 									if (new String (pswJug3.getPassword()).equals(pass)) {
+										String icono = "/img/FichasSmall/Ficha" + colores[2] + "_00_00_00_00.png";
 										usuariosBD.get(i).setColor(colores[2]);
+										usuariosBD.get(i).setCasillaActual(16);
+										usuariosBD.get(i).setIcono(icono);
 										listaJugadores.add(usuariosBD.get(i));
 										todoUnable3();
-										vPrincipal.getBtnCasilla_16().setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/Ficha" + colores[2] + "_00_00_00_00.png")));
-										vPrincipal.getBtnCasilla_16().setEnabled(true);
-										vPrincipal.getBtnCasilla_16().setVisible(true);
+										vPrincipal.getLblCasilla_16().setVisible(true);
+										vPrincipal.getLblCasilla_16().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
+										nJugadores++;
 									} else {
 										JOptionPane.showMessageDialog(null, "¡ Jugador 3 - Contraseña Incorrecta !","¡Atención!",JOptionPane.WARNING_MESSAGE);
 									}
@@ -267,27 +277,32 @@ public class DialogoJugadores extends JDialog {
 								if (usuariosBD.get(i).getUsuario().equals(cbxJug4Nombre.getSelectedItem())) {
 									String pass = usuariosBD.get(i).getContrasenia();
 									if (new String (pswJug4.getPassword()).equals(pass)) {
+										String icono = "/img/FichasSmall/Ficha" + colores[3] + "_00_00_00_00.png";
 										usuariosBD.get(i).setColor(colores[3]);
+										usuariosBD.get(i).setCasillaActual(8);
+										usuariosBD.get(i).setIcono(icono);
 										listaJugadores.add(usuariosBD.get(i));
 										todoUnable4();
-										vPrincipal.getBtnCasilla_08().setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/Ficha" + colores[3] + "_00_00_00_00.png")));
-										vPrincipal.getBtnCasilla_08().setEnabled(true);
-										vPrincipal.getBtnCasilla_08().setVisible(true);
+										vPrincipal.getLblCasilla_08().setVisible(true);
+										vPrincipal.getLblCasilla_08().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
+										nJugadores++;
 									} else {
 										JOptionPane.showMessageDialog(null, "¡ Jugador 4 - Contraseña Incorrecta !","¡Atención!",JOptionPane.WARNING_MESSAGE);
 									}
 								}
 							}
 							
-						}					
-						if (!cbxJug1Nombre.isEnabled() && !cbxJug2Nombre.isEnabled() && !cbxJug3Nombre.isEnabled() && !cbxJug4Nombre.isEnabled()) {
+						}
+						if(nJugadores == 0){
+							JOptionPane.showMessageDialog(null, "Se necesitan elegir al menos un jugador"," Trivial4B",JOptionPane.PLAIN_MESSAGE);
+						}
+						else {
 							vPrincipal.setListaJugadores(listaJugadores);
+							vPrincipal.setNJugadorActual(0);
 							vJugadores.dispose();
 							JOptionPane.showMessageDialog(null, "¡ Bienvenido a Trivial4B para - " + listaJugadores.size() + " jugadores !"," Trivial4B",JOptionPane.PLAIN_MESSAGE);
 							JOptionPane.showMessageDialog(null, "Turno del jugador : " + listaJugadores.get(0).getUsuario()," Trivial4B",JOptionPane.PLAIN_MESSAGE);
-						} else {
-							
-						}			
+						}		
 					
 				}
 

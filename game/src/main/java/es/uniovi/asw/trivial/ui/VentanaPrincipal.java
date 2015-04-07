@@ -1,5 +1,6 @@
 package es.uniovi.asw.trivial.ui;
 
+import java.awt.Button;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -13,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.ImageIcon;
@@ -30,6 +32,7 @@ import javax.swing.border.EmptyBorder;
 
 import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Usuario;
 import es.uniovi.asw.trivial.game.Trivial;
+import es.uniovi.asw.trivial.model.pregunta.PreguntaGame;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -167,6 +170,9 @@ public class VentanaPrincipal extends JFrame {
 	private static VentanaPrincipal ventanaPrincipal;
 	private List<Usuario> listaJugadores;
 	private Trivial trivial;
+	private int nJugadorTurnoActual;
+	private List<JButton> botonesTablero;
+	private List<JLabel> labelTablero;
 
 	/**
 	 * Launch the application.
@@ -188,7 +194,8 @@ public class VentanaPrincipal extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaPrincipal(Trivial t) {
-		this.trivial = t;		
+		this.trivial = t;
+		nJugadorTurnoActual = -1;
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaPrincipal.class.getResource("/img/ico_150x150_app.png")));
 		setTitle("Trivial Arquisoft4b");
@@ -201,6 +208,100 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.add(getMenuBar_1());
 		contentPane.add(getPnContenido());
 		ventanaPrincipal = this;
+		
+		botonesTablero = new ArrayList<JButton>();
+		botonesTablero.add(btnCasilla_00);
+		botonesTablero.add(btnCasilla_01);
+		botonesTablero.add(btnCasilla_02);
+		botonesTablero.add(btnCasilla_03);
+		botonesTablero.add(btnCasilla_04);
+		botonesTablero.add(btnCasilla_05);
+		botonesTablero.add(btnCasilla_06);
+		botonesTablero.add(btnCasilla_07);
+		botonesTablero.add(btnCasilla_08);
+		botonesTablero.add(btnCasilla_09);
+		botonesTablero.add(btnCasilla_10);
+		botonesTablero.add(btnCasilla_11);
+		botonesTablero.add(btnCasilla_12);
+		botonesTablero.add(btnCasilla_13);
+		botonesTablero.add(btnCasilla_14);
+		botonesTablero.add(btnCasilla_15);
+		botonesTablero.add(btnCasilla_16);
+		botonesTablero.add(btnCasilla_17);
+		botonesTablero.add(btnCasilla_18);
+		botonesTablero.add(btnCasilla_19);
+		botonesTablero.add(btnCasilla_20);
+		botonesTablero.add(btnCasilla_21);
+		botonesTablero.add(btnCasilla_22);
+		botonesTablero.add(btnCasilla_23);
+		botonesTablero.add(btnCasilla_24);
+		botonesTablero.add(btnCasilla_25);
+		botonesTablero.add(btnCasilla_26);
+		botonesTablero.add(btnCasilla_27);
+		botonesTablero.add(btnCasilla_28);
+		botonesTablero.add(btnCasilla_29);
+		botonesTablero.add(btnCasilla_30);
+		botonesTablero.add(btnCasilla_31);
+		botonesTablero.add(btnCasilla_32);
+		botonesTablero.add(btnCasilla_33);
+		botonesTablero.add(btnCasilla_34);
+		botonesTablero.add(btnCasilla_35);
+		botonesTablero.add(btnCasilla_36);
+		botonesTablero.add(btnCasilla_37);
+		botonesTablero.add(btnCasilla_38);
+		botonesTablero.add(btnCasilla_39);
+		botonesTablero.add(btnCasilla_40);
+		botonesTablero.add(btnCasilla_41);
+		botonesTablero.add(btnCasilla_42);
+		botonesTablero.add(btnCasilla_43);
+		botonesTablero.add(btnCasilla_44);
+		
+		labelTablero = new ArrayList<JLabel>();
+		labelTablero.add(lblCasilla_00);
+		labelTablero.add(lblCasilla_01);
+		labelTablero.add(lblCasilla_02);
+		labelTablero.add(lblCasilla_03);
+		labelTablero.add(lblCasilla_04);
+		labelTablero.add(lblCasilla_05);
+		labelTablero.add(lblCasilla_06);
+		labelTablero.add(lblCasilla_07);
+		labelTablero.add(lblCasilla_08);
+		labelTablero.add(lblCasilla_09);
+		labelTablero.add(lblCasilla_10);
+		labelTablero.add(lblCasilla_11);
+		labelTablero.add(lblCasilla_12);
+		labelTablero.add(lblCasilla_13);
+		labelTablero.add(lblCasilla_14);
+		labelTablero.add(lblCasilla_15);
+		labelTablero.add(lblCasilla_16);
+		labelTablero.add(lblCasilla_17);
+		labelTablero.add(lblCasilla_18);
+		labelTablero.add(lblCasilla_19);
+		labelTablero.add(lblCasilla_20);
+		labelTablero.add(lblCasilla_21);
+		labelTablero.add(lblCasilla_22);
+		labelTablero.add(lblCasilla_23);
+		labelTablero.add(lblCasilla_24);
+		labelTablero.add(lblCasilla_25);
+		labelTablero.add(lblCasilla_26);
+		labelTablero.add(lblCasilla_27);
+		labelTablero.add(lblCasilla_28);
+		labelTablero.add(lblCasilla_29);
+		labelTablero.add(lblCasilla_30);
+		labelTablero.add(lblCasilla_31);
+		labelTablero.add(lblCasilla_32);
+		labelTablero.add(lblCasilla_33);
+		labelTablero.add(lblCasilla_34);
+		labelTablero.add(lblCasilla_35);
+		labelTablero.add(lblCasilla_36);
+		labelTablero.add(lblCasilla_37);
+		labelTablero.add(lblCasilla_38);
+		labelTablero.add(lblCasilla_39);
+		labelTablero.add(lblCasilla_40);
+		labelTablero.add(lblCasilla_41);
+		labelTablero.add(lblCasilla_42);
+		labelTablero.add(lblCasilla_43);
+		labelTablero.add(lblCasilla_44);
 	}
 	private JMenuBar getMenuBar_1() {
 		if (menuBar == null) {
@@ -761,52 +862,13 @@ public class VentanaPrincipal extends JFrame {
 					lblMensajes.setText("elije casilla en el tablero"); //Cargar mensaje a mostrar
 					lblMensajes.setVisible(true); //Mostrar label mensajes
 					
-					btnCasilla_04.setVisible(true); //Mostrar botones de las casillas
-					btnCasilla_05.setVisible(true);
-					btnCasilla_06.setVisible(true);
-					btnCasilla_07.setVisible(true);
-					btnCasilla_08.setVisible(true);
-					btnCasilla_09.setVisible(true);
-					btnCasilla_10.setVisible(true);
-					btnCasilla_11.setVisible(true);
-					btnCasilla_12.setVisible(true);
-					btnCasilla_13.setVisible(true);
-					btnCasilla_14.setVisible(true);
-					btnCasilla_15.setVisible(true);
-					btnCasilla_16.setVisible(true);
-					btnCasilla_17.setVisible(true);
-					btnCasilla_18.setVisible(true);
-					btnCasilla_19.setVisible(true);
-					btnCasilla_20.setVisible(true);
-					btnCasilla_21.setVisible(true);
-					btnCasilla_22.setVisible(true);
-					btnCasilla_23.setVisible(true);
-					btnCasilla_24.setVisible(true);
-					btnCasilla_25.setVisible(true);
-					btnCasilla_26.setVisible(true);
-					btnCasilla_27.setVisible(true);
-					btnCasilla_28.setVisible(true);
-					btnCasilla_29.setVisible(true);
-					btnCasilla_30.setVisible(true);
-					btnCasilla_31.setVisible(true);
-					btnCasilla_00.setVisible(true);
-					btnCasilla_01.setVisible(true);
-					btnCasilla_02.setVisible(true);
-					btnCasilla_03.setVisible(true);
-					btnCasilla_35.setVisible(true);
-					btnCasilla_36.setVisible(true);
-					btnCasilla_37.setVisible(true);
-					btnCasilla_44.setVisible(true);
-					btnCasilla_43.setVisible(true);
-					btnCasilla_42.setVisible(true);
-					btnCasilla_41.setVisible(true);
-					btnCasilla_32.setVisible(true);
-					btnCasilla_33.setVisible(true);
-					btnCasilla_34.setVisible(true);
-					btnCasilla_40.setVisible(true);
-					btnCasilla_39.setVisible(true);
-					btnCasilla_38.setVisible(true);
+					List<Integer> destinos = trivial.obtenerDestinos(listaJugadores.get(nJugadorTurnoActual).getCasillaActual(), numDado);
 					
+					for (Integer destino : destinos) {
+						botonesTablero.get(destino).setVisible(true);
+					}
+					
+					btnComenzar3.setVisible(false);					
 				}
 			});
 			btnComenzar3.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Mensaje_over.png")));
@@ -963,6 +1025,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_04() {
 		if (btnCasilla_04 == null) {
 			btnCasilla_04 = new JButton("");
+			btnCasilla_04.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(4);
+				}
+			});
 			btnCasilla_04.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_04.setVisible(false);
 			btnCasilla_04.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -984,6 +1051,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_05() {
 		if (btnCasilla_05 == null) {
 			btnCasilla_05 = new JButton("");
+			btnCasilla_05.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(5);
+				}
+			});
 			btnCasilla_05.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_05.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_05.setVisible(false);
@@ -1006,6 +1078,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_06() {
 		if (btnCasilla_06 == null) {
 			btnCasilla_06 = new JButton("");
+			btnCasilla_06.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(6);
+				}
+			});
 			btnCasilla_06.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_06.setVisible(false);
 			btnCasilla_06.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1027,6 +1104,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_07() {
 		if (btnCasilla_07 == null) {
 			btnCasilla_07 = new JButton("");
+			btnCasilla_07.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(7);
+				}
+			});
 			btnCasilla_07.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_07.setVisible(false);
 			btnCasilla_07.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1048,6 +1130,11 @@ public class VentanaPrincipal extends JFrame {
 	protected JButton getBtnCasilla_08() {
 		if (btnCasilla_08 == null) {
 			btnCasilla_08 = new JButton("");
+			btnCasilla_08.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(8);
+				}
+			});
 			btnCasilla_08.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_08.setVisible(false);
 			btnCasilla_08.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1069,6 +1156,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_09() {
 		if (btnCasilla_09 == null) {
 			btnCasilla_09 = new JButton("");
+			btnCasilla_09.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(9);
+				}
+			});
 			btnCasilla_09.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_09.setVisible(false);
 			btnCasilla_09.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1090,6 +1182,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_10() {
 		if (btnCasilla_10 == null) {
 			btnCasilla_10 = new JButton("");
+			btnCasilla_10.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(10);
+				}
+			});
 			btnCasilla_10.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_10.setVisible(false);
 			btnCasilla_10.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1111,6 +1208,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_11() {
 		if (btnCasilla_11 == null) {
 			btnCasilla_11 = new JButton("");
+			btnCasilla_11.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(11);
+				}
+			});
 			btnCasilla_11.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_11.setVisible(false);
 			btnCasilla_11.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1132,6 +1234,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_12() {
 		if (btnCasilla_12 == null) {
 			btnCasilla_12 = new JButton("");
+			btnCasilla_12.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(12);
+				}
+			});
 			btnCasilla_12.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_12.setVisible(false);
 			btnCasilla_12.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1153,6 +1260,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_13() {
 		if (btnCasilla_13 == null) {
 			btnCasilla_13 = new JButton("");
+			btnCasilla_13.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(13);
+				}
+			});
 			btnCasilla_13.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_13.setVisible(false);
 			btnCasilla_13.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1174,6 +1286,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_14() {
 		if (btnCasilla_14 == null) {
 			btnCasilla_14 = new JButton("");
+			btnCasilla_14.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(14);
+				}
+			});
 			btnCasilla_14.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_14.setVisible(false);
 			btnCasilla_14.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1195,6 +1312,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_15() {
 		if (btnCasilla_15 == null) {
 			btnCasilla_15 = new JButton("");
+			btnCasilla_15.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(15);
+				}
+			});
 			btnCasilla_15.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_15.setVisible(false);
 			btnCasilla_15.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1216,6 +1338,11 @@ public class VentanaPrincipal extends JFrame {
 	JButton getBtnCasilla_16() {
 		if (btnCasilla_16 == null) {
 			btnCasilla_16 = new JButton("");
+			btnCasilla_16.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(16);
+				}
+			});
 			btnCasilla_16.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_16.setVisible(false);
 			btnCasilla_16.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1237,6 +1364,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_17() {
 		if (btnCasilla_17 == null) {
 			btnCasilla_17 = new JButton("");
+			btnCasilla_17.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(17);
+				}
+			});
 			btnCasilla_17.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_17.setVisible(false);
 			btnCasilla_17.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1258,6 +1390,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_18() {
 		if (btnCasilla_18 == null) {
 			btnCasilla_18 = new JButton("");
+			btnCasilla_18.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(18);
+				}
+			});
 			btnCasilla_18.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_18.setVisible(false);
 			btnCasilla_18.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1279,6 +1416,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_19() {
 		if (btnCasilla_19 == null) {
 			btnCasilla_19 = new JButton("");
+			btnCasilla_19.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(19);
+				}
+			});
 			btnCasilla_19.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_19.setVisible(false);
 			btnCasilla_19.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1300,6 +1442,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_20() {
 		if (btnCasilla_20 == null) {
 			btnCasilla_20 = new JButton("");
+			btnCasilla_20.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(20);
+				}
+			});
 			btnCasilla_20.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_20.setVisible(false);
 			btnCasilla_20.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1321,6 +1468,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_21() {
 		if (btnCasilla_21 == null) {
 			btnCasilla_21 = new JButton("");
+			btnCasilla_21.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(21);
+				}
+			});
 			btnCasilla_21.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_21.setVisible(false);
 			btnCasilla_21.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1342,6 +1494,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_22() {
 		if (btnCasilla_22 == null) {
 			btnCasilla_22 = new JButton("");
+			btnCasilla_22.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(22);
+				}
+			});
 			btnCasilla_22.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_22.setVisible(false);
 			btnCasilla_22.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1363,6 +1520,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_23() {
 		if (btnCasilla_23 == null) {
 			btnCasilla_23 = new JButton("");
+			btnCasilla_23.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(23);
+				}
+			});
 			btnCasilla_23.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_23.setVisible(false);
 			btnCasilla_23.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1384,6 +1546,11 @@ public class VentanaPrincipal extends JFrame {
 	JButton getBtnCasilla_24() {
 		if (btnCasilla_24 == null) {
 			btnCasilla_24 = new JButton("");
+			btnCasilla_24.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(24);
+				}
+			});
 			btnCasilla_24.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_24.setVisible(false);
 			btnCasilla_24.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1405,6 +1572,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_25() {
 		if (btnCasilla_25 == null) {
 			btnCasilla_25 = new JButton("");
+			btnCasilla_25.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(25);
+				}
+			});
 			btnCasilla_25.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_25.setVisible(false);
 			btnCasilla_25.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1426,6 +1598,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_26() {
 		if (btnCasilla_26 == null) {
 			btnCasilla_26 = new JButton("");
+			btnCasilla_26.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					nuevaTirada(26);
+				}
+			});
 			btnCasilla_26.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_26.setVisible(false);
 			btnCasilla_26.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1447,6 +1624,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_27() {
 		if (btnCasilla_27 == null) {
 			btnCasilla_27 = new JButton("");
+			btnCasilla_27.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(27);
+				}
+			});
 			btnCasilla_27.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_27.setVisible(false);
 			btnCasilla_27.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1468,6 +1650,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_28() {
 		if (btnCasilla_28 == null) {
 			btnCasilla_28 = new JButton("");
+			btnCasilla_28.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(28);
+				}
+			});
 			btnCasilla_28.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_28.setVisible(false);
 			btnCasilla_28.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1489,6 +1676,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_29() {
 		if (btnCasilla_29 == null) {
 			btnCasilla_29 = new JButton("");
+			btnCasilla_29.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(29);
+				}
+			});
 			btnCasilla_29.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_29.setVisible(false);
 			btnCasilla_29.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1510,6 +1702,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_30() {
 		if (btnCasilla_30 == null) {
 			btnCasilla_30 = new JButton("");
+			btnCasilla_30.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(30);
+				}
+			});
 			btnCasilla_30.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_30.setVisible(false);
 			btnCasilla_30.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1531,6 +1728,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_31() {
 		if (btnCasilla_31 == null) {
 			btnCasilla_31 = new JButton("");
+			btnCasilla_31.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(31);
+				}
+			});
 			btnCasilla_31.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_31.setVisible(false);
 			btnCasilla_31.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1552,6 +1754,11 @@ public class VentanaPrincipal extends JFrame {
 	public JButton getBtnCasilla_00() {
 		if (btnCasilla_00 == null) {
 			btnCasilla_00 = new JButton("");
+			btnCasilla_00.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(0);
+				}
+			});
 			btnCasilla_00.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_00.setVisible(false);
 			btnCasilla_00.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1573,6 +1780,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_01() {
 		if (btnCasilla_01 == null) {
 			btnCasilla_01 = new JButton("");
+			btnCasilla_01.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(1);
+				}
+			});
 			btnCasilla_01.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_01.setVisible(false);
 			btnCasilla_01.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1594,6 +1806,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_02() {
 		if (btnCasilla_02 == null) {
 			btnCasilla_02 = new JButton("");
+			btnCasilla_02.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(2);
+				}
+			});
 			btnCasilla_02.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_02.setVisible(false);
 			btnCasilla_02.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1615,6 +1832,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_03() {
 		if (btnCasilla_03 == null) {
 			btnCasilla_03 = new JButton("");
+			btnCasilla_03.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(3);
+				}
+			});
 			btnCasilla_03.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_03.setVisible(false);
 			btnCasilla_03.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -1636,6 +1858,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_35() {
 		if (btnCasilla_35 == null) {
 			btnCasilla_35 = new JButton("");
+			btnCasilla_35.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(35);
+				}
+			});
 			btnCasilla_35.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_35.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_35.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1657,6 +1884,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_36() {
 		if (btnCasilla_36 == null) {
 			btnCasilla_36 = new JButton("");
+			btnCasilla_36.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(36);
+				}
+			});
 			btnCasilla_36.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_36.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_36.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1678,6 +1910,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_37() {
 		if (btnCasilla_37 == null) {
 			btnCasilla_37 = new JButton("");
+			btnCasilla_37.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(37);
+				}
+			});
 			btnCasilla_37.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_37.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_37.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1699,6 +1936,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_44() {
 		if (btnCasilla_44 == null) {
 			btnCasilla_44 = new JButton("");
+			btnCasilla_44.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(44);
+				}
+			});
 			btnCasilla_44.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_44.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_44.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1720,6 +1962,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_43() {
 		if (btnCasilla_43 == null) {
 			btnCasilla_43 = new JButton("");
+			btnCasilla_43.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(43);
+				}
+			});
 			btnCasilla_43.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_43.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_43.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1741,6 +1988,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_42() {
 		if (btnCasilla_42 == null) {
 			btnCasilla_42 = new JButton("");
+			btnCasilla_42.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(42);
+				}
+			});
 			btnCasilla_42.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_42.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_42.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1762,6 +2014,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_41() {
 		if (btnCasilla_41 == null) {
 			btnCasilla_41 = new JButton("");
+			btnCasilla_41.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(41);
+				}
+			});
 			btnCasilla_41.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_41.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_41.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1783,6 +2040,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_32() {
 		if (btnCasilla_32 == null) {
 			btnCasilla_32 = new JButton("");
+			btnCasilla_32.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(32);
+				}
+			});
 			btnCasilla_32.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_32.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_32.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1804,6 +2066,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_33() {
 		if (btnCasilla_33 == null) {
 			btnCasilla_33 = new JButton("");
+			btnCasilla_33.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(33);
+				}
+			});
 			btnCasilla_33.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_33.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_33.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1825,6 +2092,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_34() {
 		if (btnCasilla_34 == null) {
 			btnCasilla_34 = new JButton("");
+			btnCasilla_34.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(34);
+				}
+			});
 			btnCasilla_34.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_34.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_34.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1846,6 +2118,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_40() {
 		if (btnCasilla_40 == null) {
 			btnCasilla_40 = new JButton("");
+			btnCasilla_40.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(40);
+				}
+			});
 			btnCasilla_40.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_40.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_40.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1867,6 +2144,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_39() {
 		if (btnCasilla_39 == null) {
 			btnCasilla_39 = new JButton("");
+			btnCasilla_39.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(39);
+				}
+			});
 			btnCasilla_39.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_39.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_39.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -1888,6 +2170,11 @@ public class VentanaPrincipal extends JFrame {
 	private JButton getBtnCasilla_38() {
 		if (btnCasilla_38 == null) {
 			btnCasilla_38 = new JButton("");
+			btnCasilla_38.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					nuevaTirada(38);
+				}
+			});
 			btnCasilla_38.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir_over.png")));
 			btnCasilla_38.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 			btnCasilla_38.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Casilla_ir.png")));
@@ -2048,7 +2335,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblCasilla_30;
 	}
-	private JLabel getLblCasilla_16() {
+	JLabel getLblCasilla_16() {
 		if (lblCasilla_16 == null) {
 			lblCasilla_16 = new JLabel("");
 			lblCasilla_16.setVisible(false);
@@ -2056,7 +2343,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblCasilla_16;
 	}
-	private JLabel getLblCasilla_08() {
+	JLabel getLblCasilla_08() {
 		if (lblCasilla_08 == null) {
 			lblCasilla_08 = new JLabel("");
 			lblCasilla_08.setVisible(false);
@@ -2064,7 +2351,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblCasilla_08;
 	}
-	private JLabel getLblCasilla_24() {
+	JLabel getLblCasilla_24() {
 		if (lblCasilla_24 == null) {
 			lblCasilla_24 = new JLabel("");
 			lblCasilla_24.setVisible(false);
@@ -2224,7 +2511,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblCasilla_01;
 	}
-	private JLabel getLblCasilla_00() {
+	JLabel getLblCasilla_00() {
 		if (lblCasilla_00 == null) {
 			lblCasilla_00 = new JLabel("");
 			lblCasilla_10.setVisible(false);
@@ -2379,7 +2666,59 @@ public class VentanaPrincipal extends JFrame {
 
 	public void setListaJugadores(List<Usuario> listaJugadores) {
 		this.listaJugadores = listaJugadores;
-		
 	}
+	
+	public List<Usuario> getListaJugadores(){
+		return listaJugadores;
+	}
+
+	public void setNJugadorActual(int i) {
+		this.nJugadorTurnoActual = i;
+	}
+	
+	private void nuevaTirada(int casilla){
+		for (JButton jButton : botonesTablero)
+			jButton.setVisible(false);
+		for (JLabel jLabel : labelTablero)
+			jLabel.setVisible(false);
+		
+		for (Usuario usuario : listaJugadores) {
+			int casillaJugador = usuario.getCasillaActual();
+			labelTablero.get(casillaJugador).setVisible(true);
+			labelTablero.get(casillaJugador).setIcon(new ImageIcon(VentanaPrincipal.class.getResource(usuario.getIcono())));
+		}
+		
+		Usuario jugadorActual = listaJugadores.get(nJugadorTurnoActual);
+		int casillaActual = jugadorActual.getCasillaActual();
+		labelTablero.get(casillaActual).setVisible(false);
+		
+		labelTablero.get(casilla).setVisible(true);
+		labelTablero.get(casilla).setIcon(new ImageIcon(VentanaPrincipal.class.getResource(jugadorActual.getIcono())));
+		
+		listaJugadores.get(nJugadorTurnoActual).setCasillaActual(casilla);
+		
+		trivial.usarCasilla(casilla);
+		boolean isVuelveATirar = trivial.isVuelveATirar();
+		boolean isCasillaFinal = trivial.isCasillaFinal();
+		
+		if(isVuelveATirar){
+			System.out.println("Vuelve A Tirar");
+			trivial.setVuelveATirar(false);
+		}
+		else if(isCasillaFinal){
+			System.out.println("Casilla Final");
+			trivial.setCasillaFinal(false);
+		}
+		else{
+			PreguntaGame pregunta = trivial.getPreguntaActual();			
+			System.out.println(pregunta.getPregunta().getEnunciado());
+			
+			DialogoPregunta dialogoPregunta = new DialogoPregunta(pregunta, this);
+			dialogoPregunta.setVisible(true);
+		}
+		
+		btnComenzar3.setVisible(true);		
+	}
+	
 }
 

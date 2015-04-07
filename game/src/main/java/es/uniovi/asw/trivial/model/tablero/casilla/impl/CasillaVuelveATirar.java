@@ -10,7 +10,7 @@ public class CasillaVuelveATirar implements Casilla{
 		// Permite volver a tirar (nuevo turno)
 		return new Action() {
 			public void execute(Trivial trivial) {
-				System.out.println("Casilla vuelve a tirar");
+				trivial.setVuelveATirar(true);
 			}
 		};
 	}
