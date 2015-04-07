@@ -2716,6 +2716,17 @@ public class VentanaPrincipal extends JFrame {
 		
 		btnComenzar3.setVisible(true);		
 	}
+
+	public void siguienteJugador() {
+		
+	}
+
+	public void actualizarQuesitos(String categoria) {
+		Usuario jugadorActual = listaJugadores.get(nJugadorTurnoActual);
+		jugadorActual.addQuesito(categoria);
+		int casillaJugador = listaJugadores.get(nJugadorTurnoActual).getCasillaActual();
+		labelTablero.get(casillaJugador).setIcon(new ImageIcon(VentanaPrincipal.class.getResource(jugadorActual.getIcono())));
+	}
 	
 }
 

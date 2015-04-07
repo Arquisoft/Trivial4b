@@ -52,6 +52,8 @@ public class DialogoPregunta extends JDialog {
 	private PreguntaGame pregunta;
 	private VentanaPrincipal vPrincipal;
 	private int respuestaCorrecta;
+	
+	private boolean respuestaAcertada;
 
 	/**
 	 * Create the dialog.
@@ -111,7 +113,8 @@ public class DialogoPregunta extends JDialog {
 		lblRespuesta4.setText(respuestas.get(3).getRespuesta());
 		btnRespuesta4.setText(respuestas.get(3).getRespuesta());
 		
-		
+		lblImgCategoria.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Tema_"+pregunta.getPregunta().getCategoria().replace(" ", "_")+".png")));
+		respuestaAcertada = false;
 	}
 	private JLabel getLblImgFondoPreguntas() {
 		if (lblImgFondoPreguntas == null) {
@@ -165,6 +168,9 @@ public class DialogoPregunta extends JDialog {
 						lblRespuesta4.setVisible(true);
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Correcta > Continuar");
+						respuestaAcertada = true;
+						lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_"+pregunta.getPregunta().getCategoria().replace(" ", "_")+".png")));
+						lblImgQuesito.setVisible(true);
 					}
 					else{
 						// Botones Respuesta 1, 2, 3, 4 > ocultar
@@ -232,6 +238,9 @@ public class DialogoPregunta extends JDialog {
 						lblRespuesta4.setVisible(true);
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Correcta > Continuar");
+						respuestaAcertada = true;
+						lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_"+pregunta.getPregunta().getCategoria().replace(" ", "_")+".png")));
+						lblImgQuesito.setVisible(true);
 					}
 					else{
 						// Botones Respuesta 1, 2, 3, 4 > ocultar
@@ -249,7 +258,8 @@ public class DialogoPregunta extends JDialog {
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Incorrecta > Continuar");
 					}
-					
+					// Bot�n Continuar > Mostrar
+					btnContinuar.setVisible(true);
 				}
 			});
 			btnRespuesta2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -294,6 +304,9 @@ public class DialogoPregunta extends JDialog {
 						lblRespuesta4.setVisible(true);
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Correcta > Continuar");
+						respuestaAcertada = true;
+						lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_"+pregunta.getPregunta().getCategoria().replace(" ", "_")+".png")));
+						lblImgQuesito.setVisible(true);
 					}
 					else{
 						// Botones Respuesta 1, 2, 3, 4 > ocultar
@@ -311,7 +324,8 @@ public class DialogoPregunta extends JDialog {
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Incorrecta > Continuar");
 					}
-					
+					// Bot�n Continuar > Mostrar
+					btnContinuar.setVisible(true);
 				}
 			});
 			btnRespuesta3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -356,6 +370,9 @@ public class DialogoPregunta extends JDialog {
 						lblRespuesta4.setVisible(true);
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Correcta > Continuar");
+						respuestaAcertada = true;
+						lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_"+pregunta.getPregunta().getCategoria().replace(" ", "_")+".png")));
+						lblImgQuesito.setVisible(true);
 					}
 					else{
 						// Botones Respuesta 1, 2, 3, 4 > ocultar
@@ -373,7 +390,8 @@ public class DialogoPregunta extends JDialog {
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Incorrecta > Continuar");
 					}
-					
+					// Bot�n Continuar > Mostrar
+					btnContinuar.setVisible(true);
 				}
 			});
 			btnRespuesta4.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -436,9 +454,12 @@ public class DialogoPregunta extends JDialog {
 			btnContinuar.setVisible(false);
 			btnContinuar.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
-					
 					//Acci�n al pulsar "Continuar"
-					
+					dispose();
+					if(pregunta.isEsQuesito() && respuestaAcertada)
+						vPrincipal.actualizarQuesitos(pregunta.getPregunta().getCategoria());
+//					if(!respuestaAcertada)
+//						vPrincipal.siguienteJugador();
 				}
 			});
 			btnContinuar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));

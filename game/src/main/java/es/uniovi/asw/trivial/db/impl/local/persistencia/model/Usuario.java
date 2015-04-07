@@ -1,8 +1,10 @@
 package es.uniovi.asw.trivial.db.impl.local.persistencia.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -28,6 +30,8 @@ public class Usuario implements Serializable{
 	@Transient
 	private int casillaActual;
 	@Transient
+	private String[] quesitos;
+	@Transient
 	private String icono;
 	@OneToMany(mappedBy = "usuario")
 	protected Set<UsuariosPartida> partidas= new HashSet<UsuariosPartida>();
@@ -51,6 +55,30 @@ public class Usuario implements Serializable{
 		this.nombre = nombre;
 		this.color = "";
 		this.casillaActual = -1;
+		this.quesitos = new String[4];
+	}
+	
+	public void addQuesito(String categoria) {
+		if(quesitos == null)
+			quesitos = new String[4];
+		if(categoria.equalsIgnoreCase("espectáculos"))
+			quesitos[0] = categoria;
+		else if(categoria.equalsIgnoreCase("ciencia y naturaleza"))
+			quesitos[1] = categoria;
+		else if(categoria.equalsIgnoreCase("geografía"))
+			quesitos[2] = categoria;
+		else if(categoria.equalsIgnoreCase("historia"))
+			quesitos[3] = categoria;
+		
+		actualizarIconoQuesitos();
+	}
+	
+	public void actualizarIconoQuesitos(){
+		icono = icono.split("_")[0];
+		for(String quesito : quesitos){
+			icono += "_"+quesito;
+		}
+		icono += ".png";
 	}
 	
 	public Long getId() {
