@@ -220,9 +220,9 @@ public class DialogoJugadores extends JDialog {
 			btnComenzar2.setRolloverIcon(new ImageIcon(DialogoJugadores.class.getResource("/img/Mensaje_over.png")));
 			btnComenzar2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {				
-//					((CardLayout)pnContenido.getLayout()).show(pnContenido,"name_9358627801380");
-					
+//					((CardLayout)pnContenido.getLayout()).show(pnContenido,"name_9358627801380");		
 					boolean valido = true;
+					boolean passValido = false;
 					// Para Nuevos Jugadores.
 					int nJugadores = 0;
 					PersistenceFactory finder = new SimplePersistenceFactory();
@@ -231,68 +231,115 @@ public class DialogoJugadores extends JDialog {
 					//TODO Comprobar que no existen dos usuarios iguales
 					//Por la noche lo miran Pedro y Juako
 					if (!txtJug1Nombre.getText().equals("") && cbxJug1Nombre.getSelectedItem().equals("")) {
-						if(!(getPswJug1().getPassword().length==0)){
+						if(!(getPswJug1().getPassword().length == 0)){
 							Usuario usuario = new Usuario(numUsuarios + 1,
 									txtJug1Nombre.getText(), new String(getPswJug1()
 											.getPassword()),
 									txtJug1Nombre.getText());
+							passValido = true;
+							nJugadores++;
 							try {
 								finder.createUsuarioFinder().save(usuario);
+								numUsuarios++;
+								String icono = "/img/FichasSmall/Ficha" + colores[0] + "_00_00_00_00.png";
+								usuario.setColor(colores[0]);
+								usuario.setCasillaActual(24);
+								usuario.setIcono(icono);
+								listaJugadores.add(usuario);
+								todoUnable1();
+								vPrincipal.getLblCasilla_24().setVisible(true);
+								vPrincipal.getLblCasilla_24().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));		
 							} catch (IOException e) {
 								JOptionPane.showMessageDialog(null, "¡El jugador ya existe!","¡Atención!",JOptionPane.WARNING_MESSAGE);
 								nJugadores = -1;
-							}
-							listaJugadores.add(usuario);
-							numUsuarios++;
+							}						
+												
+						} else {
+							passValido = false;						
 						}
 					}
-					if (!txtJug2Nombre.getText().equals("") || cbxJug2Nombre.getSelectedItem().equals("")) {
-						if(!(getPswJug2().getPassword().length==0)){
+					if (!txtJug2Nombre.getText().equals("") && cbxJug2Nombre.getSelectedItem().equals("")) {
+						if(!(getPswJug2().getPassword().length == 0)){
 							Usuario usuario = new Usuario(numUsuarios + 1,
 									txtJug2Nombre.getText(), new String(getPswJug2()
 											.getPassword()),
 									txtJug2Nombre.getText());
+							passValido = true;
+							nJugadores++;
 							try {
 								finder.createUsuarioFinder().save(usuario);
+								numUsuarios++;
+								String icono = "/img/FichasSmall/Ficha" + colores[1] + "_00_00_00_00.png";
+								usuario.setColor(colores[1]);
+								usuario.setCasillaActual(00);
+								usuario.setIcono(icono);
+								listaJugadores.add(usuario);
+								todoUnable2();
+								vPrincipal.getLblCasilla_00().setVisible(true);
+								vPrincipal.getLblCasilla_00().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
 							} catch (IOException e) {
 								JOptionPane.showMessageDialog(null, "¡El jugador ya existe!","¡Atención!",JOptionPane.WARNING_MESSAGE);
 								nJugadores = -1;
-							}
-							listaJugadores.add(usuario);
-							numUsuarios++;
+							} 						
 							
+						} else {
+							passValido = false;						
 						}
 					}
-					if (!txtJug3Nombre.getText().equals("") || cbxJug3Nombre.getSelectedItem().equals("")) {
-						if(!(getPswJug3().getPassword().length==0)){
+					if (!txtJug3Nombre.getText().equals("") && cbxJug3Nombre.getSelectedItem().equals("")) {
+						if(!(getPswJug3().getPassword().length == 0)){
 							Usuario usuario = new Usuario(numUsuarios + 1,
 									txtJug3Nombre.getText(), new String(getPswJug3()
 											.getPassword()),
 									txtJug3Nombre.getText());
+							passValido = true;
+							nJugadores++;
 							try {
 								finder.createUsuarioFinder().save(usuario);
+								numUsuarios++;
+								String icono = "/img/FichasSmall/Ficha" + colores[2] + "_00_00_00_00.png";
+								usuario.setColor(colores[2]);
+								usuario.setCasillaActual(16);
+								usuario.setIcono(icono);
+								listaJugadores.add(usuario);
+								todoUnable1();
+								vPrincipal.getLblCasilla_16().setVisible(true);
+								vPrincipal.getLblCasilla_16().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
 							} catch (IOException e) {
 								JOptionPane.showMessageDialog(null, "¡El jugador ya existe!","¡Atención!",JOptionPane.WARNING_MESSAGE);
 								nJugadores = -1;
 							}
-							listaJugadores.add(usuario);
-							numUsuarios++;
+							
+						} else {
+							passValido = false;						
 						}
 					}
-					if (!txtJug4Nombre.getText().equals("") || cbxJug4Nombre.getSelectedItem().equals("")) {
-						if(!(getPswJug4().getPassword().length==0)){
+					if (!txtJug4Nombre.getText().equals("") && cbxJug4Nombre.getSelectedItem().equals("")) {
+						if(!(getPswJug4().getPassword().length == 0)){
 							Usuario usuario = new Usuario(numUsuarios + 1,
 									txtJug4Nombre.getText(), new String(getPswJug4()
 											.getPassword()),
 									txtJug4Nombre.getText());
+							passValido = true;
+							nJugadores++;
 							try {
 								finder.createUsuarioFinder().save(usuario);
+								numUsuarios++;
+								String icono = "/img/FichasSmall/Ficha" + colores[3] + "_00_00_00_00.png";
+								usuario.setColor(colores[3]);
+								usuario.setCasillaActual(8);
+								usuario.setIcono(icono);
+								listaJugadores.add(usuario);
+								todoUnable1();
+								vPrincipal.getLblCasilla_08().setVisible(true);
+								vPrincipal.getLblCasilla_08().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
 							} catch (IOException e) {
 								JOptionPane.showMessageDialog(null, "¡El jugador ya existe!","¡Atención!",JOptionPane.WARNING_MESSAGE);
 								nJugadores = -1;
 							}
-							listaJugadores.add(usuario);
-							numUsuarios++;
+							
+						} else {
+							passValido = false;						
 						}
 					}
 					
@@ -406,10 +453,12 @@ public class DialogoJugadores extends JDialog {
 							}
 							
 						}
-						if(nJugadores == 0){
+						if(passValido == false){
+							JOptionPane.showMessageDialog(null, "¡ Las contraseñas han de tener 1 caracter !","¡Atención!",JOptionPane.WARNING_MESSAGE);
+						} else if (nJugadores == 0) {
 							JOptionPane.showMessageDialog(null, "Se necesitan elegir al menos un jugador"," Trivial4B",JOptionPane.PLAIN_MESSAGE);
 						}
-						else if(nJugadores != -1) {
+						else if(nJugadores > 0) {
 							vPrincipal.setListaJugadores(listaJugadores);
 							vPrincipal.setNJugadorActual(0);
 							vJugadores.dispose();
