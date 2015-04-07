@@ -28,6 +28,11 @@ public class Respuesta implements Serializable{
 		this.correcta = correcta;
 	}
 	
+	public Respuesta( String respuesta, boolean correcta) {
+		this.respuesta = respuesta;
+		this.correcta = correcta;
+	}
+	
 	
 	public Long getId() {
 		return id;

@@ -2,13 +2,14 @@ package es.uniovi.asw.trivial;
 
 import java.util.List;
 
-import es.uniovi.asw.trivial.db.DBManager;
-import es.uniovi.asw.trivial.game.Grafo;
-import es.uniovi.asw.trivial.game.Trivial;
-import es.uniovi.asw.trivial.model.pregunta.*;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import es.uniovi.asw.trivial.db.DBManager;
+import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Pregunta;
+import es.uniovi.asw.trivial.game.Grafo;
+import es.uniovi.asw.trivial.game.Trivial;
+import es.uniovi.asw.trivial.model.pregunta.PreguntaComparator;
 
 /**
  * Unit test for simple App.
@@ -57,7 +58,7 @@ public class AppTest
 	
 	public void testEstructuraPreguntas() {	
 		for (int i = 0; i < preguntas.size(); i++) {
-			assert(preguntas.get(0).getEnunciado().length() > 5);
+			assert(preguntas.get(0).getPregunta().length() > 5);
 			assertNotNull(preguntas.get(i).getRespuestaCorrecta());
 			int respuestasCorrectas = 0;
 			for (int j = 0; j < preguntas.get(i).getRespuestas().size(); j++) {

@@ -1,6 +1,5 @@
 package es.uniovi.asw.trivial.ui;
 
-import java.awt.Button;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -32,6 +31,7 @@ import javax.swing.border.EmptyBorder;
 
 import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Usuario;
 import es.uniovi.asw.trivial.game.Trivial;
+import es.uniovi.asw.trivial.main.Main;
 import es.uniovi.asw.trivial.model.pregunta.PreguntaGame;
 
 public class VentanaPrincipal extends JFrame {
@@ -342,13 +342,10 @@ public class VentanaPrincipal extends JFrame {
 			mntmNewMenuItem = new JMenuItem("Nueva partida");
 			mntmNewMenuItem.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					
-					//Men� Juego > Nueva partida
+				ventanaPrincipal.dispose();	
+				//Men� Juego > Nueva partida
 					// Mostrar Di�logo de selecci�n de jugadores
-					DialogoJugadores frame = new DialogoJugadores(ventanaPrincipal); 
-					frame.setLocationRelativeTo(null); 
-					frame.setVisible(true);
-					frame.setModalityType(DialogoJugadores.ModalityType.APPLICATION_MODAL);
+					Main.main(null);
 					
 				}
 			});
@@ -2711,7 +2708,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		else{
 			PreguntaGame pregunta = trivial.getPreguntaActual();			
-			System.out.println(pregunta.getPregunta().getEnunciado());
+			System.out.println(pregunta.getPregunta().getPregunta());
 			
 			DialogoPregunta dialogoPregunta = new DialogoPregunta(pregunta, this);
 			dialogoPregunta.setVisible(true);

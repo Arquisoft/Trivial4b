@@ -1,6 +1,5 @@
 package es.uniovi.asw.trivial.ui;
 
-import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -155,6 +154,65 @@ public class DialogoJugadores extends JDialog {
 		
 				
 	}
+	
+	public DialogoJugadores(VentanaPrincipal ventanaPrincipal, List<Usuario> usuarios) {
+		this.vPrincipal = ventanaPrincipal;
+		this.listaJugadores = usuarios;
+		PersistenceFactory pf = new SimplePersistenceFactory();
+		usuariosBD = pf.createUsuarioFinder().findAll();
+		nicks = new String[usuariosBD.size() + 1];
+		nicks[0] = "";
+		for (int i = 1; i < usuariosBD.size() + 1; i++) {
+			nicks[i] = usuariosBD.get(i - 1).getUsuario();
+		}	
+		setResizable(false);
+		setModalityType(ModalityType.APPLICATION_MODAL);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DialogoJugadores.class.getResource("/img/ico_32x32_jugadores.png")));
+		setTitle("Selecci\u00F3n de Jugadores");
+		getContentPane().setBounds(new Rectangle(0, 0, 480, 443));
+		setBounds(100, 100, 621, 476);
+		getContentPane().setLayout(null);
+		panelPrincipal.setPreferredSize(new Dimension(480, 443));
+		panelPrincipal.setMinimumSize(new Dimension(480, 443));
+		panelPrincipal.setMaximumSize(new Dimension(480, 443));
+		panelPrincipal.setBounds(new Rectangle(0, 0, 615, 443));
+		panelPrincipal.setBackground(new Color(0, 55, 76));
+		panelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(panelPrincipal);
+		panelPrincipal.setLayout(null);
+		panelPrincipal.add(getBtnComenzar2());
+		panelPrincipal.add(getLblQuesitoRo());
+		panelPrincipal.add(getLblJug1Nuevo());
+		panelPrincipal.add(getTxtJug1Nombre());
+		panelPrincipal.add(getLblJug1Existente());
+		panelPrincipal.add(getCbxJug1Nombre());
+		panelPrincipal.add(getLblJug1Contras());
+		panelPrincipal.add(getPswJug1());
+		panelPrincipal.add(getLblQuesitoVe());
+		panelPrincipal.add(getLblJug2Nuevo());
+		panelPrincipal.add(getTxtJug2Nombre());
+		panelPrincipal.add(getLblJug2Existente());
+		panelPrincipal.add(getCbxJug2Nombre());
+		panelPrincipal.add(getLblJug2Contras());
+		panelPrincipal.add(getPswJug2());
+		panelPrincipal.add(getLblQuesitoAm());
+		panelPrincipal.add(getLblJug3Nuevo());
+		panelPrincipal.add(getTxtJug3Nombre());
+		panelPrincipal.add(getLblJug3Existente());
+		panelPrincipal.add(getCbxJug3Nombre());
+		panelPrincipal.add(getLblJug3Contras());
+		panelPrincipal.add(getPswJug3());
+		panelPrincipal.add(getLblQuesitoAz());
+		panelPrincipal.add(getLblJug4Nuevo());
+		panelPrincipal.add(getTxtJug4Nombre());
+		panelPrincipal.add(getLblJug4Existente());
+		panelPrincipal.add(getCbxJug4Nombre());
+		panelPrincipal.add(getLblJug4Contras());
+		panelPrincipal.add(getPswJug4());
+		
+		
+				
+	}
 	private JButton getBtnComenzar2() {
 		if (btnComenzar2 == null) {
 			btnComenzar2 = new JButton("Comenzar");
@@ -166,22 +224,55 @@ public class DialogoJugadores extends JDialog {
 					boolean valido = true;
 					// Para Nuevos Jugadores.
 					int nJugadores = 0;
-//					if (!txtJug1Nombre.getText().equals("") || cbxJug1Nombre.getSelectedItem().equals("")) {
-//						//Crear usuario1 en la base de datos, crear usuario1 en memoria.
-//						todoUnable1();
-//					}
-//					if (!txtJug2Nombre.getText().equals("") || cbxJug2Nombre.getSelectedItem().equals("")) {
-//						//Crear usuario2 en la base de datos, crear usuario1 en memoria.
-//						todoUnable2();
-//					}
-//					if (!txtJug3Nombre.getText().equals("") || cbxJug3Nombre.getSelectedItem().equals("")) {
-//						//Crear usuario3 en la base de datos, crear usuario1 en memoria.
-//						todoUnable3();
-//					}
-//					if (!txtJug4Nombre.getText().equals("") || cbxJug4Nombre.getSelectedItem().equals("")) {
-//						//Crear usuario4 en la base de datos, crear usuario1 en memoria.
-//						todoUnable4();
-//					}
+					PersistenceFactory finder = new SimplePersistenceFactory();
+					List<Usuario> usuariosDB =  finder.createUsuarioFinder().findAll();
+					Long numUsuarios = (long) usuariosDB.size();
+					//TODO Comprobar que no existen dos usuarios iguales
+					//Por la noche lo miran Pedro y Juako
+					if (!txtJug1Nombre.getText().equals("") && cbxJug1Nombre.getSelectedItem().equals("")) {
+						if(!(getPswJug1().getPassword().length==0)){
+							Usuario usuario = new Usuario(numUsuarios + 1,
+									txtJug1Nombre.getText(), new String(getPswJug1()
+											.getPassword()),
+									txtJug1Nombre.getText());
+							finder.createUsuarioFinder().save(usuario);
+							listaJugadores.add(usuario);
+							numUsuarios++;
+						}
+					}
+					if (!txtJug2Nombre.getText().equals("") || cbxJug2Nombre.getSelectedItem().equals("")) {
+						if(!(getPswJug2().getPassword().length==0)){
+							Usuario usuario = new Usuario(numUsuarios + 1,
+									txtJug2Nombre.getText(), new String(getPswJug2()
+											.getPassword()),
+									txtJug2Nombre.getText());
+							finder.createUsuarioFinder().save(usuario);
+							listaJugadores.add(usuario);
+							numUsuarios++;
+						}
+					}
+					if (!txtJug3Nombre.getText().equals("") || cbxJug3Nombre.getSelectedItem().equals("")) {
+						if(!(getPswJug3().getPassword().length==0)){
+							Usuario usuario = new Usuario(numUsuarios + 1,
+									txtJug3Nombre.getText(), new String(getPswJug3()
+											.getPassword()),
+									txtJug3Nombre.getText());
+							finder.createUsuarioFinder().save(usuario);
+							listaJugadores.add(usuario);
+							numUsuarios++;
+						}
+					}
+					if (!txtJug4Nombre.getText().equals("") || cbxJug4Nombre.getSelectedItem().equals("")) {
+						if(!(getPswJug4().getPassword().length==0)){
+							Usuario usuario = new Usuario(numUsuarios + 1,
+									txtJug4Nombre.getText(), new String(getPswJug4()
+											.getPassword()),
+									txtJug4Nombre.getText());
+							finder.createUsuarioFinder().save(usuario);
+							listaJugadores.add(usuario);
+							numUsuarios++;
+						}
+					}
 					
 						//Para Jugadores existentes.
 						//Comprobación de contraseñas.
@@ -300,6 +391,7 @@ public class DialogoJugadores extends JDialog {
 							vPrincipal.setListaJugadores(listaJugadores);
 							vPrincipal.setNJugadorActual(0);
 							vJugadores.dispose();
+							
 							JOptionPane.showMessageDialog(null, "¡ Bienvenido a Trivial4B para - " + listaJugadores.size() + " jugadores !"," Trivial4B",JOptionPane.PLAIN_MESSAGE);
 							JOptionPane.showMessageDialog(null, "Turno del jugador : " + listaJugadores.get(0).getUsuario()," Trivial4B",JOptionPane.PLAIN_MESSAGE);
 						}		

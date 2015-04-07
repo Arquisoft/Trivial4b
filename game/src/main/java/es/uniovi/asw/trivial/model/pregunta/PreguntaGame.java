@@ -1,5 +1,7 @@
 package es.uniovi.asw.trivial.model.pregunta;
 
+import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Pregunta;
+
 public class PreguntaGame {
 
 	private Pregunta pregunta;

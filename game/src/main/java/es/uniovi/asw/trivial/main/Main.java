@@ -2,14 +2,10 @@ package es.uniovi.asw.trivial.main;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Properties;
-
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.PropertyConfigurator;
 
 import es.uniovi.asw.trivial.db.DBManager;
+import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Pregunta;
 import es.uniovi.asw.trivial.game.Trivial;
-import es.uniovi.asw.trivial.model.pregunta.Pregunta;
 import es.uniovi.asw.trivial.model.pregunta.PreguntaComparator;
 import es.uniovi.asw.trivial.ui.VentanaPrincipal;
 

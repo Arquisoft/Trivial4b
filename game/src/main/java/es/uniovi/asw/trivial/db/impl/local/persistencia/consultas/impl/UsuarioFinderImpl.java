@@ -14,7 +14,19 @@ import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Usuario;
 public class UsuarioFinderImpl implements UsuarioFinder {
 	
 	public void save(Usuario usuario) {
-		Jpa.getManager().merge(usuario);
+		EntityManager em = Jpa.createEntityManager();
+		EntityTransaction trx = em.getTransaction();
+		try{
+			trx.begin();
+			Jpa.getManager().merge(usuario);
+			trx.commit();
+		}catch(PersistenceException e) {
+			try {
+				throw new IOException("Base de datos NO conectada.");
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		}
 	}
 
 	public void delete(Usuario usuario) {
@@ -29,27 +41,19 @@ public class UsuarioFinderImpl implements UsuarioFinder {
 		// Contexto persistencia abierto
 		try {
 			trx.begin();
+			return Jpa.getManager()
+					.createNamedQuery("Usuario.findAll", Usuario.class)
+					.getResultList();
+
 		} catch (PersistenceException e) {
 			try {
 				throw new IOException("Base de datos NO conectada.");
 			} catch (IOException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		}
-
-		try {
-			trx.commit();
-			return Jpa.getManager().createNamedQuery("Usuario.findAll", Usuario.class).getResultList();		
-		} catch (Exception e) {
-			if (trx.isActive())
-				trx.rollback();
-		} finally {
-			if (em.isOpen())
-				em.close();
-		} // Contexto persistencia cerrado.
 		return null;
-		
+
 	}
 	
 	

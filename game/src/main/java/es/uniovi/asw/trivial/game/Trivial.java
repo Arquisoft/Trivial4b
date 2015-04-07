@@ -3,8 +3,8 @@ package es.uniovi.asw.trivial.game;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Pregunta;
 import es.uniovi.asw.trivial.factories.TableroFactory;
-import es.uniovi.asw.trivial.model.pregunta.Pregunta;
 import es.uniovi.asw.trivial.model.pregunta.PreguntaGame;
 import es.uniovi.asw.trivial.model.tablero.Casilla;
 

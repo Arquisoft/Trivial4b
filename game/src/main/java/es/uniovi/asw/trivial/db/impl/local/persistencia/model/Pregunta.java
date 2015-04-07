@@ -1,8 +1,9 @@
 package es.uniovi.asw.trivial.db.impl.local.persistencia.model;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -18,11 +19,24 @@ public class Pregunta implements Serializable{
 	private String categoria;
 	
 	@OneToMany
-	private Set<Respuesta> respuestas = new HashSet<Respuesta>();
+	private List<Respuesta> respuestas = new ArrayList<Respuesta>();
+
+	public List<Respuesta> getRespuestas() {
+		return respuestas;
+	}
+
+	public void setRespuestas(List<Respuesta> respuestas) {
+		this.respuestas = respuestas;
+	}
 
 	public Pregunta(Long id, String pregunta, String categoria) {
 		super();
 		this.id = id;
+		this.pregunta = pregunta;
+		this.categoria = categoria;
+	}
+	
+	public Pregunta(String pregunta, String categoria) {
 		this.pregunta = pregunta;
 		this.categoria = categoria;
 	}
@@ -78,5 +92,16 @@ public class Pregunta implements Serializable{
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
+	}
+
+	public Respuesta getRespuestaCorrecta() {
+		Iterator<Respuesta> it = respuestas.iterator() ;
+		while(it.hasNext()){
+			Respuesta  r= it.next();
+			if(r.isCorrecta()){
+				return r;
+			}
+		}
+		return null;
 	}
 }

@@ -9,7 +9,10 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -20,8 +23,8 @@ import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Respuesta;
 import es.uniovi.asw.trivial.model.pregunta.PreguntaGame;
-import es.uniovi.asw.trivial.model.pregunta.Respuesta;
 
 public class DialogoPregunta extends JDialog {
 
@@ -83,8 +86,9 @@ public class DialogoPregunta extends JDialog {
 		panelPrincipal.add(getLblImgCategoria());
 		panelPrincipal.add(getLblImgFondoPreguntas());
 		
-		txtPregunta.setText(pregunta.getPregunta().getEnunciado());
-		List<Respuesta> respuestas = pregunta.getPregunta().getRespuestas();
+		txtPregunta.setText(pregunta.getPregunta().getPregunta());
+		Respuesta[] respuestasSet = (Respuesta[]) pregunta.getPregunta().getRespuestas().toArray();
+		List<Respuesta >respuestas = Arrays.asList(respuestasSet);
 		
 		respuestaCorrecta = -1;
 		for (int i = 0; i < respuestas.size(); i++) {

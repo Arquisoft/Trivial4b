@@ -2,6 +2,8 @@ package es.uniovi.asw.trivial.model.pregunta;
 
 import java.util.Comparator;
 
+import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Pregunta;
+
 public class PreguntaComparator {
 
 	public static Comparator<Pregunta> comparatorCategoria = new Comparator<Pregunta>() {
