@@ -20,6 +20,8 @@ import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 
 import es.uniovi.asw.trivial.db.RemoteDB;
+import es.uniovi.asw.trivial.db.impl.local.persistencia.consultas.PersistenceFactory;
+import es.uniovi.asw.trivial.db.impl.local.persistencia.consultas.impl.SimplePersistenceFactory;
 import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Pregunta;
 import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Respuesta;
 
@@ -77,9 +79,11 @@ public class RemoteMongoDB implements RemoteDB {
 					Respuesta respuesta = new Respuesta(
 							(String) respuestaJSON.get("respuesta"),
 							(Boolean) respuestaJSON.get("isCorrecta"));
-					pregunta.getRespuestas().add(respuesta);
+//					pregunta.getRespuestas().add(respuesta);
+					pregunta.addRespuesta(respuesta);
 				}
 
+				
 				listaPreguntas.add(pregunta);
 			}
 			cursor.close();

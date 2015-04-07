@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -14,13 +15,19 @@ import javax.persistence.Table;
 @Entity
 @Table(name="TPREGUNTAS")
 public class Pregunta implements Serializable{
-	@Id private Long id;
+	@Id @GeneratedValue 
+	private Long id;
 	private String pregunta;
 	private String categoria;
 	
-	@OneToMany
+	@OneToMany(mappedBy = "pregunta")
 	private List<Respuesta> respuestas = new ArrayList<Respuesta>();
 
+	public void addRespuesta(Respuesta respuesta){
+		respuesta._setPregunta(this);
+		respuestas.add(respuesta);
+	}
+	
 	public List<Respuesta> getRespuestas() {
 		return respuestas;
 	}

@@ -9,6 +9,7 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -235,7 +236,12 @@ public class DialogoJugadores extends JDialog {
 									txtJug1Nombre.getText(), new String(getPswJug1()
 											.getPassword()),
 									txtJug1Nombre.getText());
-							finder.createUsuarioFinder().save(usuario);
+							try {
+								finder.createUsuarioFinder().save(usuario);
+							} catch (IOException e) {
+								JOptionPane.showMessageDialog(null, "¡El jugador ya existe!","¡Atención!",JOptionPane.WARNING_MESSAGE);
+								nJugadores = -1;
+							}
 							listaJugadores.add(usuario);
 							numUsuarios++;
 						}
@@ -246,9 +252,15 @@ public class DialogoJugadores extends JDialog {
 									txtJug2Nombre.getText(), new String(getPswJug2()
 											.getPassword()),
 									txtJug2Nombre.getText());
-							finder.createUsuarioFinder().save(usuario);
+							try {
+								finder.createUsuarioFinder().save(usuario);
+							} catch (IOException e) {
+								JOptionPane.showMessageDialog(null, "¡El jugador ya existe!","¡Atención!",JOptionPane.WARNING_MESSAGE);
+								nJugadores = -1;
+							}
 							listaJugadores.add(usuario);
 							numUsuarios++;
+							
 						}
 					}
 					if (!txtJug3Nombre.getText().equals("") || cbxJug3Nombre.getSelectedItem().equals("")) {
@@ -257,7 +269,12 @@ public class DialogoJugadores extends JDialog {
 									txtJug3Nombre.getText(), new String(getPswJug3()
 											.getPassword()),
 									txtJug3Nombre.getText());
-							finder.createUsuarioFinder().save(usuario);
+							try {
+								finder.createUsuarioFinder().save(usuario);
+							} catch (IOException e) {
+								JOptionPane.showMessageDialog(null, "¡El jugador ya existe!","¡Atención!",JOptionPane.WARNING_MESSAGE);
+								nJugadores = -1;
+							}
 							listaJugadores.add(usuario);
 							numUsuarios++;
 						}
@@ -268,7 +285,12 @@ public class DialogoJugadores extends JDialog {
 									txtJug4Nombre.getText(), new String(getPswJug4()
 											.getPassword()),
 									txtJug4Nombre.getText());
-							finder.createUsuarioFinder().save(usuario);
+							try {
+								finder.createUsuarioFinder().save(usuario);
+							} catch (IOException e) {
+								JOptionPane.showMessageDialog(null, "¡El jugador ya existe!","¡Atención!",JOptionPane.WARNING_MESSAGE);
+								nJugadores = -1;
+							}
 							listaJugadores.add(usuario);
 							numUsuarios++;
 						}
@@ -387,7 +409,7 @@ public class DialogoJugadores extends JDialog {
 						if(nJugadores == 0){
 							JOptionPane.showMessageDialog(null, "Se necesitan elegir al menos un jugador"," Trivial4B",JOptionPane.PLAIN_MESSAGE);
 						}
-						else {
+						else if(nJugadores != -1) {
 							vPrincipal.setListaJugadores(listaJugadores);
 							vPrincipal.setNJugadorActual(0);
 							vJugadores.dispose();

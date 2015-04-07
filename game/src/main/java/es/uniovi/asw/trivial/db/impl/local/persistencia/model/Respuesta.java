@@ -3,7 +3,10 @@ package es.uniovi.asw.trivial.db.impl.local.persistencia.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -12,9 +15,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name="TRESPUESTAS")
 public class Respuesta implements Serializable{
-	@Id private Long id;
+	@Id @GeneratedValue
+	private Long id;
 	private String respuesta;
 	private boolean correcta;
+	
+	@ManyToOne
+	@JoinColumn(name = "TPREGUNTAS_ID")
+	private Pregunta pregunta;
 	
 	public Respuesta() {
 		super();
@@ -58,6 +66,10 @@ public class Respuesta implements Serializable{
 		this.correcta = correcta;
 	}
 
+	public void _setPregunta(Pregunta pregunta){
+		this.pregunta = pregunta;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

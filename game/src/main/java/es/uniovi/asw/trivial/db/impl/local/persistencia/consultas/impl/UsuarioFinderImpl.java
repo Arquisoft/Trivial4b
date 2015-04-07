@@ -13,7 +13,7 @@ import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Usuario;
 
 public class UsuarioFinderImpl implements UsuarioFinder {
 	
-	public void save(Usuario usuario) {
+	public void save(Usuario usuario) throws IOException {
 		EntityManager em = Jpa.createEntityManager();
 		EntityTransaction trx = em.getTransaction();
 		try{
@@ -21,11 +21,7 @@ public class UsuarioFinderImpl implements UsuarioFinder {
 			Jpa.getManager().merge(usuario);
 			trx.commit();
 		}catch(PersistenceException e) {
-			try {
-				throw new IOException("Base de datos NO conectada.");
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
+			throw new IOException("Base de datos NO conectada.");
 		}
 	}
 

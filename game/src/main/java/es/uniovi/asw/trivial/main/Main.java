@@ -1,10 +1,16 @@
 package es.uniovi.asw.trivial.main;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.Collections;
 import java.util.List;
 
+import javax.persistence.PersistenceException;
+
 import es.uniovi.asw.trivial.db.DBManager;
+import es.uniovi.asw.trivial.db.impl.local.persistencia.consultas.PersistenceFactory;
+import es.uniovi.asw.trivial.db.impl.local.persistencia.consultas.impl.SimplePersistenceFactory;
 import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Pregunta;
+import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Respuesta;
 import es.uniovi.asw.trivial.game.Trivial;
 import es.uniovi.asw.trivial.model.pregunta.PreguntaComparator;
 import es.uniovi.asw.trivial.ui.VentanaPrincipal;
@@ -36,10 +42,17 @@ public class Main {
 		
 		Collections.sort(listaPreguntas, PreguntaComparator.comparatorCategoria);
 		
-//		for(int i = 0; i < listaPreguntas.size(); i++){
-//			System.out.println();
-//			System.out.println(listaPreguntas.get(i));
-//		}
+		PersistenceFactory pf = new SimplePersistenceFactory();
+		for(int i = 0; i < listaPreguntas.size(); i++){
+			Pregunta pregunta = listaPreguntas.get(i);
+			List<Respuesta> respuestas = pregunta.getRespuestas();			
+
+				pf.createPreguntaSaver().save(pregunta);
+			for(Respuesta respuesta: respuestas){
+				pf.createRespuestaSaver().save(respuesta);
+			}
+
+		}
 
 		// Se deben guardar las preguntas y las respuestas en la base de datos
 		// local

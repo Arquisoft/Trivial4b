@@ -93,8 +93,7 @@ public class DialogoPregunta extends JDialog {
 		panelPrincipal.add(getLblImgFondoPreguntas());
 		
 		txtPregunta.setText(pregunta.getPregunta().getPregunta());
-		Respuesta[] respuestasSet = (Respuesta[]) pregunta.getPregunta().getRespuestas().toArray();
-		List<Respuesta >respuestas = Arrays.asList(respuestasSet);
+		List<Respuesta> respuestas = pregunta.getPregunta().getRespuestas();
 		
 		respuestaCorrecta = -1;
 		for (int i = 0; i < respuestas.size(); i++) {
