@@ -13,9 +13,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.help.HelpBroker;
+import javax.help.HelpSet;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -34,6 +37,7 @@ import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Usuario;
 import es.uniovi.asw.trivial.game.Trivial;
 import es.uniovi.asw.trivial.main.Main;
 import es.uniovi.asw.trivial.model.pregunta.PreguntaGame;
+import java.net.URL;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -306,6 +310,7 @@ public class VentanaPrincipal extends JFrame {
 		labelTablero.add(lblCasilla_42);
 		labelTablero.add(lblCasilla_43);
 		labelTablero.add(lblCasilla_44);
+		cargaAyuda();
 	}
 	private JMenuBar getMenuBar_1() {
 		if (menuBar == null) {
@@ -417,6 +422,11 @@ public class VentanaPrincipal extends JFrame {
 	private JMenuItem getMntmNewMenuItem_3() {
 		if (mntmNewMenuItem_3 == null) {
 			mntmNewMenuItem_3 = new JMenuItem("Ayuda");
+			mntmNewMenuItem_3.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					cargaAyuda();
+				}
+			});
 			mntmNewMenuItem_3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
 			mntmNewMenuItem_3.setMnemonic('y');
 			mntmNewMenuItem_3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -2740,6 +2750,30 @@ public class VentanaPrincipal extends JFrame {
 			jugadorGanador = listaJugadores.get(nJugadorTurnoActual).getUsuario();
 		}
 	}
+	
+	private void cargaAyuda(){
+
+		   URL hsURL;
+		   HelpSet hs;
+
+		    try {
+			    	File fichero = new File("ayuda/Ayuda.hs");
+			    	hsURL = fichero.toURI().toURL();
+			        hs = new HelpSet(null, hsURL);
+			      }
+
+		    catch (Exception e){
+		      System.out.println("Ayuda no encontrada");
+		     return;
+		   }
+
+		   HelpBroker hb = hs.createHelpBroker();
+		   hb.enableHelpKey(getRootPane(),"introduccion", hs);
+		   hb.enableHelpOnButton(mntmNewMenuItem_3, "introduccion", hs);
+		   hb.initPresentation();
+		  
+		   
+		 }
 	
 }
 
