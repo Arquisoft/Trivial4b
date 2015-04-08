@@ -63,7 +63,7 @@ public class Usuario implements Serializable{
 			quesitos = new String[4];
 		if(categoria.equalsIgnoreCase("espectáculos"))
 			quesitos[0] = categoria;
-		else if(categoria.equalsIgnoreCase("ciencia y naturaleza"))
+		else if(categoria.equalsIgnoreCase("ciencias y naturaleza"))
 			quesitos[1] = categoria;
 		else if(categoria.equalsIgnoreCase("geografía"))
 			quesitos[2] = categoria;
@@ -76,7 +76,10 @@ public class Usuario implements Serializable{
 	public void actualizarIconoQuesitos(){
 		icono = icono.split("_")[0];
 		for(String quesito : quesitos){
-			icono += "_"+quesito;
+			if(quesito != null)
+				icono += "_"+quesito.replace(" ", "");
+			else
+				icono += "_"+quesito;
 		}
 		icono += ".png";
 	}

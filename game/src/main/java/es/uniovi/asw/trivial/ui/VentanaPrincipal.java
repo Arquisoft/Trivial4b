@@ -33,10 +33,12 @@ import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import es.uniovi.asw.trivial.db.impl.local.persistencia.JustLoadHibernate;
 import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Usuario;
 import es.uniovi.asw.trivial.game.Trivial;
 import es.uniovi.asw.trivial.main.Main;
 import es.uniovi.asw.trivial.model.pregunta.PreguntaGame;
+
 import java.net.URL;
 
 public class VentanaPrincipal extends JFrame {
@@ -178,6 +180,7 @@ public class VentanaPrincipal extends JFrame {
 	private int nJugadorTurnoActual;
 	private List<JButton> botonesTablero;
 	private List<JLabel> labelTablero;
+	private List<JLabel> labelQuesos;
 
 	private boolean partidaTerminada;
 	private String jugadorGanador;
@@ -310,6 +313,13 @@ public class VentanaPrincipal extends JFrame {
 		labelTablero.add(lblCasilla_42);
 		labelTablero.add(lblCasilla_43);
 		labelTablero.add(lblCasilla_44);
+		
+		labelQuesos = new ArrayList<JLabel>();
+		labelQuesos.add(lblQuesoRo);
+		labelQuesos.add(lblQuesoVe);
+		labelQuesos.add(lblQuesoAm);
+		labelQuesos.add(lblQuesoAz);
+		
 		cargaAyuda();
 	}
 	private JMenuBar getMenuBar_1() {
@@ -2736,8 +2746,20 @@ public class VentanaPrincipal extends JFrame {
 		}
 	}
 
-	public void siguienteJugador() {
+	public void siguienteJugador() {		
+		for(int i = nJugadorTurnoActual+1; i <= listaJugadores.size(); i++){
+			if (i < listaJugadores.size()) {
+				if (listaJugadores.get(i) != null) {
+					nJugadorTurnoActual = i;
+					break;
+				}
+			} else if (i == listaJugadores.size()) {
+				nJugadorTurnoActual = 0;
+			}
+		}
 		
+		Usuario jugadorActual = listaJugadores.get(nJugadorTurnoActual);
+		JOptionPane.showMessageDialog(null, "¡Empieza el turno del jugador +"+jugadorActual.getUsuario()+"!","¡Siguiente!",JOptionPane.INFORMATION_MESSAGE);
 	}
 
 	public void actualizarQuesitos(String categoria) {
@@ -2745,35 +2767,34 @@ public class VentanaPrincipal extends JFrame {
 		jugadorActual.addQuesito(categoria);
 		int casillaJugador = listaJugadores.get(nJugadorTurnoActual).getCasillaActual();
 		labelTablero.get(casillaJugador).setIcon(new ImageIcon(VentanaPrincipal.class.getResource(jugadorActual.getIcono())));
+		
 		if(jugadorActual.todosLosQuesitos()){
 			partidaTerminada = true;
 			jugadorGanador = listaJugadores.get(nJugadorTurnoActual).getUsuario();
+			JOptionPane.showMessageDialog(null, "¡El jugador +"+jugadorGanador+" ha ganado la partida!","¡Final!",JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 	
-	private void cargaAyuda(){
+	private void cargaAyuda() {
+		URL hsURL;
+		HelpSet hs;
 
-		   URL hsURL;
-		   HelpSet hs;
+		try {
+			File fichero = new File("ayuda/Ayuda.hs");
+			hsURL = fichero.toURI().toURL();
+			hs = new HelpSet(null, hsURL);
+		}
 
-		    try {
-			    	File fichero = new File("ayuda/Ayuda.hs");
-			    	hsURL = fichero.toURI().toURL();
-			        hs = new HelpSet(null, hsURL);
-			      }
+		catch (Exception e) {
+			System.out.println("Ayuda no encontrada");
+			return;
+		}
 
-		    catch (Exception e){
-		      System.out.println("Ayuda no encontrada");
-		     return;
-		   }
-
-		   HelpBroker hb = hs.createHelpBroker();
-		   hb.enableHelpKey(getRootPane(),"introduccion", hs);
-		   hb.enableHelpOnButton(mntmNewMenuItem_3, "introduccion", hs);
-		   hb.initPresentation();
-		  
-		   
-		 }
+		HelpBroker hb = hs.createHelpBroker();
+		hb.enableHelpKey(getRootPane(), "introduccion", hs);
+		hb.enableHelpOnButton(mntmNewMenuItem_3, "introduccion", hs);
+		hb.initPresentation();
+	}
 	
 }
 

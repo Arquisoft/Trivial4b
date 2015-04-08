@@ -222,7 +222,7 @@ public class DialogoJugadores extends JDialog {
 				public void actionPerformed(ActionEvent arg0) {				
 //					((CardLayout)pnContenido.getLayout()).show(pnContenido,"name_9358627801380");		
 					boolean valido = true;
-					boolean passValido = false;
+					boolean passValido = true;
 					// Para Nuevos Jugadores.
 					int nJugadores = 0;
 					PersistenceFactory finder = new SimplePersistenceFactory();
@@ -254,8 +254,8 @@ public class DialogoJugadores extends JDialog {
 								nJugadores = -1;
 							}						
 												
-						} else {
-							passValido = false;						
+						} else if (!txtJug1Nombre.getText().equals("")) {
+						       passValido = false;					
 						}
 					}
 					if (!txtJug2Nombre.getText().equals("") && cbxJug2Nombre.getSelectedItem().equals("")) {
@@ -282,8 +282,8 @@ public class DialogoJugadores extends JDialog {
 								nJugadores = -1;
 							} 						
 							
-						} else {
-							passValido = false;						
+						} else if (!txtJug2Nombre.getText().equals("")) {
+						       passValido = false;				
 						}
 					}
 					if (!txtJug3Nombre.getText().equals("") && cbxJug3Nombre.getSelectedItem().equals("")) {
@@ -310,8 +310,8 @@ public class DialogoJugadores extends JDialog {
 								nJugadores = -1;
 							}
 							
-						} else {
-							passValido = false;						
+						} else if (!txtJug3Nombre.getText().equals("")) {
+						       passValido = false;				
 						}
 					}
 					if (!txtJug4Nombre.getText().equals("") && cbxJug4Nombre.getSelectedItem().equals("")) {
@@ -338,8 +338,8 @@ public class DialogoJugadores extends JDialog {
 								nJugadores = -1;
 							}
 							
-						} else {
-							passValido = false;						
+						} else if (!txtJug4Nombre.getText().equals("")) {
+						       passValido = false;				
 						}
 					}
 					

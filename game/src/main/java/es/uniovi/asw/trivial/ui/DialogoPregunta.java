@@ -127,7 +127,7 @@ public class DialogoPregunta extends JDialog {
 	private JLabel getLblImgCategoria() {
 		if (lblImgCategoria == null) {
 			lblImgCategoria = new JLabel("");
-			lblImgCategoria.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Tema_Ciencias.png")));
+			lblImgCategoria.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Tema_Ciencias_y_Naturaleza.png")));
 			lblImgCategoria.setBounds(197, 20, 75, 55);
 		}
 		return lblImgCategoria;
@@ -169,8 +169,10 @@ public class DialogoPregunta extends JDialog {
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Correcta > Continuar");
 						respuestaAcertada = true;
-						lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_"+pregunta.getPregunta().getCategoria().replace(" ", "_")+".png")));
-						lblImgQuesito.setVisible(true);
+						if(pregunta.isEsQuesito()){
+							lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_"+pregunta.getPregunta().getCategoria().replace(" ", "_")+".png")));
+							lblImgQuesito.setVisible(true);
+						}
 					}
 					else{
 						// Botones Respuesta 1, 2, 3, 4 > ocultar
@@ -239,8 +241,10 @@ public class DialogoPregunta extends JDialog {
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Correcta > Continuar");
 						respuestaAcertada = true;
-						lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_"+pregunta.getPregunta().getCategoria().replace(" ", "_")+".png")));
-						lblImgQuesito.setVisible(true);
+						if(pregunta.isEsQuesito()){
+							lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_"+pregunta.getPregunta().getCategoria().replace(" ", "_")+".png")));
+							lblImgQuesito.setVisible(true);
+						}
 					}
 					else{
 						// Botones Respuesta 1, 2, 3, 4 > ocultar
@@ -305,8 +309,10 @@ public class DialogoPregunta extends JDialog {
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Correcta > Continuar");
 						respuestaAcertada = true;
-						lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_"+pregunta.getPregunta().getCategoria().replace(" ", "_")+".png")));
-						lblImgQuesito.setVisible(true);
+						if(pregunta.isEsQuesito()){
+							lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_"+pregunta.getPregunta().getCategoria().replace(" ", "_")+".png")));
+							lblImgQuesito.setVisible(true);
+						}
 					}
 					else{
 						// Botones Respuesta 1, 2, 3, 4 > ocultar
@@ -371,8 +377,10 @@ public class DialogoPregunta extends JDialog {
 						// Bot�n Continuar > Texto Correcta
 						btnContinuar.setText("Correcta > Continuar");
 						respuestaAcertada = true;
-						lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_"+pregunta.getPregunta().getCategoria().replace(" ", "_")+".png")));
-						lblImgQuesito.setVisible(true);
+						if(pregunta.isEsQuesito()){
+							lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_"+pregunta.getPregunta().getCategoria().replace(" ", "_")+".png")));
+							lblImgQuesito.setVisible(true);
+						}
 					}
 					else{
 						// Botones Respuesta 1, 2, 3, 4 > ocultar
@@ -458,8 +466,8 @@ public class DialogoPregunta extends JDialog {
 					dispose();
 					if(pregunta.isEsQuesito() && respuestaAcertada)
 						vPrincipal.actualizarQuesitos(pregunta.getPregunta().getCategoria());
-//					if(!respuestaAcertada)
-//						vPrincipal.siguienteJugador();
+					if(!respuestaAcertada)
+						vPrincipal.siguienteJugador();
 				}
 			});
 			btnContinuar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -483,7 +491,7 @@ public class DialogoPregunta extends JDialog {
 		if (lblImgQuesito == null) {
 			lblImgQuesito = new JLabel("");
 			lblImgQuesito.setVisible(false);
-			lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_Ro.png")));
+			lblImgQuesito.setIcon(new ImageIcon(DialogoPregunta.class.getResource("/img/Quesito_Espectáculos.png")));
 			lblImgQuesito.setBounds(346, 431, 60, 66);
 		}
 		return lblImgQuesito;
