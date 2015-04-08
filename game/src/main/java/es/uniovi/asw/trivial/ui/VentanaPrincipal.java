@@ -880,7 +880,7 @@ public class VentanaPrincipal extends JFrame {
 					int numDado = trivial.lanzarDado();		
 					lblDadoTirada.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Dado_0" + numDado +".png"))); //Cargar imagen con resultado de tirada
 					lblDadoTirada.setVisible(true); //Mostrar imagen con tirada de dado
-					lblMensajes.setText("elije casilla en el tablero"); //Cargar mensaje a mostrar
+					lblMensajes.setText("Elegir casilla en el tablero"); //Cargar mensaje a mostrar
 					lblMensajes.setVisible(true); //Mostrar label mensajes
 					
 					List<Integer> destinos = trivial.obtenerDestinos(listaJugadores.get(nJugadorTurnoActual).getCasillaActual(), numDado);
@@ -2699,7 +2699,7 @@ public class VentanaPrincipal extends JFrame {
 	
 	private void nuevaTirada(int casilla){
 		if(partidaTerminada){
-			JOptionPane.showMessageDialog(null, "¡El jugador +"+jugadorGanador+" ha ganado la partida!","¡Final!",JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "¡El jugador " + jugadorGanador + " ha ganado la partida!","¡Final!",JOptionPane.INFORMATION_MESSAGE);
 		}
 		else{
 			for (JButton jButton : botonesTablero)
@@ -2756,6 +2756,7 @@ public class VentanaPrincipal extends JFrame {
 			}
 			
 			btnComenzar3.setVisible(true);
+			lblMensajes.setVisible(false);
 		}
 	}
 
@@ -2784,7 +2785,7 @@ public class VentanaPrincipal extends JFrame {
 		if(jugadorActual.todosLosQuesitos()){
 			partidaTerminada = true;
 			jugadorGanador = listaJugadores.get(nJugadorTurnoActual).getUsuario();
-			JOptionPane.showMessageDialog(null, "¡El jugador +"+jugadorGanador+" ha ganado la partida!","¡Final!",JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "¡El jugador "+jugadorGanador+" ha ganado la partida!","¡Final!",JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 	
