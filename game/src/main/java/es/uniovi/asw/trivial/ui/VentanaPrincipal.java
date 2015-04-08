@@ -2708,9 +2708,11 @@ public class VentanaPrincipal extends JFrame {
 				jLabel.setVisible(false);
 			
 			for (Usuario usuario : listaJugadores) {
-				int casillaJugador = usuario.getCasillaActual();
-				labelTablero.get(casillaJugador).setVisible(true);
-				labelTablero.get(casillaJugador).setIcon(new ImageIcon(VentanaPrincipal.class.getResource(usuario.getIcono())));
+				if(usuario != null){
+					int casillaJugador = usuario.getCasillaActual();
+					labelTablero.get(casillaJugador).setVisible(true);
+					labelTablero.get(casillaJugador).setIcon(new ImageIcon(VentanaPrincipal.class.getResource(usuario.getIcono())));
+				}
 			}
 			
 			Usuario jugadorActual = listaJugadores.get(nJugadorTurnoActual);

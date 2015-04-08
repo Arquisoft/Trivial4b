@@ -100,6 +100,9 @@ public class DialogoJugadores extends JDialog {
 	public DialogoJugadores(VentanaPrincipal ventanaPrincipal) {
 		this.vPrincipal = ventanaPrincipal;
 		this.listaJugadores = new ArrayList<Usuario>();
+		  for (int i = 0; i < 4; i++) {
+		   this.listaJugadores.add(null);
+		  }
 		PersistenceFactory pf = new SimplePersistenceFactory();
 		usuariosBD = pf.createUsuarioFinder().findAll();
 		nicks = new String[usuariosBD.size() + 1];
@@ -150,70 +153,9 @@ public class DialogoJugadores extends JDialog {
 		panelPrincipal.add(getLblJug4Existente());
 		panelPrincipal.add(getCbxJug4Nombre());
 		panelPrincipal.add(getLblJug4Contras());
-		panelPrincipal.add(getPswJug4());
-		
-		
-				
+		panelPrincipal.add(getPswJug4());				
 	}
 	
-	public DialogoJugadores(VentanaPrincipal ventanaPrincipal, List<Usuario> usuarios) {
-		this.vPrincipal = ventanaPrincipal;
-		this.listaJugadores = usuarios;
-		PersistenceFactory pf = new SimplePersistenceFactory();
-		usuariosBD = pf.createUsuarioFinder().findAll();
-		nicks = new String[usuariosBD.size() + 1];
-		nicks[0] = "";
-		for (int i = 1; i < usuariosBD.size() + 1; i++) {
-			nicks[i] = usuariosBD.get(i - 1).getUsuario();
-		}	
-		setResizable(false);
-		setModalityType(ModalityType.APPLICATION_MODAL);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(DialogoJugadores.class.getResource("/img/ico_32x32_jugadores.png")));
-		setTitle("Selecci\u00F3n de Jugadores");
-		getContentPane().setBounds(new Rectangle(0, 0, 480, 443));
-		setBounds(100, 100, 621, 476);
-		getContentPane().setLayout(null);
-		panelPrincipal.setPreferredSize(new Dimension(480, 443));
-		panelPrincipal.setMinimumSize(new Dimension(480, 443));
-		panelPrincipal.setMaximumSize(new Dimension(480, 443));
-		panelPrincipal.setBounds(new Rectangle(0, 0, 615, 443));
-		panelPrincipal.setBackground(new Color(0, 55, 76));
-		panelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
-		getContentPane().add(panelPrincipal);
-		panelPrincipal.setLayout(null);
-		panelPrincipal.add(getBtnComenzar2());
-		panelPrincipal.add(getLblQuesitoRo());
-		panelPrincipal.add(getLblJug1Nuevo());
-		panelPrincipal.add(getTxtJug1Nombre());
-		panelPrincipal.add(getLblJug1Existente());
-		panelPrincipal.add(getCbxJug1Nombre());
-		panelPrincipal.add(getLblJug1Contras());
-		panelPrincipal.add(getPswJug1());
-		panelPrincipal.add(getLblQuesitoVe());
-		panelPrincipal.add(getLblJug2Nuevo());
-		panelPrincipal.add(getTxtJug2Nombre());
-		panelPrincipal.add(getLblJug2Existente());
-		panelPrincipal.add(getCbxJug2Nombre());
-		panelPrincipal.add(getLblJug2Contras());
-		panelPrincipal.add(getPswJug2());
-		panelPrincipal.add(getLblQuesitoAm());
-		panelPrincipal.add(getLblJug3Nuevo());
-		panelPrincipal.add(getTxtJug3Nombre());
-		panelPrincipal.add(getLblJug3Existente());
-		panelPrincipal.add(getCbxJug3Nombre());
-		panelPrincipal.add(getLblJug3Contras());
-		panelPrincipal.add(getPswJug3());
-		panelPrincipal.add(getLblQuesitoAz());
-		panelPrincipal.add(getLblJug4Nuevo());
-		panelPrincipal.add(getTxtJug4Nombre());
-		panelPrincipal.add(getLblJug4Existente());
-		panelPrincipal.add(getCbxJug4Nombre());
-		panelPrincipal.add(getLblJug4Contras());
-		panelPrincipal.add(getPswJug4());
-		
-		
-				
-	}
 	private JButton getBtnComenzar2() {
 		if (btnComenzar2 == null) {
 			btnComenzar2 = new JButton("Comenzar");
@@ -245,7 +187,7 @@ public class DialogoJugadores extends JDialog {
 								usuario.setColor(colores[0]);
 								usuario.setCasillaActual(24);
 								usuario.setIcono(icono);
-								listaJugadores.add(usuario);
+								listaJugadores.set(0,usuario);
 								todoUnable1();
 								vPrincipal.getLblCasilla_24().setVisible(true);
 								vPrincipal.getLblCasilla_24().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));		
@@ -273,7 +215,7 @@ public class DialogoJugadores extends JDialog {
 								usuario.setColor(colores[1]);
 								usuario.setCasillaActual(00);
 								usuario.setIcono(icono);
-								listaJugadores.add(usuario);
+								listaJugadores.set(1,usuario);
 								todoUnable2();
 								vPrincipal.getLblCasilla_00().setVisible(true);
 								vPrincipal.getLblCasilla_00().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
@@ -301,8 +243,8 @@ public class DialogoJugadores extends JDialog {
 								usuario.setColor(colores[2]);
 								usuario.setCasillaActual(16);
 								usuario.setIcono(icono);
-								listaJugadores.add(usuario);
-								todoUnable1();
+								listaJugadores.set(2,usuario);
+								todoUnable3();
 								vPrincipal.getLblCasilla_16().setVisible(true);
 								vPrincipal.getLblCasilla_16().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
 							} catch (IOException e) {
@@ -329,8 +271,8 @@ public class DialogoJugadores extends JDialog {
 								usuario.setColor(colores[3]);
 								usuario.setCasillaActual(8);
 								usuario.setIcono(icono);
-								listaJugadores.add(usuario);
-								todoUnable1();
+								listaJugadores.set(3,usuario);
+								todoUnable4();
 								vPrincipal.getLblCasilla_08().setVisible(true);
 								vPrincipal.getLblCasilla_08().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
 							} catch (IOException e) {
@@ -347,7 +289,7 @@ public class DialogoJugadores extends JDialog {
 						//Comprobación de contraseñas.
 						if (cbxJug1Nombre.isEnabled() && !cbxJug1Nombre.getSelectedItem().equals("")) {
 							for (int i = 0; i < listaJugadores.size(); i++) {
-								if (listaJugadores.get(i).getUsuario().equals(cbxJug1Nombre.getSelectedItem())) {
+								if (listaJugadores.get(i) != null && listaJugadores.get(i).getUsuario().equals(cbxJug1Nombre.getSelectedItem())) {
 									valido = false;
 									JOptionPane.showMessageDialog(null, "¡ Jugador 1 - Este nombre ya está elegido. !","¡Atención!",JOptionPane.WARNING_MESSAGE);
 								}
@@ -360,7 +302,7 @@ public class DialogoJugadores extends JDialog {
 										usuariosBD.get(i).setColor(colores[0]);
 										usuariosBD.get(i).setCasillaActual(24);
 										usuariosBD.get(i).setIcono(icono);
-										listaJugadores.add(usuariosBD.get(i));
+										listaJugadores.set(0,usuariosBD.get(i));
 										todoUnable1();
 										vPrincipal.getLblCasilla_24().setVisible(true);
 										vPrincipal.getLblCasilla_24().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
@@ -374,7 +316,7 @@ public class DialogoJugadores extends JDialog {
 						}
 						if (cbxJug2Nombre.isEnabled() && !cbxJug2Nombre.getSelectedItem().equals("")) {
 							for (int i = 0; i < listaJugadores.size(); i++) {
-								if (listaJugadores.get(i).getUsuario().equals(cbxJug2Nombre.getSelectedItem())) {
+								if (listaJugadores.get(i) != null && listaJugadores.get(i).getUsuario().equals(cbxJug2Nombre.getSelectedItem())) {
 									valido = false;
 									JOptionPane.showMessageDialog(null, "¡ Jugador 2 - Este nombre ya está elegido. !","¡Atención!",JOptionPane.WARNING_MESSAGE);
 								}
@@ -387,7 +329,7 @@ public class DialogoJugadores extends JDialog {
 										usuariosBD.get(i).setColor(colores[1]);
 										usuariosBD.get(i).setCasillaActual(0);
 										usuariosBD.get(i).setIcono(icono);
-										listaJugadores.add(usuariosBD.get(i));
+										listaJugadores.set(1,usuariosBD.get(i));
 										todoUnable2();
 										vPrincipal.getLblCasilla_00().setVisible(true);
 										vPrincipal.getLblCasilla_00().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
@@ -401,7 +343,7 @@ public class DialogoJugadores extends JDialog {
 						}
 						if (cbxJug3Nombre.isEnabled() && !cbxJug3Nombre.getSelectedItem().equals("")) {
 							for (int i = 0; i < listaJugadores.size(); i++) {
-								if (listaJugadores.get(i).getUsuario().equals(cbxJug3Nombre.getSelectedItem())) {
+								if (listaJugadores.get(i) != null && listaJugadores.get(i).getUsuario().equals(cbxJug3Nombre.getSelectedItem())) {
 									valido = false;
 									JOptionPane.showMessageDialog(null, "¡ Jugador 3 - Este nombre ya está elegido. !","¡Atención!",JOptionPane.WARNING_MESSAGE);
 								}
@@ -414,7 +356,7 @@ public class DialogoJugadores extends JDialog {
 										usuariosBD.get(i).setColor(colores[2]);
 										usuariosBD.get(i).setCasillaActual(16);
 										usuariosBD.get(i).setIcono(icono);
-										listaJugadores.add(usuariosBD.get(i));
+										listaJugadores.set(2,usuariosBD.get(i));
 										todoUnable3();
 										vPrincipal.getLblCasilla_16().setVisible(true);
 										vPrincipal.getLblCasilla_16().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
@@ -428,7 +370,7 @@ public class DialogoJugadores extends JDialog {
 						}
 						if (cbxJug4Nombre.isEnabled() && !cbxJug4Nombre.getSelectedItem().equals("")) {
 							for (int i = 0; i < listaJugadores.size(); i++) {
-								if (listaJugadores.get(i).getUsuario().equals(cbxJug4Nombre.getSelectedItem())) {
+								if (listaJugadores.get(i) != null && listaJugadores.get(i).getUsuario().equals(cbxJug4Nombre.getSelectedItem())) {
 									valido = false;
 									JOptionPane.showMessageDialog(null, "¡ Jugador 4 - Este nombre ya está elegido. !","¡Atención!",JOptionPane.WARNING_MESSAGE);
 								}
@@ -441,7 +383,7 @@ public class DialogoJugadores extends JDialog {
 										usuariosBD.get(i).setColor(colores[3]);
 										usuariosBD.get(i).setCasillaActual(8);
 										usuariosBD.get(i).setIcono(icono);
-										listaJugadores.add(usuariosBD.get(i));
+										listaJugadores.set(3,usuariosBD.get(i));
 										todoUnable4();
 										vPrincipal.getLblCasilla_08().setVisible(true);
 										vPrincipal.getLblCasilla_08().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
@@ -463,8 +405,15 @@ public class DialogoJugadores extends JDialog {
 							vPrincipal.setNJugadorActual(0);
 							vJugadores.dispose();
 							
+						Usuario j1 = null;
+						for (int i = 0; i < listaJugadores.size() && j1 == null; i++) {
+							if (listaJugadores.get(i) != null) {
+								j1 = listaJugadores.get(i);
+							}
+						}
+							
 							JOptionPane.showMessageDialog(null, "¡ Bienvenido a Trivial4B para - " + listaJugadores.size() + " jugadores !"," Trivial4B",JOptionPane.PLAIN_MESSAGE);
-							JOptionPane.showMessageDialog(null, "Turno del jugador : " + listaJugadores.get(0).getUsuario()," Trivial4B",JOptionPane.PLAIN_MESSAGE);
+							JOptionPane.showMessageDialog(null, "Turno del jugador : " + j1.getUsuario()," Trivial4B",JOptionPane.PLAIN_MESSAGE);
 						}		
 					
 				}
