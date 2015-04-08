@@ -2699,7 +2699,7 @@ public class VentanaPrincipal extends JFrame {
 	
 	private void nuevaTirada(int casilla){
 		if(partidaTerminada){
-			JOptionPane.showMessageDialog(null, "¡El jugador +"+jugadorGanador+" ha ganado la partida!","¡Final!",JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "¡El jugador " + jugadorGanador + " ha ganado la partida!","¡Final!",JOptionPane.INFORMATION_MESSAGE);
 		}
 		else{
 			for (JButton jButton : botonesTablero)
@@ -2784,7 +2784,7 @@ public class VentanaPrincipal extends JFrame {
 		if(jugadorActual.todosLosQuesitos()){
 			partidaTerminada = true;
 			jugadorGanador = listaJugadores.get(nJugadorTurnoActual).getUsuario();
-			JOptionPane.showMessageDialog(null, "¡El jugador +"+jugadorGanador+" ha ganado la partida!","¡Final!",JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "¡El jugador "+jugadorGanador+" ha ganado la partida!","¡Final!",JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 	

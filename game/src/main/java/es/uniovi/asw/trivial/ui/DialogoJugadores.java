@@ -412,7 +412,7 @@ public class DialogoJugadores extends JDialog {
 							}
 						}
 							
-							JOptionPane.showMessageDialog(null, "¡ Bienvenido a Trivial4B para - " + listaJugadores.size() + " jugadores !"," Trivial4B",JOptionPane.PLAIN_MESSAGE);
+							JOptionPane.showMessageDialog(null, "¡ Bienvenido a Trivial4B para - " + nJugadores + " jugadores !"," Trivial4B",JOptionPane.PLAIN_MESSAGE);
 							JOptionPane.showMessageDialog(null, "Turno del jugador : " + j1.getUsuario()," Trivial4B",JOptionPane.PLAIN_MESSAGE);
 						}		
 					
