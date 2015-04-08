@@ -153,7 +153,7 @@ public class DialogoJugadores extends JDialog {
 		panelPrincipal.add(getLblJug4Existente());
 		panelPrincipal.add(getCbxJug4Nombre());
 		panelPrincipal.add(getLblJug4Contras());
-		panelPrincipal.add(getPswJug4());				
+		panelPrincipal.add(getPswJug4());
 	}
 	
 	private JButton getBtnComenzar2() {
