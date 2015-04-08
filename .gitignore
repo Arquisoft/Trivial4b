@@ -28,6 +28,5 @@ local.properties
 user.mongouser
 app.log
 *Thumbs.db
-game/data/test.script
+game/data/test.log
 game/data/test.lck
-game/data/test.properties
