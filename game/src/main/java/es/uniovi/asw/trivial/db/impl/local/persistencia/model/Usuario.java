@@ -123,6 +123,13 @@ public class Usuario implements Serializable{
 		this.usuario = usuario;
 	}
 
+	public boolean todosLosQuesitos() {
+		for(String string : quesitos)
+			if(string == null)
+				return false;
+		return true;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -147,4 +154,5 @@ public class Usuario implements Serializable{
 			return false;
 		return true;
 	}
+	
 }

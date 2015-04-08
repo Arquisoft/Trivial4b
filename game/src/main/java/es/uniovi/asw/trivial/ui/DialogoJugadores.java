@@ -241,7 +241,7 @@ public class DialogoJugadores extends JDialog {
 							try {
 								finder.createUsuarioFinder().save(usuario);
 								numUsuarios++;
-								String icono = "/img/FichasSmall/Ficha" + colores[0] + "_00_00_00_00.png";
+								String icono = "/img/FichasSmall/Ficha" + colores[0] + "_null_null_null_null.png";
 								usuario.setColor(colores[0]);
 								usuario.setCasillaActual(24);
 								usuario.setIcono(icono);
@@ -269,7 +269,7 @@ public class DialogoJugadores extends JDialog {
 							try {
 								finder.createUsuarioFinder().save(usuario);
 								numUsuarios++;
-								String icono = "/img/FichasSmall/Ficha" + colores[1] + "_00_00_00_00.png";
+								String icono = "/img/FichasSmall/Ficha" + colores[1] + "_null_null_null_null.png";
 								usuario.setColor(colores[1]);
 								usuario.setCasillaActual(00);
 								usuario.setIcono(icono);
@@ -297,7 +297,7 @@ public class DialogoJugadores extends JDialog {
 							try {
 								finder.createUsuarioFinder().save(usuario);
 								numUsuarios++;
-								String icono = "/img/FichasSmall/Ficha" + colores[2] + "_00_00_00_00.png";
+								String icono = "/img/FichasSmall/Ficha" + colores[2] + "_null_null_null_null.png";
 								usuario.setColor(colores[2]);
 								usuario.setCasillaActual(16);
 								usuario.setIcono(icono);
@@ -325,7 +325,7 @@ public class DialogoJugadores extends JDialog {
 							try {
 								finder.createUsuarioFinder().save(usuario);
 								numUsuarios++;
-								String icono = "/img/FichasSmall/Ficha" + colores[3] + "_00_00_00_00.png";
+								String icono = "/img/FichasSmall/Ficha" + colores[3] + "_null_null_null_null.png";
 								usuario.setColor(colores[3]);
 								usuario.setCasillaActual(8);
 								usuario.setIcono(icono);
@@ -356,7 +356,7 @@ public class DialogoJugadores extends JDialog {
 								if (usuariosBD.get(i).getUsuario().equals(cbxJug1Nombre.getSelectedItem())) {								
 									String pass = usuariosBD.get(i).getContrasenia();
 									if (new String (pswJug1.getPassword()).equals(pass)) {
-										String icono = "/img/FichasSmall/Ficha" + colores[0] + "_00_00_00_00.png";
+										String icono = "/img/FichasSmall/Ficha" + colores[0] + "_null_null_null_null.png";
 										usuariosBD.get(i).setColor(colores[0]);
 										usuariosBD.get(i).setCasillaActual(24);
 										usuariosBD.get(i).setIcono(icono);
@@ -383,7 +383,7 @@ public class DialogoJugadores extends JDialog {
 								if (usuariosBD.get(i).getUsuario().equals(cbxJug2Nombre.getSelectedItem())) {
 									String pass = usuariosBD.get(i).getContrasenia();
 									if (new String (pswJug2.getPassword()).equals(pass)) {
-										String icono = "/img/FichasSmall/Ficha" + colores[1] + "_00_00_00_00.png";
+										String icono = "/img/FichasSmall/Ficha" + colores[1] + "_null_null_null_null.png";
 										usuariosBD.get(i).setColor(colores[1]);
 										usuariosBD.get(i).setCasillaActual(0);
 										usuariosBD.get(i).setIcono(icono);
@@ -410,7 +410,7 @@ public class DialogoJugadores extends JDialog {
 								if (usuariosBD.get(i).getUsuario().equals(cbxJug3Nombre.getSelectedItem())) {
 									String pass = usuariosBD.get(i).getContrasenia();
 									if (new String (pswJug3.getPassword()).equals(pass)) {
-										String icono = "/img/FichasSmall/Ficha" + colores[2] + "_00_00_00_00.png";
+										String icono = "/img/FichasSmall/Ficha" + colores[2] + "_null_null_null_null.png";
 										usuariosBD.get(i).setColor(colores[2]);
 										usuariosBD.get(i).setCasillaActual(16);
 										usuariosBD.get(i).setIcono(icono);
@@ -437,7 +437,7 @@ public class DialogoJugadores extends JDialog {
 								if (usuariosBD.get(i).getUsuario().equals(cbxJug4Nombre.getSelectedItem())) {
 									String pass = usuariosBD.get(i).getContrasenia();
 									if (new String (pswJug4.getPassword()).equals(pass)) {
-										String icono = "/img/FichasSmall/Ficha" + colores[3] + "_00_00_00_00.png";
+										String icono = "/img/FichasSmall/Ficha" + colores[3] + "_null_null_null_null.png";
 										usuariosBD.get(i).setColor(colores[3]);
 										usuariosBD.get(i).setCasillaActual(8);
 										usuariosBD.get(i).setIcono(icono);
@@ -514,7 +514,7 @@ public class DialogoJugadores extends JDialog {
 	private JLabel getLblQuesitoRo() {
 		if (lblQuesitoRo == null) {
 			lblQuesitoRo = new JLabel("");
-			lblQuesitoRo.setIcon(new ImageIcon(DialogoJugadores.class.getResource("/img/FichasSmall/FichaRo_00_00_00_00.png")));
+			lblQuesitoRo.setIcon(new ImageIcon(DialogoJugadores.class.getResource("/img/FichasSmall/FichaRo_null_null_null_null.png")));
 			lblQuesitoRo.setBounds(41, 36, 55, 55);
 		}
 		return lblQuesitoRo;
@@ -522,7 +522,7 @@ public class DialogoJugadores extends JDialog {
 	private JLabel getLblQuesitoVe() {
 		if (lblQuesitoVe == null) {
 			lblQuesitoVe = new JLabel("");
-			lblQuesitoVe.setIcon(new ImageIcon(DialogoJugadores.class.getResource("/img/FichasSmall/FichaVe_00_00_00_00.png")));
+			lblQuesitoVe.setIcon(new ImageIcon(DialogoJugadores.class.getResource("/img/FichasSmall/FichaVe_null_null_null_null.png")));
 			lblQuesitoVe.setBounds(41, 117, 55, 55);
 		}
 		return lblQuesitoVe;
@@ -530,7 +530,7 @@ public class DialogoJugadores extends JDialog {
 	private JLabel getLblQuesitoAm() {
 		if (lblQuesitoAm == null) {
 			lblQuesitoAm = new JLabel("");
-			lblQuesitoAm.setIcon(new ImageIcon(DialogoJugadores.class.getResource("/img/FichasSmall/FichaAm_00_00_00_00.png")));
+			lblQuesitoAm.setIcon(new ImageIcon(DialogoJugadores.class.getResource("/img/FichasSmall/FichaAm_null_null_null_null.png")));
 			lblQuesitoAm.setBounds(41, 198, 55, 55);
 		}
 		return lblQuesitoAm;
@@ -538,7 +538,7 @@ public class DialogoJugadores extends JDialog {
 	private JLabel getLblQuesitoAz() {
 		if (lblQuesitoAz == null) {
 			lblQuesitoAz = new JLabel("");
-			lblQuesitoAz.setIcon(new ImageIcon(DialogoJugadores.class.getResource("/img/FichasSmall/FichaAz_00_00_00_00.png")));
+			lblQuesitoAz.setIcon(new ImageIcon(DialogoJugadores.class.getResource("/img/FichasSmall/FichaAz_null_null_null_null.png")));
 			lblQuesitoAz.setBounds(41, 280, 55, 55);
 		}
 		return lblQuesitoAz;

@@ -23,6 +23,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
@@ -173,6 +174,9 @@ public class VentanaPrincipal extends JFrame {
 	private int nJugadorTurnoActual;
 	private List<JButton> botonesTablero;
 	private List<JLabel> labelTablero;
+
+	private boolean partidaTerminada;
+	private String jugadorGanador;
 
 	/**
 	 * Launch the application.
@@ -710,7 +714,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblQuesoRo() {
 		if (lblQuesoRo == null) {
 			lblQuesoRo = new JLabel("");
-			lblQuesoRo.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaRo_00_00_Az_Am.png")));
+			lblQuesoRo.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaRo_null_null_null_null.png")));
 			lblQuesoRo.setSize(new Dimension(221, 43));
 			lblQuesoRo.setRequestFocusEnabled(false);
 			lblQuesoRo.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -727,7 +731,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblQuesoVe() {
 		if (lblQuesoVe == null) {
 			lblQuesoVe = new JLabel("");
-			lblQuesoVe.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaVe_Ro_Ve_00_00.png")));
+			lblQuesoVe.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaVe_null_null_null_null.png")));
 			lblQuesoVe.setSize(new Dimension(221, 43));
 			lblQuesoVe.setRequestFocusEnabled(false);
 			lblQuesoVe.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -744,7 +748,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblQuesoAm() {
 		if (lblQuesoAm == null) {
 			lblQuesoAm = new JLabel("");
-			lblQuesoAm.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaAm_Ro_Ve_00_Am.png")));
+			lblQuesoAm.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaAm_null_null_null_null.png")));
 			lblQuesoAm.setSize(new Dimension(221, 43));
 			lblQuesoAm.setRequestFocusEnabled(false);
 			lblQuesoAm.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -761,7 +765,7 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel getLblQuesoAz() {
 		if (lblQuesoAz == null) {
 			lblQuesoAz = new JLabel("");
-			lblQuesoAz.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaAz_00_Ve_00_00.png")));
+			lblQuesoAz.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasBig/FichaAz_null_null_null_null.png")));
 			lblQuesoAz.setSize(new Dimension(221, 43));
 			lblQuesoAz.setRequestFocusEnabled(false);
 			lblQuesoAz.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -2674,47 +2678,52 @@ public class VentanaPrincipal extends JFrame {
 	}
 	
 	private void nuevaTirada(int casilla){
-		for (JButton jButton : botonesTablero)
-			jButton.setVisible(false);
-		for (JLabel jLabel : labelTablero)
-			jLabel.setVisible(false);
-		
-		for (Usuario usuario : listaJugadores) {
-			int casillaJugador = usuario.getCasillaActual();
-			labelTablero.get(casillaJugador).setVisible(true);
-			labelTablero.get(casillaJugador).setIcon(new ImageIcon(VentanaPrincipal.class.getResource(usuario.getIcono())));
-		}
-		
-		Usuario jugadorActual = listaJugadores.get(nJugadorTurnoActual);
-		int casillaActual = jugadorActual.getCasillaActual();
-		labelTablero.get(casillaActual).setVisible(false);
-		
-		labelTablero.get(casilla).setVisible(true);
-		labelTablero.get(casilla).setIcon(new ImageIcon(VentanaPrincipal.class.getResource(jugadorActual.getIcono())));
-		
-		listaJugadores.get(nJugadorTurnoActual).setCasillaActual(casilla);
-		
-		trivial.usarCasilla(casilla);
-		boolean isVuelveATirar = trivial.isVuelveATirar();
-		boolean isCasillaFinal = trivial.isCasillaFinal();
-		
-		if(isVuelveATirar){
-			System.out.println("Vuelve A Tirar");
-			trivial.setVuelveATirar(false);
-		}
-		else if(isCasillaFinal){
-			System.out.println("Casilla Final");
-			trivial.setCasillaFinal(false);
+		if(partidaTerminada){
+			JOptionPane.showMessageDialog(null, "¡El jugador +"+jugadorGanador+" ha ganado la partida!","¡Final!",JOptionPane.INFORMATION_MESSAGE);
 		}
 		else{
-			PreguntaGame pregunta = trivial.getPreguntaActual();			
-			System.out.println(pregunta.getPregunta().getPregunta());
+			for (JButton jButton : botonesTablero)
+				jButton.setVisible(false);
+			for (JLabel jLabel : labelTablero)
+				jLabel.setVisible(false);
 			
-			DialogoPregunta dialogoPregunta = new DialogoPregunta(pregunta, this);
-			dialogoPregunta.setVisible(true);
+			for (Usuario usuario : listaJugadores) {
+				int casillaJugador = usuario.getCasillaActual();
+				labelTablero.get(casillaJugador).setVisible(true);
+				labelTablero.get(casillaJugador).setIcon(new ImageIcon(VentanaPrincipal.class.getResource(usuario.getIcono())));
+			}
+			
+			Usuario jugadorActual = listaJugadores.get(nJugadorTurnoActual);
+			int casillaActual = jugadorActual.getCasillaActual();
+			labelTablero.get(casillaActual).setVisible(false);
+			
+			labelTablero.get(casilla).setVisible(true);
+			labelTablero.get(casilla).setIcon(new ImageIcon(VentanaPrincipal.class.getResource(jugadorActual.getIcono())));
+			
+			listaJugadores.get(nJugadorTurnoActual).setCasillaActual(casilla);
+			
+			trivial.usarCasilla(casilla);
+			boolean isVuelveATirar = trivial.isVuelveATirar();
+			boolean isCasillaFinal = trivial.isCasillaFinal();
+			
+			if(isVuelveATirar){
+				System.out.println("Vuelve A Tirar");
+				trivial.setVuelveATirar(false);
+			}
+			else if(isCasillaFinal){
+				System.out.println("Casilla Final");
+				trivial.setCasillaFinal(false);
+			}
+			else{
+				PreguntaGame pregunta = trivial.getPreguntaActual();			
+				System.out.println(pregunta.getPregunta().getPregunta());
+				
+				DialogoPregunta dialogoPregunta = new DialogoPregunta(pregunta, this);
+				dialogoPregunta.setVisible(true);
+			}
+			
+			btnComenzar3.setVisible(true);
 		}
-		
-		btnComenzar3.setVisible(true);		
 	}
 
 	public void siguienteJugador() {
@@ -2726,6 +2735,10 @@ public class VentanaPrincipal extends JFrame {
 		jugadorActual.addQuesito(categoria);
 		int casillaJugador = listaJugadores.get(nJugadorTurnoActual).getCasillaActual();
 		labelTablero.get(casillaJugador).setIcon(new ImageIcon(VentanaPrincipal.class.getResource(jugadorActual.getIcono())));
+		if(jugadorActual.todosLosQuesitos()){
+			partidaTerminada = true;
+			jugadorGanador = listaJugadores.get(nJugadorTurnoActual).getUsuario();
+		}
 	}
 	
 }
