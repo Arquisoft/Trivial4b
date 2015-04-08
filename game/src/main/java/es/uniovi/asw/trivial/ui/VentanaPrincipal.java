@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,13 +34,10 @@ import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import es.uniovi.asw.trivial.db.impl.local.persistencia.JustLoadHibernate;
 import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Usuario;
 import es.uniovi.asw.trivial.game.Trivial;
 import es.uniovi.asw.trivial.main.Main;
 import es.uniovi.asw.trivial.model.pregunta.PreguntaGame;
-
-import java.net.URL;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -876,20 +874,25 @@ public class VentanaPrincipal extends JFrame {
 			btnComenzar3.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					
-					//Acci�n al pulsar
-					int numDado = trivial.lanzarDado();		
-					lblDadoTirada.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Dado_0" + numDado +".png"))); //Cargar imagen con resultado de tirada
-					lblDadoTirada.setVisible(true); //Mostrar imagen con tirada de dado
-					lblMensajes.setText("Elegir casilla en el tablero"); //Cargar mensaje a mostrar
-					lblMensajes.setVisible(true); //Mostrar label mensajes
-					
-					List<Integer> destinos = trivial.obtenerDestinos(listaJugadores.get(nJugadorTurnoActual).getCasillaActual(), numDado);
-					
-					for (Integer destino : destinos) {
-						botonesTablero.get(destino).setVisible(true);
+					if(!partidaTerminada){
+						//Acci�n al pulsar
+						int numDado = trivial.lanzarDado();		
+						lblDadoTirada.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Dado_0" + numDado +".png"))); //Cargar imagen con resultado de tirada
+						lblDadoTirada.setVisible(true); //Mostrar imagen con tirada de dado
+						lblMensajes.setText("Elegir casilla en el tablero"); //Cargar mensaje a mostrar
+						lblMensajes.setVisible(true); //Mostrar label mensajes
+						
+						List<Integer> destinos = trivial.obtenerDestinos(listaJugadores.get(nJugadorTurnoActual).getCasillaActual(), numDado);
+						
+						for (Integer destino : destinos) {
+							botonesTablero.get(destino).setVisible(true);
+						}
+						
+						btnComenzar3.setVisible(false);		
 					}
-					
-					btnComenzar3.setVisible(false);					
+					else{
+						JOptionPane.showMessageDialog(null, "¡El jugador "+jugadorGanador+" ha ganado la partida!","¡Final!",JOptionPane.INFORMATION_MESSAGE);
+					}
 				}
 			});
 			btnComenzar3.setRolloverIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Mensaje_over.png")));
@@ -2773,7 +2776,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		
 		Usuario jugadorActual = listaJugadores.get(nJugadorTurnoActual);
-		JOptionPane.showMessageDialog(null, "¡Empieza el turno del jugador +"+jugadorActual.getUsuario()+"!","¡Siguiente!",JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, "¡Empieza el turno del jugador "+jugadorActual.getUsuario()+"!","¡Siguiente!",JOptionPane.INFORMATION_MESSAGE);
 	}
 
 	public void actualizarQuesitos(String categoria) {

@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,8 +21,6 @@ import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 
 import es.uniovi.asw.trivial.db.RemoteDB;
-import es.uniovi.asw.trivial.db.impl.local.persistencia.consultas.PersistenceFactory;
-import es.uniovi.asw.trivial.db.impl.local.persistencia.consultas.impl.SimplePersistenceFactory;
 import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Pregunta;
 import es.uniovi.asw.trivial.db.impl.local.persistencia.model.Respuesta;
 
@@ -40,7 +39,8 @@ public class RemoteMongoDB implements RemoteDB {
 		BufferedReader br = null;
 
 		try {
-			br = new BufferedReader(new FileReader(new File("userReader.mongouser")));
+			
+			br = new BufferedReader(new InputStreamReader(getClass().getClassLoader().getResourceAsStream("db/userReader.mongouser")));
 			String user = "";
 			String pass = "";
 			while (br.ready()) {

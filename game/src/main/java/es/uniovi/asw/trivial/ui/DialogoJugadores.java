@@ -98,6 +98,7 @@ public class DialogoJugadores extends JDialog {
 	 * @param vJugadores 
 	 */
 	public DialogoJugadores(VentanaPrincipal ventanaPrincipal) {
+		setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
 		this.vPrincipal = ventanaPrincipal;
 		this.listaJugadores = new ArrayList<Usuario>();
 		  for (int i = 0; i < 4; i++) {
