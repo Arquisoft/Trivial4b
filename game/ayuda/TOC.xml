@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='ISO-8859-1' ?>
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN"
+         "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+
+<toc version="1.0">
+  
+  <tocitem text="Arquisoft Trivial" target="introduccion"/>
+  <tocitem text="Paneles de la aplicación">
+  		<tocitem text="Seleccion de jugadores" target="seleccionjugadores"/>
+  		<tocitem text="Como jugar" target="comojugar"/>
+  </tocitem>
+
+</toc>

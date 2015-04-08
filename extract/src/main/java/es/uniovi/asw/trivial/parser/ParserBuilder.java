@@ -16,9 +16,9 @@ public class ParserBuilder {
 	public static Parser build(String inputFilePath, String inputFileFormat) {
 		Parser p = new ParserGIFT(inputFilePath);
 
-		if (inputFileFormat.equalsIgnoreCase("xml"))
+		if (inputFileFormat.equalsIgnoreCase(Parser.XML_FORMAT))
 			p = new ParserXML(inputFilePath);
-		else if (inputFileFormat.equalsIgnoreCase("gift"))
+		else if (inputFileFormat.equalsIgnoreCase(Parser.GIFT_FORMAT))
 			p = new ParserGIFT(inputFilePath);
 		return p;
 	}

@@ -23,4 +23,10 @@ local.properties
 .buildpath
 .target
 .texlipse
-.DS_Store
+*.DS_Store
+*.json
+user.mongouser
+app.log
+*Thumbs.db
+game/data/test.log
+game/data/test.lck
