@@ -2734,6 +2734,17 @@ public class VentanaPrincipal extends JFrame {
 			}
 			else if(isCasillaFinal){
 				System.out.println("Casilla Final");
+				
+				String[] categorias = new String[]{"Historia","Ciencias y Naturaleza","Espectáculos","Geografía"};
+				int posRandom = (int) (Math.random() * ((3 - 0) + 1) + 0);
+				trivial.hacerPregunta(categorias[posRandom], false);
+				
+				PreguntaGame pregunta = trivial.getPreguntaActual();			
+				System.out.println(pregunta.getPregunta().getPregunta());
+				
+				DialogoPregunta dialogoPregunta = new DialogoPregunta(pregunta, this);
+				dialogoPregunta.setVisible(true);
+				
 				trivial.setCasillaFinal(false);
 			}
 			else{
