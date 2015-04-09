@@ -2763,18 +2763,25 @@ public class VentanaPrincipal extends JFrame {
 		}
 	}
 
-	public void siguienteJugador() {		
-		for(int i = nJugadorTurnoActual+1; i <= listaJugadores.size(); i++){
-			if (i < listaJugadores.size()) {
-				if (listaJugadores.get(i) != null) {
-					nJugadorTurnoActual = i;
-					break;
+	public void setnJugadorTurnoActual(int nJugadorTurnoActual) {
+		this.nJugadorTurnoActual = nJugadorTurnoActual;
+	}
+
+	public void siguienteJugador() {
+		boolean jugadorEncontrado = false;
+		int contador = nJugadorTurnoActual + 1;
+		while (!jugadorEncontrado) {
+			if (listaJugadores.get(contador) != null) {
+				nJugadorTurnoActual = contador;
+				jugadorEncontrado = true;
+				break;
+			} else {
+				contador++;
+				if (contador == listaJugadores.size()) {
+					contador = 0;
 				}
-			} else if (i == listaJugadores.size()) {
-				nJugadorTurnoActual = 0;
-			}
+			}	
 		}
-		
 		Usuario jugadorActual = listaJugadores.get(nJugadorTurnoActual);
 		JOptionPane.showMessageDialog(null, "¡Empieza el turno del jugador "+jugadorActual.getUsuario()+"!","¡Siguiente!",JOptionPane.INFORMATION_MESSAGE);
 	}
