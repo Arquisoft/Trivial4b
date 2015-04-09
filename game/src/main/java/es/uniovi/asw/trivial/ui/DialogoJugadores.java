@@ -405,11 +405,12 @@ public class DialogoJugadores extends JDialog {
 							vPrincipal.setListaJugadores(listaJugadores);
 							vPrincipal.setNJugadorActual(0);
 							vJugadores.dispose();
-							
+
 						Usuario j1 = null;
 						for (int i = 0; i < listaJugadores.size() && j1 == null; i++) {
 							if (listaJugadores.get(i) != null) {
 								j1 = listaJugadores.get(i);
+								vPrincipal.setNJugadorActual(i);
 							}
 						}
 							
