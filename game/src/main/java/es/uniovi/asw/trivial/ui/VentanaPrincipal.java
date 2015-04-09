@@ -4,7 +4,6 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Insets;
 import java.awt.Rectangle;
@@ -183,9 +182,7 @@ public class VentanaPrincipal extends JFrame {
 	private boolean partidaTerminada;
 	private String jugadorGanador;
 
-	/**
-	 * Launch the application.
-	 */
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -198,6 +195,7 @@ public class VentanaPrincipal extends JFrame {
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Create the frame.
@@ -661,9 +659,9 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblFondoPcpal;
 	}
-	private JLabel getLblJugador2() {
+	public JLabel getLblJugador2() {
 		if (lblJugador2 == null) {
-			lblJugador2 = new JLabel("Jugador 02");
+			lblJugador2 = new JLabel("");
 			lblJugador2.setHorizontalAlignment(SwingConstants.CENTER);
 			lblJugador2.setBorder(null);
 			lblJugador2.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -678,9 +676,9 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblJugador2;
 	}
-	private JLabel getLblJugador1() {
+	public JLabel getLblJugador1() {
 		if (lblJugador1 == null) {
-			lblJugador1 = new JLabel("Jugador 01");
+			lblJugador1 = new JLabel("");
 			lblJugador1.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Jugador.png")));
 			lblJugador1.setSize(new Dimension(221, 43));
 			lblJugador1.setRequestFocusEnabled(false);
@@ -695,9 +693,9 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblJugador1;
 	}
-	private JLabel getLblJugador3() {
+	public JLabel getLblJugador3() {
 		if (lblJugador3 == null) {
-			lblJugador3 = new JLabel("Jugador 03");
+			lblJugador3 = new JLabel("");
 			lblJugador3.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Jugador.png")));
 			lblJugador3.setSize(new Dimension(221, 43));
 			lblJugador3.setRequestFocusEnabled(false);
@@ -712,9 +710,9 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblJugador3;
 	}
-	private JLabel getLblJugador4() {
+	public JLabel getLblJugador4() {
 		if (lblJugador4 == null) {
-			lblJugador4 = new JLabel("Jugador 04");
+			lblJugador4 = new JLabel("");
 			lblJugador4.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Jugador.png")));
 			lblJugador4.setSize(new Dimension(221, 43));
 			lblJugador4.setRequestFocusEnabled(false);
@@ -2756,8 +2754,7 @@ public class VentanaPrincipal extends JFrame {
 				
 				DialogoPregunta dialogoPregunta = new DialogoPregunta(pregunta, this);
 				dialogoPregunta.setVisible(true);
-			}
-			
+			}		
 			btnComenzar3.setVisible(true);
 			lblMensajes.setVisible(false);
 		}
@@ -2771,7 +2768,9 @@ public class VentanaPrincipal extends JFrame {
 		boolean jugadorEncontrado = false;
 		int contador = nJugadorTurnoActual + 1;
 		while (!jugadorEncontrado) {
-			if (listaJugadores.get(contador) != null) {
+			if (contador == listaJugadores.size()) {
+				contador = 0;
+			} else if (listaJugadores.get(contador) != null ) {
 				nJugadorTurnoActual = contador;
 				jugadorEncontrado = true;
 				break;
@@ -2782,6 +2781,36 @@ public class VentanaPrincipal extends JFrame {
 				}
 			}	
 		}
+		
+		switch (nJugadorTurnoActual + 1) {
+		case 1:
+			getLblJugador1Off().setVisible(false);
+			getLblJugador2Off().setVisible(true);
+			getLblJugador3Off().setVisible(true);
+			getLblJugador4Off().setVisible(true);
+			break;
+		case 2:
+			getLblJugador1Off().setVisible(true);
+			getLblJugador2Off().setVisible(false);
+			getLblJugador3Off().setVisible(true);
+			getLblJugador4Off().setVisible(true);
+			break;
+		case 3:
+			getLblJugador1Off().setVisible(true);
+			getLblJugador2Off().setVisible(true);
+			getLblJugador3Off().setVisible(false);
+			getLblJugador4Off().setVisible(true);
+			break;
+		case 4:
+			getLblJugador1Off().setVisible(true);
+			getLblJugador2Off().setVisible(true);
+			getLblJugador3Off().setVisible(true);
+			getLblJugador4Off().setVisible(false);
+			break;
+		default:
+			break;
+		}
+		
 		Usuario jugadorActual = listaJugadores.get(nJugadorTurnoActual);
 		JOptionPane.showMessageDialog(null, "¡Empieza el turno del jugador "+jugadorActual.getUsuario()+"!","¡Siguiente!",JOptionPane.INFORMATION_MESSAGE);
 	}

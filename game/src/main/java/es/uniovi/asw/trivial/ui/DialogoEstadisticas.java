@@ -3,7 +3,6 @@ package es.uniovi.asw.trivial.ui;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Toolkit;
 
@@ -23,9 +22,8 @@ public class DialogoEstadisticas extends JDialog {
 	private JTable tablaEstadisticas;
 	private ModeloNoEditable modeloTabla; // Declaramos el modelo para la tabla (antes DefaultTableModel)
 
-	/**
-	 * Launch the application.
-	 */
+	
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -39,6 +37,7 @@ public class DialogoEstadisticas extends JDialog {
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Create the dialog.
