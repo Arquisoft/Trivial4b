@@ -30,3 +30,4 @@ app.log
 *Thumbs.db
 game/data/test.log
 game/data/test.lck
+*test.properties

@@ -56,6 +56,7 @@ public class Usuario implements Serializable{
 		this.color = "";
 		this.casillaActual = -1;
 		this.quesitos = new String[4];
+		this.privilegiado = false;
 	}
 	
 	public void addQuesito(String categoria) {
