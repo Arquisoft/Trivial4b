@@ -414,11 +414,42 @@ public class DialogoJugadores extends JDialog {
 							vJugadores.dispose();
 
 						Usuario j1 = null;
+						int jugadorInicial = 1;
 						for (int i = 0; i < listaJugadores.size() && j1 == null; i++) {
 							if (listaJugadores.get(i) != null) {
 								j1 = listaJugadores.get(i);
 								vPrincipal.setNJugadorActual(i);
+								jugadorInicial = i + 1;
 							}
+						}
+						
+						switch (jugadorInicial) {
+						case 1:
+							vPrincipal.getLblJugador1Off().setVisible(false);
+							vPrincipal.getLblJugador2Off().setVisible(true);
+							vPrincipal.getLblJugador3Off().setVisible(true);
+							vPrincipal.getLblJugador4Off().setVisible(true);
+							break;
+						case 2:
+							vPrincipal.getLblJugador1Off().setVisible(true);
+							vPrincipal.getLblJugador2Off().setVisible(false);
+							vPrincipal.getLblJugador3Off().setVisible(true);
+							vPrincipal.getLblJugador4Off().setVisible(true);
+							break;
+						case 3:
+							vPrincipal.getLblJugador1Off().setVisible(true);
+							vPrincipal.getLblJugador2Off().setVisible(true);
+							vPrincipal.getLblJugador3Off().setVisible(false);
+							vPrincipal.getLblJugador4Off().setVisible(true);
+							break;
+						case 4:
+							vPrincipal.getLblJugador1Off().setVisible(true);
+							vPrincipal.getLblJugador2Off().setVisible(true);
+							vPrincipal.getLblJugador3Off().setVisible(true);
+							vPrincipal.getLblJugador4Off().setVisible(false);
+							break;
+						default:
+							break;
 						}
 							
 							JOptionPane.showMessageDialog(null, "¡ Bienvenido a Trivial4B para - " + nJugadores + " jugadores !"," Trivial4B",JOptionPane.PLAIN_MESSAGE);

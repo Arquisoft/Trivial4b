@@ -789,7 +789,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblQuesoAz;
 	}
-	private JLabel getLblJugador2Off() {
+	JLabel getLblJugador2Off() {
 		if (lblJugador2Off == null) {
 			lblJugador2Off = new JLabel("");
 			lblJugador2Off.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Jugador_off.png")));
@@ -806,7 +806,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblJugador2Off;
 	}
-	private JLabel getLblJugador1Off() {
+	JLabel getLblJugador1Off() {
 		if (lblJugador1Off == null) {
 			lblJugador1Off = new JLabel("");
 			lblJugador1Off.setVisible(false);
@@ -824,7 +824,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblJugador1Off;
 	}
-	private JLabel getLblJugador3Off() {
+	JLabel getLblJugador3Off() {
 		if (lblJugador3Off == null) {
 			lblJugador3Off = new JLabel("");
 			lblJugador3Off.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Jugador_off.png")));
@@ -841,7 +841,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblJugador3Off;
 	}
-	private JLabel getLblJugador4Off() {
+	JLabel getLblJugador4Off() {
 		if (lblJugador4Off == null) {
 			lblJugador4Off = new JLabel("");
 			lblJugador4Off.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Jugador_off.png")));
@@ -2646,7 +2646,6 @@ public class VentanaPrincipal extends JFrame {
 		Usuario jugadorActual = listaJugadores.get(nJugadorTurnoActual);
 		jugadorActual.addQuesito(categoria);
 		int casillaJugador = listaJugadores.get(nJugadorTurnoActual).getCasillaActual();
-		System.out.println(jugadorActual.getIcono());
 		labelTablero.get(casillaJugador).setIcon(new ImageIcon(VentanaPrincipal.class.getResource(jugadorActual.getIcono())));
 		
 		if(jugadorActual.todosLosQuesitos()){
