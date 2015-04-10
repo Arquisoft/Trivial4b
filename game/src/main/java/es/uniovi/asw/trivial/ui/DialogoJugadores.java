@@ -73,9 +73,7 @@ public class DialogoJugadores extends JDialog {
 
 	
 
-	/**
-	 * Launch the application.
-	 */
+	/*
 	public static void main(String[] args) {
 		try {
 			DialogoJugadores dialog1 = new DialogoJugadores(null);
@@ -87,6 +85,7 @@ public class DialogoJugadores extends JDialog {
 		
 		
 	}
+	*/
 	
 	public void setDialogoJugadores(DialogoJugadores d){
 		this.vJugadores = d;
@@ -191,7 +190,8 @@ public class DialogoJugadores extends JDialog {
 								listaJugadores.set(0,usuario);
 								todoUnable1();
 								vPrincipal.getLblCasilla_24().setVisible(true);
-								vPrincipal.getLblCasilla_24().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));		
+								vPrincipal.getLblCasilla_24().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
+								vPrincipal.getLblJugador1().setText(usuario.getUsuario());
 							} catch (IOException e) {
 								JOptionPane.showMessageDialog(null, "¡El jugador ya existe!","¡Atención!",JOptionPane.WARNING_MESSAGE);
 								nJugadores = -1;
@@ -220,6 +220,7 @@ public class DialogoJugadores extends JDialog {
 								todoUnable2();
 								vPrincipal.getLblCasilla_00().setVisible(true);
 								vPrincipal.getLblCasilla_00().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
+								vPrincipal.getLblJugador2().setText(usuario.getUsuario());
 							} catch (IOException e) {
 								JOptionPane.showMessageDialog(null, "¡El jugador ya existe!","¡Atención!",JOptionPane.WARNING_MESSAGE);
 								nJugadores = -1;
@@ -248,6 +249,7 @@ public class DialogoJugadores extends JDialog {
 								todoUnable3();
 								vPrincipal.getLblCasilla_16().setVisible(true);
 								vPrincipal.getLblCasilla_16().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
+								vPrincipal.getLblJugador3().setText(usuario.getUsuario());
 							} catch (IOException e) {
 								JOptionPane.showMessageDialog(null, "¡El jugador ya existe!","¡Atención!",JOptionPane.WARNING_MESSAGE);
 								nJugadores = -1;
@@ -276,6 +278,7 @@ public class DialogoJugadores extends JDialog {
 								todoUnable4();
 								vPrincipal.getLblCasilla_08().setVisible(true);
 								vPrincipal.getLblCasilla_08().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
+								vPrincipal.getLblJugador4().setText(usuario.getUsuario());
 							} catch (IOException e) {
 								JOptionPane.showMessageDialog(null, "¡El jugador ya existe!","¡Atención!",JOptionPane.WARNING_MESSAGE);
 								nJugadores = -1;
@@ -307,6 +310,7 @@ public class DialogoJugadores extends JDialog {
 										todoUnable1();
 										vPrincipal.getLblCasilla_24().setVisible(true);
 										vPrincipal.getLblCasilla_24().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
+										vPrincipal.getLblJugador1().setText(listaJugadores.get(0).getUsuario());
 										nJugadores++;
 									} else {
 										JOptionPane.showMessageDialog(null, "¡ Jugador 1 - Contraseña Incorrecta !","¡Atención!",JOptionPane.WARNING_MESSAGE);
@@ -334,6 +338,7 @@ public class DialogoJugadores extends JDialog {
 										todoUnable2();
 										vPrincipal.getLblCasilla_00().setVisible(true);
 										vPrincipal.getLblCasilla_00().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
+										vPrincipal.getLblJugador2().setText(listaJugadores.get(1).getUsuario());
 										nJugadores++;
 									} else {
 										JOptionPane.showMessageDialog(null, "¡ Jugador 2 - Contraseña Incorrecta !","¡Atención!",JOptionPane.WARNING_MESSAGE);
@@ -361,6 +366,7 @@ public class DialogoJugadores extends JDialog {
 										todoUnable3();
 										vPrincipal.getLblCasilla_16().setVisible(true);
 										vPrincipal.getLblCasilla_16().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
+										vPrincipal.getLblJugador3().setText(listaJugadores.get(2).getUsuario());
 										nJugadores++;
 									} else {
 										JOptionPane.showMessageDialog(null, "¡ Jugador 3 - Contraseña Incorrecta !","¡Atención!",JOptionPane.WARNING_MESSAGE);
@@ -388,6 +394,7 @@ public class DialogoJugadores extends JDialog {
 										todoUnable4();
 										vPrincipal.getLblCasilla_08().setVisible(true);
 										vPrincipal.getLblCasilla_08().setIcon(new ImageIcon(VentanaPrincipal.class.getResource(icono)));
+										vPrincipal.getLblJugador4().setText(listaJugadores.get(3).getUsuario());
 										nJugadores++;
 									} else {
 										JOptionPane.showMessageDialog(null, "¡ Jugador 4 - Contraseña Incorrecta !","¡Atención!",JOptionPane.WARNING_MESSAGE);

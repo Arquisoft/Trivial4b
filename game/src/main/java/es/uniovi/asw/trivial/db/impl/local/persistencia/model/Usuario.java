@@ -23,6 +23,8 @@ public class Usuario implements Serializable{
 	private String usuario;
 	private String contrasenia;
 	private String nombre;
+	private boolean privilegiado;
+
 	@Transient
 	private String color;
 	@Transient
@@ -54,6 +56,7 @@ public class Usuario implements Serializable{
 		this.color = "";
 		this.casillaActual = -1;
 		this.quesitos = new String[4];
+		this.privilegiado = false;
 	}
 	
 	public void addQuesito(String categoria) {
@@ -122,6 +125,10 @@ public class Usuario implements Serializable{
 
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
+	}
+	
+	public boolean isPrivilegiado() {
+		return privilegiado;
 	}
 
 	public boolean todosLosQuesitos() {

@@ -31,9 +31,7 @@ public class DialogoAjustes extends JDialog {
 	private JComboBox<String> cbxQuesitos;
 	private JButton btnGuardar;
 
-	/**
-	 * Launch the application.
-	 */
+	/*
 	public static void main(String[] args) {
 		try {
 			DialogoAjustes dialog = new DialogoAjustes();
@@ -43,6 +41,8 @@ public class DialogoAjustes extends JDialog {
 			e.printStackTrace();
 		}
 	}
+	*/
+	
 
 	/**
 	 * Create the dialog.
@@ -70,10 +70,11 @@ public class DialogoAjustes extends JDialog {
 		panelPrincipal.add(getCbxQuesitos());
 		panelPrincipal.add(getBtnGuardar());
 	}
+	
 	private JComboBox<String> getCbxEstilo() {
 		if (cbxEstilo == null) {
 			cbxEstilo = new JComboBox<String>();
-			cbxEstilo.setModel(new DefaultComboBoxModel(new String[] {"Tradicional", "Moderno"}));
+			cbxEstilo.setModel(new DefaultComboBoxModel<String>(new String[] {"Tradicional", "Moderno"}));
 			cbxEstilo.setFont(new Font("Arial", Font.PLAIN, 17));
 			cbxEstilo.setBorder(new EmptyBorder(0, 0, 0, 0));
 			cbxEstilo.setBackground(Color.WHITE);
@@ -113,7 +114,7 @@ public class DialogoAjustes extends JDialog {
 	private JComboBox<String> getCbxQuesitos() {
 		if (cbxQuesitos == null) {
 			cbxQuesitos = new JComboBox<String>();
-			cbxQuesitos.setModel(new DefaultComboBoxModel(new String[] {"4", "3", "2", "1"}));
+			cbxQuesitos.setModel(new DefaultComboBoxModel<String>(new String[] {"4", "3", "2", "1"}));
 			cbxQuesitos.setFont(new Font("Arial", Font.PLAIN, 17));
 			cbxQuesitos.setBorder(null);
 			cbxQuesitos.setBackground(Color.WHITE);

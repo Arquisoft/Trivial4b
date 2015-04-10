@@ -33,9 +33,8 @@ public class DialogoAcercade extends JDialog {
 	private JLabel lblProyecto;
 	private JLabel lblLink;
 
-	/**
-	 * Launch the application.
-	 */
+	
+	/*
 	public static void main(String[] args) {
 		try {
 			DialogoAcercade dialog = new DialogoAcercade();
@@ -45,6 +44,7 @@ public class DialogoAcercade extends JDialog {
 			e.printStackTrace();
 		}
 	}
+	*/
 
 	/**
 	 * Create the dialog.

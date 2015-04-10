@@ -4,7 +4,6 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Insets;
 import java.awt.Rectangle;
@@ -74,8 +73,6 @@ public class VentanaPrincipal extends JFrame {
 	private JLabel lblJugador4Off;
 	private JButton btnComenzar3;
 	private JLabel lblDadoImg;
-	private JMenu mnTemppruebas;
-	private JMenuItem mntmNewMenuItem_6;
 	private JLabel lblDadoTirada;
 	private JLabel lblMensajes;
 	private JButton btnCasilla_04;
@@ -124,9 +121,6 @@ public class VentanaPrincipal extends JFrame {
 	private JButton btnCasilla_39;
 	private JButton btnCasilla_38;
 	private JMenuItem mntmNewMenuItem_8;
-	private JMenuItem mntmNewMenuItem_5;
-	private JMenuItem mntmNewMenuItem_7;
-	private JMenuItem mntmNewMenuItem_9;
 	private JLabel lblCasilla_33;
 	private JLabel lblCasilla_34;
 	private JLabel lblCasilla_02;
@@ -183,9 +177,7 @@ public class VentanaPrincipal extends JFrame {
 	private boolean partidaTerminada;
 	private String jugadorGanador;
 
-	/**
-	 * Launch the application.
-	 */
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -198,6 +190,7 @@ public class VentanaPrincipal extends JFrame {
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Create the frame.
@@ -326,7 +319,6 @@ public class VentanaPrincipal extends JFrame {
 			menuBar.setBounds(0, 0, 1004, 30);
 			menuBar.add(getMnNewMenu());
 			menuBar.add(getMnNewMenu_1());
-			menuBar.add(getMnTemppruebas());
 		}
 		return menuBar;
 	}
@@ -661,9 +653,9 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblFondoPcpal;
 	}
-	private JLabel getLblJugador2() {
+	public JLabel getLblJugador2() {
 		if (lblJugador2 == null) {
-			lblJugador2 = new JLabel("Jugador 02");
+			lblJugador2 = new JLabel("");
 			lblJugador2.setHorizontalAlignment(SwingConstants.CENTER);
 			lblJugador2.setBorder(null);
 			lblJugador2.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -678,9 +670,9 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblJugador2;
 	}
-	private JLabel getLblJugador1() {
+	public JLabel getLblJugador1() {
 		if (lblJugador1 == null) {
-			lblJugador1 = new JLabel("Jugador 01");
+			lblJugador1 = new JLabel("");
 			lblJugador1.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Jugador.png")));
 			lblJugador1.setSize(new Dimension(221, 43));
 			lblJugador1.setRequestFocusEnabled(false);
@@ -695,9 +687,9 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblJugador1;
 	}
-	private JLabel getLblJugador3() {
+	public JLabel getLblJugador3() {
 		if (lblJugador3 == null) {
-			lblJugador3 = new JLabel("Jugador 03");
+			lblJugador3 = new JLabel("");
 			lblJugador3.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Jugador.png")));
 			lblJugador3.setSize(new Dimension(221, 43));
 			lblJugador3.setRequestFocusEnabled(false);
@@ -712,9 +704,9 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblJugador3;
 	}
-	private JLabel getLblJugador4() {
+	public JLabel getLblJugador4() {
 		if (lblJugador4 == null) {
-			lblJugador4 = new JLabel("Jugador 04");
+			lblJugador4 = new JLabel("");
 			lblJugador4.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Jugador.png")));
 			lblJugador4.setSize(new Dimension(221, 43));
 			lblJugador4.setRequestFocusEnabled(false);
@@ -928,88 +920,8 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return lblDadoImg;
 	}
-	private JMenu getMnTemppruebas() {
-		if (mnTemppruebas == null) {
-			mnTemppruebas = new JMenu("TempPruebas");
-			mnTemppruebas.setMnemonic('t');
-			mnTemppruebas.setFont(new Font("Arial", Font.PLAIN, 15));
-			mnTemppruebas.add(getMntmNewMenuItem_6());
-			mnTemppruebas.add(getMntmNewMenuItem_7());
-			mnTemppruebas.add(getMntmNewMenuItem_5());
-			mnTemppruebas.add(getMntmNewMenuItem_9());
-		}
-		return mnTemppruebas;
-	}
-	private JMenuItem getMntmNewMenuItem_6() {
-		if (mntmNewMenuItem_6 == null) {
-			mntmNewMenuItem_6 = new JMenuItem("Tirar dado");
-			mntmNewMenuItem_6.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/ico_16x16_Acerca.png")));
-			mntmNewMenuItem_6.setMargin(new Insets(5, 5, 5, 5));
-			mntmNewMenuItem_6.setFont(new Font("Arial", Font.PLAIN, 15));
-			mntmNewMenuItem_6.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			mntmNewMenuItem_6.setBorder(new EmptyBorder(0, 0, 0, 0));
-			mntmNewMenuItem_6.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					
-					//Men� TempPruebas > Tirar dado
-					lblDadoImg.setVisible(false); //Ocultar imagen de dado
-					btnComenzar3.setVisible(false); //Ocultar bot�n mensaje tirar
-					lblDadoTirada.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Dado_06.png"))); //Cargar imagen con resultado de tirada
-					lblDadoTirada.setVisible(true); //Mostrar imagen con tirada de dado
-					lblMensajes.setText("elije casilla en el tablero"); //Cargar mensaje a mostrar
-					lblMensajes.setVisible(true); //Mostrar label mensajes
-					
-					btnCasilla_04.setVisible(true); //Mostrar botones de las casillas
-					btnCasilla_05.setVisible(true);
-					btnCasilla_06.setVisible(true);
-					btnCasilla_07.setVisible(true);
-					btnCasilla_08.setVisible(true);
-					btnCasilla_09.setVisible(true);
-					btnCasilla_10.setVisible(true);
-					btnCasilla_11.setVisible(true);
-					btnCasilla_12.setVisible(true);
-					btnCasilla_13.setVisible(true);
-					btnCasilla_14.setVisible(true);
-					btnCasilla_15.setVisible(true);
-					btnCasilla_16.setVisible(true);
-					btnCasilla_17.setVisible(true);
-					btnCasilla_18.setVisible(true);
-					btnCasilla_19.setVisible(true);
-					btnCasilla_20.setVisible(true);
-					btnCasilla_21.setVisible(true);
-					btnCasilla_22.setVisible(true);
-					btnCasilla_23.setVisible(true);
-					btnCasilla_24.setVisible(true);
-					btnCasilla_25.setVisible(true);
-					btnCasilla_26.setVisible(true);
-					btnCasilla_27.setVisible(true);
-					btnCasilla_28.setVisible(true);
-					btnCasilla_29.setVisible(true);
-					btnCasilla_30.setVisible(true);
-					btnCasilla_31.setVisible(true);
-					btnCasilla_00.setVisible(true);
-					btnCasilla_01.setVisible(true);
-					btnCasilla_02.setVisible(true);
-					btnCasilla_03.setVisible(true);
-					btnCasilla_35.setVisible(true);
-					btnCasilla_36.setVisible(true);
-					btnCasilla_37.setVisible(true);
-					btnCasilla_44.setVisible(true);
-					btnCasilla_43.setVisible(true);
-					btnCasilla_42.setVisible(true);
-					btnCasilla_41.setVisible(true);
-					btnCasilla_32.setVisible(true);
-					btnCasilla_33.setVisible(true);
-					btnCasilla_34.setVisible(true);
-					btnCasilla_40.setVisible(true);
-					btnCasilla_39.setVisible(true);
-					btnCasilla_38.setVisible(true);
-
-				}
-			});
-		}
-		return mntmNewMenuItem_6;
-	}
+	
+	
 	private JLabel getLblDadoTirada() {
 		if (lblDadoTirada == null) {
 			lblDadoTirada = new JLabel("");
@@ -2238,95 +2150,8 @@ public class VentanaPrincipal extends JFrame {
 		}
 		return mntmNewMenuItem_8;
 	}
-	private JMenuItem getMntmNewMenuItem_5() {
-		if (mntmNewMenuItem_5 == null) {
-			mntmNewMenuItem_5 = new JMenuItem("1 - Tirar dado > tirada: 4");
-			mntmNewMenuItem_5.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			mntmNewMenuItem_5.setFont(new Font("Arial", Font.PLAIN, 15));
-			mntmNewMenuItem_5.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					
-					//Código de la acción
-					
-					//Mostrar posibles casillas destino para mover 4 (mostrar botones)
-					btnCasilla_35.setVisible(true);
-					btnCasilla_38.setVisible(true);
-					btnCasilla_41.setVisible(true);
-					btnCasilla_01.setVisible(true);
-					btnCasilla_31.setVisible(true);
-					
-					//Mostrar Dado con la tirada (4)
-					lblDadoImg.setVisible(false); //Ocultar imagen de dado
-					btnComenzar3.setVisible(false); //Ocultar botón mensaje tirar
-					lblDadoTirada.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/Dado_04.png"))); //Cargar imagen con resultado de tirada
-					lblDadoTirada.setVisible(true); //Mostrar imagen con tirada de dado
-					lblMensajes.setText("elije casilla en el tablero"); //Cargar mensaje a mostrar
-					lblMensajes.setVisible(true); //Mostrar label mensajes
-					
-					
-				}
-			});
-		}
-		return mntmNewMenuItem_5;
-	}
-	private JMenuItem getMntmNewMenuItem_7() {
-		if (mntmNewMenuItem_7 == null) {
-			mntmNewMenuItem_7 = new JMenuItem("0 - Posición de partida");
-			mntmNewMenuItem_7.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			mntmNewMenuItem_7.setFont(new Font("Arial", Font.PLAIN, 15));
-			mntmNewMenuItem_7.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent arg0) {
-					
-					//Código de la acción
-					
-					//Ficha Rosa del jugador 1 en la casilla 34 (imagen en la label, label visible)
-					lblCasilla_34.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/FichaRo_00_00_Az_Am.png")));
-					lblCasilla_34.setVisible(true);
-					
-					//Ficha Verde del jugador 2 en la casilla 36 (imagen en la label, label visible)
-					lblCasilla_36.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/FichaVe_Ro_Ve_00_00.png")));
-					lblCasilla_36.setVisible(true);
-					
-					//Ficha Amarilla del jugador 3 en la casilla 02 (imagen en la label, label visible)
-					lblCasilla_02.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/FichaAm_Ro_Ve_00_Am.png")));
-					lblCasilla_02.setVisible(true);
-					
-					//Ficha Azul del jugador 4 en la casilla 40 (imagen en la label, label visible)
-					lblCasilla_40.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/FichaAz_00_Ve_00_Am.png")));
-					lblCasilla_40.setVisible(true);
-						
-				}
-			});
-		}
-		return mntmNewMenuItem_7;
-	}
-	private JMenuItem getMntmNewMenuItem_9() {
-		if (mntmNewMenuItem_9 == null) {
-			mntmNewMenuItem_9 = new JMenuItem("2 - Casilla destino > mover");
-			mntmNewMenuItem_9.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			mntmNewMenuItem_9.setFont(new Font("Arial", Font.PLAIN, 15));
-			mntmNewMenuItem_9.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					
-					//Código de la acción
-					
-					//Mover 34 --> 38
-					lblCasilla_34.setVisible(false);
-					
-					lblCasilla_38.setIcon(new ImageIcon(VentanaPrincipal.class.getResource("/img/FichasSmall/FichaRo_00_00_Az_Am.png")));
-					lblCasilla_38.setVisible(true);
-					
-					btnCasilla_35.setVisible(false);
-					btnCasilla_38.setVisible(false);
-					btnCasilla_41.setVisible(false);
-					btnCasilla_01.setVisible(false);
-					btnCasilla_31.setVisible(false);
-
-				}
-			});
-		}
-		return mntmNewMenuItem_9;
-	}
+	
+	
 	private JLabel getLblCasilla_33() {
 		if (lblCasilla_33 == null) {
 			lblCasilla_33 = new JLabel("");
@@ -2756,8 +2581,7 @@ public class VentanaPrincipal extends JFrame {
 				
 				DialogoPregunta dialogoPregunta = new DialogoPregunta(pregunta, this);
 				dialogoPregunta.setVisible(true);
-			}
-			
+			}		
 			btnComenzar3.setVisible(true);
 			lblMensajes.setVisible(false);
 		}
@@ -2771,7 +2595,9 @@ public class VentanaPrincipal extends JFrame {
 		boolean jugadorEncontrado = false;
 		int contador = nJugadorTurnoActual + 1;
 		while (!jugadorEncontrado) {
-			if (listaJugadores.get(contador) != null) {
+			if (contador == listaJugadores.size()) {
+				contador = 0;
+			} else if (listaJugadores.get(contador) != null ) {
 				nJugadorTurnoActual = contador;
 				jugadorEncontrado = true;
 				break;
@@ -2782,6 +2608,36 @@ public class VentanaPrincipal extends JFrame {
 				}
 			}	
 		}
+		
+		switch (nJugadorTurnoActual + 1) {
+		case 1:
+			getLblJugador1Off().setVisible(false);
+			getLblJugador2Off().setVisible(true);
+			getLblJugador3Off().setVisible(true);
+			getLblJugador4Off().setVisible(true);
+			break;
+		case 2:
+			getLblJugador1Off().setVisible(true);
+			getLblJugador2Off().setVisible(false);
+			getLblJugador3Off().setVisible(true);
+			getLblJugador4Off().setVisible(true);
+			break;
+		case 3:
+			getLblJugador1Off().setVisible(true);
+			getLblJugador2Off().setVisible(true);
+			getLblJugador3Off().setVisible(false);
+			getLblJugador4Off().setVisible(true);
+			break;
+		case 4:
+			getLblJugador1Off().setVisible(true);
+			getLblJugador2Off().setVisible(true);
+			getLblJugador3Off().setVisible(true);
+			getLblJugador4Off().setVisible(false);
+			break;
+		default:
+			break;
+		}
+		
 		Usuario jugadorActual = listaJugadores.get(nJugadorTurnoActual);
 		JOptionPane.showMessageDialog(null, "¡Empieza el turno del jugador "+jugadorActual.getUsuario()+"!","¡Siguiente!",JOptionPane.INFORMATION_MESSAGE);
 	}
@@ -2790,6 +2646,7 @@ public class VentanaPrincipal extends JFrame {
 		Usuario jugadorActual = listaJugadores.get(nJugadorTurnoActual);
 		jugadorActual.addQuesito(categoria);
 		int casillaJugador = listaJugadores.get(nJugadorTurnoActual).getCasillaActual();
+		System.out.println(jugadorActual.getIcono());
 		labelTablero.get(casillaJugador).setIcon(new ImageIcon(VentanaPrincipal.class.getResource(jugadorActual.getIcono())));
 		
 		if(jugadorActual.todosLosQuesitos()){
