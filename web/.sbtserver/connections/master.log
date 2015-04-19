@@ -1,13 +1,16 @@
-New log file opened at Thu Apr 16 14:45:45 CEST 2015 by 6468@Sergio-PC
-Taking next connection to: 2272
-New client attempting to connect on port: 2273-2272
-  Address = /192.168.0.10:2272
-This client on port 2273 has uuid 55cdcc1a-bb24-400d-9017-a386e779bd62 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-55cdcc1a-bb24-400d-9017-a386e779bd62
-Taking next connection to: 2272
-New client attempting to connect on port: 2331-2272
-  Address = /192.168.0.10:2272
-Handshake exception on socket: 2331
+New log file opened at Sun Apr 19 22:12:00 CEST 2015 by 20788@Sergio-PC
+Taking next connection to: 20072
+New client attempting to connect on port: 20073-20072
+  Address = /192.168.0.10:20072
+This client on port 20073 has uuid ffa04875-c951-4614-aa2b-7bc986fea1c2 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-ffa04875-c951-4614-aa2b-7bc986fea1c2
+Taking next connection to: 20072
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 20072
+New client attempting to connect on port: 20088-20072
+  Address = /192.168.0.10:20072
+Handshake exception on socket: 20088
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
@@ -23,15 +26,9 @@ Caused by: java.net.SocketException: Software caused connection abort: recv fail
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
-Taking next connection to: 2272
-New client attempting to connect on port: 2332-2272
-  Address = /192.168.0.10:2272
-This client on port 2332 has uuid bce603dc-3e79-401f-8942-e6856bbbef40 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-bce603dc-3e79-401f-8942-e6856bbbef40
-Taking next connection to: 2272
-Checking to see if clients are empty...
-No non-daemon clients connected after 3 min. Shutting down.
-Server socket thread exiting.
-0 clients open, will close them...
-All client sockets have been closed.
-Closing the 6468@Sergio-PC logs at Thu Apr 16 14:50:51 CEST 2015, goodbye.
+Taking next connection to: 20072
+New client attempting to connect on port: 20089-20072
+  Address = /192.168.0.10:20072
+This client on port 20089 has uuid 81731293-b170-4078-9f88-ded0cfaf21e2 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-81731293-b170-4078-9f88-ded0cfaf21e2
+Taking next connection to: 20072

@@ -3,8 +3,6 @@ package controllers;
 import java.net.UnknownHostException;
 import java.util.Arrays;
 
-import org.bson.types.ObjectId;
-
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.preguntas;
@@ -23,10 +21,7 @@ public class TrivialAPI extends Controller {
 	public static Result obtenerPreguntas() {
 		String resultJSON = "{\"preguntas\":[";
 
-		DB db = conectar();
-
-		DBCollection colPreguntas = db.getCollection("preguntas");
-		DBCursor cursor = colPreguntas.find();
+		DBCursor cursor = ejecutarConsulta("preguntas");
 
 		while (cursor.hasNext()) {
 			DBObject preguntaJSON = cursor.next();
@@ -78,8 +73,7 @@ public class TrivialAPI extends Controller {
 		int i = 0;
 		while (cursor.hasNext()) {
 			DBObject preguntaJSON = cursor.next();
-			if(i==posRandom){ 
-				System.out.println(i+" "+posRandom);				
+			if(i==posRandom){ 			
 				resultJSON = preguntaJSON.toString();
 				break;
 			}
@@ -90,6 +84,13 @@ public class TrivialAPI extends Controller {
 		return ok(preguntas.render(resultJSON));
 	}
 
+	private static DBCursor ejecutarConsulta(String coleccion) {
+		DB db = conectar();
+		DBCollection colPreguntas = db.getCollection(coleccion);		
+		DBCursor cursor = colPreguntas.find();
+		return cursor;
+	}
+	
 	private static DBCursor ejecutarConsulta(BasicDBObject consulta,
 			String coleccion) {
 		DB db = conectar();
