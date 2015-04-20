@@ -1,7 +1,11 @@
+@(prueba:String)
 <html>
 	<head>
 		<script type="text/javascript">
-			function hacerPregunta(){
+		
+			var idPregunta;
+			
+			function createAJAX(){
 				// Este es el trozo de codigo para usar AJAX
 				var xmlhttp;
 				if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -10,6 +14,20 @@
 				else { // code for IE6, IE5
 					xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 				}
+				
+				return xmlhttp;
+			}
+			
+			function executeAJAX(xmlhttp, method, url){
+				// Aqui abro la conexion con la llamada REST
+				xmlhttp.open(method,url,true);
+				
+				// Envio la peticion GET
+				xmlhttp.send();
+			}
+			
+			function hacerPregunta(){
+				var xmlhttp = createAJAX();
 				
 				// Esto es lo que ejecutará la llamada AJAX cuando termine
 				xmlhttp.onreadystatechange=function() {
@@ -20,6 +38,9 @@
 						
 						// Convierto el texto JSON a un objeto JSON
 						var pregunta = JSON.parse(textJSON);
+						
+						// Guardo la referencia al id de la pregunta en la variable global
+						idPregunta = pregunta._id;
 						
 						// Muestro la lista de respuestas que de primeras está oculta
 						document.getElementById("lista_respuestas").style.display = "block";
@@ -34,12 +55,32 @@
 					}
 				}
 				
-				// Aqui abro la conexion con la llamada REST
-				xmlhttp.open("GET","http://localhost:9000/preguntas/random/historia",true);
-				
-				// Envio la peticion GET
-				xmlhttp.send();
+				executeAJAX(xmlhttp,"GET","http://localhost:9000/preguntas/random/historia");
 			}
+			
+			function comprobarRespuesta(nRespuesta){
+				var xmlhttp = createAJAX();
+				
+				// Esto es lo que ejecutará la llamada AJAX cuando termine
+				xmlhttp.onreadystatechange=function() {
+					if (xmlhttp.readyState==4 && xmlhttp.status==200){
+						// Recojo la respuesta de AXAJ, en este caso el json de una pregunta alatoria de historia
+						document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+						var textJSON = document.getElementById("myDiv").innerHTML;
+						
+						// Convierto el texto JSON a un objeto JSON
+						var pregunta = JSON.parse(textJSON);
+						var isCorrecta = pregunta.respuestas[nRespuesta].isCorrecta;				
+						if(isCorrecta)
+							alert("Respuesta correcta");
+						else
+							alert("Respuesta incorrecta");
+					}
+				}
+				
+				executeAJAX(xmlhttp,"GET","http://localhost:9000/preguntas/comprobar/"+idPregunta);
+			}
+			
 		</script>
 	</head>
 	<body>
@@ -47,11 +88,20 @@
 		<button onclick="hacerPregunta()">Hacer pregunta</button>
 		<div style="display: none;" id="myDiv"></div>
 		<p id="enunciado"></p>
+		<p>@prueba</p>
 		<ul id="lista_respuestas" style="display: none;">
-			<li id="primera_respuesta"></li>
-			<li id="segunda_respuesta"></li>
-			<li id="tercera_respuesta"></li>
-			<li id="cuarta_respuesta"></li>
+			<li>
+				<button id="primera_respuesta" onclick="comprobarRespuesta(0)"></button>
+			</li>
+			<li>
+				<button id="segunda_respuesta" onclick="comprobarRespuesta(1)"></button>
+			</li>
+			<li>
+				<button id="tercera_respuesta" onclick="comprobarRespuesta(2)"></button>
+			</li>
+			<li>
+				<button id="cuarta_respuesta" onclick="comprobarRespuesta(3)"></button>
+			</li>
 		</ul>
 	</body>
 </html>

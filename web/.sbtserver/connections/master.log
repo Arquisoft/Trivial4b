@@ -1,16 +1,13 @@
-New log file opened at Sun Apr 19 22:12:00 CEST 2015 by 20788@Sergio-PC
-Taking next connection to: 20072
-New client attempting to connect on port: 20073-20072
-  Address = /192.168.0.10:20072
-This client on port 20073 has uuid ffa04875-c951-4614-aa2b-7bc986fea1c2 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-ffa04875-c951-4614-aa2b-7bc986fea1c2
-Taking next connection to: 20072
-Checking to see if clients are empty...
-We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 20072
-New client attempting to connect on port: 20088-20072
-  Address = /192.168.0.10:20072
-Handshake exception on socket: 20088
+New log file opened at Mon Apr 20 12:27:03 CEST 2015 by 24460@Sergio-PC
+Taking next connection to: 24395
+New client attempting to connect on port: 24396-24395
+  Address = /192.168.0.10:24395
+This client on port 24396 has uuid 1725659b-5e14-4270-9a36-fa8787678e4e configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-1725659b-5e14-4270-9a36-fa8787678e4e
+Taking next connection to: 24395
+New client attempting to connect on port: 24418-24395
+  Address = /192.168.0.10:24395
+Handshake exception on socket: 24418
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
@@ -26,9 +23,9 @@ Caused by: java.net.SocketException: Software caused connection abort: recv fail
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
-Taking next connection to: 20072
-New client attempting to connect on port: 20089-20072
-  Address = /192.168.0.10:20072
-This client on port 20089 has uuid 81731293-b170-4078-9f88-ded0cfaf21e2 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-81731293-b170-4078-9f88-ded0cfaf21e2
-Taking next connection to: 20072
+Taking next connection to: 24395
+New client attempting to connect on port: 24419-24395
+  Address = /192.168.0.10:24395
+This client on port 24419 has uuid 84b0af2d-2131-4c88-b336-834f84c01f66 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-84b0af2d-2131-4c88-b336-834f84c01f66
+Taking next connection to: 24395

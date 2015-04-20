@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.index;
 import views.html.preguntas;
 
 import com.mongodb.BasicDBObject;
@@ -83,20 +84,25 @@ public class TrivialAPI extends Controller {
 		
 		return ok(preguntas.render(resultJSON));
 	}
-
-	private static DBCursor ejecutarConsulta(String coleccion) {
-		DB db = conectar();
-		DBCollection colPreguntas = db.getCollection(coleccion);		
-		DBCursor cursor = colPreguntas.find();
-		return cursor;
-	}
 	
-	private static DBCursor ejecutarConsulta(BasicDBObject consulta,
-			String coleccion) {
-		DB db = conectar();
-		DBCollection colPreguntas = db.getCollection(coleccion);		
-		DBCursor cursor = colPreguntas.find(consulta);
-		return cursor;
+	public static Result comprobarRespuesta(Integer id){
+		String resultJSON = "";		
+		
+		BasicDBObject consulta = new BasicDBObject();
+		consulta.put("_id", id);
+		String coleccion = "preguntas";
+		
+		DBCursor cursor = ejecutarConsulta(consulta, coleccion);
+		
+		if (cursor.hasNext()) {
+			DBObject preguntaJSON = cursor.next();
+			preguntaJSON.get("respuestas");
+			resultJSON = preguntaJSON.toString();
+			System.out.println(preguntaJSON.toString());
+		}
+		cursor.close();
+		
+		return ok(preguntas.render(resultJSON));
 	}
 
 	private static String checkCategoria(String categoria) {
@@ -129,6 +135,33 @@ public class TrivialAPI extends Controller {
 		DB db = mongoClient.getDB("trivial");
 		System.out.println("Conexion creada con la base de datos");
 		return db;
+	}
+	
+	public static Result obtenerUsuarios(){
+		return null;
+	}
+	
+	public static Result obtenerUsuario(String usuario){
+		return null;
+	}
+	
+	public static Result guardarUsuario(String usuario, String password){
+		return null;
+	}
+	
+	private static DBCursor ejecutarConsulta(String coleccion) {
+		DB db = conectar();
+		DBCollection colPreguntas = db.getCollection(coleccion);		
+		DBCursor cursor = colPreguntas.find();
+		return cursor;
+	}
+	
+	private static DBCursor ejecutarConsulta(BasicDBObject consulta,
+			String coleccion) {
+		DB db = conectar();
+		DBCollection colPreguntas = db.getCollection(coleccion);		
+		DBCursor cursor = colPreguntas.find(consulta);
+		return cursor;
 	}
 
 }

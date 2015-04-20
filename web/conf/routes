@@ -3,10 +3,20 @@
 # ~~~~
 
 # Home page
+
+# Index de la aplicacion
 GET     /                                         controllers.Application.index()
+
+# Llamadas rest para las preguntas
 GET     /preguntas                                controllers.TrivialAPI.obtenerPreguntas()
 GET     /preguntas/categoria/:categoria           controllers.TrivialAPI.obtenerPreguntasPorCategoria(categoria:String)
 GET     /preguntas/random/:categoria              controllers.TrivialAPI.obtenerPreguntaAleatoria(categoria:String)
+GET     /preguntas/comprobar/:id                  controllers.TrivialAPI.comprobarRespuesta(id:Integer)
+
+# Llamadas rest para los usuarios
+GET     /usuarios/                                controllers.TrivialAPI.obtenerUsuarios()
+GET     /usuarios/get/:usuario                    controllers.TrivialAPI.obtenerUsuario(usuario:String)
+POST    /usuarios/save/:usuario/:password         controllers.TrivialAPI.guardarUsuario(usuario:String,password:String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
