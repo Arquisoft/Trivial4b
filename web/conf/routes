@@ -2,21 +2,33 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
+#######################################################################################################################
 
-# Index de la aplicacion
+# Aqui defino todas las diferentes pantallas que tendra la aplicacion y sus rutas
 GET     /                                         controllers.Application.index()
+GET     /login                                    controllers.Application.login()
+GET     /trivial                                  controllers.Application.trivial()
+GET     /admin                                    controllers.Application.pantallaAdministracion()
+
+#######################################################################################################################
+
+# Aqui comienzan las rutas para las llamadas REST de la api
+# Toda esta zona ya es lógica de la aplicacion
 
 # Llamadas rest para las preguntas
-GET     /preguntas                                controllers.TrivialAPI.obtenerPreguntas()
-GET     /preguntas/categoria/:categoria           controllers.TrivialAPI.obtenerPreguntasPorCategoria(categoria:String)
-GET     /preguntas/random/:categoria              controllers.TrivialAPI.obtenerPreguntaAleatoria(categoria:String)
-GET     /preguntas/comprobar/:id                  controllers.TrivialAPI.comprobarRespuesta(id:Integer)
+GET     /preguntas                                             controllers.TrivialAPI.obtenerPreguntas()
+GET     /preguntas/categoria/:categoria                        controllers.TrivialAPI.obtenerPreguntasPorCategoria(categoria:String)
+GET     /preguntas/random/:categoria                           controllers.TrivialAPI.obtenerPreguntaAleatoria(categoria:String)
+GET     /preguntas/comprobar/:idPregunta/:nRespuesta           controllers.TrivialAPI.comprobarRespuesta(idPregunta:Integer,nRespuesta:Integer)
 
 # Llamadas rest para los usuarios
 GET     /usuarios/                                controllers.TrivialAPI.obtenerUsuarios()
 GET     /usuarios/get/:usuario                    controllers.TrivialAPI.obtenerUsuario(usuario:String)
 POST    /usuarios/save/:usuario/:password         controllers.TrivialAPI.guardarUsuario(usuario:String,password:String)
 
+#######################################################################################################################
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+#######################################################################################################################

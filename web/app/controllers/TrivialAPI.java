@@ -8,6 +8,7 @@ import play.mvc.Result;
 import views.html.index;
 import views.html.preguntas;
 
+import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -22,103 +23,104 @@ public class TrivialAPI extends Controller {
 	public static Result obtenerPreguntas() {
 		String resultJSON = "{\"preguntas\":[";
 
-		DBCursor cursor = ejecutarConsulta("preguntas");
+		DBCursor cursor = ejecutarConsulta(null, "preguntas");
 
-		while (cursor.hasNext()) {
-			DBObject preguntaJSON = cursor.next();
-			resultJSON += preguntaJSON.toString() + ",";
-		}
-		cursor.close();
-
-		resultJSON = resultJSON.substring(0, resultJSON.length() - 1) + "]}";
+		resultJSON = createJSONArray(resultJSON, cursor);
 
 		return ok(preguntas.render(resultJSON));
 	}
 
-	public static Result obtenerPreguntasPorCategoria(String categoria){
-		String resultJSON = "{\"preguntas\":[";
-		
+	public static Result obtenerPreguntasPorCategoria(String categoria) {
 		categoria = checkCategoria(categoria);
 		
+		String resultJSON = "{\"preguntas\":[";		
+
 		BasicDBObject consulta = new BasicDBObject();
 		consulta.put("categoria", categoria);
 		String coleccion = "preguntas";
-		
+
 		DBCursor cursor = ejecutarConsulta(consulta, coleccion);
-		
-		while (cursor.hasNext()) {
-			DBObject preguntaJSON = cursor.next();
-			resultJSON += preguntaJSON.toString()+",";
-		}
-		cursor.close();
-		
-		resultJSON = resultJSON.substring(0, resultJSON.length()-1)+"]}";
-		
+
+		resultJSON = createJSONArray(resultJSON, cursor);
+
 		return ok(preguntas.render(resultJSON));
 	}
 
-	public static Result obtenerPreguntaAleatoria(String categoria){
-		String resultJSON = "";		
-		
+	public static Result obtenerPreguntaAleatoria(String categoria) {
+		String resultJSON = "";
+
 		categoria = checkCategoria(categoria);
-		
+
 		BasicDBObject consulta = new BasicDBObject();
 		consulta.put("categoria", categoria);
 		String coleccion = "preguntas";
-		
+
 		DBCursor cursor = ejecutarConsulta(consulta, coleccion);
-		
-		int maxIndex = cursor.count()-1;
+
+		int maxIndex = cursor.count() - 1;
 		int posRandom = (int) (Math.random() * ((maxIndex - 0) + 1) + 0);
-		
+
 		int i = 0;
 		while (cursor.hasNext()) {
 			DBObject preguntaJSON = cursor.next();
-			if(i==posRandom){ 			
+			if (i == posRandom) {
 				resultJSON = preguntaJSON.toString();
 				break;
 			}
 			i++;
 		}
 		cursor.close();
-		
+
 		return ok(preguntas.render(resultJSON));
 	}
-	
-	public static Result comprobarRespuesta(Integer id){
-		String resultJSON = "";		
+
+	public static Result comprobarRespuesta(Integer idPregunta, Integer nRespuesta) {
 		
 		BasicDBObject consulta = new BasicDBObject();
-		consulta.put("_id", id);
+		consulta.put("_id", idPregunta);
 		String coleccion = "preguntas";
-		
+
 		DBCursor cursor = ejecutarConsulta(consulta, coleccion);
-		
+
+		BasicDBObject respuestaElegida = null;
 		if (cursor.hasNext()) {
 			DBObject preguntaJSON = cursor.next();
-			preguntaJSON.get("respuestas");
-			resultJSON = preguntaJSON.toString();
-			System.out.println(preguntaJSON.toString());
+			BasicDBList respuestas = (BasicDBList) preguntaJSON.get("respuestas");			
+			respuestaElegida = (BasicDBObject) respuestas.get(nRespuesta);
 		}
 		cursor.close();
-		
-		return ok(preguntas.render(resultJSON));
+
+		return ok(preguntas.render(respuestaElegida.get("isCorrecta").toString()));
 	}
 
 	private static String checkCategoria(String categoria) {
 		categoria = categoria.replace("%20", " ");
-		
-		if(categoria.equalsIgnoreCase("historia"))
+
+		if (categoria.equalsIgnoreCase("historia"))
 			categoria = "Historia";
-		else if(categoria.equalsIgnoreCase("espectáculos") || categoria.equalsIgnoreCase("espectaculos"))
+		else if (categoria.equalsIgnoreCase("espectáculos")
+				|| categoria.equalsIgnoreCase("espectaculos"))
 			categoria = "Espectáculos";
-		else if(categoria.equalsIgnoreCase("ciencias y naturaleza"))
+		else if (categoria.equalsIgnoreCase("ciencias y naturaleza"))
 			categoria = "Ciencias y Naturaleza";
-		else if(categoria.equalsIgnoreCase("geografía") || categoria.equalsIgnoreCase("geografia"))
+		else if (categoria.equalsIgnoreCase("geografía")
+				|| categoria.equalsIgnoreCase("geografia"))
 			categoria = "Geografía";
 		return categoria;
 	}
-	
+
+	public static Result obtenerUsuarios() {
+		return null;
+	}
+
+	public static Result obtenerUsuario(String usuario) {
+		return null;
+	}
+
+	public static Result guardarUsuario(String usuario, String password) {
+		return null;
+	}
+
 	private static DB conectar() {
 		MongoClient mongoClient = null;
 		MongoCredential mongoCredential = MongoCredential
@@ -136,32 +138,29 @@ public class TrivialAPI extends Controller {
 		System.out.println("Conexion creada con la base de datos");
 		return db;
 	}
-	
-	public static Result obtenerUsuarios(){
-		return null;
-	}
-	
-	public static Result obtenerUsuario(String usuario){
-		return null;
-	}
-	
-	public static Result guardarUsuario(String usuario, String password){
-		return null;
-	}
-	
-	private static DBCursor ejecutarConsulta(String coleccion) {
-		DB db = conectar();
-		DBCollection colPreguntas = db.getCollection(coleccion);		
-		DBCursor cursor = colPreguntas.find();
-		return cursor;
-	}
-	
+
 	private static DBCursor ejecutarConsulta(BasicDBObject consulta,
 			String coleccion) {
 		DB db = conectar();
 		DBCollection colPreguntas = db.getCollection(coleccion);		
-		DBCursor cursor = colPreguntas.find(consulta);
+		
+		DBCursor cursor = null;
+		if(consulta!=null)
+			cursor = colPreguntas.find(consulta);
+		else
+			cursor = colPreguntas.find();
+		
 		return cursor;
 	}
 
+	private static String createJSONArray(String resultJSON, DBCursor cursor) {
+		while (cursor.hasNext()) {
+			DBObject preguntaJSON = cursor.next();
+			resultJSON += preguntaJSON.toString() + ",";
+		}
+		cursor.close();
+	
+		resultJSON = resultJSON.substring(0, resultJSON.length() - 1) + "]}";
+		return resultJSON;
+	}
 }

@@ -1,107 +1,16 @@
-@(prueba:String)
-<html>
-	<head>
-		<script type="text/javascript">
-		
-			var idPregunta;
-			
-			function createAJAX(){
-				// Este es el trozo de codigo para usar AJAX
-				var xmlhttp;
-				if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
-					xmlhttp=new XMLHttpRequest();
-				}
-				else { // code for IE6, IE5
-					xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-				}
-				
-				return xmlhttp;
-			}
-			
-			function executeAJAX(xmlhttp, method, url){
-				// Aqui abro la conexion con la llamada REST
-				xmlhttp.open(method,url,true);
-				
-				// Envio la peticion GET
-				xmlhttp.send();
-			}
-			
-			function hacerPregunta(){
-				var xmlhttp = createAJAX();
-				
-				// Esto es lo que ejecutará la llamada AJAX cuando termine
-				xmlhttp.onreadystatechange=function() {
-					if (xmlhttp.readyState==4 && xmlhttp.status==200){
-						// Recojo la respuesta de AXAJ, en este caso el json de una pregunta alatoria de historia
-						document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-						var textJSON = document.getElementById("myDiv").innerHTML;
-						
-						// Convierto el texto JSON a un objeto JSON
-						var pregunta = JSON.parse(textJSON);
-						
-						// Guardo la referencia al id de la pregunta en la variable global
-						idPregunta = pregunta._id;
-						
-						// Muestro la lista de respuestas que de primeras está oculta
-						document.getElementById("lista_respuestas").style.display = "block";
-						
-						// En accedo a las diferentes partes del html rellenandolas con la informacion
-						// del objeto JSON
-						document.getElementById("enunciado").innerHTML = pregunta.enunciado;
-						document.getElementById("primera_respuesta").innerHTML = pregunta.respuestas[0].respuesta;
-						document.getElementById("segunda_respuesta").innerHTML = pregunta.respuestas[1].respuesta;
-						document.getElementById("tercera_respuesta").innerHTML = pregunta.respuestas[2].respuesta;
-						document.getElementById("cuarta_respuesta").innerHTML = pregunta.respuestas[3].respuesta;
-					}
-				}
-				
-				executeAJAX(xmlhttp,"GET","http://localhost:9000/preguntas/random/historia");
-			}
-			
-			function comprobarRespuesta(nRespuesta){
-				var xmlhttp = createAJAX();
-				
-				// Esto es lo que ejecutará la llamada AJAX cuando termine
-				xmlhttp.onreadystatechange=function() {
-					if (xmlhttp.readyState==4 && xmlhttp.status==200){
-						// Recojo la respuesta de AXAJ, en este caso el json de una pregunta alatoria de historia
-						document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-						var textJSON = document.getElementById("myDiv").innerHTML;
-						
-						// Convierto el texto JSON a un objeto JSON
-						var pregunta = JSON.parse(textJSON);
-						var isCorrecta = pregunta.respuestas[nRespuesta].isCorrecta;				
-						if(isCorrecta)
-							alert("Respuesta correcta");
-						else
-							alert("Respuesta incorrecta");
-					}
-				}
-				
-				executeAJAX(xmlhttp,"GET","http://localhost:9000/preguntas/comprobar/"+idPregunta);
-			}
-			
-		</script>
-	</head>
-	<body>
-		<h1>Bienvenido a Trivial4b!</h1>
-		<button onclick="hacerPregunta()">Hacer pregunta</button>
-		<div style="display: none;" id="myDiv"></div>
-		<p id="enunciado"></p>
-		<p>@prueba</p>
-		<ul id="lista_respuestas" style="display: none;">
-			<li>
-				<button id="primera_respuesta" onclick="comprobarRespuesta(0)"></button>
-			</li>
-			<li>
-				<button id="segunda_respuesta" onclick="comprobarRespuesta(1)"></button>
-			</li>
-			<li>
-				<button id="tercera_respuesta" onclick="comprobarRespuesta(2)"></button>
-			</li>
-			<li>
-				<button id="cuarta_respuesta" onclick="comprobarRespuesta(3)"></button>
-			</li>
-		</ul>
-	</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>TrivialArquisoft - Inicio</title>
+<link rel="stylesheet" type="text/css" href="assets/stylesheets/index.css">
+</head>
+    <body>
+        <div class="container">
+            <div class="fondo"></div>
+            <a href="http://localhost:9000/login">
+                <div id="botonInicio" class="botonAmarillo" style="left: 385px; top: 427px;">Comenzar</div>
+            </a>
+        </div>
+    </body>
 </html>
