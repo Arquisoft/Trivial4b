@@ -26,7 +26,9 @@ GET     /usuarios/                                controllers.TrivialAPI.obtener
 GET     /usuarios/get/:usuario                    controllers.TrivialAPI.obtenerUsuario(usuario:String)
 POST    /usuarios/save/:usuario/:password         controllers.TrivialAPI.guardarUsuario(usuario:String,password:String)
 
+# Logica del juego
 GET     /posiciones/:actual/:tirada               controllers.TrivialAPI.calcularDestinos(actual:Integer, tirada:Integer)
+GET     /casilla/:nCasilla                        controllers.TrivialAPI.usarCasilla(nCasilla:Integer)
 
 #######################################################################################################################
 

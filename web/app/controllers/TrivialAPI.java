@@ -4,8 +4,11 @@ import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.List;
 
-import logica.Grafo;
-import logica.TableroFactory;
+import logica.Trivial;
+import models.Pregunta;
+import models.PreguntaGame;
+import models.Respuesta;
+import persistence.DBFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.mensajes;
@@ -23,6 +26,12 @@ import com.mongodb.ServerAddress;
 
 public class TrivialAPI extends Controller {
 
+	private static Trivial trivial = new Trivial(obtenerListaPreguntas());
+	
+	private static List<Pregunta> obtenerListaPreguntas() {
+		return DBFactory.createRemoteDB().cargarPreguntas();
+	}
+	
 	public static Result obtenerPreguntas() {
 		String resultJSON = "{\"preguntas\":[";
 
@@ -35,8 +44,8 @@ public class TrivialAPI extends Controller {
 
 	public static Result obtenerPreguntasPorCategoria(String categoria) {
 		categoria = checkCategoria(categoria);
-		
-		String resultJSON = "{\"preguntas\":[";		
+
+		String resultJSON = "{\"preguntas\":[";
 
 		BasicDBObject consulta = new BasicDBObject();
 		consulta.put("categoria", categoria);
@@ -77,8 +86,9 @@ public class TrivialAPI extends Controller {
 		return ok(preguntas.render(resultJSON));
 	}
 
-	public static Result comprobarRespuesta(Integer idPregunta, Integer nRespuesta) {
-		
+	public static Result comprobarRespuesta(Integer idPregunta,
+			Integer nRespuesta) {
+
 		BasicDBObject consulta = new BasicDBObject();
 		consulta.put("_id", idPregunta);
 		String coleccion = "preguntas";
@@ -88,12 +98,16 @@ public class TrivialAPI extends Controller {
 		BasicDBObject respuestaElegida = null;
 		if (cursor.hasNext()) {
 			DBObject preguntaJSON = cursor.next();
-			BasicDBList respuestas = (BasicDBList) preguntaJSON.get("respuestas");			
+			BasicDBList respuestas = (BasicDBList) preguntaJSON
+					.get("respuestas");
 			respuestaElegida = (BasicDBObject) respuestas.get(nRespuesta);
 		}
 		cursor.close();
 
-		return ok(preguntas.render(respuestaElegida.get("isCorrecta").toString()));
+		String result = "{\"isCorrecta\":"
+				+ respuestaElegida.get("isCorrecta").toString() + "}";
+
+		return ok(preguntas.render(result));
 	}
 
 	private static String checkCategoria(String categoria) {
@@ -120,20 +134,54 @@ public class TrivialAPI extends Controller {
 		return null;
 	}
 
-	public static Result guardarUsuario(String usuario, String password) {		
+	public static Result guardarUsuario(String usuario, String password) {
 		return null;
-	} 
-	
-	public static Result calcularDestinos(Integer actual, Integer tirada){
-		Grafo grafo = new Grafo(TableroFactory.createTablero());
-		List<Integer> destinos = grafo.getDestinos(actual, tirada);
+	}
+
+	public static Result calcularDestinos(Integer actual, Integer tirada) {
+		trivial = new Trivial(obtenerListaPreguntas());
 		
-		String result = "[";
-		for(Integer destino : destinos)
-			result += ""+destino+",";
-		result = result.substring(0,result.length()-1);
-		result += "]";
+		List<Integer> destinos = trivial.obtenerDestinos(actual, tirada);
+
+		String result = "{\"posiciones\":[";
+		for (Integer destino : destinos)
+			result += "{\"posicion\":" + destino + "},";
+		result = result.substring(0, result.length() - 1);
+		result += "]}";
 		return ok(mensajes.render(result));
+	}
+	
+	public static Result usarCasilla(Integer nCasilla){
+		trivial.usarCasilla(nCasilla);
+		
+		PreguntaGame pregunta = trivial.getPreguntaActual();
+		boolean isCasillaFinal = trivial.isCasillaFinal();
+		boolean isVuelveATirar = trivial.isVuelveATirar();
+		
+		String result = "{";
+		
+		result += "\"isQuesito\":\""+pregunta.isEsQuesito()+"\",";
+		result += "\"enunciado\":\""+pregunta.getEnunciado()+"\",";
+		result += "\"categoria\":\""+pregunta.getCategoria()+"\",";
+		
+		List<Respuesta> respuestas = pregunta.getRespuestas();
+		String respuestasJSON = "\"respuestas\":[";
+		for (Respuesta respuesta : respuestas) {
+			respuestasJSON += "{";
+			
+			respuestasJSON += "\"respuesta\":\""+respuesta.getRespuesta()+"\",";
+			respuestasJSON += "\"isCorrecta\":\""+respuesta.isCorrecta()+"\"";
+			
+			respuestasJSON += "},";
+		}
+		respuestasJSON = respuestasJSON.substring(0,respuestasJSON.length()-1)+"]";
+		
+		result += respuestasJSON+",";
+		result += "\"isCasillFinal\":"+isCasillaFinal+",";
+		result += "\"isVuelveATirar\":"+isVuelveATirar+"";
+		
+		result += "}";
+		return ok(preguntas.render(result));
 	}
 
 	private static DB conectar() {
@@ -157,14 +205,14 @@ public class TrivialAPI extends Controller {
 	private static DBCursor ejecutarConsulta(BasicDBObject consulta,
 			String coleccion) {
 		DB db = conectar();
-		DBCollection colPreguntas = db.getCollection(coleccion);		
-		
+		DBCollection colPreguntas = db.getCollection(coleccion);
+
 		DBCursor cursor = null;
-		if(consulta!=null)
+		if (consulta != null)
 			cursor = colPreguntas.find(consulta);
 		else
 			cursor = colPreguntas.find();
-		
+
 		return cursor;
 	}
 
@@ -174,8 +222,9 @@ public class TrivialAPI extends Controller {
 			resultJSON += preguntaJSON.toString() + ",";
 		}
 		cursor.close();
-	
+
 		resultJSON = resultJSON.substring(0, resultJSON.length() - 1) + "]}";
 		return resultJSON;
 	}
+	
 }

@@ -1,5 +1,6 @@
 package models.casilla.impl;
 
+import logica.Trivial;
 import models.casilla.Action;
 import models.casilla.Casilla;
 
@@ -14,7 +15,10 @@ public class CasillaQuesito implements Casilla {
 	public Action usoCasilla() {
 		// Hace una pregunta sobre la categoria del quesito
 		return new Action() {
-			public void execute() {
+			public void execute(Trivial trivial) {
+				trivial.hacerPregunta(categoria, true);
+				trivial.setCasillaFinal(false);
+				trivial.setVuelveATirar(false);
 			}
 		};
 	}
