@@ -7,14 +7,29 @@
     <title>TrivialArquisoft - Jugadores</title>
     
     <script type="text/javascript">
-    
-        function MM_preloadImages() { //v3.0
+	
+		function MM_preloadImages() { //v3.0
           var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
             var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
             if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
         }
-    
+		
+		function MM_openBrWindow(theURL,winName,features) { //v2.0
+		  window.open(theURL,winName,features);
+		}
+		
     </script>
+    
+    <script>
+	
+		function iraJugar() {
+		//cargar el tablero (03.html) en la ventana principal (window.opener)
+		window.opener.location.href="03.html";
+		//cerrar la ventana actual (window)
+		window.close();
+		}
+		
+	</script> 
     
 </head>
 
@@ -138,7 +153,7 @@
         
     </form>
     
-    <a href="#">
+    <a href="#" onclick="iraJugar()">
         <div id="boton2" class="botonAmarillo absoluto" style="left: 190px; top: 376px;">Comenzar el juego</div>
     </a>
 
