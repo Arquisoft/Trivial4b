@@ -1,92 +1,32 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>TrivialArquisoft - Inicio</title>
-<style type="text/css">
-body {
-	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
-	background-color: #03374C;
-	margin: 0;
-	padding: 0;
-	color: #000;
-}
-ul, ol, dl { 
-	padding: 0;
-	margin: 0;
-}
-h1, h2, h3, h4, h5, h6, p {
-	margin-top: 0;
-	padding-right: 15px;
-	padding-left: 15px; 
-}
-a img { 
-	border: none;
-}
 
-a:link {
-	color: #42413C;
-	text-decoration: underline; 
-}
-a:visited {
-	color: #6E6C64;
-	text-decoration: underline;
-}
-a:hover, a:active, a:focus {
-	text-decoration: none;
-}
-.container {
-	width: 1004px;
-	background-color: #03374C;
-	margin: 0 auto;
-  	left: 0;
-  	right: 0;
-	position: fixed;
-	height: 100%;
-}
-.fondo {
-	padding: 10px 0;
-	background-image: url(imgs/Fondo_Inicio.png);
-	position: absolute;
-	visibility: visible;
-	height: 682px;
-	width: 1004px;
-	z-index: 1;
-	background-color: #03374C;
-}
-.botonAmarillo {
-	background-image: url(imgs/Mensaje.png);
-	position: absolute;
-	visibility: visible;
-	width: 245px;
-	height: 43px;
-	z-index: 2;
-	font-family:  Arial, Helvetica, sans-serif;
-	text-align: center;
-	font-size: 18px;
-	text-align: center;
-	color: #000;
-	text-decoration: none;
-	line-height: 2.3em;
-}
-.botonAmarillo:hover {
-	background-image: url(imgs/Mensaje_over.png);
-}
-</style>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="css/estilos.css" rel="stylesheet" type="text/css" media="screen" />
+    <title>TrivialArquisoft - Inicio</title>
+    
+    <script type="text/javascript">
+    
+        function MM_preloadImages() { //v3.0
+          var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+            var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+            if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+        }
+    
+    </script>
+
 </head>
 
-    <body>
+    <body onload="MM_preloadImages('imgs/Mensaje_over.png')">
     
-        <div class="container">
+        <div class="container" style="width: 1004px;">
         
-            <div class="fondo"></div>
+            <div id="fondoInicio" class="fondo"></div>
             
             <a href="#">
-                <div id="botonInicio" class="botonAmarillo" style="left: 385px; top: 427px;">Comenzar</div>
-            </a>
-        
-        <!-- end .container --></div>
-      
+                <div id="boton1" class="botonAmarillo absoluto" style="left: 385px; top: 427px;">Comenzar</div>
+            </a></div>
     </body>
 
 </html>
