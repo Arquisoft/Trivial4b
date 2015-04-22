@@ -2,10 +2,10 @@ package controllers;
 
 import java.net.UnknownHostException;
 import java.util.Arrays;
+import java.util.List;
 
-import models.Usuario;
-import play.db.jpa.JPA;
-import play.db.jpa.Transactional;
+import logica.Grafo;
+import logica.TableroFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.mensajes;
@@ -123,6 +123,18 @@ public class TrivialAPI extends Controller {
 	public static Result guardarUsuario(String usuario, String password) {		
 		return null;
 	} 
+	
+	public static Result calcularDestinos(Integer actual, Integer tirada){
+		Grafo grafo = new Grafo(TableroFactory.createTablero());
+		List<Integer> destinos = grafo.getDestinos(actual, tirada);
+		
+		String result = "[";
+		for(Integer destino : destinos)
+			result += ""+destino+",";
+		result = result.substring(0,result.length()-1);
+		result += "]";
+		return ok(mensajes.render(result));
+	}
 
 	private static DB conectar() {
 		MongoClient mongoClient = null;

@@ -11,7 +11,7 @@ libraryDependencies ++= Seq(
   javaEbean,
   cache,
   javaWs,
-  javaJpa.exclude("org.hibernate.javax.persistence", "hibernate-jpa-2.0-api"),
+  javaJpa.exclude("org.hibernate.javax.persistence", "hibernate-jpa-2.1-api"),
   "org.hibernate" % "hibernate-entitymanager" % "4.3.8.Final"
 )
 

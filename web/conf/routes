@@ -26,6 +26,8 @@ GET     /usuarios/                                controllers.TrivialAPI.obtener
 GET     /usuarios/get/:usuario                    controllers.TrivialAPI.obtenerUsuario(usuario:String)
 POST    /usuarios/save/:usuario/:password         controllers.TrivialAPI.guardarUsuario(usuario:String,password:String)
 
+GET     /posiciones/:actual/:tirada               controllers.TrivialAPI.calcularDestinos(actual:Integer, tirada:Integer)
+
 #######################################################################################################################
 
 # Map static resources from the /public folder to the /assets URL path

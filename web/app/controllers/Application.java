@@ -5,7 +5,7 @@ import play.mvc.Result;
 import views.html.index;
 import views.html.login;
 import views.html.trivial;
-import views.html.admin;
+import views.html.estadisticas;
 
 public class Application extends Controller {
 
@@ -22,7 +22,7 @@ public class Application extends Controller {
 	}
 
 	public static Result pantallaAdministracion() {
-		return ok(admin.render());
+		return ok(estadisticas.render());
 	}
 
 }
