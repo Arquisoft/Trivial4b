@@ -5,4 +5,5 @@ public interface PersistenceFactory {
 	PartidaFinder createPartidaFinder();
 	PreguntaSaver createPreguntaSaver();
 	RespuestaSaver createRespuestaSaver();
+	UsuarioSaver createUsuarioSaver();
 }

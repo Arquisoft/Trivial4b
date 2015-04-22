@@ -3,9 +3,12 @@ package controllers;
 import java.net.UnknownHostException;
 import java.util.Arrays;
 
+import models.Usuario;
+import play.db.jpa.JPA;
+import play.db.jpa.Transactional;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.index;
+import views.html.mensajes;
 import views.html.preguntas;
 
 import com.mongodb.BasicDBList;
@@ -117,9 +120,9 @@ public class TrivialAPI extends Controller {
 		return null;
 	}
 
-	public static Result guardarUsuario(String usuario, String password) {
+	public static Result guardarUsuario(String usuario, String password) {		
 		return null;
-	}
+	} 
 
 	private static DB conectar() {
 		MongoClient mongoClient = null;

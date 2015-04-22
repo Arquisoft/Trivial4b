@@ -5,6 +5,7 @@ import persistence.consultas.PersistenceFactory;
 import persistence.consultas.PreguntaSaver;
 import persistence.consultas.RespuestaSaver;
 import persistence.consultas.UsuarioFinder;
+import persistence.consultas.UsuarioSaver;
 
 public class SimplePersistenceFactory implements PersistenceFactory {
 
@@ -22,6 +23,10 @@ public class SimplePersistenceFactory implements PersistenceFactory {
 	
 	public RespuestaSaver createRespuestaSaver(){
 		return new RespuestaSaverImpl();
+	}
+	
+	public UsuarioSaver createUsuarioSaver(){
+		return new UsuarioSaverImpl();
 	}
 	
 }

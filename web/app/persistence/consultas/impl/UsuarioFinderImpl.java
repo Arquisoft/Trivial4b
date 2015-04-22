@@ -12,24 +12,10 @@ import persistence.consultas.UsuarioFinder;
 import persistence.consultas.util.Jpa;
 
 public class UsuarioFinderImpl implements UsuarioFinder {
-	
-	public void save(Usuario usuario) throws IOException {
-		EntityManager em = Jpa.createEntityManager();
-		EntityTransaction trx = em.getTransaction();
-		try{
-			trx.begin();
-			Jpa.getManager().merge(usuario);
-			trx.commit();
-		}catch(PersistenceException e) {
-			throw new IOException("Base de datos NO conectada.");
-		}
-	}
 
 	public void delete(Usuario usuario) {
 		Jpa.getManager().remove(usuario);		
 	}
-	
-	
 	
 	public List<Usuario> findAll() {
 		EntityManager em = Jpa.createEntityManager();

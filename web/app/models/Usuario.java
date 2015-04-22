@@ -1,17 +1,12 @@
 package models;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
 
 
 @SuppressWarnings("serial")
@@ -33,16 +28,6 @@ public class Usuario implements Serializable{
 	private String[] quesitos;
 	@Transient
 	private String icono;
-	@OneToMany(mappedBy = "usuario")
-	protected Set<UsuariosPartida> partidas= new HashSet<UsuariosPartida>();
-
-	public Set<UsuariosPartida> getPartida() {
-		return Collections.unmodifiableSet(partidas);
-	}
-
-	public Set<UsuariosPartida> _getPartida() {
-		return partidas;
-	}	
 		
 	public Usuario(){
 		super();

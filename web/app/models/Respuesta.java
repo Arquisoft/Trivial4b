@@ -21,12 +21,10 @@ public class Respuesta implements Serializable{
 	private boolean correcta;
 	
 	@ManyToOne
-	@JoinColumn(name = "TPREGUNTAS_ID")
 	private Pregunta pregunta;
 	
 	public Respuesta() {
-		super();
-		// TODO Auto-generated constructor stub
+		super();		
 	}
 
 	public Respuesta(Long id, String respuesta, boolean correcta) {

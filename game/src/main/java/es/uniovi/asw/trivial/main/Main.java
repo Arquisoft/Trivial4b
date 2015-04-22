@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.util.Collections;
 import java.util.List;
 
-import org.hsqldb.Server;
 
 import es.uniovi.asw.trivial.db.DBManager;
 import es.uniovi.asw.trivial.db.impl.local.persistencia.consultas.PersistenceFactory;
@@ -43,17 +42,17 @@ public class Main {
 			System.err.println(e.getMessage());
 		}
 		*/
-		Server hsqlServer = null;
-		Connection connection = null;
-		ResultSet rs = null;
+//		Server hsqlServer = null;
+//		Connection connection = null;
+//		ResultSet rs = null;
+//		
+//		hsqlServer = new Server();
+//		hsqlServer.setLogWriter(null);
+//		hsqlServer.setSilent(true);
+//		hsqlServer.setDatabaseName(0, "trivial4b");
+//		hsqlServer.setDatabasePath(0, "data/");
 		
-		hsqlServer = new Server();
-		hsqlServer.setLogWriter(null);
-		hsqlServer.setSilent(true);
-		hsqlServer.setDatabaseName(0, "trivial4b");
-		hsqlServer.setDatabasePath(0, "data/");
-		
-		hsqlServer.start();
+//		hsqlServer.start();
 
 		
 		PersistenceFactory pf = new SimplePersistenceFactory();
