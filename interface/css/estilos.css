@@ -42,7 +42,7 @@ a:hover, a:active, a:focus {
 	margin: 0 auto;
   	left: 0;
   	right: 0;
-	position: fixed;
+	position: absolute;
 	height: 100%;
 }
 
@@ -54,11 +54,11 @@ a:hover, a:active, a:focus {
 	position: fixed;
 }
 
-.contenidoModal {
+.contenedorModal {
 	background-color: #03374C;
   	left: 0;
   	right: 0;
-	position: fixed;
+	position: absolute;
 	height: 100%;
 }
 
