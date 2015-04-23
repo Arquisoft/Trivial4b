@@ -37,7 +37,7 @@ a:hover, a:active, a:focus {
 	text-decoration: none;
 }
 
-.container {
+.contenedor {
 	background-color: #03374C;
 	margin: 0 auto;
   	left: 0;
@@ -121,6 +121,15 @@ label {
     display: block;
 	margin-left: -5px;
 }
+
+#botonMenu {
+	position: absolute;
+	left: 0px; 
+	top: 5px; 
+	z-index: 4
+}
+
+
 
 /*----------------------------------------------*/
 /*  Estilos de página 'Inicio'                  */
@@ -260,7 +269,7 @@ label {
 }
 
 #tapaJugador1 {
-	visibility: hidden;
+	visibility: visible;
 	left: 52px;
 	top: 246px;
 }
