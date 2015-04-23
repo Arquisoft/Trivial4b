@@ -4,6 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="css/estilos.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="css/bootstrap.css" rel="stylesheet">
     <title>TrivialArquisoft - Tablero</title>
 
 	<script type="text/javascript">
@@ -31,13 +32,35 @@
 		}
     
     </script>
+    
+    <script>
+	
+		function nuevaPartida() {
+			window.location.href="01.html";
+			window.open('02.html','jugadores','width=644,height=456');
+		}
+		
+	</script>
 </head>
 
 <body onload="MM_preloadImages('imgs/Mensaje_over.png','imgs/Casilla_ir_over.png')">
 
-<div class="container" style="width: 1004px">
+<div class="contenedor" style="width: 1004px">
 
 <div id="fondoTablero" class="fondo"></div>
+
+<div id="botonMenu">
+	<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+		Menú
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+		<li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="window.open('05.html','jugadores','width=401,height=365')">Configuración</a></li>
+		<li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="window.open('07.html','jugadores','width=644,height=430')">Estadísticas</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#" onclick="nuevaPartida()">Nueva partida</a></li>
+		</ul>
+</div>
 
 <div id="tirarDadoDecorativo"></div>
 
@@ -380,6 +403,9 @@ window.open('04.html','jugadores','width=480,height=547')">
 </a>
 
  <!-- end .container --></div>
-  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+<script src="js/bootstrap.min.js"></script>
+     
 </body>
 </html>
