@@ -46,6 +46,22 @@ a:hover, a:active, a:focus {
 	height: 100%;
 }
 
+.contenedorTabla {
+	background-color: #03374C;
+	margin: 0 auto;
+  	left: 0;
+  	right: 0;
+	position: fixed;
+}
+
+.contenidoModal {
+	background-color: #03374C;
+  	left: 0;
+  	right: 0;
+	position: fixed;
+	height: 100%;
+}
+
 .fondo {
 	position: absolute;
 	visibility: visible;
@@ -69,6 +85,15 @@ a:hover, a:active, a:focus {
 
 .botonAmarillo:hover {
 	background-image: url(../imgs/Mensaje_over.png);
+	text-decoration: none;
+}
+
+#botonCerrar1 {
+	text-decoration: none;
+}
+
+#botonCerrar1:hover {
+	text-decoration: none;
 }
 
 .absoluto {
@@ -77,8 +102,16 @@ a:hover, a:active, a:focus {
 
 .elementoFormulario {
 	position: absolute;
+	display: block;      
+}
+
+.elementoTabla {
 	display: block;
-        
+    margin: 30px;    
+}
+
+.elementoTabla > a:hover {
+	text-decoration: none;   
 }
 
 .form-control {
@@ -113,7 +146,7 @@ a:hover, a:active, a:focus {
 
 label {
 	color: #FFF;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 .checkbox, .radio {
@@ -562,11 +595,3 @@ td {
 	vertical-align: top;
 	border-top: 1px solid #DDD;
 }
-
-
-
-
-
-
-
-
