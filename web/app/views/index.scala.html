@@ -1,16 +1,58 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>TrivialArquisoft - Inicio</title>
-<link rel="stylesheet" type="text/css" href="assets/stylesheets/index.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="assets/stylesheets/estilos.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/stylesheets/bootstrap.css" rel="stylesheet">
+    <title>TrivialArquisoft - Inicio</title>
+    
+    <script type="text/javascript">
+	
+		function MM_preloadImages() { //v3.0
+          var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+            var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+            if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+        }
+		
+    </script>
+    
+    <script>
+	
+		function ira_Jugar() {
+		//cerrar el diálogo modal
+		$('#modalJugadores').modal('hide');
+		window.location.href="trivial";
+		}
+		
+	</script> 
+
 </head>
-    <body>
-        <div class="container">
-            <div class="fondo"></div>
-            <a href="http://localhost:9000/login">
-                <div id="botonInicio" class="botonAmarillo" style="left: 385px; top: 427px;">Comenzar</div>
-            </a>
-        </div>
-    </body>
+
+<body onload="MM_preloadImages('imgs/Mensaje_over.png')">
+    
+    <!-- Modal Jugadores -->
+    <div class="modal fade" id="modalJugadores" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content" style="width: 644px; height: 150px;"></div><!-- contenido en: modal_Jugadores.html -->
+      </div>
+    </div>
+    <!-- fin: Modal Jugadores -->
+
+    
+	<div class="contenedor" style="width: 1004px;">
+        
+        <div id="fondoInicio" class="fondo"></div>
+                
+        <a data-toggle="modal" href="assets/modal_Jugadores.html" data-target="#modalJugadores">
+            <div id="boton1" class="botonAmarillo absoluto" style="left: 385px; top: 427px;">Comenzar</div>
+        </a>
+    
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+	<script src="assets/javascripts/bootstrap.min.js"></script>
+
+</body>
+
 </html>

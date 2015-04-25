@@ -38,6 +38,8 @@ public class TrivialAPI extends Controller {
 		DBCursor cursor = ejecutarConsulta(null, "preguntas");
 
 		resultJSON = createJSONArray(resultJSON, cursor);
+		
+		resultJSON = ocultarRespuestaCorrecta(resultJSON);
 
 		return ok(preguntas.render(resultJSON));
 	}
@@ -55,6 +57,8 @@ public class TrivialAPI extends Controller {
 
 		resultJSON = createJSONArray(resultJSON, cursor);
 
+		resultJSON = ocultarRespuestaCorrecta(resultJSON);
+		
 		return ok(preguntas.render(resultJSON));
 	}
 
@@ -82,8 +86,17 @@ public class TrivialAPI extends Controller {
 			i++;
 		}
 		cursor.close();
+		
+		resultJSON = ocultarRespuestaCorrecta(resultJSON);
 
 		return ok(preguntas.render(resultJSON));
+	}
+	
+	private static String ocultarRespuestaCorrecta(String resultJSON) {
+		resultJSON = resultJSON.replace(" , \"isCorrecta\" : ", "");
+		resultJSON = resultJSON.replace("true", "");
+		resultJSON = resultJSON.replace("false", "");
+		return resultJSON;
 	}
 
 	public static Result comprobarRespuesta(Integer idPregunta,
@@ -169,8 +182,7 @@ public class TrivialAPI extends Controller {
 		for (Respuesta respuesta : respuestas) {
 			respuestasJSON += "{";
 			
-			respuestasJSON += "\"respuesta\":\""+respuesta.getRespuesta()+"\",";
-			respuestasJSON += "\"isCorrecta\":\""+respuesta.isCorrecta()+"\"";
+			respuestasJSON += "\"respuesta\":\""+respuesta.getRespuesta()+"\"";
 			
 			respuestasJSON += "},";
 		}
@@ -182,6 +194,10 @@ public class TrivialAPI extends Controller {
 		
 		result += "}";
 		return ok(preguntas.render(result));
+	}
+	
+	public static Result tirarDado(){
+		return ok(preguntas.render("{\"numero\":"+String.valueOf(trivial.lanzarDado())+"}"));
 	}
 
 	private static DB conectar() {
