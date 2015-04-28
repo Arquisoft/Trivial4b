@@ -6,9 +6,7 @@
 
 # Aqui defino todas las diferentes pantallas que tendra la aplicacion y sus rutas
 GET     /                                         controllers.Application.index()
-GET     /login                                    controllers.Application.login()
 GET     /trivial                                  controllers.Application.trivial()
-GET     /admin                                    controllers.Application.pantallaAdministracion()
 
 #######################################################################################################################
 

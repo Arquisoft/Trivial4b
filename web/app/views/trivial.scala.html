@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -9,6 +9,12 @@
     <title>TrivialArquisoft - Tablero</title>
 
 	<script type="text/javascript">
+		
+		var pregunta;
+		var posicionActual = 0;
+		var nJugadorActual;
+		var imagenFicha;
+		var arrayPosiciones;
 		
 		function MM_preloadImages() { //v3.0
           var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
@@ -38,6 +44,14 @@
 		  window.open(theURL,winName,features);
 		}
 		
+		function comenzarPartida(){
+			nJugadorActual = 1;
+			imagenFicha = "url(assets/imgs/FichasSmall/FichaRo_null_null_null_null.png)";
+			
+			$('#casilla00_ficha').css("visibility","visible");
+			$('#casilla00_ficha').css("background-image",imagenFicha);
+		}
+		
 		function tirarDado(){
 			var xmlhttp = createAJAX();
 				
@@ -49,31 +63,216 @@
 					var imgDado = "url(assets/imgs/Dado_0"+numero+".png)";
 					$('#tirarDadoDecorativo').css("background-image",imgDado);
 					
+					if(arrayPosiciones != null)
+						ocultarCaminos();
+					cargarPosiblesCaminos(numero);
 				}
 			}
 			
 			executeAJAX(xmlhttp,"GET","http://localhost:9000/dado");
 		}
-    
-    </script>
-    
-    <script>
-	
+		
+		function cargarPosiblesCaminos(numero){
+			var xmlhttp = createAJAX();
+			
+			// Esto es lo que ejecutará la llamada AJAX cuando termine
+			xmlhttp.onreadystatechange=function() {
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){
+					var respuestaJSON = xmlhttp.responseText.replace(/&quot;/g,"\"");
+					
+					arrayPosiciones = JSON.parse(respuestaJSON);
+					
+					for (i = 0; i < arrayPosiciones.posiciones.length; i++) { 
+					    var casilla = arrayPosiciones.posiciones[i].posicion;
+					    if(casilla > 9){
+					    	MM_showHideLayers('casilla'+casilla,'','show');
+					    }
+					    else{
+					    	MM_showHideLayers('casilla0'+casilla,'','show');
+					 	}
+					}
+				}
+			}
+			
+			executeAJAX(xmlhttp,"GET","http://localhost:9000/posiciones/"+posicionActual+"/"+numero);
+		}
+		
+		function usarCasilla(casilla){
+			posicionAnterior = posicionActual;
+			posicionActual = casilla;
+			var xmlhttp = createAJAX();
+				
+			// Esto es lo que ejecutará la llamada AJAX cuando termine
+			xmlhttp.onreadystatechange=function() {
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){
+					var respuestaJSON = xmlhttp.responseText.replace(/&quot;/g,"\"");
+					pregunta = JSON.parse(respuestaJSON);
+					
+					cargaPregunta();
+					ocultarCaminos();
+				}
+			}
+			
+			executeAJAX(xmlhttp,"GET","http://localhost:9000/casilla/"+casilla);
+		}
+		
+		function ocultarCaminos(){
+			for (i = 0; i < arrayPosiciones.posiciones.length; i++) { 
+				var casilla = arrayPosiciones.posiciones[i].posicion;
+				if(casilla > 9){
+					MM_showHideLayers('casilla'+casilla,'','hidden');
+				}
+				else{
+					MM_showHideLayers('casilla0'+casilla,'','hidden');
+				}
+			}
+		}
+		
 		function nuevaPartida() {
 			window.location.href="Inicio.html";
 		}
 		
+		function comprobarRespuesta(nRespuesta){
+			var xmlhttp = createAJAX();
+				
+			// Esto es lo que ejecutará la llamada AJAX cuando termine
+			xmlhttp.onreadystatechange=function() {
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){
+					var respuestaJSON = xmlhttp.responseText.replace(/&quot;/g,"\"");
+					var comprobacion = JSON.parse(respuestaJSON);
+					
+					switchBotonesRespuestasVisible(false);
+					
+					$('#botonSeguir1').css("visibility","visible");
+					
+					if(comprobacion.isCorrecta){
+						var imgRespuestaCorrecta = "url(assets/imgs/Respuesta_Verde.png)";
+						var color = "#FFF";
+						
+						$('#respuesta'+(nRespuesta+1)+'Resultado').css("background-image",imgRespuestaCorrecta);
+						$('#respuesta'+(nRespuesta+1)+'Resultado').css("color",color);
+						$('#respuesta'+(nRespuesta+1)+'Bien').css("visibility","visible");
+					}
+					else{
+						var imgRespuestaIncorrecta = "url(assets/imgs/Respuesta_Rojo.png)";
+						var imgRespuestaCorrecta = "url(assets/imgs/Respuesta_Verde.png)";
+						var color = "#FFF";
+						
+						var respuestaCorrecta = comprobacion.nCorrecta;
+						
+						$('#respuesta'+(respuestaCorrecta+1)+'Resultado').css("background-image",imgRespuestaCorrecta);
+						$('#respuesta'+(respuestaCorrecta+1)+'Resultado').css("color",color);
+						$('#respuesta'+(respuestaCorrecta+1)+'Bien').css("visibility","visible");
+						
+						$('#respuesta'+(nRespuesta+1)+'Resultado').css("background-image",imgRespuestaIncorrecta);
+						$('#respuesta'+(nRespuesta+1)+'Resultado').css("color",color);
+					}
+					
+					moverFicha();
+				}
+			}
+			
+			executeAJAX(xmlhttp,"GET","http://localhost:9000/preguntas/comprobar/"+pregunta._id+"/"+nRespuesta);
+		}
+		
+		function moverFicha(){
+			if(posicionAnterior > 9){
+				$('#casilla'+posicionAnterior+'_ficha').css("visibility","hidden");
+			}
+			else{
+				$('#casilla0'+posicionAnterior+'_ficha').css("visibility","hidden");
+			}
+		
+			if(posicionActual > 9){
+				$('#casilla'+posicionActual+'_ficha').css("visibility","visible");
+				$('#casilla'+posicionActual+'_ficha').css("background-image",imagenFicha);
+			}
+			else{
+				$('#casilla0'+posicionActual+'_ficha').css("visibility","visible");
+				$('#casilla0'+posicionActual+'_ficha').css("background-image",imagenFicha);
+			}
+		}
+		
 		function cargaPregunta() {
+			$('#modalPregunta').on({
+			  'loaded.bs.modal': function(e){
+				mostrarRespuestas();
+			  }
+			})
+			
+			$('#modalPregunta').on({
+			  'show.bs.modal': function(e){
+				mostrarRespuestas();			  	
+			  }
+			})
+			
+			$('#modalPregunta').on({
+			  'hidden.bs.modal': function(e){
+				switchBotonesRespuestasVisible(true);
+			  }
+			})
+			
 			$('#modalPregunta').modal({
 			  backdrop: 'static',
 				remote: 'assets/modal_Pregunta.html'
 			})
 		}
 		
+		function mostrarRespuestas(){
+			$('#preguntaTexo').text(pregunta.enunciado);
+			for(i = 0; i < pregunta.respuestas.length; i++){
+				$('#respuesta'+(i+1)+'Boton').text(pregunta.respuestas[i].respuesta);
+				$('#respuesta'+(i+1)+'Resultado').text(pregunta.respuestas[i].respuesta);
+			}
+		}
+		
+		function switchBotonesRespuestasVisible(visible){
+			if(visible)
+				cambiarBotonesRespuestas("visible","hidden");
+			else 
+				cambiarBotonesRespuestas("hidden","visible");
+		}
+		
+		function cambiarBotonesRespuestas(visibilityBoton, visibilityResultado){
+			reiniciarCSSRespuestas();
+			
+			$('#respuesta1Boton').css("visibility",visibilityBoton);
+			$('#respuesta2Boton').css("visibility",visibilityBoton);
+			$('#respuesta3Boton').css("visibility",visibilityBoton);
+			$('#respuesta4Boton').css("visibility",visibilityBoton);
+			
+			$('#respuesta1Resultado').css("visibility",visibilityResultado);
+			$('#respuesta2Resultado').css("visibility",visibilityResultado);
+			$('#respuesta3Resultado').css("visibility",visibilityResultado);
+			$('#respuesta4Resultado').css("visibility",visibilityResultado);
+			
+			$('#botonSeguir1').css("visibility","hidden");
+		}
+		
+		function reiniciarCSSRespuestas(){
+			var imgRespuestaNormal = "url(assets/imgs/Respuesta_Blanco.png)";
+			var color = "#000";
+			
+			$('#respuesta1Bien').css("visibility","hidden");
+			$('#respuesta2Bien').css("visibility","hidden");
+			$('#respuesta3Bien').css("visibility","hidden");
+			$('#respuesta4Bien').css("visibility","hidden");
+			
+			$('#respuesta1Resultado').css("background-image",imgRespuestaNormal);
+			$('#respuesta2Resultado').css("background-image",imgRespuestaNormal);
+			$('#respuesta3Resultado').css("background-image",imgRespuestaNormal);
+			$('#respuesta4Resultado').css("background-image",imgRespuestaNormal);
+			
+			$('#respuesta1Resultado').css("color",color);
+			$('#respuesta2Resultado').css("color",color);
+			$('#respuesta3Resultado').css("color",color);
+			$('#respuesta4Resultado').css("color",color);
+		}
+		
 	</script>
 </head>
 
-<body onload="MM_preloadImages('assets/imgs/Mensaje_over.png','assets/imgs/Casilla_ir_over.png','assets/imgs/Respuesta_Over.png','assets/imgs/Respuesta_Rojo.png','assets/imgs/Respuesta_Verde.png','assets/imgs/Respuesta_IcoCorrecta.png','assets/imgs/Respuesta_Blanco.png','assets/imgs/Respuesta_Continuar_Over.png','assets/imgs/Respuesta_Continuar.png','assets/imgs/Quesito_Am.png','assets/imgs/Quesito_Az.png','assets/imgs/Quesito_Ro.png','assets/imgs/Quesito_Ve.png')">
+<body onload="comenzarPartida()">
 
 <div class="contenedor" style="width: 1004px">
 
@@ -205,7 +404,7 @@
 
 <div id="casilla13_ficha" class="botonCasillaFicha" style="left: 884px; top: 122px;"></div>
 
-<div id="casilla14_ficha" class="botonCasillaFicha" style="left: 884px; top: 185px; background-image: url(imgs/FichasSmall/FichaVe_Ro_null_null_null.png); visibility: visible;"></div>
+<div id="casilla14_ficha" class="botonCasillaFicha" style="left: 884px; top: 185px;"></div>
 
 <div id="casilla15_ficha" class="botonCasillaFicha" style="left: 884px; top: 248px;"></div>
 
@@ -215,7 +414,7 @@
 
 <div id="casilla18_ficha" class="botonCasillaFicha" style="left: 884px; top: 437px;"></div>
 
-<div id="casilla19_ficha" class="botonCasillaFicha" style="left: 884px; top: 500px; background-image: url(imgs/FichasSmall/FichaAm_null_null_Az_Am.png); visibility: visible;"></div>
+<div id="casilla19_ficha" class="botonCasillaFicha" style="left: 884px; top: 500px; ></div>
 
 <div id="casilla20_ficha" class="botonCasillaFicha" style="left: 884px; top: 563px;"></div>
 
@@ -239,7 +438,7 @@
 
 <div id="casilla30_ficha" class="botonCasillaFicha" style="left: 380px; top: 437px;"></div>
 
-<div id="casilla31_ficha" class="botonCasillaFicha" style="left: 380px; top: 374px; background-image: url(imgs/FichasSmall/FichaRo_null_Ve_null_Am.png); visibility: visible;"></div>
+<div id="casilla31_ficha" class="botonCasillaFicha" style="left: 380px; top: 374px; ></div>
 
 <div id="casilla32_ficha" class="botonCasillaFicha" style="left: 443px; top: 311px;"></div>
 
@@ -261,7 +460,7 @@
 
 <div id="casilla41_ficha" class="botonCasillaFicha" style="left: 632px; top: 500px;"></div>
 
-<div id="casilla42_ficha" class="botonCasillaFicha" style="left: 632px; top: 437px; background-image: url(imgs/FichasSmall/FichaAz_Ro_null_null_Am.png); visibility: visible;"></div>
+<div id="casilla42_ficha" class="botonCasillaFicha" style="left: 632px; top: 437px; ></div>
 
 <div id="casilla43_ficha" class="botonCasillaFicha" style="left: 632px; top: 374px;"></div>
 
@@ -270,212 +469,187 @@
 
 
 <a href="#" >
-	<div id="casilla00" class="botonCasilla" style="left: 380px; top: 311px;"></div>
+	<div onclick="usarCasilla(0)" id="casilla00" class="botonCasilla" style="left: 380px; top: 311px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla01" class="botonCasilla" style="left: 380px; top: 248px;"></div>
+	<div onclick="usarCasilla(1)" id="casilla01" class="botonCasilla" style="left: 380px; top: 248px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla02" class="botonCasilla" style="left: 380px; top: 185px;"></div>
+	<div onclick="usarCasilla(2)" id="casilla02" class="botonCasilla" style="left: 380px; top: 185px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla03" class="botonCasilla" style="left: 380px; top: 122px;"></div>
+	<div onclick="usarCasilla(3)" id="casilla03" class="botonCasilla" style="left: 380px; top: 122px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla04" class="botonCasilla" style="left: 380px; top: 59px;"></div>
+	<div onclick="usarCasilla(4)" id="casilla04" class="botonCasilla" style="left: 380px; top: 59px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla05" class="botonCasilla" style="left: 443px; top: 59px;"></div>
+	<div onclick="usarCasilla(5)" id="casilla05" class="botonCasilla" style="left: 443px; top: 59px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla06" class="botonCasilla" style="left: 506px; top: 59px;"></div>
+	<div onclick="usarCasilla(6)" id="casilla06" class="botonCasilla" style="left: 506px; top: 59px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla07" class="botonCasilla" style="left: 569px; top: 59px;"></div>
+	<div onclick="usarCasilla(7)" id="casilla07" class="botonCasilla" style="left: 569px; top: 59px;"></div>
 
 <a href="#" >
-	<div id="casilla08" class="botonCasilla" style="left: 632px; top: 59px;"></div>
-</a>
-
-<a href="#" >
-	<div id="casilla09" class="botonCasilla" style="left: 695px; top: 59px;"></div>
+	<div onclick="usarCasilla(8)" id="casilla08" class="botonCasilla" style="left: 632px; top: 59px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla10" class="botonCasilla" style="left: 758px; top: 59px;"></div>
+	<div onclick="usarCasilla(9)" id="casilla09" class="botonCasilla" style="left: 695px; top: 59px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla11" class="botonCasilla" style="left: 821px; top: 59px;"></div>
+	<div onclick="usarCasilla(10)" id="casilla10" class="botonCasilla" style="left: 758px; top: 59px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla12" class="botonCasilla" style="left: 884px; top: 59px;"></div>
+	<div onclick="usarCasilla(11)" id="casilla11" class="botonCasilla" style="left: 821px; top: 59px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla13" class="botonCasilla" style="left: 884px; top: 122px;"></div>
+	<div onclick="usarCasilla(12)" id="casilla12" class="botonCasilla" style="left: 884px; top: 59px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla14" class="botonCasilla" style="left: 884px; top: 185px;"></div>
+	<div onclick="usarCasilla(13)" id="casilla13" class="botonCasilla" style="left: 884px; top: 122px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla15" class="botonCasilla" style="left: 884px; top: 248px;"></div>
+	<div onclick="usarCasilla(14)" id="casilla14" class="botonCasilla" style="left: 884px; top: 185px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla16" class="botonCasilla" style="left: 884px; top: 311px;"></div>
+	<div onclick="usarCasilla(15)" id="casilla15" class="botonCasilla" style="left: 884px; top: 248px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla17" class="botonCasilla" style="left: 884px; top: 374px;"></div>
+	<div onclick="usarCasilla(16)" id="casilla16" class="botonCasilla" style="left: 884px; top: 311px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla18" class="botonCasilla" style="left: 884px; top: 437px;"></div>
+	<div onclick="usarCasilla(17)" id="casilla17" class="botonCasilla" style="left: 884px; top: 374px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla19" class="botonCasilla" style="left: 884px; top: 500px;"></div>
+	<div onclick="usarCasilla(18)" id="casilla18" class="botonCasilla" style="left: 884px; top: 437px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla20" class="botonCasilla" style="left: 884px; top: 563px;"></div>
-</a>
-
-<a href="#" onclick="MM_showHideLayers('casilla21','','hide','casilla27','','hide','casilla32','','hide','casilla35','','hide','casilla38','','hide');
-MM_changeProp('casilla21_ficha','','backgroundImage','url(imgs/FichasSmall/FichaAz_Ro_null_null_Am.png)','DIV');
-MM_changeProp('casilla21_ficha','','visibility','visible','DIV');
-MM_changeProp('casilla42_ficha','','visibility','hidden','DIV');
-MM_showHideLayers('tirarDadoTirada','','hide','tirarMensajeMover','','hide','tirarMensajeResponder','','show');
-	cargaPregunta()">
-	<div id="casilla21" class="botonCasilla" style="left: 821px; top: 563px;"></div>
+	<div onclick="usarCasilla(19)" id="casilla19" class="botonCasilla" style="left: 884px; top: 500px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla22" class="botonCasilla" style="left: 758px; top: 563px;"></div>
+	<div onclick="usarCasilla(20)" id="casilla20" class="botonCasilla" style="left: 884px; top: 563px;"></div>
+</a>
+
+<a href="#">
+	<div onclick="usarCasilla(21)" id="casilla21" class="botonCasilla" style="left: 821px; top: 563px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla23" class="botonCasilla" style="left: 695px; top: 563px;"></div>
+	<div onclick="usarCasilla(22)" id="casilla22" class="botonCasilla" style="left: 758px; top: 563px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla24" class="botonCasilla" style="left: 632px; top: 563px;"></div>
+	<div onclick="usarCasilla(23)" id="casilla23" class="botonCasilla" style="left: 695px; top: 563px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla25" class="botonCasilla" style="left: 569px; top: 563px;"></div>
+	<div onclick="usarCasilla(24)" id="casilla24" class="botonCasilla" style="left: 632px; top: 563px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla26" class="botonCasilla" style="left: 506px; top: 563px;"></div>
-</a>
-
-<a href="#" onclick="MM_showHideLayers('casilla21','','hide','casilla27','','hide','casilla32','','hide','casilla35','','hide','casilla38','','hide');
-    MM_changeProp('casilla27_ficha','','backgroundImage','url(imgs/FichasSmall/FichaAz_Ro_null_null_Am.png)','DIV');
-    MM_changeProp('casilla27_ficha','','visibility','visible','DIV');
-    MM_changeProp('casilla42_ficha','','visibility','hidden','DIV');
-    MM_showHideLayers('tirarDadoTirada','','hide','tirarMensajeMover','','hide','tirarMensajeResponder','','show');
-	cargaPregunta()">
-	<div id="casilla27" class="botonCasilla" style="left: 443px; top: 563px;"></div>
+	<div onclick="usarCasilla(25)" id="casilla25" class="botonCasilla" style="left: 569px; top: 563px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla28" class="botonCasilla" style="left: 380px; top: 563px;"></div>
+	<div onclick="usarCasilla(26)" id="casilla26" class="botonCasilla" style="left: 506px; top: 563px;"></div>
+</a>
+
+<a href="#">
+	<div onclick="usarCasilla(27)" id="casilla27" class="botonCasilla" style="left: 443px; top: 563px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla29" class="botonCasilla" style="left: 380px; top: 500px;"></div>
+	<div onclick="usarCasilla(28)" id="casilla28" class="botonCasilla" style="left: 380px; top: 563px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla30" class="botonCasilla" style="left: 380px; top: 437px;"></div>
+	<div onclick="usarCasilla(29)" id="casilla29" class="botonCasilla" style="left: 380px; top: 500px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla31" class="botonCasilla" style="left: 380px; top: 374px;"></div>
-</a>
-
-<a href="#" onclick="MM_showHideLayers('casilla21','','hide','casilla27','','hide','casilla32','','hide','casilla35','','hide','casilla38','','hide');
-    MM_changeProp('casilla32_ficha','','backgroundImage','url(imgs/FichasSmall/FichaAz_Ro_null_null_Am.png)','DIV');
-    MM_changeProp('casilla32_ficha','','visibility','visible','DIV');
-    MM_changeProp('casilla42_ficha','','visibility','hidden','DIV');
-    MM_showHideLayers('tirarDadoTirada','','hide','tirarMensajeMover','','hide','tirarMensajeResponder','','show');
-	cargaPregunta()">
-	<div id="casilla32" class="botonCasilla" style="left: 443px; top: 311px;"></div>
+	<div onclick="usarCasilla(30)" id="casilla30" class="botonCasilla" style="left: 380px; top: 437px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla33" class="botonCasilla" style="left: 506px; top: 311px;"></div>
+	<div onclick="usarCasilla(31)" id="casilla31" class="botonCasilla" style="left: 380px; top: 374px;"></div>
+</a>
+
+<a href="#">
+	<div onclick="usarCasilla(32)" id="casilla32" class="botonCasilla" style="left: 443px; top: 311px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla34" class="botonCasilla" style="left: 569px; top: 311px;"></div>
-</a>
-
-<a href="#" onclick="MM_showHideLayers('casilla21','','hide','casilla27','','hide','casilla32','','hide','casilla35','','hide','casilla38','','hide');
-    MM_changeProp('casilla35_ficha','','backgroundImage','url(imgs/FichasSmall/FichaAz_Ro_null_null_Am.png)','DIV');
-    MM_changeProp('casilla35_ficha','','visibility','visible','DIV');
-    MM_changeProp('casilla42_ficha','','visibility','hidden','DIV');
-    MM_showHideLayers('tirarDadoTirada','','hide','tirarMensajeMover','','hide','tirarMensajeResponder','','show');
-	cargaPregunta()">
-	<div id="casilla35" class="botonCasilla" style="left: 632px; top: 122px;"></div>
+	<div onclick="usarCasilla(33)" id="casilla33" class="botonCasilla" style="left: 506px; top: 311px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla36" class="botonCasilla" style="left: 632px; top: 185px;"></div>
+	<div onclick="usarCasilla(34)" id="casilla34" class="botonCasilla" style="left: 569px; top: 311px;"></div>
+</a>
+
+<a href="#">
+	<div onclick="usarCasilla(35)" id="casilla35" class="botonCasilla" style="left: 632px; top: 122px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla37" class="botonCasilla" style="left: 632px; top: 248px;"></div>
-</a>
-
-<a href="#" onclick="MM_showHideLayers('casilla21','','hide','casilla27','','hide','casilla32','','hide','casilla35','','hide','casilla38','','hide');
-    MM_changeProp('casilla38_ficha','','backgroundImage','url(imgs/FichasSmall/FichaAz_Ro_null_null_Am.png)','DIV');
-    MM_changeProp('casilla38_ficha','','visibility','visible','DIV');
-    MM_changeProp('casilla42_ficha','','visibility','hidden','DIV');
-    MM_showHideLayers('tirarDadoTirada','','hide','tirarMensajeMover','','hide','tirarMensajeResponder','','show');
-	cargaPregunta()">
-	<div id="casilla38" class="botonCasilla" style="left: 821px; top: 311px;"></div>
+	<div onclick="usarCasilla(36)" id="casilla36" class="botonCasilla" style="left: 632px; top: 185px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla39" class="botonCasilla" style="left: 758px; top: 311px;"></div>
+	<div onclick="usarCasilla(37)" id="casilla37" class="botonCasilla" style="left: 632px; top: 248px;"></div>
+</a>
+
+<a href="#">
+	<div onclick="usarCasilla(38)" id="casilla38" class="botonCasilla" style="left: 821px; top: 311px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla40" class="botonCasilla" style="left: 695px; top: 311px;"></div>
+	<div onclick="usarCasilla(39)" id="casilla39" class="botonCasilla" style="left: 758px; top: 311px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla41" class="botonCasilla" style="left: 632px; top: 500px;"></div>
+	<div onclick="usarCasilla(40)" id="casilla40" class="botonCasilla" style="left: 695px; top: 311px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla42" class="botonCasilla" style="left: 632px; top: 437px;"></div>
+	<div onclick="usarCasilla(41)" id="casilla41" class="botonCasilla" style="left: 632px; top: 500px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla43" class="botonCasilla" style="left: 632px; top: 374px;"></div>
+	<div onclick="usarCasilla(42)" id="casilla42" class="botonCasilla" style="left: 632px; top: 437px;"></div>
 </a>
 
 <a href="#" >
-	<div id="casilla44" class="botonCasilla" style="left: 632px; top: 311px;"></div>
+	<div onclick="usarCasilla(43)" id="casilla43" class="botonCasilla" style="left: 632px; top: 374px;"></div>
+</a>
+
+<a href="#" >
+	<div onclick="usarCasilla(44)" id="casilla44" class="botonCasilla" style="left: 632px; top: 311px;"></div>
 </a>
 
  <!-- end .container --></div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+<script src="assets/javascripts/jquery.min.js"></script>  
 <script src="assets/javascripts/bootstrap.min.js"></script>
 <script src="assets/javascripts/ajax.js"></script>
      

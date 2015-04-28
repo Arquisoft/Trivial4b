@@ -12,7 +12,7 @@ import persistence.DBFactory;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.mensajes;
-import views.html.preguntas;
+import views.html.resultados;
 
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
@@ -41,7 +41,7 @@ public class TrivialAPI extends Controller {
 		
 		resultJSON = ocultarRespuestaCorrecta(resultJSON);
 
-		return ok(preguntas.render(resultJSON));
+		return ok(resultados.render(resultJSON));
 	}
 
 	public static Result obtenerPreguntasPorCategoria(String categoria) {
@@ -59,7 +59,7 @@ public class TrivialAPI extends Controller {
 
 		resultJSON = ocultarRespuestaCorrecta(resultJSON);
 		
-		return ok(preguntas.render(resultJSON));
+		return ok(resultados.render(resultJSON));
 	}
 
 	public static Result obtenerPreguntaAleatoria(String categoria) {
@@ -89,7 +89,7 @@ public class TrivialAPI extends Controller {
 		
 		resultJSON = ocultarRespuestaCorrecta(resultJSON);
 
-		return ok(preguntas.render(resultJSON));
+		return ok(resultados.render(resultJSON));
 	}
 	
 	private static String ocultarRespuestaCorrecta(String resultJSON) {
@@ -108,19 +108,27 @@ public class TrivialAPI extends Controller {
 
 		DBCursor cursor = ejecutarConsulta(consulta, coleccion);
 
+		int respuestaCorrecta = -1;
 		BasicDBObject respuestaElegida = null;
+		
 		if (cursor.hasNext()) {
 			DBObject preguntaJSON = cursor.next();
 			BasicDBList respuestas = (BasicDBList) preguntaJSON
 					.get("respuestas");
+			
+			for(int i = 0; i < respuestas.size(); i++)
+				if(((BasicDBObject)respuestas.get(i)).getBoolean("isCorrecta"))
+					respuestaCorrecta = i;
+			
 			respuestaElegida = (BasicDBObject) respuestas.get(nRespuesta);
 		}
 		cursor.close();
 
-		String result = "{\"isCorrecta\":"
-				+ respuestaElegida.get("isCorrecta").toString() + "}";
+		String result = "{\"isCorrecta\":" 
+				+ respuestaElegida.get("isCorrecta").toString() + ","
+				+ "\"nCorrecta\":" + respuestaCorrecta + "}";
 
-		return ok(preguntas.render(result));
+		return ok(resultados.render(result));
 	}
 
 	private static String checkCategoria(String categoria) {
@@ -161,7 +169,7 @@ public class TrivialAPI extends Controller {
 			result += "{\"posicion\":" + destino + "},";
 		result = result.substring(0, result.length() - 1);
 		result += "]}";
-		return ok(mensajes.render(result));
+		return ok(resultados.render(result));
 	}
 	
 	public static Result usarCasilla(Integer nCasilla){
@@ -173,6 +181,7 @@ public class TrivialAPI extends Controller {
 		
 		String result = "{";
 		
+		result += "\"_id\":\""+pregunta.getId()+"\",";
 		result += "\"isQuesito\":\""+pregunta.isEsQuesito()+"\",";
 		result += "\"enunciado\":\""+pregunta.getEnunciado()+"\",";
 		result += "\"categoria\":\""+pregunta.getCategoria()+"\",";
@@ -193,11 +202,11 @@ public class TrivialAPI extends Controller {
 		result += "\"isVuelveATirar\":"+isVuelveATirar+"";
 		
 		result += "}";
-		return ok(preguntas.render(result));
+		return ok(resultados.render(result));
 	}
 	
 	public static Result tirarDado(){
-		return ok(preguntas.render("{\"numero\":"+String.valueOf(trivial.lanzarDado())+"}"));
+		return ok(resultados.render("{\"numero\":"+String.valueOf(trivial.lanzarDado())+"}"));
 	}
 
 	private static DB conectar() {

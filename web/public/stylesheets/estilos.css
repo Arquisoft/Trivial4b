@@ -266,28 +266,28 @@ label {
 }
 
 #quesoJugador1 {
-	background-image: url(../imgs/FichasBig/FichaRo_null_CienciasyNaturaleza_null_Historia.png);
+	background-image: url(../imgs/FichasBig/FichaRo_null_null_null_null.png);
 	left: 57px;
 	top: 248px;
 	visibility: visible;
 }
 
 #quesoJugador2 {
-	background-image: url(../imgs/FichasBig/FichaAz_Espect%C3%A1culos_null_null_Historia.png);
+	background-image: url(../imgs/FichasBig/FichaAz_null_null_null_null.png);
 	left: 57px;
 	top: 335px;
 	visibility: visible;
 }
 
 #quesoJugador3 {
-	background-image: url(../imgs/FichasBig/FichaAm_null_null_Geograf%C3%ADa_Historia.png);
+	background-image: url(../imgs/FichasBig/FichaAm_null_null_null_null.png);
 	left: 57px;
 	top: 422px;
 	visibility: visible;
 }
 
 #quesoJugador4 {
-	background-image: url(../imgs/FichasBig/FichaVe_Espect%C3%A1culos_null_null_null.png);
+	background-image: url(../imgs/FichasBig/FichaVe_null_null_null_null.png);
 	left: 57px;
 	top: 510px;
 	visibility: visible;

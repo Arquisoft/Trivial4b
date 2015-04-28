@@ -12,71 +12,40 @@
                 
 		<div id="preguntaTexo">¿Lorem ipsum dolor sit amet, consectetur ad adipiscing elit, sed do eiusmod tempor atem incididunt ut labore et magna aliqua?</div>  
     
+		<!-- Respuesta 1 -->
 		<div id="respuesta1Bien" class="respuestaBien" style="left: 64px; top: 181px"></div>
-		<a href="#" onclick="
-    		MM_showHideLayers('respuesta1Bien','','show'); /* Mostrar check indicando la correcta */
-        	MM_changeProp('respuesta1Resultado','','backgroundImage','url(imgs/Respuesta_Verde.png)','DIV'); /* Fondo color en la respondida */
-        	MM_changeProp('respuesta1Resultado','','color','#FFFFFF','DIV'); /* Texto blanco en la respondida */
-			/* Ocultar las respuestas botones */
-        	MM_showHideLayers('respuesta1Boton','','hide','respuesta2Boton','','hide','respuesta3Boton','','hide','respuesta4Boton','','hide');
-			/* Mostrar las respuestas no-botones */
-			MM_showHideLayers('respuesta1Resultado','','show','respuesta2Resultado','','show','respuesta3Resultado','','show','respuesta4Resultado','','show');
-        	MM_showHideLayers('botonSeguir1','','show'); /* Mostrar botón continuar */
-        	MM_changeProp('quesitoGanado','','backgroundImage','url(imgs/Quesito_Ve.png)','DIV'); /* Cargar imagen de quesito ganado */
-        	MM_showHideLayers('quesitoGanado','','show'); /* Mostrar quesito ganado */
-        	">
-		<div id="respuesta1Boton" class="respuestaBoton" style="left: 109px; top: 177px; ">Caballito de mar</div></a> 
+		<a href="#" onclick="comprobarRespuesta(0)">
+			<div id="respuesta1Boton" class="respuestaBoton" style="left: 109px; top: 177px; ">Caballito de mar</div>
+		</a> 
 		<div id="respuesta1Resultado" class="respuestaResultado" style="left: 109px; top: 177px;">Caballito de mar</div>
 
+		<!-- Respuesta 2 -->
 		<div id="respuesta2Bien" class="respuestaBien" style="left: 64px; top: 246px"></div>
-		<a href="#" onclick="
-    	MM_showHideLayers('respuesta1Bien','','show'); /* Mostrar check indicando la correcta */
-        MM_changeProp('respuesta2Resultado','','backgroundImage','url(imgs/Respuesta_Rojo.png)','DIV'); /* Fondo color en la respondida */
-        MM_changeProp('respuesta2Resultado','','color','#FFFFFF','DIV'); /* Texto blanco en la respondida */
-		/* Ocultar las respuestas botones */
-        MM_showHideLayers('respuesta1Boton','','hide','respuesta2Boton','','hide','respuesta3Boton','','hide','respuesta4Boton','','hide');
-        /* Mostrar las respuestas no-botones */
-        MM_showHideLayers('respuesta1Resultado','','show','respuesta2Resultado','','show','respuesta3Resultado','','show','respuesta4Resultado','','show');
-        MM_showHideLayers('botonSeguir1','','show'); /* Mostrar botón continuar */
-        ">
-    <div id="respuesta2Boton" class="respuestaBoton" style="left: 109px; top: 242px; ">Estrella de mar</div></a> 
-	<div id="respuesta2Resultado" class="respuestaResultado" style="left: 109px; top: 242px;">Estrella de mar</div>
+		<a href="#" onclick="comprobarRespuesta(1)">
+    		<div id="respuesta2Boton" class="respuestaBoton" style="left: 109px; top: 242px; ">Estrella de mar</div>
+    	</a> 
+		<div id="respuesta2Resultado" class="respuestaResultado" style="left: 109px; top: 242px;">Estrella de mar</div>
+		
+		<!-- Respuesta 3 -->
+		<div id="respuesta3Bien" class="respuestaBien" style="left: 64px; top: 309px"></div>
+		<a href="#" onclick="comprobarRespuesta(2)">
+			<div id="respuesta3Boton" class="respuestaBoton" style="left: 109px; top: 305px; ">Calamar</div>
+		</a>  
+		<div id="respuesta3Resultado" class="respuestaResultado" style="left: 109px; top: 305px; ">Calamar</div>
+		
+		<!-- Respuesta 4 -->
+		<div id="respuesta4Bien" class="respuestaBien" style="left: 64px; top: 373px"></div>   
+		<a href="#" onclick="comprobarRespuesta(3)">
+			<div id="respuesta4Boton" class="respuestaBoton" style="left: 109px; top: 369px;">Placton</div>
+		</a>     
+		<div id="respuesta4Resultado" class="respuestaResultado" style="left: 109px; top: 369px;">Placton</div>
+		 
+		<a href="#" onclick="$('#modalPregunta').modal('hide')">
+			<div id="botonSeguir1" class="botonSeguir">Continuar</div>
+		</a>
     
-    <div id="respuesta3Bien" class="respuestaBien" style="left: 64px; top: 309px"></div>
-	<a href="#" onclick="
-    	MM_showHideLayers('respuesta1Bien','','show'); /* Mostrar check indicando la correcta */
-        MM_changeProp('respuesta3Resultado','','backgroundImage','url(imgs/Respuesta_Rojo.png)','DIV'); /* Fondo color en la respondida */
-        MM_changeProp('respuesta3Resultado','','color','#FFFFFF','DIV'); /* Texto blanco en la respondida */
-		/* Ocultar las respuestas botones */
-        MM_showHideLayers('respuesta1Boton','','hide','respuesta2Boton','','hide','respuesta3Boton','','hide','respuesta4Boton','','hide');
-        /* Mostrar las respuestas no-botones */
-        MM_showHideLayers('respuesta1Resultado','','show','respuesta2Resultado','','show','respuesta3Resultado','','show','respuesta4Resultado','','show');
-        MM_showHideLayers('botonSeguir1','','show'); /* Mostrar botón continuar */
-        ">
-    <div id="respuesta3Boton" class="respuestaBoton" style="left: 109px; top: 305px; ">Calamar</div></a>  
-    <div id="respuesta3Resultado" class="respuestaResultado" style="left: 109px; top: 305px; ">Calamar</div>
-    
-  	<div id="respuesta4Bien" class="respuestaBien" style="left: 64px; top: 373px"></div>   
-	<a href="#" onclick="
-    	MM_showHideLayers('respuesta1Bien','','show'); /* Mostrar check indicando la correcta */
-        MM_changeProp('respuesta4Resultado','','backgroundImage','url(imgs/Respuesta_Rojo.png)','DIV'); /* Fondo color en la respondida */
-        MM_changeProp('respuesta4Resultado','','color','#FFFFFF','DIV'); /* Texto blanco en la respondida */
-		/* Ocultar las respuestas botones */
-        MM_showHideLayers('respuesta1Boton','','hide','respuesta2Boton','','hide','respuesta3Boton','','hide','respuesta4Boton','','hide');
-        /* Mostrar las respuestas no-botones */
-        MM_showHideLayers('respuesta1Resultado','','show','respuesta2Resultado','','show','respuesta3Resultado','','show','respuesta4Resultado','','show');
-        MM_showHideLayers('botonSeguir1','','show'); /* Mostrar botón continuar */
-        ">
-    <div id="respuesta4Boton" class="respuestaBoton" style="left: 109px; top: 369px;">Placton</div></a>     
-    <div id="respuesta4Resultado" class="respuestaResultado" style="left: 109px; top: 369px;">Placton</div>
-     
-  	<a href="#" onclick="$('#modalPregunta').modal('hide')">
-    	<div id="botonSeguir1" class="botonSeguir">Continuar</div>
-    </a>
-    
-	<div id="quesitoGanado"></div> 
+		<div id="quesitoGanado"></div> 
             
-            
-            </div><!-- fin .contenedor -->
+    </div><!-- fin .contenedor -->
 
-          </div><!-- fin .modal-body -->
+</div><!-- fin .modal-body -->

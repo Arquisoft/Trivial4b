@@ -1,7 +1,5 @@
 package persistence;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -49,12 +47,13 @@ public class RemoteMongoDB implements RemoteDB {
 			while (cursor.hasNext()) {
 
 				DBObject preguntaJSON = cursor.next();
+				Long id = (Long) preguntaJSON.get("_id");
 				String enunciado = (String) preguntaJSON.get("enunciado");
 				String categoria = (String) preguntaJSON.get("categoria");
 				BasicDBList respuestas = (BasicDBList) preguntaJSON
 						.get("respuestas");
 
-				Pregunta pregunta = new Pregunta(enunciado, categoria);
+				Pregunta pregunta = new Pregunta(id, enunciado, categoria);
 				for (int i = 0; i < respuestas.size(); i++) {
 					DBObject respuestaJSON = (DBObject) respuestas.get(i);
 					Respuesta respuesta = new Respuesta(
