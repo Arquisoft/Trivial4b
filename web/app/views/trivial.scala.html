@@ -50,6 +50,7 @@
 			
 			$('#casilla00_ficha').css("visibility","visible");
 			$('#casilla00_ficha').css("background-image",imagenFicha);
+			$('#tapaJugador'+nJugadorActual).css("visibility","hidden");
 		}
 		
 		function tirarDado(){
@@ -66,6 +67,8 @@
 					if(arrayPosiciones != null)
 						ocultarCaminos();
 					cargarPosiblesCaminos(numero);
+					//$('#tirarBotonTirar').css("visibility","hidden");
+					//$('#tirarMensajeMover').css("visibility","visible");
 				}
 			}
 			
@@ -107,8 +110,12 @@
 				if (xmlhttp.readyState==4 && xmlhttp.status==200){
 					var respuestaJSON = xmlhttp.responseText.replace(/&quot;/g,"\"");
 					pregunta = JSON.parse(respuestaJSON);
-					
-					cargaPregunta();
+					if(!pregunta.isVuelveATirar){
+						cargaPregunta();
+					}
+					else{
+						moverFicha();
+					}
 					ocultarCaminos();
 				}
 			}
@@ -129,7 +136,7 @@
 		}
 		
 		function nuevaPartida() {
-			window.location.href="Inicio.html";
+			window.location.href="/";
 		}
 		
 		function comprobarRespuesta(nRespuesta){
@@ -196,6 +203,8 @@
 		function cargaPregunta() {
 			$('#modalPregunta').on({
 			  'loaded.bs.modal': function(e){
+			  var tema = pregunta.categoria.replace(/ /g,"\"_");
+			  $('#preguntaTipo').css('background-image','Tema_'+tema+".png");
 				mostrarRespuestas();
 			  }
 			})
@@ -352,7 +361,7 @@
 	<div class="botonJugadorTexto">Jugador 1</div>
 </div>
 
-<div id="tapaJugador2" class="tapaJugador" style="visibility: hidden;"></div>
+<div id="tapaJugador2" class="tapaJugador"></div>
 
 <div id="quesoJugador2" class="quesoJugador"></div>
 

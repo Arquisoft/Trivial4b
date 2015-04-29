@@ -72,8 +72,23 @@ public class Trivial {
 		return (int) (Math.random() * (7 - 1) + 1);
 	}
 	
+	public void hacerPregunta(boolean esQuesito){		
+		preguntaActual = new PreguntaGame(obtenerPregunta(), esQuesito);
+	}
+	
 	public void hacerPregunta(String categoria, boolean esQuesito){		
 		preguntaActual = new PreguntaGame(obtenerPregunta(categoria), esQuesito);
+	}
+	
+	private Pregunta obtenerPregunta() {
+		if (listaPreguntas.size() > 0) {
+			int maxIndex = listaPreguntas.size() - 1;
+
+			int posRandom = (int) (Math.random() * ((maxIndex - 0) + 1) + 0);
+			return listaPreguntas.get(posRandom);
+		} else {
+			return null;
+		}
 	}
 	
 	private Pregunta obtenerPregunta(String categoria) {

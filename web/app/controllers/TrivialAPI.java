@@ -180,24 +180,26 @@ public class TrivialAPI extends Controller {
 		boolean isVuelveATirar = trivial.isVuelveATirar();
 		
 		String result = "{";
+		String respuestasJSON = "";
 		
-		result += "\"_id\":\""+pregunta.getId()+"\",";
-		result += "\"isQuesito\":\""+pregunta.isEsQuesito()+"\",";
-		result += "\"enunciado\":\""+pregunta.getEnunciado()+"\",";
-		result += "\"categoria\":\""+pregunta.getCategoria()+"\",";
-		
-		List<Respuesta> respuestas = pregunta.getRespuestas();
-		String respuestasJSON = "\"respuestas\":[";
-		for (Respuesta respuesta : respuestas) {
-			respuestasJSON += "{";
+		if(pregunta != null){
+			result += "\"_id\":\""+pregunta.getId()+"\",";
+			result += "\"isQuesito\":\""+pregunta.isEsQuesito()+"\",";
+			result += "\"enunciado\":\""+pregunta.getEnunciado()+"\",";
+			result += "\"categoria\":\""+pregunta.getCategoria()+"\",";
 			
-			respuestasJSON += "\"respuesta\":\""+respuesta.getRespuesta()+"\"";
-			
-			respuestasJSON += "},";
+			List<Respuesta> respuestas = pregunta.getRespuestas();
+			respuestasJSON = "\"respuestas\":[";
+			for (Respuesta respuesta : respuestas) {
+				respuestasJSON += "{";
+				
+				respuestasJSON += "\"respuesta\":\""+respuesta.getRespuesta()+"\"";
+				
+				respuestasJSON += "},";
+			}
+			respuestasJSON = respuestasJSON.substring(0,respuestasJSON.length()-1)+"]"+",";
 		}
-		respuestasJSON = respuestasJSON.substring(0,respuestasJSON.length()-1)+"]";
-		
-		result += respuestasJSON+",";
+		result += respuestasJSON;
 		result += "\"isCasillFinal\":"+isCasillaFinal+",";
 		result += "\"isVuelveATirar\":"+isVuelveATirar+"";
 		
