@@ -11,7 +11,7 @@ GET     /trivial                                  controllers.Application.trivia
 #######################################################################################################################
 
 # Aqui comienzan las rutas para las llamadas REST de la api
-# Toda esta zona ya es lógica de la aplicacion
+# Toda esta zona ya es lÃ³gica de la aplicacion
 
 # Llamadas rest para las preguntas
 GET     /preguntas                                             controllers.TrivialAPI.obtenerPreguntas()
@@ -23,6 +23,8 @@ GET     /preguntas/comprobar/:idPregunta/:nRespuesta           controllers.Trivi
 GET     /usuarios/                                controllers.TrivialAPI.obtenerUsuarios()
 GET     /usuarios/get/:usuario                    controllers.TrivialAPI.obtenerUsuario(usuario:String)
 POST    /usuarios/save/:usuario/:password         controllers.TrivialAPI.guardarUsuario(usuario:String,password:String)
+GET		/usuarios/validateUser/:usuario/:password controllers.TrivialAPI.validateUser(usuario:String,password:String)
+
 
 # Logica del juego
 GET     /posiciones/:actual/:tirada               controllers.TrivialAPI.calcularDestinos(actual:Integer, tirada:Integer)

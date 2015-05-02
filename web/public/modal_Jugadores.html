@@ -6,14 +6,14 @@
 
             <div class="contenedor" style="width: 644px; height: 450px;">
                 
-                <form class="form">
+                <form class="form" name="loginForm">
                 
                     <div id="quesitoJugador1" class="quesitoJugador"></div>
                     <div class="elementoFormulario" style="left: 108px; top: 35px;">
                         <label for="nombreNuevo1">Jugador nuevo</label>
                     </div>
                     <div class="elementoFormulario" style="left: 108px; top: 61px;">
-                        <input id="nombreNuevo1" class="form-control" placeholder="nombre">
+                        <input id="nombreNuevo1" name="nombreNuevo1" class="form-control" placeholder="nombre">
                     </div>
                     <div class="elementoFormulario" style="left: 270px; top: 35px;">
                         <label for="nombreExistente1">Existente</label>
@@ -124,7 +124,9 @@
                 
                 <a href="#" onclick="ira_Jugar()">
                     <div id="boton2" class="botonAmarillo absoluto" style="left: 190px; top: 376px;">Comenzar el juego</div>
-                </a>
+                </a> 
+                
+                <a href="#" onclick="prueba()">Prueba</a>
             
             
             </div><!-- fin .contenedor -->
