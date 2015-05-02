@@ -1,9 +1,0 @@
-New log file opened at Wed Apr 29 13:44:27 CEST 2015 by 400@EII-L-01-04
-Sending msg to client play-fork-run-c8694f32-f4ae-44f0-b564-68760341efe3: DetachedLogEvent(LogMessage(debug,sbt server socket logs are in: C:\Users\uo205060\Trivial4b\web\.sbtserver\connections\master.log))
-Sending msg to client play-fork-run-c8694f32-f4ae-44f0-b564-68760341efe3: DetachedLogEvent(LogMessage(debug,sbt general server logs are in: C:\Users\uo205060\Trivial4b\web\.sbtserver\master.log))
-Sending msg to client play-fork-run-c8694f32-f4ae-44f0-b564-68760341efe3: DetachedLogEvent(LogMessage(debug,sbt client logs are in: C:\Users\uo205060\Trivial4b\web\.sbtserver\connections\play-fork-run-c8694f32-f4ae-44f0-b564-68760341efe3.log))
-Reading next message from client.
-Client play-fork-run-c8694f32-f4ae-44f0-b564-68760341efe3 closed, java.net.SocketException: Connection reset, shutting down
-Stopping client.
-Client play-fork-run-c8694f32-f4ae-44f0-b564-68760341efe3 thread exiting.
-Dropping message (0,ReceivedResponse()) to dead client play-fork-run-c8694f32-f4ae-44f0-b564-68760341efe3

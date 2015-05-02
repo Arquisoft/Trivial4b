@@ -67,8 +67,8 @@
 					if(arrayPosiciones != null)
 						ocultarCaminos();
 					cargarPosiblesCaminos(numero);
-					//$('#tirarBotonTirar').css("visibility","hidden");
-					//$('#tirarMensajeMover').css("visibility","visible");
+					$('#tirarBotonTirar').css("visibility","hidden");
+					$('#tirarMensajeMover').css("visibility","visible");
 				}
 			}
 			
@@ -115,6 +115,8 @@
 					}
 					else{
 						moverFicha();
+						$('#tirarBotonTirar').css("visibility","visible");
+						$('#tirarMensajeMover').css("visibility","hidden");
 					}
 					ocultarCaminos();
 				}
@@ -176,6 +178,8 @@
 					}
 					
 					moverFicha();
+					$('#tirarBotonTirar').css("visibility","visible");
+					$('#tirarMensajeMover').css("visibility","hidden");
 				}
 			}
 			
@@ -200,17 +204,24 @@
 			}
 		}
 		
+		function setCategoriamodalPregunta() {
+			  var tema = pregunta.categoria.replace(/ /g,'\_');
+			  var imagenTema = "url(assets/imgs/Tema_" + tema + ".png)";
+			  alert(tema);
+			  $('#preguntaTipo').css("background-image", imagenTema);
+		}
+		
 		function cargaPregunta() {
 			$('#modalPregunta').on({
 			  'loaded.bs.modal': function(e){
-			  var tema = pregunta.categoria.replace(/ /g,"\"_");
-			  $('#preguntaTipo').css('background-image','Tema_'+tema+".png");
-				mostrarRespuestas();
+			   setCategoriamodalPregunta();
+			   mostrarRespuestas();
 			  }
 			})
 			
 			$('#modalPregunta').on({
 			  'show.bs.modal': function(e){
+			    setCategoriamodalPregunta();
 				mostrarRespuestas();			  	
 			  }
 			})
