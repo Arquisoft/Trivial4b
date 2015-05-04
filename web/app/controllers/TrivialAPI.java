@@ -148,14 +148,36 @@ public class TrivialAPI extends Controller {
 	}
 
 	public static Result obtenerUsuarios() {
-		return null;
+		String resultJSON = "{\"usuarios\":[";
+
+		DBCursor cursor = ejecutarConsulta(null, "usuarios");
+
+		resultJSON = createJSONArray(resultJSON, cursor);
+
+		return ok(resultados.render(resultJSON));
 	}
 
 	public static Result obtenerUsuario(String usuario) {
-		return null;
+		String resultJSON = "{\"usuarios\":[";
+
+		BasicDBObject consulta = new BasicDBObject();
+		consulta.put("nombre", usuario);
+		String coleccion = "usuarios";
+
+		DBCursor cursor = ejecutarConsulta(consulta, coleccion);
+
+		resultJSON = createJSONArray(resultJSON, cursor);
+
+		resultJSON = ocultarRespuestaCorrecta(resultJSON);
+		
+		return ok(resultados.render(resultJSON));
 	}
 
 	public static Result guardarUsuario(String usuario, String password) {
+		return null;
+	}
+	
+	public static Result validateUser(String usuario, String password){
 		return null;
 	}
 

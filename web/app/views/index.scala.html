@@ -21,10 +21,20 @@
 			window.location.href="trivial";
 		}
 		
-		function prueba() {
+		function comprobarCamposParaLlamada() {
 			//cerrar el diálogo modal
 			var username = $('#nombreNuevo1').val();
-			alert(username);
+			var password = $('#password1').val();
+			var existente = $('#nombreExistente1').val();
+			if(username != '' && password != '' && existente == 'seleccionar'){
+				alert('Llamada a la api rest para crear el nuevo jugador');
+			}
+			else if(username == '' && password != '' && existente != 'seleccionar'){
+				alert('Llamada a la api rest para validar el jugador');
+			}
+			else{
+				alert('No se puede comenzar el juego');
+			}
 		}
 		
 	</script> 

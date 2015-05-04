@@ -4,7 +4,7 @@
           </div>
           <div class="modal-body">
 
-            <div class="contenedor" style="width: 644px; height: 450px;">
+            <div class="contenedor" style="width: 644px; height: 460px;">
                 
                 <form class="form" name="loginForm">
                 
@@ -41,13 +41,13 @@
                         <label for="nombreNuevo2">Jugador nuevo</label>
                     </div>
                     <div class="elementoFormulario" style="left: 108px; top: 143px;">
-                        <input id="nombreNuevo2" class="form-control" placeholder="nombre" >
+                        <input id="nombreNuevo2" class="form-control" placeholder="nombre" disabled >
                     </div>
                     <div class="elementoFormulario" style="left: 270px; top: 117px;">
                         <label for="nombreExistente2">Existente</label>
                     </div>
                     <div class="elementoFormulario" style="left: 270px; top: 143px;">
-                        <select id="nombreExistente2" class="form-control">
+                        <select id="nombreExistente2" class="form-control" disabled>
                                 <option>seleccionar</option>
                                 <option>Luis Pérez</option>
                                 <option>María García</option>
@@ -60,7 +60,7 @@
                         <label for="password2">Contraseña</label>
                     </div>
                     <div class="elementoFormulario" style="left: 433px; top: 143px;">
-                        <input id="password2" type="password" class="form-control" placeholder="contraseña" >
+                        <input id="password2" type="password" class="form-control" placeholder="contraseña" disabled >
                     </div>
                     
                     
@@ -69,13 +69,13 @@
                         <label for="nombreNuevo3">Jugador nuevo</label>
                     </div>
                     <div class="elementoFormulario" style="left: 108px; top: 224px;">
-                        <input id="nombreNuevo3" class="form-control" placeholder="nombre" >
+                        <input id="nombreNuevo3" class="form-control" placeholder="nombre" disabled>
                     </div>
                     <div class="elementoFormulario" style="left: 270px; top: 196px;">
                         <label for="nombreExistente3">Existente</label>
                     </div>
                     <div class="elementoFormulario" style="left: 270px; top: 224px;">
-                        <select id="nombreExistente3" class="form-control">
+                        <select id="nombreExistente3" class="form-control" disabled>
                                 <option>seleccionar</option>
                                 <option>Luis Pérez</option>
                                 <option>María García</option>
@@ -88,7 +88,7 @@
                         <label for="password3">Contraseña</label>
                     </div>
                     <div class="elementoFormulario" style="left: 433px; top: 224px;">
-                        <input id="password3" type="password" class="form-control" placeholder="contraseña" >
+                        <input id="password3" type="password" class="form-control" placeholder="contraseña" disabled>
                     </div>
                     
                     
@@ -98,13 +98,13 @@
                         <label for="nombreNuevo4">Jugador nuevo</label>
                     </div>
                     <div class="elementoFormulario" style="left: 108px; top: 306px;">
-                        <input id="nombreNuevo4" class="form-control" placeholder="nombre" >
+                        <input id="nombreNuevo4" class="form-control" placeholder="nombre" disabled>
                     </div>
                     <div class="elementoFormulario" style="left: 270px; top: 280px;">
                         <label for="nombreExistente4">Existente</label>
                     </div>
                     <div class="elementoFormulario" style="left: 270px; top: 306px;">
-                        <select id="nombreExistente4" class="form-control">
+                        <select id="nombreExistente4" class="form-control" disabled>
                                 <option>seleccionar</option>
                                 <option>Luis Pérez</option>
                                 <option>María García</option>
@@ -117,16 +117,18 @@
                         <label for="password4">Contraseña</label>
                     </div>
                     <div class="elementoFormulario" style="left: 433px; top: 306px;">
-                        <input id="password4" type="password" class="form-control" placeholder="contraseña" >
+                        <input id="password4" type="password" class="form-control" placeholder="contraseña" disabled >
                     </div>
                     
                 </form>
                 
                 <a href="#" onclick="ira_Jugar()">
-                    <div id="boton2" class="botonAmarillo absoluto" style="left: 190px; top: 376px;">Comenzar el juego</div>
+                    <div id="boton2" class="botonAmarillo absoluto" style="left: 190px; top: 350px;">Comenzar el juego</div>
                 </a> 
                 
-                <a href="#" onclick="prueba()">Prueba</a>
+                <a href="#" onclick="comprobarCamposParaLlamada()">
+                    <div id="boton3" class="botonAmarillo absoluto" style="left: 190px; top: 400px;">Validarse</div>
+                </a> 
             
             
             </div><!-- fin .contenedor -->
