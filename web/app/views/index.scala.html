@@ -9,16 +9,46 @@
     
     <script type="text/javascript">
 	
+		var isValidado = false;
+	
 		function MM_preloadImages() { //v3.0
-          var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
-            var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
-            if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+			var d=document;
+			if(d.images){
+				if(!d.MM_p)
+					d.MM_p=new Array();
+				var i,j=d.MM_p.length,a=MM_preloadImages.arguments;
+				for(i=0; i<a.length; i++)
+				if (a[i].indexOf("#")!=0){
+					d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];
+				}
+			}
+			
+			cargarJugadoresExistentes();
+			
         }
+		
+		function cargarJugadoresExistentes(){
+			var xmlhttp = createAJAX();
+				
+			// Esto es lo que ejecutará la llamada AJAX cuando termine
+			xmlhttp.onreadystatechange=function() {
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){					
+					var respuestaJSON = xmlhttp.responseText.replace(/&quot;/g,"\"");
+					var usuarios = JSON.parse(respuestaJSON);					
+				}
+			}
+			executeAJAX(xmlhttp,"GET","http://localhost:9000/usuarios");
+		}
 	
 		function ira_Jugar() {
-			//cerrar el diálogo modal
-			$('#modalJugadores').modal('hide');
-			window.location.href="trivial";
+			if(isValidado){
+				//cerrar el diálogo modal
+				$('#modalJugadores').modal('hide');
+				window.location.href="trivial";
+			}
+			else{
+				alert("No hay ningun usuario validado");
+			}
 		}
 		
 		function comprobarCamposParaLlamada() {
@@ -26,22 +56,66 @@
 			var username = $('#nombreNuevo1').val();
 			var password = $('#password1').val();
 			var existente = $('#nombreExistente1').val();
-			if(username != '' && password != '' && existente == 'seleccionar'){
-				alert('Llamada a la api rest para crear el nuevo jugador');
+			if(username != '' && password != '' && existente == 'seleccionar'){				
+				$('#nombreNuevo1').attr('disabled', true);
+				$('#password1').attr('disabled', true);
+				$('#nombreExistente1').attr('disabled', true);
+				
+				$('#labelUsuariosValidados').text('Guardando usuarios');
+				$('#labelUsuariosValidados').css('visibility', "visible");
+				isValidado = true;
+				
+				guardarUsuario(username,password);
 			}
 			else if(username == '' && password != '' && existente != 'seleccionar'){
 				alert('Llamada a la api rest para validar el jugador');
+				$('#labelUsuariosValidados').text('Usuarios validados correctamente, ya se puede comenzar el juego');
+				$('#labelUsuariosValidados').css('visibility', "visible");
+				isValidado = true;
 			}
 			else{
-				alert('No se puede comenzar el juego');
+				$('#labelUsuariosValidados').text('No se ha podido validar los usuarios, comprueba los datos e intentalo de nuevo');
+				$('#labelUsuariosValidados').css('visibility', "visible");
 			}
+		}
+		
+		function guardarUsuario(username,password){
+			var xmlhttp = createAJAX();
+				
+			// Esto es lo que ejecutará la llamada AJAX cuando termine
+			xmlhttp.onreadystatechange=function() {
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){					
+					var respuestaJSON = xmlhttp.responseText.replace(/&quot;/g,"\"");
+					var comprobacion = JSON.parse(respuestaJSON);
+					
+					comprobacion.usuarios[]
+					
+					if(comprobacion.resultado){
+						var username = $('#nombreNuevo1').attr('disabled', true);
+						var password = $('#password1').attr('disabled', true);
+						var existente = $('#nombreExistente1').attr('disabled', true);
+						
+						$('#labelUsuariosValidados').text('Usuarios validados correctamente, ya se puede comenzar el juego');
+						$('#labelUsuariosValidados').css('visibility', "visible");
+					}
+					else{					
+						$('#nombreNuevo1').attr('disabled', false);
+						$('#password1').attr('disabled', false);
+						$('#nombreExistente1').attr('disabled', false);
+					
+						$('#labelUsuariosValidados').text('Error al introducir nuevo usuario, ¿usuario ya existente?');
+						$('#labelUsuariosValidados').css('visibility', "visible");
+					}
+				}
+			}
+			executeAJAX(xmlhttp,"GET","http://localhost:9000/usuarios/save/"+username+"/"+password);
 		}
 		
 	</script> 
 
 </head>
 
-<body onload="MM_preloadImages('imgs/Mensaje_over.png')">
+<body onload="MM_preloadImages('assets/imgs/Mensaje_over.png')">
     
     <!-- Modal Jugadores -->
     <div class="modal fade" id="modalJugadores" role="dialog">
@@ -64,6 +138,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
 	<script src="assets/javascripts/bootstrap.min.js"></script>
+	<script src="assets/javascripts/ajax.js"></script>
 	
 
 </body>

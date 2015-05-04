@@ -111,7 +111,7 @@
                                 <option>Iván Gómez</option>
                                 <option>Pedro Gutiérrez</option>
                                 <option>Elsa Fernández</option>
-                            </select>
+                        </select>
                     </div>
                     <div class="elementoFormulario" style="left: 433px; top: 280px;">
                         <label for="password4">Contraseña</label>
@@ -121,16 +121,17 @@
                     </div>
                     
                 </form>
-                
-                <a href="#" onclick="ira_Jugar()">
-                    <div id="boton2" class="botonAmarillo absoluto" style="left: 190px; top: 350px;">Comenzar el juego</div>
-                </a> 
-                
-                <a href="#" onclick="comprobarCamposParaLlamada()">
+				
+                <label id="labelUsuariosValidados" style="visibility:hidden; ">Usuarios validados correctamente</label>
+				
+				<a href="#" onclick="comprobarCamposParaLlamada()">
                     <div id="boton3" class="botonAmarillo absoluto" style="left: 190px; top: 400px;">Validarse</div>
-                </a> 
-            
-            
+                </a>
+				
+                <a id="botonComenzar" href="#" onclick="ira_Jugar()" disabled>
+                    <div id="boton2" class="botonAmarillo absoluto" style="left: 190px; top: 350px;">Comenzar el juego</div>
+                </a>
+				
             </div><!-- fin .contenedor -->
 
           </div><!-- fin .modal-body -->

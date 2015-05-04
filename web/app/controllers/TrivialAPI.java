@@ -1,6 +1,7 @@
 package controllers;
 
 import java.net.UnknownHostException;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,10 +24,14 @@ import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
+import com.mongodb.util.JSON;
+
+import models.Usuario;
 
 public class TrivialAPI extends Controller {
 
 	private static Trivial trivial = new Trivial(obtenerListaPreguntas());
+	private static Usuario usuarioEnSesion;
 	
 	private static List<Pregunta> obtenerListaPreguntas() {
 		return DBFactory.createRemoteDB().cargarPreguntas();
@@ -161,24 +166,75 @@ public class TrivialAPI extends Controller {
 		String resultJSON = "{\"usuarios\":[";
 
 		BasicDBObject consulta = new BasicDBObject();
-		consulta.put("nombre", usuario);
+		consulta.put("usuario", usuario);
 		String coleccion = "usuarios";
 
 		DBCursor cursor = ejecutarConsulta(consulta, coleccion);
-
-		resultJSON = createJSONArray(resultJSON, cursor);
-
-		resultJSON = ocultarRespuestaCorrecta(resultJSON);
+		
+		if (cursor.hasNext()) {
+			DBObject preguntaJSON = cursor.next();
+			resultJSON += preguntaJSON.toString();
+		}
+		
+		resultJSON += "]}";
 		
 		return ok(resultados.render(resultJSON));
 	}
 
 	public static Result guardarUsuario(String usuario, String password) {
-		return null;
+		String resultJSON = "{\"resultado\":true}";
+		
+		try{
+			BasicDBObject consulta = new BasicDBObject();
+			consulta.put("usuario", usuario);
+			String coleccion = "usuarios";
+
+			DBCursor cursor = ejecutarConsulta(consulta, coleccion);
+			
+			if (cursor.hasNext()) {
+				resultJSON = resultJSON.replace("true", "false");
+			}
+			else{
+				DB db = conectar();
+				DBCollection colUsuarios = db.getCollection("usuarios");
+				
+				String usuarioJSON = "{\"usuario\":\""+usuario+"\","+"\"pass\":\""+password+"\"}";
+				DBObject jsonObject = (DBObject) JSON.parse(usuarioJSON);
+				colUsuarios.insert(jsonObject);
+			}
+			
+		} catch (Exception e){
+			resultJSON = resultJSON.replace("true", "false");
+		}
+		return ok(resultados.render(resultJSON));
 	}
 	
 	public static Result validateUser(String usuario, String password){
-		return null;
+		String resultJSON = "{\"validacion\":";
+
+		BasicDBObject consulta = new BasicDBObject();
+		consulta.put("usuario", usuario);
+		String coleccion = "usuarios";
+
+		DBCursor cursor = ejecutarConsulta(consulta, coleccion);
+		
+		if (cursor.hasNext()) {
+			DBObject usuarioJSON = cursor.next();
+			String pass = (String) usuarioJSON.get("pass");
+			if(pass.equals(password))
+				resultJSON += "true";
+			else
+				resultJSON += "false";
+		}
+		else{
+			resultJSON += "false";
+		}
+		
+		resultJSON += "}";
+		
+		usuarioEnSesion = new Usuario(usuario,password);
+		
+		return ok(resultados.render(resultJSON));
 	}
 
 	public static Result calcularDestinos(Integer actual, Integer tirada) {
@@ -236,8 +292,8 @@ public class TrivialAPI extends Controller {
 	private static DB conectar() {
 		MongoClient mongoClient = null;
 		MongoCredential mongoCredential = MongoCredential
-				.createMongoCRCredential("trivialuserReadOnly", "trivial",
-						"trivialuserReadOnly".toCharArray());
+				.createMongoCRCredential("trivialuser", "trivial",
+						"4btrivialmongouser".toCharArray());
 		try {
 			mongoClient = new MongoClient(new ServerAddress(
 					"ds062797.mongolab.com", 62797),

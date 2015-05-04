@@ -20,9 +20,9 @@ GET     /preguntas/random/:categoria                           controllers.Trivi
 GET     /preguntas/comprobar/:idPregunta/:nRespuesta           controllers.TrivialAPI.comprobarRespuesta(idPregunta:Integer,nRespuesta:Integer)
 
 # Llamadas rest para los usuarios
-GET     /usuarios/                                controllers.TrivialAPI.obtenerUsuarios()
+GET     /usuarios                                 controllers.TrivialAPI.obtenerUsuarios()
 GET     /usuarios/get/:usuario                    controllers.TrivialAPI.obtenerUsuario(usuario:String)
-POST    /usuarios/save/:usuario/:password         controllers.TrivialAPI.guardarUsuario(usuario:String,password:String)
+GET     /usuarios/save/:usuario/:password         controllers.TrivialAPI.guardarUsuario(usuario:String,password:String)
 GET		/usuarios/validar/:usuario/:password 	  controllers.TrivialAPI.validateUser(usuario:String,password:String)
 
 
