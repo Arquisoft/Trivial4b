@@ -20,16 +20,18 @@ GET     /preguntas/random/:categoria                           controllers.Trivi
 GET     /preguntas/comprobar/:idPregunta/:nRespuesta           controllers.TrivialAPI.comprobarRespuesta(idPregunta:Integer,nRespuesta:Integer)
 
 # Llamadas rest para los usuarios
-GET     /usuarios                                controllers.TrivialAPI.obtenerUsuarios()
-GET     /usuarios/get/:usuario                   controllers.TrivialAPI.obtenerUsuario(usuario:String)
+GET     /usuarios                                 controllers.TrivialAPI.obtenerUsuarios()
+GET     /usuarios/get/:usuario                    controllers.TrivialAPI.obtenerUsuario(usuario:String)
 GET     /usuarios/save/:usuario/:password         controllers.TrivialAPI.guardarUsuario(usuario:String,password:String)
 GET		/usuarios/validar/:usuario/:password 	  controllers.TrivialAPI.validateUser(usuario:String,password:String)
-GET		/usuarios/sesion						  controllers.TrivialAPI.getUserSesion()
+GET		/usuarios/sesion                          controllers.TrivialAPI.getUserSesion()
 
 # Logica del juego
 GET     /posiciones/:actual/:tirada               controllers.TrivialAPI.calcularDestinos(actual:Integer, tirada:Integer)
 GET     /casilla/:nCasilla                        controllers.TrivialAPI.usarCasilla(nCasilla:Integer)
 GET     /dado                                     controllers.TrivialAPI.tirarDado()
+GET     /quesito                                  controllers.TrivialAPI.getQuesitos()
+GET     /quesito/:categoria                       controllers.TrivialAPI.addQuesito(categoria:String)
 
 #######################################################################################################################
 

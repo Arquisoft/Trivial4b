@@ -212,13 +212,15 @@ public class TrivialAPI extends Controller {
 	
 	public static Result getUserSesion(){
 		if (usuarioEnSesion != null) {
-			String resultJSON = "{\"username\":\"";
-			resultJSON += usuarioEnSesion.getUsuario() + "\", \"pass\":\"";
-			resultJSON += usuarioEnSesion.getContrasenia()+"\"";
-			resultJSON += "}";	
+			String resultJSON = 
+					"{"
+							+ "\"username\":\"" + usuarioEnSesion.getUsuario()     + "\","
+							+ "\"pass\":\""     + usuarioEnSesion.getContrasenia() + "\","
+							+ "\"icono\":\""    + usuarioEnSesion.getIcono()       + "\""
+					+"}";	
 			return ok(resultados.render(resultJSON));	
 		} else {
-			String resultJSON = "{\"username\":\"\", \"pass\":\"\"}";
+			String resultJSON = "{\"error\":\"No existe ningun usuario en sesion\"}";
 			return ok(resultados.render(resultJSON));
 		}
 		
@@ -250,6 +252,22 @@ public class TrivialAPI extends Controller {
 		resultJSON += "}";	
 		return ok(resultados.render(resultJSON));
 	}
+	
+	public static Result addQuesito(String categoria){
+		categoria = checkCategoria(categoria);
+		
+		usuarioEnSesion.addQuesito(categoria);
+		usuarioEnSesion.actualizarIconoQuesitos();
+		
+		String resultJSON = "{\"icono\":\""+usuarioEnSesion.getIcono()+"\"}";
+		
+		return ok(resultados.render(resultJSON));
+	}
+	
+	public static Result getQuesitos(){
+		String resultJSON = "{\"todosLosQuesitos\":"+usuarioEnSesion.todosLosQuesitos()+"}";
+		return ok(resultados.render(resultJSON));
+	}
 
 	public static Result calcularDestinos(Integer actual, Integer tirada) {
 		trivial = new Trivial(obtenerListaPreguntas());
@@ -276,7 +294,7 @@ public class TrivialAPI extends Controller {
 		
 		if(pregunta != null){
 			result += "\"_id\":\""+pregunta.getId()+"\",";
-			result += "\"isQuesito\":\""+pregunta.isEsQuesito()+"\",";
+			result += "\"isQuesito\":"+pregunta.isEsQuesito()+",";
 			result += "\"enunciado\":\""+pregunta.getEnunciado()+"\",";
 			result += "\"categoria\":\""+pregunta.getCategoria()+"\",";
 			
@@ -292,7 +310,7 @@ public class TrivialAPI extends Controller {
 			respuestasJSON = respuestasJSON.substring(0,respuestasJSON.length()-1)+"]"+",";
 		}
 		result += respuestasJSON;
-		result += "\"isCasillFinal\":"+isCasillaFinal+",";
+		result += "\"isCasillaFinal\":"+isCasillaFinal+",";
 		result += "\"isVuelveATirar\":"+isVuelveATirar+"";
 		
 		result += "}";

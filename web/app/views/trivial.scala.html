@@ -15,6 +15,7 @@
 		var nJugadorActual;
 		var imagenFicha;
 		var arrayPosiciones;
+		var usuarioEnSesion = null;
 		
 		function MM_preloadImages() { //v3.0
           var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
@@ -49,25 +50,38 @@
 			imagenFicha = "url(assets/imgs/FichasSmall/FichaRo_null_null_null_null.png)";
 			$('#casilla00_ficha').css("visibility","visible");
 			$('#casilla00_ficha').css("background-image",imagenFicha);
-			$('#tapaJugador'+nJugadorActual).css("visibility","hidden");
-			getNombreJugador();
+			$('#tapaJugador'+nJugadorActual).css("visibility","hidden");			
+			getUsuarioEnSesion();
+			
 		}
-		
-		
-		function getNombreJugador() {
+
+		function getUsuarioEnSesion() {
 			var xmlhttp = createAJAX();
 				
 			// Esto es lo que ejecutará la llamada AJAX cuando termine
 			xmlhttp.onreadystatechange=function() {
 				if (xmlhttp.readyState==4 && xmlhttp.status==200){
 					var respuestaJSON = xmlhttp.responseText.replace(/&quot;/g,"\"");
-					var usuario = JSON.parse(respuestaJSON);
-					$('#j1').text(usuario.username);
+					usuarioEnSesion = JSON.parse(respuestaJSON);
+					
+					actualizarDatosJugador();
 				}
 			}
 			executeAJAX(xmlhttp,"GET","http://localhost:9000/usuarios/sesion");
 		}
 		
+		function actualizarDatosJugador(){
+			$('#j1').text(usuarioEnSesion.username);
+			
+			if(posicionActual > 9){
+				$('#casilla'+posicionActual+'_ficha').css("visibility","visible");
+				$('#casilla'+posicionActual+'_ficha').css("background-image",imagenFicha);
+			}
+			else{
+				$('#casilla0'+posicionActual+'_ficha').css("visibility","visible");
+				$('#casilla0'+posicionActual+'_ficha').css("background-image",imagenFicha);
+			}
+		}	
 		
 		function tirarDado(){
 			var xmlhttp = createAJAX();
@@ -128,7 +142,7 @@
 					pregunta = JSON.parse(respuestaJSON);
 					if(!pregunta.isVuelveATirar){
 						cargaPregunta();
-					}
+					}					
 					else{
 						moverFicha();
 						$('#tirarBotonTirar').css("visibility","visible");
@@ -139,6 +153,27 @@
 			}
 			
 			executeAJAX(xmlhttp,"GET","http://localhost:9000/casilla/"+casilla);
+		}
+		
+		function comprobarQuesitos(){
+			var xmlhttp = createAJAX();
+				
+			// Esto es lo que ejecutará la llamada AJAX cuando termine
+			xmlhttp.onreadystatechange=function() {
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){
+					var respuestaJSON = xmlhttp.responseText.replace(/&quot;/g,"\"");
+					var todosLosQuesitos = JSON.parse(respuestaJSON).todosLosQuesitos;
+					
+					if(todosLosQuesitos){
+						alert("Has ganado la partida!");
+						$('#tirarBotonTirar').css("visibility","hidden");
+						$('#tirarMensajeMover').text("Has ganado!");
+						$('#tirarMensajeMover').css("visibility","visible");
+					}
+				}
+			}
+			
+			executeAJAX(xmlhttp,"GET","http://localhost:9000/quesito");			
 		}
 		
 		function ocultarCaminos(){
@@ -177,6 +212,17 @@
 						$('#respuesta'+(nRespuesta+1)+'Resultado').css("background-image",imgRespuestaCorrecta);
 						$('#respuesta'+(nRespuesta+1)+'Resultado').css("color",color);
 						$('#respuesta'+(nRespuesta+1)+'Bien').css("visibility","visible");
+						
+						moverFicha();
+						
+						if(pregunta.isQuesito){
+							var categoria = pregunta.categoria;
+							addQuesito(categoria);
+						}
+						else if(pregunta.isCasillaFinal){
+							// Comprobar que tenga todos los quesitos
+							comprobarQuesitos();
+						}
 					}
 					else{
 						var imgRespuestaIncorrecta = "url(assets/imgs/Respuesta_Rojo.png)";
@@ -193,13 +239,30 @@
 						$('#respuesta'+(nRespuesta+1)+'Resultado').css("color",color);
 					}
 					
-					moverFicha();
+					
 					$('#tirarBotonTirar').css("visibility","visible");
 					$('#tirarMensajeMover').css("visibility","hidden");
 				}
 			}
 			
 			executeAJAX(xmlhttp,"GET","http://localhost:9000/preguntas/comprobar/"+pregunta._id+"/"+nRespuesta);
+		}
+		
+		function addQuesito(categoria){
+			var xmlhttp = createAJAX();
+				
+			// Esto es lo que ejecutará la llamada AJAX cuando termine
+			xmlhttp.onreadystatechange=function() {
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){
+					var respuestaJSON = xmlhttp.responseText.replace(/&quot;/g,"\"");
+					var icono = JSON.parse(respuestaJSON).icono;
+					
+					imagenFicha = "url(assets/imgs/FichasSmall/"+icono+")";
+					actualizarDatosJugador();
+				}
+			}
+			
+			executeAJAX(xmlhttp,"GET","http://localhost:9000/quesito/"+categoria);
 		}
 		
 		function moverFicha(){
@@ -254,7 +317,7 @@
 		}
 		
 		function mostrarRespuestas(){
-			$('#preguntaTexo').text(pregunta.enunciado);
+			$('#preguntaTexo').text(pregunta.enunciado.replace(/&#x27;/g,"'"));
 			for(i = 0; i < pregunta.respuestas.length; i++){
 				$('#respuesta'+(i+1)+'Boton').text(pregunta.respuestas[i].respuesta);
 				$('#respuesta'+(i+1)+'Resultado').text(pregunta.respuestas[i].respuesta);

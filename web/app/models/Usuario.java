@@ -24,6 +24,9 @@ public class Usuario {
 	public Usuario(String usuario, String contrasenia) {
 		this.usuario = usuario;
 		this.contrasenia = contrasenia;
+		this.icono = "FichaRo_";
+		quesitos = new String[4];
+		actualizarIconoQuesitos();
 	}
 
 	public Usuario(Long id, String usuario, String contrasenia, String nombre) {
