@@ -86,6 +86,11 @@
 					if(resultado.validacion) {
 						$('#labelUsuariosValidados').text('Usuarios validados correctamente, ya se puede comenzar el juego');
 						$('#labelUsuariosValidados').css('visibility', "visible");
+						
+						$('#nombreNuevo1').attr('disabled', true);
+						$('#password1').attr('disabled', true);
+						$('#nombreExistente1').attr('disabled', true);
+						
 						isValidado = true;
 					} else {
 						$('#labelUsuariosValidados').text('Password Incorrecto');

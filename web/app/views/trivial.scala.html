@@ -218,6 +218,9 @@
 						if(pregunta.isQuesito){
 							var categoria = pregunta.categoria;
 							addQuesito(categoria);
+							
+							$('#quesitoGanado').css("background-image","url(assets/imgs/Quesito_"+categoria.replace(/ /g, "")+".png)");
+							$('#quesitoGanado').css("visibility","visible");
 						}
 						else if(pregunta.isCasillaFinal){
 							// Comprobar que tenga todos los quesitos
@@ -237,7 +240,8 @@
 						
 						$('#respuesta'+(nRespuesta+1)+'Resultado').css("background-image",imgRespuestaIncorrecta);
 						$('#respuesta'+(nRespuesta+1)+'Resultado').css("color",color);
-						moverFicha();
+						
+						posicionActual = posicionAnterior;
 					}
 					
 					
@@ -308,6 +312,7 @@
 			$('#modalPregunta').on({
 			  'hidden.bs.modal': function(e){
 				switchBotonesRespuestasVisible(true);
+				$('#quesitoGanado').css("visibility","hidden");
 			  }
 			})
 			
@@ -320,8 +325,8 @@
 		function mostrarRespuestas(){
 			$('#preguntaTexo').text(pregunta.enunciado.replace(/&#x27;/g,"'"));
 			for(i = 0; i < pregunta.respuestas.length; i++){
-				$('#respuesta'+(i+1)+'Boton').text(pregunta.respuestas[i].respuesta);
-				$('#respuesta'+(i+1)+'Resultado').text(pregunta.respuestas[i].respuesta);
+				$('#respuesta'+(i+1)+'Boton').text(pregunta.respuestas[i].respuesta.replace(/&#x27;/g,"'"));
+				$('#respuesta'+(i+1)+'Resultado').text(pregunta.respuestas[i].respuesta.replace(/&#x27;/g,"'"));
 			}
 		}
 		
@@ -513,7 +518,7 @@
 
 <div id="casilla18_ficha" class="botonCasillaFicha" style="left: 884px; top: 437px;"></div>
 
-<div id="casilla19_ficha" class="botonCasillaFicha" style="left: 884px; top: 500px; ></div>
+<div id="casilla19_ficha" class="botonCasillaFicha" style="left: 884px; top: 500px;" ></div>
 
 <div id="casilla20_ficha" class="botonCasillaFicha" style="left: 884px; top: 563px;"></div>
 
@@ -537,7 +542,7 @@
 
 <div id="casilla30_ficha" class="botonCasillaFicha" style="left: 380px; top: 437px;"></div>
 
-<div id="casilla31_ficha" class="botonCasillaFicha" style="left: 380px; top: 374px; ></div>
+<div id="casilla31_ficha" class="botonCasillaFicha" style="left: 380px; top: 374px;"></div>
 
 <div id="casilla32_ficha" class="botonCasillaFicha" style="left: 443px; top: 311px;"></div>
 
@@ -559,7 +564,7 @@
 
 <div id="casilla41_ficha" class="botonCasillaFicha" style="left: 632px; top: 500px;"></div>
 
-<div id="casilla42_ficha" class="botonCasillaFicha" style="left: 632px; top: 437px; ></div>
+<div id="casilla42_ficha" class="botonCasillaFicha" style="left: 632px; top: 437px;" ></div>
 
 <div id="casilla43_ficha" class="botonCasillaFicha" style="left: 632px; top: 374px;"></div>
 

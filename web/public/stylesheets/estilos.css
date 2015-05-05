@@ -449,11 +449,11 @@ label {
 	z-index: 2;
 	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
 	text-align: center;
-	font-size: 18px;
+	font-size: 15px;
 	text-align: center;
 	color: #000;
 	text-decoration: none;
-	line-height: 2.3em;
+	line-height: 2.6em;
 }
 .respuestaBoton:hover {
 	background-image: url(../imgs/Respuesta_Over.png);
@@ -467,15 +467,15 @@ label {
 	z-index: 2;
 	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
 	text-align: center;
-	font-size: 18px;
+	font-size: 15px;
 	text-align: center;
 	color: #000;
 	text-decoration: none;
-	line-height: 2.3em;
+	line-height: 2.6em;
 }
 #preguntaTexo {
 	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
-	font-size: 18px;
+	font-size: 17px;
 	color: #000;
 	position: absolute;
 	z-index: 2;
