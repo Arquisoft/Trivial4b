@@ -21,11 +21,25 @@
 				if (a[i].indexOf("#")!=0){
 					d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];
 				}
-			}
-			
-			cargarJugadoresExistentes();
-			
+			}		
         }
+		
+		function abrirDialogoJugadores(){
+			$('#modalJugadores').on({
+			  'loaded.bs.modal': function(e){
+			   $('#nombreExistente1').attr('disabled', true);
+			   $('#labelUsuariosValidados').text('Cargando lista de jugadores existentes ...');
+			   $('#labelUsuariosValidados').css('visibility', "visible");
+			   cargarJugadoresExistentes();
+			  }
+			})
+			
+			$('#modalJugadores').modal({
+			  backdrop: 'static',
+				remote: 'assets/modal_Jugadores.html'
+			})
+		}
+		
 		
 		function cargarJugadoresExistentes(){
 			var xmlhttp = createAJAX();
@@ -34,7 +48,15 @@
 			xmlhttp.onreadystatechange=function() {
 				if (xmlhttp.readyState==4 && xmlhttp.status==200){					
 					var respuestaJSON = xmlhttp.responseText.replace(/&quot;/g,"\"");
-					var usuarios = JSON.parse(respuestaJSON);					
+					var usuarios = JSON.parse(respuestaJSON).usuarios;	
+					for( i = 0; i < usuarios.length; i++){
+						$('#nombreExistente1').append($('<option>', {
+  							value: i,
+  				    		text: usuarios[i].usuario
+						}));				
+					}
+					$('#nombreExistente1').attr('disabled', false);	
+					$('#labelUsuariosValidados').css('visibility', "hidden");	
 				}
 			}
 			executeAJAX(xmlhttp,"GET","http://localhost:9000/usuarios");
@@ -47,16 +69,43 @@
 				window.location.href="trivial";
 			}
 			else{
-				alert("No hay ningun usuario validado");
+			$('#labelUsuariosValidados').text('Se deben validar los usuarios antes de comenzar.');
+			$('#labelUsuariosValidados').css('visibility', "visible");
 			}
 		}
+		
+		
+		function validaPass(usuario, pass) {
+				var xmlhttp = createAJAX();
+				
+			// Esto es lo que ejecutará la llamada AJAX cuando termine
+			xmlhttp.onreadystatechange=function() {
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){					
+					var respuestaJSON = xmlhttp.responseText.replace(/&quot;/g,"\"");
+					var resultado = JSON.parse(respuestaJSON);	
+					if(resultado.validacion) {
+						$('#labelUsuariosValidados').text('Usuarios validados correctamente, ya se puede comenzar el juego');
+						$('#labelUsuariosValidados').css('visibility', "visible");
+						isValidado = true;
+					} else {
+						$('#labelUsuariosValidados').text('Password Incorrecto');
+						$('#labelUsuariosValidados').css('visibility', "visible");
+						isValidado = false;
+					}
+				}
+			}
+			executeAJAX(xmlhttp,"GET","http://localhost:9000/usuarios/validar/"+usuario+"/"+pass);	 
+		}
+		
 		
 		function comprobarCamposParaLlamada() {
 			//cerrar el diálogo modal
 			var username = $('#nombreNuevo1').val();
 			var password = $('#password1').val();
-			var existente = $('#nombreExistente1').val();
-			if(username != '' && password != '' && existente == 'seleccionar'){				
+			var nExistente = $('#nombreExistente1').val();
+			var existente = $("#nombreExistente1 option[value='"+nExistente+"']").text();
+			
+			if(username != '' && password != '' && nExistente >= 0){				
 				$('#nombreNuevo1').attr('disabled', true);
 				$('#password1').attr('disabled', true);
 				$('#nombreExistente1').attr('disabled', true);
@@ -67,11 +116,8 @@
 				
 				guardarUsuario(username,password);
 			}
-			else if(username == '' && password != '' && existente != 'seleccionar'){
-				alert('Llamada a la api rest para validar el jugador');
-				$('#labelUsuariosValidados').text('Usuarios validados correctamente, ya se puede comenzar el juego');
-				$('#labelUsuariosValidados').css('visibility', "visible");
-				isValidado = true;
+			else if(username == '' && password != '' && nExistente >= 0){
+				validaPass(existente, password);	
 			}
 			else{
 				$('#labelUsuariosValidados').text('No se ha podido validar los usuarios, comprueba los datos e intentalo de nuevo');
@@ -87,8 +133,6 @@
 				if (xmlhttp.readyState==4 && xmlhttp.status==200){					
 					var respuestaJSON = xmlhttp.responseText.replace(/&quot;/g,"\"");
 					var comprobacion = JSON.parse(respuestaJSON);
-					
-					comprobacion.usuarios[]
 					
 					if(comprobacion.resultado){
 						var username = $('#nombreNuevo1').attr('disabled', true);
@@ -130,7 +174,7 @@
         
         <div id="fondoInicio" class="fondo"></div>
                 
-        <a data-toggle="modal" href="assets/modal_Jugadores.html" data-target="#modalJugadores">
+        <a onclick = "abrirDialogoJugadores()" >
             <div id="boton1" class="botonAmarillo absoluto" style="left: 385px; top: 427px;">Comenzar</div>
         </a>
     

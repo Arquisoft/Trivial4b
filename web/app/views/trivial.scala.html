@@ -47,11 +47,27 @@
 		function comenzarPartida(){
 			nJugadorActual = 1;
 			imagenFicha = "url(assets/imgs/FichasSmall/FichaRo_null_null_null_null.png)";
-			
 			$('#casilla00_ficha').css("visibility","visible");
 			$('#casilla00_ficha').css("background-image",imagenFicha);
 			$('#tapaJugador'+nJugadorActual).css("visibility","hidden");
+			getNombreJugador();
 		}
+		
+		
+		function getNombreJugador() {
+			var xmlhttp = createAJAX();
+				
+			// Esto es lo que ejecutará la llamada AJAX cuando termine
+			xmlhttp.onreadystatechange=function() {
+				if (xmlhttp.readyState==4 && xmlhttp.status==200){
+					var respuestaJSON = xmlhttp.responseText.replace(/&quot;/g,"\"");
+					var usuario = JSON.parse(respuestaJSON);
+					$('#j1').text(usuario.username);
+				}
+			}
+			executeAJAX(xmlhttp,"GET","http://localhost:9000/usuarios/sesion");
+		}
+		
 		
 		function tirarDado(){
 			var xmlhttp = createAJAX();
@@ -368,7 +384,7 @@
 <div id="quesoJugador1" class="quesoJugador" style=""></div>
 
 <div class="botonJugador1">
-	<div class="botonJugadorTexto">Jugador 1</div>
+	<div class="botonJugadorTexto" id = "j1">Jugador 1</div>
 </div>
 
 <div id="tapaJugador2" class="tapaJugador"></div>

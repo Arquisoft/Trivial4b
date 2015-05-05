@@ -209,6 +209,21 @@ public class TrivialAPI extends Controller {
 		return ok(resultados.render(resultJSON));
 	}
 	
+	
+	public static Result getUserSesion(){
+		if (usuarioEnSesion != null) {
+			String resultJSON = "{\"username\":\"";
+			resultJSON += usuarioEnSesion.getUsuario() + "\", \"pass\":\"";
+			resultJSON += usuarioEnSesion.getContrasenia()+"\"";
+			resultJSON += "}";	
+			return ok(resultados.render(resultJSON));	
+		} else {
+			String resultJSON = "{\"username\":\"\", \"pass\":\"\"}";
+			return ok(resultados.render(resultJSON));
+		}
+		
+	}
+	
 	public static Result validateUser(String usuario, String password){
 		String resultJSON = "{\"validacion\":";
 
@@ -221,8 +236,10 @@ public class TrivialAPI extends Controller {
 		if (cursor.hasNext()) {
 			DBObject usuarioJSON = cursor.next();
 			String pass = (String) usuarioJSON.get("pass");
-			if(pass.equals(password))
+			if(pass.equals(password)) {
 				resultJSON += "true";
+				usuarioEnSesion = new Usuario(usuario, password);
+			}	
 			else
 				resultJSON += "false";
 		}
@@ -230,10 +247,7 @@ public class TrivialAPI extends Controller {
 			resultJSON += "false";
 		}
 		
-		resultJSON += "}";
-		
-		usuarioEnSesion = new Usuario(usuario,password);
-		
+		resultJSON += "}";	
 		return ok(resultados.render(resultJSON));
 	}
 
