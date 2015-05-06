@@ -1,0 +1,51 @@
+<div class="modal-header">
+	<h4 class="modal-title" id="myModalLabel">Responder Pregunta</h4>
+</div>
+    
+<div class="modal-body">
+
+	<div class="contenedor" style="width: 480px; height: 547px;">
+                
+		<div id="fondoPregunta" class="fondo"></div>
+    
+		<div id="preguntaTipo"></div>
+                
+		<div id="preguntaTexo">¿Lorem ipsum dolor sit amet, consectetur ad adipiscing elit, sed do eiusmod tempor atem incididunt ut labore et magna aliqua?</div>  
+    
+		<!-- Respuesta 1 -->
+		<div id="respuesta1Bien" class="respuestaBien" style="left: 64px; top: 181px"></div>
+		<a href="#" onclick="comprobarRespuesta(0)">
+			<div id="respuesta1Boton" class="respuestaBoton" style="left: 109px; top: 177px; ">Caballito de mar</div>
+		</a> 
+		<div id="respuesta1Resultado" class="respuestaResultado" style="left: 109px; top: 177px;">Caballito de mar</div>
+
+		<!-- Respuesta 2 -->
+		<div id="respuesta2Bien" class="respuestaBien" style="left: 64px; top: 246px"></div>
+		<a href="#" onclick="comprobarRespuesta(1)">
+    		<div id="respuesta2Boton" class="respuestaBoton" style="left: 109px; top: 242px; ">Estrella de mar</div>
+    	</a> 
+		<div id="respuesta2Resultado" class="respuestaResultado" style="left: 109px; top: 242px;">Estrella de mar</div>
+		
+		<!-- Respuesta 3 -->
+		<div id="respuesta3Bien" class="respuestaBien" style="left: 64px; top: 309px"></div>
+		<a href="#" onclick="comprobarRespuesta(2)">
+			<div id="respuesta3Boton" class="respuestaBoton" style="left: 109px; top: 305px; ">Calamar</div>
+		</a>  
+		<div id="respuesta3Resultado" class="respuestaResultado" style="left: 109px; top: 305px; ">Calamar</div>
+		
+		<!-- Respuesta 4 -->
+		<div id="respuesta4Bien" class="respuestaBien" style="left: 64px; top: 373px"></div>   
+		<a href="#" onclick="comprobarRespuesta(3)">
+			<div id="respuesta4Boton" class="respuestaBoton" style="left: 109px; top: 369px;">Placton</div>
+		</a>     
+		<div id="respuesta4Resultado" class="respuestaResultado" style="left: 109px; top: 369px;">Placton</div>
+		 
+		<a href="#" onclick="$('#modalPregunta').modal('hide')">
+			<div id="botonSeguir1" class="botonSeguir">Continuar</div>
+		</a>
+    
+		<div id="quesitoGanado"></div> 
+            
+    </div><!-- fin .contenedor -->
+
+</div><!-- fin .modal-body -->

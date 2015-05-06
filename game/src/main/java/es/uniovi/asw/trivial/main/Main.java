@@ -1,7 +1,12 @@
 package es.uniovi.asw.trivial.main;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.Collections;
 import java.util.List;
+
 
 import es.uniovi.asw.trivial.db.DBManager;
 import es.uniovi.asw.trivial.db.impl.local.persistencia.consultas.PersistenceFactory;
@@ -15,6 +20,7 @@ import es.uniovi.asw.trivial.ui.VentanaPrincipal;
 public class Main {
 
 	public static void main(String[] args) {
+		System.out.println("empieza el main");
 		new Main().run();
 	}
 
@@ -36,6 +42,18 @@ public class Main {
 			System.err.println(e.getMessage());
 		}
 		*/
+//		Server hsqlServer = null;
+//		Connection connection = null;
+//		ResultSet rs = null;
+//		
+//		hsqlServer = new Server();
+//		hsqlServer.setLogWriter(null);
+//		hsqlServer.setSilent(true);
+//		hsqlServer.setDatabaseName(0, "trivial4b");
+//		hsqlServer.setDatabasePath(0, "data/");
+		
+//		hsqlServer.start();
+
 		
 		PersistenceFactory pf = new SimplePersistenceFactory();
 		for(int i = 0; i < listaPreguntas.size(); i++){

@@ -31,3 +31,4 @@ app.log
 game/data/test.log
 game/data/test.lck
 *test.properties
+*.log

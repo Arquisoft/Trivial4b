@@ -1,0 +1,47 @@
+<div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel2">Configuración del Juego</h4>
+          </div>
+          <div class="modal-body">
+
+            <div class="contenedorModal" style="width: 401px; height: 350px;">
+    
+                <form class="form">
+                
+                    <div class="elementoFormulario" style="left: 44px; top: 37px;">
+                        <label for="estiloTablero">Estilo del tablero</label>
+                    </div>
+                    <div class="elementoFormulario" style="left: 44px; top: 63px;">
+                        <select id="estiloTablero" class="form-control">
+                                <option>tradicional</option>
+                                <option>moderno</option>
+                            </select>
+                    </div>
+                    
+                    <div class="elementoFormulario" style="left: 44px; top: 197px; margin-left: -5px;">
+                        <label>
+                            <input type="checkbox"> Ganar quesito en cualquier casilla
+                        </label>
+                    </div>
+                    
+                    <div class="elementoFormulario" style="left: 44px; top: 113px;">
+                        <label for="quesitosGanar">Quesitos para ganar</label>
+                    </div>
+                    <div class="elementoFormulario" style="left: 44px; top: 140px;">
+                        <select id="quesitosGanar" class="form-control">
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
+                            </select>
+                    </div>
+            
+                </form>
+                
+                <a href="#" onclick="guardarConfiguracion()">
+                    <div id="botonGuardar" class="botonAmarillo absoluto" style="left: 73px; top: 268px;">Guardar</div>
+                </a>
+            
+            </div><!-- fin .contenedor -->
+
+          </div><!-- fin .modal-body -->
