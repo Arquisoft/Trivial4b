@@ -1,5 +1,5 @@
-New log file opened at Tue May 05 23:26:51 CEST 2015 by 36476@Sergio-PC
-jvm 36476@Sergio-PC
+New log file opened at Wed May 06 14:50:06 CEST 2015 by 47348@Sergio-PC
+jvm 47348@Sergio-PC
 jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.40-b25
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
@@ -27,7 +27,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in C:\Users\Sergio\workspace\Trivial4b\web\project, returning: (web-build)
 Loading project definition from C:\Users\Sergio\workspace\Trivial4b\web\project
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@152bca60, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@6846b150, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -68,29 +68,123 @@ Set current project to Web4b (in build file:/C:/Users/Sergio/workspace/Trivial4b
 > server-handle-next-server-request
 > compile
 Evaluating tasks: compile:compile
-Running task... Cancel: sbt.server.ServerTaskCancellation@41507e2d, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@786092e9, check cycles: false
 
 Initial source changes: 
-	removed:Set()
-	added: Set()
+	removed:Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java)
+	added: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java)
 	modified: Set()
 Removed products: Set()
 External API changes: API Changes: Set()
 Modified binary dependencies: Set()
-Initial directly invalidated sources: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaVuelveATirar.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaPregunta.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaFinal.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaQuesito.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Action.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java)
 
 Sources indirectly invalidated by:
 	product: Set()
 	binary dep: Set()
 	external source: Set()
-All initially invalidated sources: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaVuelveATirar.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaPregunta.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaFinal.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaQuesito.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Action.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java)
 
-Total time: 1 s, completed 05-may-2015 23:26:56
+Read from stdout: Compiling 10 Java sources to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Compiling 10 Java sources to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@bb08560 directly...
+Java compilation took 2.95666895 s
+Java analysis took 0.216843223 s
+Java compile + analysis took 3.190811221 s
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java source file has the following regular definitions changed:
+	notify, wait, GrafoFactory, equals, crearGrafo, notifyAll, <init>, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java source file has the following regular definitions changed:
+	notify, wait, equals, createTablero, notifyAll, <init>, TableroFactory, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java source file has the following regular definitions changed:
+	notify, wait, GrafoFactory, equals, crearGrafo, notifyAll, <init>, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java source file has the following regular definitions changed:
+	notify, wait, Grafo, equals, notifyAll, grafo, <init>, casillas, getDestinos, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java source file has the following regular definitions changed:
+	notify, wait, usarCasilla, equals, getGrafoTablero, preguntaActual, isVuelveATirar, setVuelveATirar, notifyAll, getPreguntaActual, <init>, hacerPregunta, listaPreguntas, tablero, setCasillaFinal, toString, isCasillaFinal, getClass, lanzarDado, Trivial, obtenerDestinos, hashCode, grafoTablero, obtenerPregunta.
+All member reference dependencies will be considered within this context.
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaVuelveATirar.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaPregunta.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaFinal.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaQuesito.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Action.java
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java source file has the following regular definitions changed:
+	notify, wait, Grafo, equals, notifyAll, grafo, <init>, casillas, getDestinos, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java source file has the following regular definitions changed:
+	notify, wait, usarCasilla, equals, getGrafoTablero, preguntaActual, isVuelveATirar, setVuelveATirar, notifyAll, getPreguntaActual, <init>, hacerPregunta, listaPreguntas, tablero, setCasillaFinal, toString, isCasillaFinal, getClass, lanzarDado, Trivial, obtenerDestinos, hashCode, grafoTablero, obtenerPregunta.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java source file has the following regular definitions changed:
+	notify, wait, equals, createTablero, notifyAll, <init>, TableroFactory, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+New invalidations:
+	Set(C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaVuelveATirar.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaPregunta.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaFinal.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaQuesito.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Action.java)
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaVuelveATirar.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaPregunta.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaFinal.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaQuesito.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Action.java)
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java by C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaVuelveATirar.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java by C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaPregunta.java by C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaFinal.java by C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaQuesito.java by C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java by C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\src_managed\main\routes_reverseRouting.scala by C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\src_managed\main\controllers\routes.java by C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\src_managed\main\routes_reverseRouting.scala
+Including C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\src_managed\main\routes_routing.scala by C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Action.java by C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Casilla.java by C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Action.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java by C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Casilla.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java by C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java)
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 5 s, completed 06-may-2015 14:50:15
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/compile:discoveredMainClasses
 Evaluating tasks: compile:discoveredMainClasses
-Running task... Cancel: sbt.server.ServerTaskCancellation@41aa1785, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@35ea40cf, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -107,42 +201,42 @@ Sources indirectly invalidated by:
 	external source: Set()
 All initially invalidated sources: Set()
 
-Total time: 1 s, completed 05-may-2015 23:26:57
+Total time: 1 s, completed 06-may-2015 14:50:15
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/compile:mainClass
 Evaluating tasks: compile:mainClass
-Running task... Cancel: sbt.server.ServerTaskCancellation@45407e22, check cycles: false
-Total time: 0 s, completed 05-may-2015 23:26:57
+Running task... Cancel: sbt.server.ServerTaskCancellation@79b61400, check cycles: false
+Total time: 0 s, completed 06-may-2015 14:50:15
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/echo:echoTraceSupported
 Evaluating tasks: echo:echoTraceSupported
-Running task... Cancel: sbt.server.ServerTaskCancellation@e05d223, check cycles: false
-Total time: 0 s, completed 05-may-2015 23:26:57
+Running task... Cancel: sbt.server.ServerTaskCancellation@4f0c8fbe, check cycles: false
+Total time: 0 s, completed 06-may-2015 14:50:16
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/echo:echoPlayVersionReport
 Evaluating tasks: echo:echoPlayVersionReport
-Running task... Cancel: sbt.server.ServerTaskCancellation@1aba1d72, check cycles: false
-Total time: 0 s, completed 05-may-2015 23:26:57
+Running task... Cancel: sbt.server.ServerTaskCancellation@673d3da1, check cycles: false
+Total time: 0 s, completed 06-may-2015 14:50:16
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/echo:echoAkkaVersionReport
 Evaluating tasks: echo:echoAkkaVersionReport
-Running task... Cancel: sbt.server.ServerTaskCancellation@269db321, check cycles: false
-Total time: 0 s, completed 05-may-2015 23:26:57
+Running task... Cancel: sbt.server.ServerTaskCancellation@5ae956c0, check cycles: false
+Total time: 0 s, completed 06-may-2015 14:50:16
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/echo:echoTracePlayVersion
 Evaluating tasks: echo:echoTracePlayVersion
-Running task... Cancel: sbt.server.ServerTaskCancellation@72db734d, check cycles: false
-Total time: 0 s, completed 05-may-2015 23:26:57
+Running task... Cancel: sbt.server.ServerTaskCancellation@2a892ae6, check cycles: false
+Total time: 0 s, completed 06-may-2015 14:50:16
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/compile:discoveredMainClasses
 Evaluating tasks: compile:discoveredMainClasses
-Running task... Cancel: sbt.server.ServerTaskCancellation@774a1409, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@d582921, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -159,34 +253,34 @@ Sources indirectly invalidated by:
 	external source: Set()
 All initially invalidated sources: Set()
 
-Total time: 0 s, completed 05-may-2015 23:26:57
+Total time: 0 s, completed 06-may-2015 14:50:16
 > server-post-command-cleanup
 > server-handle-next-server-request
 > echo:backgroundRun
 Evaluating tasks: echo:backgroundRun
-Running task... Cancel: sbt.server.ServerTaskCancellation@3679f183, check cycles: false
-Total time: 0 s, completed 05-may-2015 23:27:00
+Running task... Cancel: sbt.server.ServerTaskCancellation@29da96ab, check cycles: false
+Total time: 17 s, completed 06-may-2015 14:50:33
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/echo:playForkConfig
 Evaluating tasks: echo:playForkConfig
-Running task... Cancel: sbt.server.ServerTaskCancellation@ab52ab4, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@4554bbdd, check cycles: false
 Read from stdout: echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
 echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
 Read from stdout: echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
 echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
-Total time: 0 s, completed 05-may-2015 23:27:02
+Total time: 0 s, completed 06-may-2015 14:50:35
 > server-post-command-cleanup
 > server-handle-next-server-request
 > root/playForkNotifyStart http://localhost:9000
 Evaluating tasks: *:playForkNotifyStart
-Running task... Cancel: sbt.server.ServerTaskCancellation@509bec4c, check cycles: false
-Total time: 0 s, completed 05-may-2015 23:27:03
+Running task... Cancel: sbt.server.ServerTaskCancellation@610b864a, check cycles: false
+Total time: 0 s, completed 06-may-2015 14:50:37
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@1a9fef0b, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@1045a205, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -209,12 +303,1509 @@ Copy resource mappings:
 	(C:\Users\Sergio\workspace\Trivial4b\web\conf\routes,C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes\routes)
 	(C:\Users\Sergio\workspace\Trivial4b\web\conf\META-INF\orm.xml,C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes\META-INF\orm.xml)
 	(C:\Users\Sergio\workspace\Trivial4b\web\conf\META-INF\persistence.xml,C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes\META-INF\persistence.xml)
-Total time: 1 s, completed 05-may-2015 23:27:24
+Total time: 1 s, completed 06-may-2015 14:50:39
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@643132f1, check cycles: false
+
+Initial source changes: 
+	removed:Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java)
+	added: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java)
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaVuelveATirar.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaPregunta.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaFinal.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaQuesito.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Action.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaVuelveATirar.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaPregunta.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaFinal.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaQuesito.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Action.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java)
+
+Read from stdout: Compiling 10 Java sources to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Compiling 10 Java sources to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@69ee359c directly...
+Java compilation took 0.437226838 s
+Java analysis took 0.090909518 s
+Java compile + analysis took 0.545330421 s
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\GrafoFactory.java source file has the following regular definitions changed:
+	notify, wait, GrafoFactory, equals, crearGrafo, notifyAll, <init>, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\TableroFactory.java source file has the following regular definitions changed:
+	notify, wait, equals, createTablero, notifyAll, <init>, TableroFactory, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java source file has the following regular definitions changed:
+	notify, wait, GrafoFactory, equals, crearGrafo, notifyAll, <init>, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Grafo.java source file has the following regular definitions changed:
+	notify, wait, Grafo, equals, notifyAll, grafo, <init>, casillas, getDestinos, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\logica\Trivial.java source file has the following regular definitions changed:
+	notify, wait, usarCasilla, equals, getGrafoTablero, preguntaActual, isVuelveATirar, setVuelveATirar, notifyAll, getPreguntaActual, <init>, hacerPregunta, listaPreguntas, tablero, setCasillaFinal, toString, isCasillaFinal, getClass, lanzarDado, Trivial, obtenerDestinos, hashCode, grafoTablero, obtenerPregunta.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java source file has the following regular definitions changed:
+	notify, wait, Grafo, equals, notifyAll, grafo, <init>, casillas, getDestinos, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java source file has the following regular definitions changed:
+	notify, wait, usarCasilla, equals, getGrafoTablero, preguntaActual, isVuelveATirar, setVuelveATirar, notifyAll, getPreguntaActual, <init>, hacerPregunta, listaPreguntas, tablero, setCasillaFinal, toString, isCasillaFinal, getClass, lanzarDado, Trivial, obtenerDestinos, hashCode, grafoTablero, obtenerPregunta.
+All member reference dependencies will be considered within this context.
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaVuelveATirar.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaPregunta.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaFinal.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaQuesito.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Action.java
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java source file has the following regular definitions changed:
+	notify, wait, equals, createTablero, notifyAll, <init>, TableroFactory, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java
+New invalidations:
+	Set(C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaVuelveATirar.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaPregunta.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaFinal.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaQuesito.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Action.java)
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaVuelveATirar.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaPregunta.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaFinal.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaQuesito.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Action.java)
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java by C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaVuelveATirar.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java by C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaPregunta.java by C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaFinal.java by C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\impl\CasillaQuesito.java by C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java by C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\src_managed\main\routes_reverseRouting.scala by C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\src_managed\main\controllers\routes.java by C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\src_managed\main\routes_reverseRouting.scala
+Including C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\src_managed\main\routes_routing.scala by C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Action.java by C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Casilla.java by C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Action.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java by C:\Users\Sergio\workspace\Trivial4b\web\app\models\casilla\Casilla.java
+Including C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java by C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set(C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Trivial.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\TableroFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\GrafoFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\logica\Grafo.java)
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 1 s, completed 06-may-2015 15:06:12
 > server-post-command-cleanup
 > server-handle-next-server-request
 > jobStop 1
 Evaluating tasks: *:jobStop
-Running task... Cancel: sbt.server.ServerTaskCancellation@4558b10c, check cycles: false
-Total time: 0 s, completed 05-may-2015 23:36:49
+Running task... Cancel: sbt.server.ServerTaskCancellation@87b3225, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:06:12
+> server-post-command-cleanup
+> server-handle-next-server-request
+> echo:backgroundRun
+Evaluating tasks: echo:backgroundRun
+Running task... Cancel: sbt.server.ServerTaskCancellation@4f7520e8, check cycles: false
+Total time: 1 s, completed 06-may-2015 15:06:14
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@10ef4fa1, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 0 s, completed 06-may-2015 15:06:14
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 1
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@7e171c0b, check cycles: false
+Exception in thread "sbt-bg-threads-1" java.lang.Error: java.lang.InterruptedException: sleep interrupted
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method)
+	at play.sbt.forkrun.PlayForkProcess$.timedWaitFor$1(PlayForkProcess.scala:57)
+	at play.sbt.forkrun.PlayForkProcess$.play$sbt$forkrun$PlayForkProcess$$stop$1(PlayForkProcess.scala:64)
+	at play.sbt.forkrun.PlayForkProcess$.run(PlayForkProcess.scala:82)
+	at play.sbt.forkrun.PlayForkProcess$.apply(PlayForkProcess.scala:34)
+	at play.sbt.forkrun.PlayForkRun$$anonfun$backgroundForkRunTask$1$$anonfun$apply$7$$anonfun$apply$8$$anonfun$apply$9.apply(PlayForkRun.scala:108)
+	at play.sbt.forkrun.PlayForkRun$$anonfun$backgroundForkRunTask$1$$anonfun$apply$7$$anonfun$apply$8$$anonfun$apply$9.apply(PlayForkRun.scala:107)
+	at sbt.BackgroundThreadPool$$anonfun$1.apply$mcV$sp(AbstractBackgroundJobService.scala:134)
+	at sbt.BackgroundThreadPool$BackgroundRunnable.run(AbstractBackgroundJobService.scala:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	... 2 more
+Total time: 0 s, completed 06-may-2015 15:06:14
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 2
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@67b0d9ca, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:06:14
+> server-post-command-cleanup
+> server-handle-next-server-request
+> echo:backgroundRun
+Evaluating tasks: echo:backgroundRun
+Running task... Cancel: sbt.server.ServerTaskCancellation@65832f4c, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:06:14
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/echo:playForkConfig
+Evaluating tasks: echo:playForkConfig
+Running task... Cancel: sbt.server.ServerTaskCancellation@5448ef16, check cycles: false
+Read from stdout: echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+Read from stdout: echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+Total time: 0 s, completed 06-may-2015 15:06:16
+> server-post-command-cleanup
+> server-handle-next-server-request
+> root/playForkNotifyStart http://localhost:9000
+Evaluating tasks: *:playForkNotifyStart
+Running task... Cancel: sbt.server.ServerTaskCancellation@47e6c36d, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:06:18
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@1d2847a9, check cycles: false
+
+Initial source changes: 
+	removed:Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PartidaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PartidaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PersistenceFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\util\Jpa.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\SimplePersistenceFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioFinderImpl.java)
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PartidaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PartidaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PersistenceFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\util\Jpa.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\SimplePersistenceFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioFinderImpl.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PartidaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PartidaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PersistenceFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\util\Jpa.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\SimplePersistenceFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioFinderImpl.java)
+
+Recompiling all 29 sources: invalidated sources (18) exceeded 50.0% of all sources
+Read from stdout: Compiling 6 Scala sources and 23 Java sources to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Compiling 6 Scala sources and 23 Java sources to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Getting compiler-interface from component compiler for Scala 2.11.1
+Other repositories:
+Default repositories:
+Getting compiler-interface from component compiler for Scala 2.11.1
+Other repositories:
+Default repositories:
+Running cached compiler 7b36d20a, interfacing (CompilerInterface) with Scala compiler version 2.11.1
+Calling Scala compiler with arguments  (CompilerInterface):
+	-deprecation
+	-unchecked
+	-encoding
+	utf8
+	-bootclasspath
+	C:\Program Files\Java\jdk1.8.0_40\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_40\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_40\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_40\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_40\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_40\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_40\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_40\jre\classes;C:\Users\Sergio\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.11.1.jar
+	-classpath
+	C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes;C:\Users\Sergio\workspace\Trivial4b\web\lib\encripter.jar;C:\Users\Sergio\workspace\Trivial4b\web\lib\hsqldb.jar;C:\Users\Sergio\workspace\Trivial4b\web\lib\jgraph-5.13.0.0.jar;C:\Users\Sergio\workspace\Trivial4b\web\lib\jgrapht-core-0.9.1.jar;C:\Users\Sergio\workspace\Trivial4b\web\lib\mongo-java-driver-2.13.1.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\twirl-api_2.11\jars\twirl-api_2.11-1.0.2.jar;C:\Users\Sergio\.ivy2\cache\org.apache.commons\commons-lang3\jars\commons-lang3-3.1.jar;C:\Users\Sergio\.ivy2\cache\org.scala-lang.modules\scala-xml_2.11\bundles\scala-xml_2.11-1.0.1.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play_2.11\jars\play_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\build-link\jars\build-link-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-exceptions\jars\play-exceptions-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-iteratees_2.11\jars\play-iteratees_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\org.scala-stm\scala-stm_2.11\jars\scala-stm_2.11-0.7.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe\config\bundles\config-1.2.1.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-json_2.11\jars\play-json_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-functional_2.11\jars\play-functional_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-datacommons_2.11\jars\play-datacommons_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\joda-time\joda-time\jars\joda-time-2.3.jar;C:\Users\Sergio\.ivy2\cache\org.joda\joda-convert\jars\joda-convert-1.6.jar;C:\Users\Sergio\.ivy2\cache\com.fasterxml.jackson.core\jackson-annotations\bundles\jackson-annotations-2.3.2.jar;C:\Users\Sergio\.ivy2\cache\com.fasterxml.jackson.core\jackson-core\bundles\jackson-core-2.3.2.jar;C:\Users\Sergio\.ivy2\cache\com.fasterxml.jackson.core\jackson-databind\bundles\jackson-databind-2.3.2.jar;C:\Users\Sergio\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.11.1.jar;C:\Users\Sergio\.ivy2\cache\org.scala-lang.modules\scala-parser-combinators_2.11\bundles\scala-parser-combinators_2.11-1.0.1.jar;C:\Users\Sergio\.ivy2\cache\io.netty\netty\bundles\netty-3.9.3.Final.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.netty\netty-http-pipelining\jars\netty-http-pipelining-1.1.2.jar;C:\Users\Sergio\.ivy2\cache\org.slf4j\slf4j-api\jars\slf4j-api-1.7.6.jar;C:\Users\Sergio\.ivy2\cache\org.slf4j\jul-to-slf4j\jars\jul-to-slf4j-1.7.6.jar;C:\Users\Sergio\.ivy2\cache\org.slf4j\jcl-over-slf4j\jars\jcl-over-slf4j-1.7.6.jar;C:\Users\Sergio\.ivy2\cache\ch.qos.logback\logback-core\jars\logback-core-1.1.1.jar;C:\Users\Sergio\.ivy2\cache\ch.qos.logback\logback-classic\jars\logback-classic-1.1.1.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.akka\akka-actor_2.11\jars\akka-actor_2.11-2.3.4.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.akka\akka-slf4j_2.11\jars\akka-slf4j_2.11-2.3.4.jar;C:\Users\Sergio\.ivy2\cache\commons-codec\commons-codec\jars\commons-codec-1.9.jar;C:\Users\Sergio\.ivy2\cache\xerces\xercesImpl\jars\xercesImpl-2.11.0.jar;C:\Users\Sergio\.ivy2\cache\xml-apis\xml-apis\jars\xml-apis-1.4.01.jar;C:\Users\Sergio\.ivy2\cache\javax.transaction\jta\jars\jta-1.1.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-java_2.11\jars\play-java_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\org.yaml\snakeyaml\bundles\snakeyaml-1.13.jar;C:\Users\Sergio\.ivy2\cache\org.hibernate\hibernate-validator\jars\hibernate-validator-5.0.3.Final.jar;C:\Users\Sergio\.ivy2\cache\javax.validation\validation-api\jars\validation-api-1.1.0.Final.jar;C:\Users\Sergio\.ivy2\cache\com.fasterxml\classmate\bundles\classmate-1.0.0.jar;C:\Users\Sergio\.ivy2\cache\org.jboss.logging\jboss-logging\jars\jboss-logging-3.2.0.Final.jar;C:\Users\Sergio\.ivy2\cache\org.springframework\spring-context\jars\spring-context-4.0.3.RELEASE.jar;C:\Users\Sergio\.ivy2\cache\org.springframework\spring-core\jars\spring-core-4.0.3.RELEASE.jar;C:\Users\Sergio\.ivy2\cache\org.springframework\spring-beans\jars\spring-beans-4.0.3.RELEASE.jar;C:\Users\Sergio\.ivy2\cache\org.javassist\javassist\bundles\javassist-3.19.0-GA.jar;C:\Users\Sergio\.ivy2\cache\org.reflections\reflections\jars\reflections-0.9.8.jar;C:\Users\Sergio\.ivy2\cache\com.google.guava\guava\bundles\guava-16.0.1.jar;C:\Users\Sergio\.ivy2\cache\dom4j\dom4j\jars\dom4j-1.6.1.jar;C:\Users\Sergio\.ivy2\cache\com.google.code.findbugs\jsr305\jars\jsr305-2.0.3.jar;C:\Users\Sergio\.ivy2\cache\org.apache.tomcat\tomcat-servlet-api\jars\tomcat-servlet-api-8.0.5.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-java-jdbc_2.11\jars\play-java-jdbc_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-jdbc_2.11\jars\play-jdbc_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.jolbox\bonecp\bundles\bonecp-0.8.0.RELEASE.jar;C:\Users\Sergio\.ivy2\cache\com.h2database\h2\jars\h2-1.3.175.jar;C:\Users\Sergio\.ivy2\cache\tyrex\tyrex\jars\tyrex-1.0.1.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-java-ebean_2.11\jars\play-java-ebean_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\org.avaje.ebeanorm\avaje-ebeanorm\jars\avaje-ebeanorm-3.3.4.jar;C:\Users\Sergio\.ivy2\cache\org.avaje.ebeanorm\avaje-ebeanorm-agent\jars\avaje-ebeanorm-agent-3.2.2.jar;C:\Users\Sergio\.ivy2\cache\org.hibernate.javax.persistence\hibernate-jpa-2.0-api\jars\hibernate-jpa-2.0-api-1.0.1.Final.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-cache_2.11\jars\play-cache_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\net.sf.ehcache\ehcache-core\jars\ehcache-core-2.6.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-java-ws_2.11\jars\play-java-ws_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-ws_2.11\jars\play-ws_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.ning\async-http-client\jars\async-http-client-1.8.15.jar;C:\Users\Sergio\.ivy2\cache\oauth.signpost\signpost-core\jars\signpost-core-1.2.1.2.jar;C:\Users\Sergio\.ivy2\cache\oauth.signpost\signpost-commonshttp4\jars\signpost-commonshttp4-1.2.1.2.jar;C:\Users\Sergio\.ivy2\cache\org.apache.httpcomponents\httpcore\jars\httpcore-4.0.1.jar;C:\Users\Sergio\.ivy2\cache\org.apache.httpcomponents\httpclient\jars\httpclient-4.0.1.jar;C:\Users\Sergio\.ivy2\cache\commons-logging\commons-logging\jars\commons-logging-1.1.1.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-java-jpa_2.11\jars\play-java-jpa_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\org.hibernate\hibernate-entitymanager\jars\hibernate-entitymanager-4.3.8.Final.jar;C:\Users\Sergio\.ivy2\cache\org.jboss.logging\jboss-logging-annotations\jars\jboss-logging-annotations-1.2.0.Beta1.jar;C:\Users\Sergio\.ivy2\cache\org.hibernate\hibernate-core\jars\hibernate-core-4.3.8.Final.jar;C:\Users\Sergio\.ivy2\cache\org.jboss.spec.javax.transaction\jboss-transaction-api_1.2_spec\jars\jboss-transaction-api_1.2_spec-1.0.0.Final.jar;C:\Users\Sergio\.ivy2\cache\org.hibernate.common\hibernate-commons-annotations\jars\hibernate-commons-annotations-4.0.5.Final.jar;C:\Users\Sergio\.ivy2\cache\org.hibernate.javax.persistence\hibernate-jpa-2.1-api\jars\hibernate-jpa-2.1-api-1.0.0.Final.jar;C:\Users\Sergio\.ivy2\cache\antlr\antlr\jars\antlr-2.7.7.jar;C:\Users\Sergio\.ivy2\cache\org.jboss\jandex\jars\jandex-1.1.0.Final.jar
+Read from stdout: source file 'C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java' could not be found
+source file 'C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java' could not be found
+Read from stdout: one error found
+one error found
+Compilation failed (CompilerInterface)
+Read from stdout: (compile:compileIncremental) Compilation failed
+(compile:compileIncremental) Compilation failed
+Total time: 2 s, completed 06-may-2015 15:07:04
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@19206680, check cycles: false
+
+Initial source changes: 
+	removed:Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PartidaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PartidaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PersistenceFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\util\Jpa.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\SimplePersistenceFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioFinderImpl.java)
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PartidaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PartidaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PersistenceFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\util\Jpa.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\SimplePersistenceFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioFinderImpl.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PartidaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PartidaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaFinderImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PersistenceFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\util\Jpa.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\SimplePersistenceFactory.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioSaverImpl.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaFinder.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaSaver.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioFinderImpl.java)
+
+Recompiling all 28 sources: invalidated sources (18) exceeded 50.0% of all sources
+Read from stdout: Compiling 6 Scala sources and 22 Java sources to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Compiling 6 Scala sources and 22 Java sources to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Getting compiler-interface from component compiler for Scala 2.11.1
+Other repositories:
+Default repositories:
+Getting compiler-interface from component compiler for Scala 2.11.1
+Other repositories:
+Default repositories:
+Running cached compiler 28af788f, interfacing (CompilerInterface) with Scala compiler version 2.11.1
+Calling Scala compiler with arguments  (CompilerInterface):
+	-deprecation
+	-unchecked
+	-encoding
+	utf8
+	-bootclasspath
+	C:\Program Files\Java\jdk1.8.0_40\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_40\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_40\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_40\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_40\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_40\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_40\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_40\jre\classes;C:\Users\Sergio\.ivy2\cache\org.scala-lang\scala-library\jars\scala-library-2.11.1.jar
+	-classpath
+	C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes;C:\Users\Sergio\workspace\Trivial4b\web\lib\encripter.jar;C:\Users\Sergio\workspace\Trivial4b\web\lib\hsqldb.jar;C:\Users\Sergio\workspace\Trivial4b\web\lib\jgraph-5.13.0.0.jar;C:\Users\Sergio\workspace\Trivial4b\web\lib\jgrapht-core-0.9.1.jar;C:\Users\Sergio\workspace\Trivial4b\web\lib\mongo-java-driver-2.13.1.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\twirl-api_2.11\jars\twirl-api_2.11-1.0.2.jar;C:\Users\Sergio\.ivy2\cache\org.apache.commons\commons-lang3\jars\commons-lang3-3.1.jar;C:\Users\Sergio\.ivy2\cache\org.scala-lang.modules\scala-xml_2.11\bundles\scala-xml_2.11-1.0.1.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play_2.11\jars\play_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\build-link\jars\build-link-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-exceptions\jars\play-exceptions-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-iteratees_2.11\jars\play-iteratees_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\org.scala-stm\scala-stm_2.11\jars\scala-stm_2.11-0.7.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe\config\bundles\config-1.2.1.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-json_2.11\jars\play-json_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-functional_2.11\jars\play-functional_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-datacommons_2.11\jars\play-datacommons_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\joda-time\joda-time\jars\joda-time-2.3.jar;C:\Users\Sergio\.ivy2\cache\org.joda\joda-convert\jars\joda-convert-1.6.jar;C:\Users\Sergio\.ivy2\cache\com.fasterxml.jackson.core\jackson-annotations\bundles\jackson-annotations-2.3.2.jar;C:\Users\Sergio\.ivy2\cache\com.fasterxml.jackson.core\jackson-core\bundles\jackson-core-2.3.2.jar;C:\Users\Sergio\.ivy2\cache\com.fasterxml.jackson.core\jackson-databind\bundles\jackson-databind-2.3.2.jar;C:\Users\Sergio\.ivy2\cache\org.scala-lang\scala-reflect\jars\scala-reflect-2.11.1.jar;C:\Users\Sergio\.ivy2\cache\org.scala-lang.modules\scala-parser-combinators_2.11\bundles\scala-parser-combinators_2.11-1.0.1.jar;C:\Users\Sergio\.ivy2\cache\io.netty\netty\bundles\netty-3.9.3.Final.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.netty\netty-http-pipelining\jars\netty-http-pipelining-1.1.2.jar;C:\Users\Sergio\.ivy2\cache\org.slf4j\slf4j-api\jars\slf4j-api-1.7.6.jar;C:\Users\Sergio\.ivy2\cache\org.slf4j\jul-to-slf4j\jars\jul-to-slf4j-1.7.6.jar;C:\Users\Sergio\.ivy2\cache\org.slf4j\jcl-over-slf4j\jars\jcl-over-slf4j-1.7.6.jar;C:\Users\Sergio\.ivy2\cache\ch.qos.logback\logback-core\jars\logback-core-1.1.1.jar;C:\Users\Sergio\.ivy2\cache\ch.qos.logback\logback-classic\jars\logback-classic-1.1.1.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.akka\akka-actor_2.11\jars\akka-actor_2.11-2.3.4.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.akka\akka-slf4j_2.11\jars\akka-slf4j_2.11-2.3.4.jar;C:\Users\Sergio\.ivy2\cache\commons-codec\commons-codec\jars\commons-codec-1.9.jar;C:\Users\Sergio\.ivy2\cache\xerces\xercesImpl\jars\xercesImpl-2.11.0.jar;C:\Users\Sergio\.ivy2\cache\xml-apis\xml-apis\jars\xml-apis-1.4.01.jar;C:\Users\Sergio\.ivy2\cache\javax.transaction\jta\jars\jta-1.1.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-java_2.11\jars\play-java_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\org.yaml\snakeyaml\bundles\snakeyaml-1.13.jar;C:\Users\Sergio\.ivy2\cache\org.hibernate\hibernate-validator\jars\hibernate-validator-5.0.3.Final.jar;C:\Users\Sergio\.ivy2\cache\javax.validation\validation-api\jars\validation-api-1.1.0.Final.jar;C:\Users\Sergio\.ivy2\cache\com.fasterxml\classmate\bundles\classmate-1.0.0.jar;C:\Users\Sergio\.ivy2\cache\org.jboss.logging\jboss-logging\jars\jboss-logging-3.2.0.Final.jar;C:\Users\Sergio\.ivy2\cache\org.springframework\spring-context\jars\spring-context-4.0.3.RELEASE.jar;C:\Users\Sergio\.ivy2\cache\org.springframework\spring-core\jars\spring-core-4.0.3.RELEASE.jar;C:\Users\Sergio\.ivy2\cache\org.springframework\spring-beans\jars\spring-beans-4.0.3.RELEASE.jar;C:\Users\Sergio\.ivy2\cache\org.javassist\javassist\bundles\javassist-3.19.0-GA.jar;C:\Users\Sergio\.ivy2\cache\org.reflections\reflections\jars\reflections-0.9.8.jar;C:\Users\Sergio\.ivy2\cache\com.google.guava\guava\bundles\guava-16.0.1.jar;C:\Users\Sergio\.ivy2\cache\dom4j\dom4j\jars\dom4j-1.6.1.jar;C:\Users\Sergio\.ivy2\cache\com.google.code.findbugs\jsr305\jars\jsr305-2.0.3.jar;C:\Users\Sergio\.ivy2\cache\org.apache.tomcat\tomcat-servlet-api\jars\tomcat-servlet-api-8.0.5.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-java-jdbc_2.11\jars\play-java-jdbc_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-jdbc_2.11\jars\play-jdbc_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.jolbox\bonecp\bundles\bonecp-0.8.0.RELEASE.jar;C:\Users\Sergio\.ivy2\cache\com.h2database\h2\jars\h2-1.3.175.jar;C:\Users\Sergio\.ivy2\cache\tyrex\tyrex\jars\tyrex-1.0.1.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-java-ebean_2.11\jars\play-java-ebean_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\org.avaje.ebeanorm\avaje-ebeanorm\jars\avaje-ebeanorm-3.3.4.jar;C:\Users\Sergio\.ivy2\cache\org.avaje.ebeanorm\avaje-ebeanorm-agent\jars\avaje-ebeanorm-agent-3.2.2.jar;C:\Users\Sergio\.ivy2\cache\org.hibernate.javax.persistence\hibernate-jpa-2.0-api\jars\hibernate-jpa-2.0-api-1.0.1.Final.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-cache_2.11\jars\play-cache_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\net.sf.ehcache\ehcache-core\jars\ehcache-core-2.6.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-java-ws_2.11\jars\play-java-ws_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-ws_2.11\jars\play-ws_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\com.ning\async-http-client\jars\async-http-client-1.8.15.jar;C:\Users\Sergio\.ivy2\cache\oauth.signpost\signpost-core\jars\signpost-core-1.2.1.2.jar;C:\Users\Sergio\.ivy2\cache\oauth.signpost\signpost-commonshttp4\jars\signpost-commonshttp4-1.2.1.2.jar;C:\Users\Sergio\.ivy2\cache\org.apache.httpcomponents\httpcore\jars\httpcore-4.0.1.jar;C:\Users\Sergio\.ivy2\cache\org.apache.httpcomponents\httpclient\jars\httpclient-4.0.1.jar;C:\Users\Sergio\.ivy2\cache\commons-logging\commons-logging\jars\commons-logging-1.1.1.jar;C:\Users\Sergio\.ivy2\cache\com.typesafe.play\play-java-jpa_2.11\jars\play-java-jpa_2.11-2.3.8.jar;C:\Users\Sergio\.ivy2\cache\org.hibernate\hibernate-entitymanager\jars\hibernate-entitymanager-4.3.8.Final.jar;C:\Users\Sergio\.ivy2\cache\org.jboss.logging\jboss-logging-annotations\jars\jboss-logging-annotations-1.2.0.Beta1.jar;C:\Users\Sergio\.ivy2\cache\org.hibernate\hibernate-core\jars\hibernate-core-4.3.8.Final.jar;C:\Users\Sergio\.ivy2\cache\org.jboss.spec.javax.transaction\jboss-transaction-api_1.2_spec\jars\jboss-transaction-api_1.2_spec-1.0.0.Final.jar;C:\Users\Sergio\.ivy2\cache\org.hibernate.common\hibernate-commons-annotations\jars\hibernate-commons-annotations-4.0.5.Final.jar;C:\Users\Sergio\.ivy2\cache\org.hibernate.javax.persistence\hibernate-jpa-2.1-api\jars\hibernate-jpa-2.1-api-1.0.0.Final.jar;C:\Users\Sergio\.ivy2\cache\antlr\antlr\jars\antlr-2.7.7.jar;C:\Users\Sergio\.ivy2\cache\org.jboss\jandex\jars\jandex-1.1.0.Final.jar
+Scala compilation took 5.666481822 s
+Attempting to call com.sun.tools.javac.api.JavacTool@34f2db0d directly...
+Java compilation took 0.381233886 s
+Java analysis took 0.146113044 s
+Java compile + analysis took 0.540434923 s
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioFinderImpl.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioFinderImpl.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioFinderImpl.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioFinderImpl.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioFinderImpl.java source file has the following regular definitions changed:
+	notify, wait, equals, UsuarioFinderImpl, notifyAll, findAll, <init>, delete, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaSaverImpl.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaSaverImpl.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaSaverImpl.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaSaverImpl.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaSaverImpl.java source file has the following regular definitions changed:
+	notify, wait, equals, notifyAll, <init>, PreguntaSaverImpl, toString, getClass, save, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaSaverImpl.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaSaverImpl.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaSaverImpl.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaSaverImpl.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaSaverImpl.java source file has the following regular definitions changed:
+	notify, wait, equals, notifyAll, <init>, toString, RespuestaSaverImpl, getClass, save, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaFinderImpl.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaFinderImpl.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaFinderImpl.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaFinderImpl.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PreguntaFinderImpl.java source file has the following regular definitions changed:
+	notify, wait, equals, notifyAll, <init>, toString, getClass, PreguntaFinderImpl, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PartidaFinder.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PartidaFinder.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PartidaFinder.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PartidaFinder.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PartidaFinder.java source file has the following regular definitions changed:
+	PartidaFinder.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioSaverImpl.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioSaverImpl.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioSaverImpl.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioSaverImpl.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\UsuarioSaverImpl.java source file has the following regular definitions changed:
+	notify, wait, equals, UsuarioSaverImpl, notifyAll, <init>, toString, getClass, save, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaFinder.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaFinder.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaFinder.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaFinder.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaFinder.java source file has the following regular definitions changed:
+	PreguntaFinder.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PersistenceFactory.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PersistenceFactory.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PersistenceFactory.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PersistenceFactory.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PersistenceFactory.java source file has the following regular definitions changed:
+	PersistenceFactory, createUsuarioSaver, createPartidaFinder, createPreguntaSaver, createUsuarioFinder, createRespuestaSaver.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioFinder.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioFinder.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioFinder.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioFinder.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioFinder.java source file has the following regular definitions changed:
+	UsuarioFinder, findAll, delete.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\SimplePersistenceFactory.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\SimplePersistenceFactory.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\SimplePersistenceFactory.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\SimplePersistenceFactory.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\SimplePersistenceFactory.java source file has the following regular definitions changed:
+	notify, wait, equals, createUsuarioSaver, createPartidaFinder, notifyAll, <init>, SimplePersistenceFactory, createPreguntaSaver, createUsuarioFinder, toString, getClass, createRespuestaSaver, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaSaver.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaSaver.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaSaver.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaSaver.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaSaver.java source file has the following regular definitions changed:
+	RespuestaSaver, save.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaSaver.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaSaver.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaSaver.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaSaver.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\PreguntaSaver.java source file has the following regular definitions changed:
+	PreguntaSaver, save.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java source file has the following regular definitions changed:
+	notify, persistence, wait, equals, Factories, notifyAll, <init>, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\util\Jpa.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\util\Jpa.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\util\Jpa.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\util\Jpa.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\util\Jpa.java source file has the following regular definitions changed:
+	notify, wait, getEmf, equals, createEntityManager, notifyAll, emf, <init>, loadPersistentUnitName, getManager, Jpa, toString, getClass, emThread, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaFinderImpl.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaFinderImpl.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaFinderImpl.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaFinderImpl.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\RespuestaFinderImpl.java source file has the following regular definitions changed:
+	notify, wait, equals, notifyAll, <init>, RespuestaFinderImpl, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PartidaFinderImpl.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PartidaFinderImpl.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PartidaFinderImpl.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PartidaFinderImpl.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\impl\PartidaFinderImpl.java source file has the following regular definitions changed:
+	notify, wait, equals, notifyAll, PartidaFinderImpl, <init>, toString, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioSaver.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioSaver.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioSaver.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioSaver.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\UsuarioSaver.java source file has the following regular definitions changed:
+	save, UsuarioSaver.
+All member reference dependencies will be considered within this context.
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaFinder.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaFinder.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaFinder.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaFinder.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\consultas\RespuestaFinder.java source file has the following regular definitions changed:
+	RespuestaFinder.
+All member reference dependencies will be considered within this context.
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 8 s, completed 06-may-2015 15:07:12
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4945fd0, check cycles: false
+
+Canceling execution...
+Task java.util.concurrent.ExecutorCompletionService$QueueingFuture@5c884f9a rejected from java.util.concurrent.ThreadPoolExecutor@7bde33ef[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]
+java.util.concurrent.RejectedExecutionException: Task java.util.concurrent.ExecutorCompletionService$QueueingFuture@5c884f9a rejected from java.util.concurrent.ThreadPoolExecutor@7bde33ef[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]
+Use 'last' for the full log.
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 3
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@3d1ae478, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:07:12
+> server-post-command-cleanup
+> server-handle-next-server-request
+> echo:backgroundRun
+Evaluating tasks: echo:backgroundRun
+Running task... Cancel: sbt.server.ServerTaskCancellation@276a9d9e, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:07:12
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/echo:playForkConfig
+Evaluating tasks: echo:playForkConfig
+Running task... Cancel: sbt.server.ServerTaskCancellation@1a88b45c, check cycles: false
+Read from stdout: echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+Read from stdout: echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+Total time: 0 s, completed 06-may-2015 15:07:14
+> server-post-command-cleanup
+> server-handle-next-server-request
+> root/playForkNotifyStart http://localhost:9000
+Evaluating tasks: *:playForkNotifyStart
+Running task... Cancel: sbt.server.ServerTaskCancellation@5de2f481, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:07:16
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@5420680e, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java)
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@4f312b66 directly...
+Read from stdout: C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java:3: package persistence.consultas does not exist
+C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java:3: package persistence.consultas does not exist
+Read from stdout: persistence.consultas.PersistenceFactory
+persistence.consultas.PersistenceFactory
+Read from stdout: C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java:4: package persistence.consultas.impl does not exist
+C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java:4: package persistence.consultas.impl does not exist
+Read from stdout: persistence.consultas.impl.SimplePersistenceFactory
+persistence.consultas.impl.SimplePersistenceFactory
+Read from stdout: C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java:10: cannot find symbol
+Read from stdout: symbol:   class PersistenceFactory
+Read from stdout: location: class persistence.infrastucture.Factories
+C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java:10: cannot find symbol
+  symbol:   class PersistenceFactory
+  location: class persistence.infrastucture.Factories
+Read from stdout: PersistenceFactory
+PersistenceFactory
+Read from stdout: C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java:10: cannot find symbol
+Read from stdout: symbol:   class SimplePersistenceFactory
+Read from stdout: location: class persistence.infrastucture.Factories
+C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\infrastucture\Factories.java:10: cannot find symbol
+  symbol:   class SimplePersistenceFactory
+  location: class persistence.infrastucture.Factories
+Read from stdout: SimplePersistenceFactory
+SimplePersistenceFactory
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 0 s, completed 06-may-2015 15:07:19
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@7222e185, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 0 s, completed 06-may-2015 15:07:27
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 4
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@5232527f, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:07:27
+> server-post-command-cleanup
+> server-handle-next-server-request
+> echo:backgroundRun
+Evaluating tasks: echo:backgroundRun
+Running task... Cancel: sbt.server.ServerTaskCancellation@3682d9e6, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:07:27
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4d14f83a, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 0 s, completed 06-may-2015 15:07:27
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 4
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@755a3bd9, check cycles: false
+Exception in thread "sbt-bg-threads-4" java.lang.Error: java.lang.InterruptedException: sleep interrupted
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method)
+	at play.sbt.forkrun.PlayForkProcess$.timedWaitFor$1(PlayForkProcess.scala:57)
+	at play.sbt.forkrun.PlayForkProcess$.play$sbt$forkrun$PlayForkProcess$$stop$1(PlayForkProcess.scala:64)
+	at play.sbt.forkrun.PlayForkProcess$.run(PlayForkProcess.scala:82)
+	at play.sbt.forkrun.PlayForkProcess$.apply(PlayForkProcess.scala:34)
+	at play.sbt.forkrun.PlayForkRun$$anonfun$backgroundForkRunTask$1$$anonfun$apply$7$$anonfun$apply$8$$anonfun$apply$9.apply(PlayForkRun.scala:108)
+	at play.sbt.forkrun.PlayForkRun$$anonfun$backgroundForkRunTask$1$$anonfun$apply$7$$anonfun$apply$8$$anonfun$apply$9.apply(PlayForkRun.scala:107)
+	at sbt.BackgroundThreadPool$$anonfun$1.apply$mcV$sp(AbstractBackgroundJobService.scala:134)
+	at sbt.BackgroundThreadPool$BackgroundRunnable.run(AbstractBackgroundJobService.scala:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	... 2 more
+Total time: 0 s, completed 06-may-2015 15:07:27
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 5
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@5cec432c, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:07:27
+> server-post-command-cleanup
+> server-handle-next-server-request
+> echo:backgroundRun
+Evaluating tasks: echo:backgroundRun
+Running task... Cancel: sbt.server.ServerTaskCancellation@6c0f988e, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:07:28
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/echo:playForkConfig
+Evaluating tasks: echo:playForkConfig
+Running task... Cancel: sbt.server.ServerTaskCancellation@716979a3, check cycles: false
+Read from stdout: echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+Read from stdout: echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+Total time: 0 s, completed 06-may-2015 15:07:30
+> server-post-command-cleanup
+> server-handle-next-server-request
+> root/playForkNotifyStart http://localhost:9000
+Evaluating tasks: *:playForkNotifyStart
+Running task... Cancel: sbt.server.ServerTaskCancellation@36fa5b4d, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:07:32
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4c278211, check cycles: false
+
+Initial source changes: 
+	removed:Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java source file has the following regular definitions changed:
+	notify, wait, equals, DBManager, notifyAll, cargarPreguntasRemoto, <init>, toString, getClass, remoteDB, hashCode.
+All member reference dependencies will be considered within this context.
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed 06-may-2015 15:07:52
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 6
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@a1b72ca, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:07:52
+> server-post-command-cleanup
+> server-handle-next-server-request
+> echo:backgroundRun
+Evaluating tasks: echo:backgroundRun
+Running task... Cancel: sbt.server.ServerTaskCancellation@6dcb0a63, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:07:52
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/echo:playForkConfig
+Evaluating tasks: echo:playForkConfig
+Running task... Cancel: sbt.server.ServerTaskCancellation@3eea1388, check cycles: false
+Read from stdout: echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+Read from stdout: echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+Total time: 0 s, completed 06-may-2015 15:07:54
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@2ae06f4a, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+key not found: C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java
+java.util.NoSuchElementException: key not found: C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:58)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:58)
+	at play.PlayCommands$$anonfun$PostCompile$1$$anonfun$6.apply(PlayCommands.scala:83)
+	at play.PlayCommands$$anonfun$PostCompile$1$$anonfun$6.apply(PlayCommands.scala:81)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:251)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:251)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:47)
+	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:251)
+	at scala.collection.AbstractTraversable.flatMap(Traversable.scala:105)
+	at play.PlayCommands$$anonfun$PostCompile$1.apply(PlayCommands.scala:81)
+	at play.PlayCommands$$anonfun$PostCompile$1.apply(PlayCommands.scala:75)
+	at scala.Function8$$anonfun$tupled$1.apply(Function8.scala:35)
+	at scala.Function8$$anonfun$tupled$1.apply(Function8.scala:34)
+	at scala.Function1$$anonfun$compose$1.apply(Function1.scala:47)
+	at sbt.$tilde$greater$$anonfun$$u2219$1.apply(TypeFunctions.scala:40)
+	at sbt.std.Transform$$anon$4.work(System.scala:63)
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:226)
+	at sbt.Execute$$anonfun$submit$1$$anonfun$apply$1.apply(Execute.scala:226)
+	at sbt.ErrorHandling$.wideConvert(ErrorHandling.scala:17)
+	at sbt.Execute.work(Execute.scala:235)
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:226)
+	at sbt.Execute$$anonfun$submit$1.apply(Execute.scala:226)
+	at sbt.ConcurrentRestrictions$$anon$4$$anonfun$1.apply(ConcurrentRestrictions.scala:159)
+	at sbt.CompletionService$$anon$2.call(CompletionService.scala:28)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Read from stdout: (compile:compile) java.util.NoSuchElementException: key not found: C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java
+(compile:compile) java.util.NoSuchElementException: key not found: C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java
+Total time: 0 s, completed 06-may-2015 15:07:55
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> root/playForkNotifyStart http://localhost:9000
+Evaluating tasks: *:playForkNotifyStart
+Running task... Cancel: sbt.server.ServerTaskCancellation@7629bf6, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:07:56
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@5cc95f06, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@4bc0b2e0 directly...
+Java compilation took 0.060667927 s
+Java analysis took 0.021004249 s
+Java compile + analysis took 0.091677244 s
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java source file has the following regular definitions changed:
+	notify, wait, equals, DBManager, notifyAll, cargarPreguntasRemoto, <init>, toString, getClass, remoteDB, hashCode.
+All member reference dependencies will be considered within this context.
+Name hashing optimization doesn't apply to non-Scala dependency: C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed 06-may-2015 15:07:58
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 7
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@614c6656, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:07:58
+> server-post-command-cleanup
+> server-handle-next-server-request
+> echo:backgroundRun
+Evaluating tasks: echo:backgroundRun
+Running task... Cancel: sbt.server.ServerTaskCancellation@196e0011, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:07:58
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/echo:playForkConfig
+Evaluating tasks: echo:playForkConfig
+Running task... Cancel: sbt.server.ServerTaskCancellation@5793f7b1, check cycles: false
+Read from stdout: echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+Read from stdout: echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+Total time: 0 s, completed 06-may-2015 15:08:00
+> server-post-command-cleanup
+> server-handle-next-server-request
+> root/playForkNotifyStart http://localhost:9000
+Evaluating tasks: *:playForkNotifyStart
+Running task... Cancel: sbt.server.ServerTaskCancellation@60e36be9, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:08:02
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4b635c80, check cycles: false
+
+Initial source changes: 
+	removed:Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@666e9d5e directly...
+Read from stdout: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:12: package persistence does not exist
+C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:12: package persistence does not exist
+Read from stdout: persistence.DBFactory
+persistence.DBFactory
+Read from stdout: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:37: cannot find symbol
+Read from stdout: symbol:   variable DBFactory
+Read from stdout: location: class controllers.TrivialAPI
+C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:37: cannot find symbol
+  symbol:   variable DBFactory
+  location: class controllers.TrivialAPI
+Read from stdout: DBFactory
+DBFactory
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 0 s, completed 06-may-2015 15:08:41
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@797acd58, check cycles: false
+
+Initial source changes: 
+	removed:Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@475afd6b directly...
+Read from stdout: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:12: package persistence does not exist
+C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:12: package persistence does not exist
+Read from stdout: persistence.DBFactory
+persistence.DBFactory
+Read from stdout: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:37: cannot find symbol
+Read from stdout: symbol:   variable DBFactory
+Read from stdout: location: class controllers.TrivialAPI
+C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:37: cannot find symbol
+  symbol:   variable DBFactory
+  location: class controllers.TrivialAPI
+Read from stdout: DBFactory
+DBFactory
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 0 s, completed 06-may-2015 15:08:43
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@5199d644, check cycles: false
+
+Initial source changes: 
+	removed:Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@7f540a5e directly...
+Read from stdout: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:12: package persistence does not exist
+C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:12: package persistence does not exist
+Read from stdout: persistence.DBFactory
+persistence.DBFactory
+Read from stdout: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:37: cannot find symbol
+Read from stdout: symbol:   variable DBFactory
+Read from stdout: location: class controllers.TrivialAPI
+C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:37: cannot find symbol
+  symbol:   variable DBFactory
+  location: class controllers.TrivialAPI
+Read from stdout: DBFactory
+DBFactory
+Total time: 1 s, completed 06-may-2015 15:08:52
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@76e9a016, check cycles: false
+
+Initial source changes: 
+	removed:Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+	added: Set()
+	modified: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@77e8a664 directly...
+Read from stdout: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:36: cannot find symbol
+Read from stdout: symbol:   variable DBFactory
+Read from stdout: location: class controllers.TrivialAPI
+C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:36: cannot find symbol
+  symbol:   variable DBFactory
+  location: class controllers.TrivialAPI
+Read from stdout: DBFactory
+DBFactory
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 0 s, completed 06-may-2015 15:09:17
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@577fff37, check cycles: false
+
+Initial source changes: 
+	removed:Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+	added: Set()
+	modified: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteMongoDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\RemoteDB.java, C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java, C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBFactory.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@3562f6e7 directly...
+Read from stdout: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:36: cannot find symbol
+Read from stdout: symbol:   variable DBFactory
+Read from stdout: location: class controllers.TrivialAPI
+C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:36: cannot find symbol
+  symbol:   variable DBFactory
+  location: class controllers.TrivialAPI
+Read from stdout: DBFactory
+DBFactory
+Total time: 0 s, completed 06-may-2015 15:09:18
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@5f52428c, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@367b7ed6 directly...
+Read from stdout: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:36: cannot find symbol
+Read from stdout: symbol:   variable DBFactory
+Read from stdout: location: class controllers.TrivialAPI
+C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:36: cannot find symbol
+  symbol:   variable DBFactory
+  location: class controllers.TrivialAPI
+Read from stdout: DBFactory
+DBFactory
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 0 s, completed 06-may-2015 15:09:31
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@5698e8fa, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 0 s, completed 06-may-2015 15:09:32
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 8
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@4f49205f, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:09:32
+> server-post-command-cleanup
+> server-handle-next-server-request
+> echo:backgroundRun
+Evaluating tasks: echo:backgroundRun
+Running task... Cancel: sbt.server.ServerTaskCancellation@12c27a8b, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:09:33
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/echo:playForkConfig
+Evaluating tasks: echo:playForkConfig
+Running task... Cancel: sbt.server.ServerTaskCancellation@7baccd78, check cycles: false
+Read from stdout: echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+Read from stdout: echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+Total time: 0 s, completed 06-may-2015 15:09:34
+> server-post-command-cleanup
+> server-handle-next-server-request
+> root/playForkNotifyStart http://localhost:9000
+Evaluating tasks: *:playForkNotifyStart
+Running task... Cancel: sbt.server.ServerTaskCancellation@43b03198, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:09:36
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@7038d9e, check cycles: false
+
+Initial source changes: 
+	removed:Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\persistence\DBManager.java source file has the following regular definitions changed:
+	notify, wait, equals, DBManager, notifyAll, cargarPreguntasRemoto, <init>, toString, getClass, remoteDB, hashCode.
+All member reference dependencies will be considered within this context.
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed 06-may-2015 15:09:47
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 9
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@56ca2c1, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:09:47
+> server-post-command-cleanup
+> server-handle-next-server-request
+> echo:backgroundRun
+Evaluating tasks: echo:backgroundRun
+Running task... Cancel: sbt.server.ServerTaskCancellation@70005c2d, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:09:47
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@5e608538, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 0 s, completed 06-may-2015 15:09:48
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 9
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@7ca40f7b, check cycles: false
+Exception in thread "sbt-bg-threads-8" java.lang.Error: java.lang.InterruptedException: sleep interrupted
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method)
+	at play.sbt.forkrun.PlayForkProcess$.timedWaitFor$1(PlayForkProcess.scala:57)
+	at play.sbt.forkrun.PlayForkProcess$.play$sbt$forkrun$PlayForkProcess$$stop$1(PlayForkProcess.scala:64)
+	at play.sbt.forkrun.PlayForkProcess$.run(PlayForkProcess.scala:82)
+	at play.sbt.forkrun.PlayForkProcess$.apply(PlayForkProcess.scala:34)
+	at play.sbt.forkrun.PlayForkRun$$anonfun$backgroundForkRunTask$1$$anonfun$apply$7$$anonfun$apply$8$$anonfun$apply$9.apply(PlayForkRun.scala:108)
+	at play.sbt.forkrun.PlayForkRun$$anonfun$backgroundForkRunTask$1$$anonfun$apply$7$$anonfun$apply$8$$anonfun$apply$9.apply(PlayForkRun.scala:107)
+	at sbt.BackgroundThreadPool$$anonfun$1.apply$mcV$sp(AbstractBackgroundJobService.scala:134)
+	at sbt.BackgroundThreadPool$BackgroundRunnable.run(AbstractBackgroundJobService.scala:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	... 2 more
+Total time: 0 s, completed 06-may-2015 15:09:49
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 10
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@73aade2a, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:09:49
+> server-post-command-cleanup
+> server-handle-next-server-request
+> echo:backgroundRun
+Evaluating tasks: echo:backgroundRun
+Running task... Cancel: sbt.server.ServerTaskCancellation@2e5264d, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:09:49
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/echo:playForkConfig
+Evaluating tasks: echo:playForkConfig
+Running task... Cancel: sbt.server.ServerTaskCancellation@1dfd26d0, check cycles: false
+Read from stdout: echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+Read from stdout: echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+Total time: 0 s, completed 06-may-2015 15:09:51
+> server-post-command-cleanup
+> server-handle-next-server-request
+> root/playForkNotifyStart http://localhost:9000
+Evaluating tasks: *:playForkNotifyStart
+Running task... Cancel: sbt.server.ServerTaskCancellation@6717f874, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:09:52
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@32d06a5a, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Sergio\workspace\Trivial4b\web\conf\application.conf,C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes\application.conf)
+	(C:\Users\Sergio\workspace\Trivial4b\web\conf\META-INF,C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes\META-INF)
+	(C:\Users\Sergio\workspace\Trivial4b\web\conf\routes,C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes\routes)
+	(C:\Users\Sergio\workspace\Trivial4b\web\conf\META-INF\orm.xml,C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes\META-INF\orm.xml)
+	(C:\Users\Sergio\workspace\Trivial4b\web\conf\META-INF\persistence.xml,C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes\META-INF\persistence.xml)
+Total time: 1 s, completed 06-may-2015 15:09:56
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@4ca6a2ac, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java)
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java)
+
+Read from stdout: Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Compiling 1 Java source to C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@3d448252 directly...
+Read from stdout: C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:341: method conectar() is already defined in class controllers.TrivialAPI
+C:\Users\Sergio\workspace\Trivial4b\web\app\controllers\TrivialAPI.java:341: method conectar() is already defined in class controllers.TrivialAPI
+Read from stdout: private static DB conectar() {
+Read from stdout: 		MongoClient mongoClient = null;
+Read from stdout: 		MongoCredential mongoCredential = MongoCredential
+Read from stdout: 				.createMongoCRCredential("trivialuser", "trivial",
+Read from stdout: 						"4btrivialmongouser".toCharArray());
+Read from stdout: 		try {
+Read from stdout: 			mongoClient = new MongoClient(new ServerAddress(
+Read from stdout: 					"ds062797.mongolab.com", 62797),
+Read from stdout: 					Arrays.asList(mongoCredential));
+Read from stdout: 		} catch (UnknownHostException e) {
+Read from stdout: 			e.printStackTrace();
+Read from stdout: 		}
+Read from stdout: 	
+Read from stdout: 		DB db = mongoClient.getDB("trivial");
+Read from stdout: 		System.out.println("Conexion creada con la base de datos");
+Read from stdout: 		return db;
+Read from stdout: 	}
+private static DB conectar() {
+		MongoClient mongoClient = null;
+		MongoCredential mongoCredential = MongoCredential
+				.createMongoCRCredential("trivialuser", "trivial",
+						"4btrivialmongouser".toCharArray());
+		try {
+			mongoClient = new MongoClient(new ServerAddress(
+					"ds062797.mongolab.com", 62797),
+					Arrays.asList(mongoCredential));
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+	
+		DB db = mongoClient.getDB("trivial");
+		System.out.println("Conexion creada con la base de datos");
+		return db;
+	}
+Read from stdout: (compile:compileIncremental) javac returned nonzero exit code
+(compile:compileIncremental) javac returned nonzero exit code
+Total time: 0 s, completed 06-may-2015 15:10:47
+> server-post-command-error-handler
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@30405c90, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 0 s, completed 06-may-2015 15:10:54
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 11
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@1c1765d, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:10:54
+> server-post-command-cleanup
+> server-handle-next-server-request
+> echo:backgroundRun
+Evaluating tasks: echo:backgroundRun
+Running task... Cancel: sbt.server.ServerTaskCancellation@6d8e1ca1, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:10:54
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/echo:playForkConfig
+Evaluating tasks: echo:playForkConfig
+Running task... Cancel: sbt.server.ServerTaskCancellation@1b093e28, check cycles: false
+Read from stdout: echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+Read from stdout: echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+Total time: 0 s, completed 06-may-2015 15:10:56
+> server-post-command-cleanup
+> server-handle-next-server-request
+> root/playForkNotifyStart http://localhost:9000
+Evaluating tasks: *:playForkNotifyStart
+Running task... Cancel: sbt.server.ServerTaskCancellation@79d3d034, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:10:57
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@8210d6c, check cycles: false
+
+Initial source changes: 
+	removed:Set(C:\Users\Sergio\workspace\Trivial4b\web\app\models\type\UsuarioPartidaKey.java)
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\models\type\UsuarioPartidaKey.java)
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\models\type\UsuarioPartidaKey.java)
+
+Invalidating C:\Users\Sergio\workspace\Trivial4b\web\app\models\type\UsuarioPartidaKey.java...
+Invalidating (transitively) by inheritance from C:\Users\Sergio\workspace\Trivial4b\web\app\models\type\UsuarioPartidaKey.java...
+Initial set of included nodes: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\models\type\UsuarioPartidaKey.java)
+Invalidated by transitive inheritance dependency: Set(C:\Users\Sergio\workspace\Trivial4b\web\app\models\type\UsuarioPartidaKey.java)
+The C:\Users\Sergio\workspace\Trivial4b\web\app\models\type\UsuarioPartidaKey.java source file has the following regular definitions changed:
+	notify, wait, getPartida, equals, partida, usuario, notifyAll, <init>, getUsuario, toString, UsuarioPartidaKey, getClass, hashCode.
+All member reference dependencies will be considered within this context.
+New invalidations:
+	Set()
+Initial set of included nodes: Set()
+Previously invalidated, but (transitively) depend on new invalidations:
+	Set()
+All newly invalidated sources after taking into account (previously) recompiled sources:Set()
+Total time: 0 s, completed 06-may-2015 15:57:47
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 12
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@6112f6ab, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:57:47
+> server-post-command-cleanup
+> server-handle-next-server-request
+> echo:backgroundRun
+Evaluating tasks: echo:backgroundRun
+Running task... Cancel: sbt.server.ServerTaskCancellation@2deeff97, check cycles: false
+Total time: 1 s, completed 06-may-2015 15:57:48
+> server-post-command-cleanup
+> server-handle-next-server-request
+> compile
+Evaluating tasks: compile:compile
+Running task... Cancel: sbt.server.ServerTaskCancellation@3c858a8b, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Total time: 0 s, completed 06-may-2015 15:57:49
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 12
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@4c3422cc, check cycles: false
+Exception in thread "sbt-bg-threads-11" java.lang.Error: java.lang.InterruptedException: sleep interrupted
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1148)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method)
+	at play.sbt.forkrun.PlayForkProcess$.timedWaitFor$1(PlayForkProcess.scala:57)
+	at play.sbt.forkrun.PlayForkProcess$.play$sbt$forkrun$PlayForkProcess$$stop$1(PlayForkProcess.scala:64)
+	at play.sbt.forkrun.PlayForkProcess$.run(PlayForkProcess.scala:82)
+	at play.sbt.forkrun.PlayForkProcess$.apply(PlayForkProcess.scala:34)
+	at play.sbt.forkrun.PlayForkRun$$anonfun$backgroundForkRunTask$1$$anonfun$apply$7$$anonfun$apply$8$$anonfun$apply$9.apply(PlayForkRun.scala:108)
+	at play.sbt.forkrun.PlayForkRun$$anonfun$backgroundForkRunTask$1$$anonfun$apply$7$$anonfun$apply$8$$anonfun$apply$9.apply(PlayForkRun.scala:107)
+	at sbt.BackgroundThreadPool$$anonfun$1.apply$mcV$sp(AbstractBackgroundJobService.scala:134)
+	at sbt.BackgroundThreadPool$BackgroundRunnable.run(AbstractBackgroundJobService.scala:68)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	... 2 more
+Total time: 0 s, completed 06-may-2015 15:57:49
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 13
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@4de073e7, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:57:49
+> server-post-command-cleanup
+> server-handle-next-server-request
+> echo:backgroundRun
+Evaluating tasks: echo:backgroundRun
+Running task... Cancel: sbt.server.ServerTaskCancellation@6353c043, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:57:49
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/echo:playForkConfig
+Evaluating tasks: echo:playForkConfig
+Running task... Cancel: sbt.server.ServerTaskCancellation@71cc7619, check cycles: false
+Read from stdout: echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+echo-trace-akka jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-akka-2.3.9_2.11:0.1.14
+Read from stdout: echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+echo-trace-play jar for Inspect is on the echo:run classpath com.typesafe.trace:echo-trace-play-2.3.8_2.11:0.1.14
+Total time: 0 s, completed 06-may-2015 15:57:51
+> server-post-command-cleanup
+> server-handle-next-server-request
+> root/playForkNotifyStart http://localhost:9000
+Evaluating tasks: *:playForkNotifyStart
+Running task... Cancel: sbt.server.ServerTaskCancellation@565ebe3e, check cycles: false
+Total time: 0 s, completed 06-may-2015 15:57:53
+> server-post-command-cleanup
+> server-handle-next-server-request
+> {file:/C:/Users/Sergio/workspace/Trivial4b/web/}root/*:playForkReload
+Evaluating tasks: *:playForkReload
+Running task... Cancel: sbt.server.ServerTaskCancellation@4812ea89, check cycles: false
+
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()
+All initially invalidated sources: Set()
+
+Copy resource mappings: 
+	(C:\Users\Sergio\workspace\Trivial4b\web\conf\application.conf,C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes\application.conf)
+	(C:\Users\Sergio\workspace\Trivial4b\web\conf\META-INF,C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes\META-INF)
+	(C:\Users\Sergio\workspace\Trivial4b\web\conf\routes,C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes\routes)
+	(C:\Users\Sergio\workspace\Trivial4b\web\conf\META-INF\orm.xml,C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes\META-INF\orm.xml)
+	(C:\Users\Sergio\workspace\Trivial4b\web\conf\META-INF\persistence.xml,C:\Users\Sergio\workspace\Trivial4b\web\target\scala-2.11\classes\META-INF\persistence.xml)
+Total time: 1 s, completed 06-may-2015 15:58:01
+> server-post-command-cleanup
+> server-handle-next-server-request
+> jobStop 14
+Evaluating tasks: *:jobStop
+Running task... Cancel: sbt.server.ServerTaskCancellation@6605351e, check cycles: false
+Total time: 0 s, completed 06-may-2015 18:15:04
 > server-post-command-cleanup
 > server-handle-next-server-request

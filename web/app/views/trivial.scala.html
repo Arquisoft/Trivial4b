@@ -373,6 +373,17 @@
 			$('#respuesta4Resultado').css("color",color);
 		}
 		
+		function guardarConfiguracion(){
+			var nTablero = $('#estiloTablero').val();
+			
+			if(nTablero < 9)
+				$('#fondoTablero').css("background-image","url(assets/imgs/Fondo_Tablero_0"+nTablero+".png)");
+			else
+				$('#fondoTablero').css("background-image","url(assets/imgs/Fondo_Tablero_"+nTablero+".png)");
+				
+			$('#modalConfiguracion').modal('hide');
+		}
+		
 	</script>
 </head>
 
