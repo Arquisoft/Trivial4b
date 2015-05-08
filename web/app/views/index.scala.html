@@ -110,7 +110,7 @@
 			var nExistente = $('#nombreExistente1').val();
 			var existente = $("#nombreExistente1 option[value='"+nExistente+"']").text();
 			
-			if(username != '' && password != '' && nExistente >= 0){				
+			if(username != '' && password != '' && nExistente == "seleccionar"){				
 				$('#nombreNuevo1').attr('disabled', true);
 				$('#password1').attr('disabled', true);
 				$('#nombreExistente1').attr('disabled', true);
@@ -121,7 +121,7 @@
 				
 				guardarUsuario(username,password);
 			}
-			else if(username == '' && password != '' && nExistente >= 0){
+			else if(username == '' && password != '' && nExistente != "seleccionar"){
 				validaPass(existente, password);	
 			}
 			else{
