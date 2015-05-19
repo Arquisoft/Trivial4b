@@ -15,7 +15,7 @@ public class RespuestaSaverImpl implements RespuestaSaver {
 		EntityTransaction trx = em.getTransaction();
 		try{
 			trx.begin();
-			Jpa.getManager().merge(respuesta);
+			Jpa.getManager().persist(respuesta);
 			trx.commit();
 		}catch(PersistenceException e) {
 			if(trx.isActive())

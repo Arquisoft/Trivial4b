@@ -1,11 +1,8 @@
 package es.uniovi.asw.trivial.main;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.util.Collections;
 import java.util.List;
+
 
 
 import es.uniovi.asw.trivial.db.DBManager;
@@ -25,10 +22,27 @@ public class Main {
 	}
 
 	public void run() {
-		DBManager dbManager = new DBManager();
-		List<Pregunta> listaPreguntas = dbManager.cargarPreguntasRemoto();
+			DBManager dbManager = new DBManager();
+			List<Pregunta> listaPreguntas = dbManager.cargarPreguntasRemoto();
+			Collections.sort(listaPreguntas, PreguntaComparator.comparatorCategoria);
+			
+			PersistenceFactory pf = new SimplePersistenceFactory();
+			for(int i = 0; i < listaPreguntas.size(); i++){
+				Pregunta pregunta = listaPreguntas.get(i);
+				List<Respuesta> respuestas = pregunta.getRespuestas();			
+
+					pf.createPreguntaSaver().save(pregunta);
+				for(Respuesta respuesta: respuestas){
+					pf.createRespuestaSaver().save(respuesta);
+				}
+
+			}
+
+			Trivial trivial = new Trivial(listaPreguntas);
+			VentanaPrincipal vInicio = new VentanaPrincipal(trivial);
+			vInicio.setVisible(true);
+	}
 		
-		Collections.sort(listaPreguntas, PreguntaComparator.comparatorCategoria);
 		
 		/*
 		 * Con este codigo se puede iniciar la base de datos automaticamente
@@ -54,22 +68,6 @@ public class Main {
 		
 //		hsqlServer.start();
 
-		
-		PersistenceFactory pf = new SimplePersistenceFactory();
-		for(int i = 0; i < listaPreguntas.size(); i++){
-			Pregunta pregunta = listaPreguntas.get(i);
-			List<Respuesta> respuestas = pregunta.getRespuestas();			
-
-				pf.createPreguntaSaver().save(pregunta);
-			for(Respuesta respuesta: respuestas){
-				pf.createRespuestaSaver().save(respuesta);
-			}
-
-		}
-
-		Trivial trivial = new Trivial(listaPreguntas);
-		VentanaPrincipal vInicio = new VentanaPrincipal(trivial);
-		vInicio.setVisible(true);
-	}
+	
 
 }

@@ -20,8 +20,15 @@ public class Jpa {
 		new ThreadLocal<EntityManager>();
 	
 	public static EntityManager createEntityManager() {
-		EntityManager entityManager = getEmf().createEntityManager();
+		EntityManager entityManager = null;
+		try{
+		entityManager = getEmf().createEntityManager();
 		emThread.set(entityManager);
+		}
+		catch(javax.persistence.PersistenceException e){
+			System.err.println("¡ ERROR - Seguramente NO se han añadido las dos librerias de la carpeta 'lib' (Donde se encuentra hibernate3.), al Build Path del proyecto.  !");
+			System.exit(0);
+		}
 		return entityManager;
 	}
 
@@ -30,10 +37,11 @@ public class Jpa {
 	}
 
 	private static EntityManagerFactory getEmf() {
-		if (emf == null){
-			String persistenceUnitName = loadPersistentUnitName();
-			emf = Persistence.createEntityManagerFactory(persistenceUnitName);
-		}
+			if (emf == null){
+				String persistenceUnitName = loadPersistentUnitName();
+				emf = Persistence.createEntityManagerFactory(persistenceUnitName);
+			}
+		
 		return emf;
 	}
 

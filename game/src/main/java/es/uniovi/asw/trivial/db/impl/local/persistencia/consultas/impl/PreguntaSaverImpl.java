@@ -15,7 +15,7 @@ public class PreguntaSaverImpl implements PreguntaSaver {
 		EntityTransaction trx = em.getTransaction();
 		try{
 			trx.begin();
-			Jpa.getManager().merge(pregunta);
+			Jpa.getManager().persist(pregunta);
 			trx.commit();
 		}catch(PersistenceException e) {
 			if(trx.isActive())

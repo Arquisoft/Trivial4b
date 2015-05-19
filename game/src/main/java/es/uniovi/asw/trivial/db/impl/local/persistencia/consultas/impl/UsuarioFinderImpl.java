@@ -20,8 +20,9 @@ public class UsuarioFinderImpl implements UsuarioFinder {
 			trx.begin();
 			Jpa.getManager().merge(usuario);
 			trx.commit();
+			
 		}catch(PersistenceException e) {
-			throw new IOException("Base de datos NO conectada.");
+			throw new IOException(e.getMessage());
 		}
 	}
 
