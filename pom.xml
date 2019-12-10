@@ -207,19 +207,9 @@
 			<timezone>2</timezone>
 			<properties/>
 		</developer>
-	</developers>
-	
-	
-	<properties>
-   		 <maven.compiler.source>1.6</maven.compiler.source>
-   		 <maven.compiler.target>1.6</maven.compiler.target>
-  	</properties>
-
-
+	</developers>	
 	<organization>
 		<name>University of Oviedo</name>
 		<url>http://www.uniovi.es</url>
-	</organization>
-
-	
+	</organization>	
 </project>
