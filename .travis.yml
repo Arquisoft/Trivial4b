@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - openjdk12
-  - oraclejdk12
+  - openjdk8
+  - oraclejdk8
 services:
   - mongodb
